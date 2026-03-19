@@ -124,14 +124,14 @@ body, html {
     gap: 24px;
     opacity: 1;
     transform: rotate(0deg);
-    padding-top: 24px;    /* Size, Spacing/6 */
-    padding-right: 32px;  /* Size, Spacing/5 */
-    padding-bottom: 32px; /* Size, Spacing/5 */
-    padding-left: 32px;   /* Size, Spacing/5 */
-    border-radius: 24px;  /* Border Radius/6 */
-    border-width: 3px;    /* Stroke Width/3 */
-    background: #F5F5F5;  /* Surface-Container-Foreground */
-    border-top: 4px solid #E5E5E5; /* Surface-Border-Subtle */
+    padding-top: 24px;
+    padding-right: 32px;
+    padding-bottom: 32px;
+    padding-left: 32px;
+    border-radius: 24px;
+    border-width: 3px;
+    background: #F5F5F5;
+    border-top: 4px solid #E5E5E5;
     box-shadow: 0px 20px 40px 0px #00000029;
     display: flex;
     flex-direction: column;
@@ -157,10 +157,115 @@ body, html {
     flex-direction: column;
 }
 
+.form-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form Labels */
+.form-group label {
+    display: block;
+    width: 300px;
+    height: 22px;
+    justify-content: space-between;
+    opacity: 1;
+    transform: rotate(0deg);
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
 .form-group {
     margin-bottom: 24px;
     display: flex;
     flex-direction: column;
+}
+
+/* Name Input */
+.form-group:nth-child(1) input {
+    width: 373px;
+    height: 48px;
+    gap: 4px;
+    opacity: 1;
+    transform: rotate(0deg);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 14px;
+    background: #f8f9fa;
+    box-sizing: border-box;
+}
+
+/* Company Input */
+.form-group:nth-child(2) {
+    width: 373px;
+    height: 74px;
+    gap: 4px;
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.form-group:nth-child(2) input {
+    width: 373px;
+    height: 48px;
+    gap: 4px;
+    opacity: 1;
+    transform: rotate(0deg);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 14px;
+    background: #f8f9fa;
+    box-sizing: border-box;
+}
+
+/* Company Size Select */
+.form-group:nth-child(3) select {
+    width: 373px;
+    height: 48px;
+    gap: 4px;
+    opacity: 1;
+    transform: rotate(0deg);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 14px;
+    background: #f8f9fa;
+    box-sizing: border-box;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+/* Message Textarea Container */
+.form-group:nth-child(4) {
+    width: 373px;
+    height: 124px;
+    gap: 4px;
+    opacity: 1;
+    transform: rotate(0deg);
+    position: relative;
+}
+
+.form-group:nth-child(4) textarea {
+    width: 373px;
+    height: 124px;
+    gap: 4px;
+    opacity: 1;
+    transform: rotate(0deg);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 14px;
+    background: #f8f9fa;
+    resize: none;
+    font-family: inherit;
+    box-sizing: border-box;
 }
 
 .char-count {
@@ -198,7 +303,7 @@ body, html {
 }
 
 .join-btn:hover {
-    background: #555;
+    background: #333 !important;
 }
 
 /* Responsive Design */
@@ -331,109 +436,4 @@ body, html {
         padding: 4px 8px;
         font-size: 12px;
     }
-}
-
-.form-container h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 30px;
-}
-
-/* Form Labels */
-.form-group label {
-    display: block;
-    width: 300px;
-    height: 22px;
-    justify-content: space-between;
-    opacity: 1;
-    transform: rotate(0deg);
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-/* Name Input */
-.form-group:nth-child(1) input {
-    width: 373px;
-    height: 48px;
-    gap: 4px;
-    opacity: 1;
-    transform: rotate(0deg);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0 15px;
-    font-size: 14px;
-    background: #f8f9fa;
-    box-sizing: border-box;
-}
-
-/* Company Input */
-.form-group:nth-child(2) {
-    width: 373px;
-    height: 74px;
-    gap: 4px;
-    opacity: 1;
-    transform: rotate(0deg);
-}
-
-.form-group:nth-child(2) input {
-    width: 373px;
-    height: 48px;
-    gap: 4px;
-    opacity: 1;
-    transform: rotate(0deg);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0 15px;
-    font-size: 14px;
-    background: #f8f9fa;
-    box-sizing: border-box;
-}
-
-/* Company Size Select */
-.form-group:nth-child(3) select {
-    width: 373px;
-    height: 48px;
-    gap: 4px;
-    opacity: 1;
-    transform: rotate(0deg);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 0 15px;
-    font-size: 14px;
-    background: #f8f9fa;
-    box-sizing: border-box;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 12px center;
-    background-repeat: no-repeat;
-    background-size: 16px;
-}
-
-/* Message Textarea Container */
-.form-group:nth-child(4) {
-    width: 373px;
-    height: 124px;
-    gap: 4px;
-    opacity: 1;
-    transform: rotate(0deg);
-    position: relative;
-}
-
-.form-group:nth-child(4) textarea {
-    width: 373px;
-    height: 124px;
-    gap: 4px;
-    opacity: 1;
-    transform: rotate(0deg);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-    font-size: 14px;
-    background: #f8f9fa;
-    resize: none;
-    font-family: inherit;
-    box-sizing: border-box;
 }
