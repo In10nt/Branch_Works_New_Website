@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './ComingSoon.css';
 
 const ComingSoon = () => {
@@ -10,6 +11,8 @@ const ComingSoon = () => {
   });
 
   const [charCount, setCharCount] = useState(0);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -23,10 +26,35 @@ const ComingSoon = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      const response = await axios.post('/api/waitlist', formData);
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for joining! We\'ll be in touch soon.'
+      });
+      
+      // Reset form
+      setFormData({
+        name: '',
+        company: '',
+        companySize: '0 - 5',
+        message: ''
+      });
+      setCharCount(0);
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: error.response?.data?.message || 'Something went wrong. Please try again.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -40,15 +68,22 @@ const ComingSoon = () => {
             <h1>Not everything offshore is hidden. Some things are just getting ready.</h1>
           </div>
           <div className="social-icons">
-            <div className="social-icon">📷</div>
-            <div className="social-icon">💼</div>
-            <div className="social-icon">🐦</div>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">📷</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon">💼</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon">🐦</a>
           </div>
           <div className="brand-name">Branchworks</div>
         </div>
         <div className="right-section">
           <div className="form-container">
             <h2>Join the first wave</h2>
+            
+            {submitStatus.message && (
+              <div className={`status-message ${submitStatus.type}`}>
+                {submitStatus.message}
+              </div>
+            )}
+            
             <form onSubmit={handleSubmit}>
               <div className="form-fields">
                 <div className="form-group">
@@ -59,6 +94,7 @@ const ComingSoon = () => {
                     placeholder="ex: John"
                     value={formData.name}
                     onChange={handleInputChange}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -69,6 +105,7 @@ const ComingSoon = () => {
                     placeholder="ex : Google"
                     value={formData.company}
                     onChange={handleInputChange}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -77,6 +114,7 @@ const ComingSoon = () => {
                     name="companySize"
                     value={formData.companySize}
                     onChange={handleInputChange}
+                    required
                   >
                     <option value="0 - 5">0 - 5</option>
                     <option value="6 - 20">6 - 20</option>
@@ -93,11 +131,14 @@ const ComingSoon = () => {
                     value={formData.message}
                     onChange={handleInputChange}
                     maxLength={250}
+                    required
                   />
                   <div className="char-count">{charCount}/250</div>
                 </div>
               </div>
-              <button type="submit" className="join-btn">Join</button>
+              <button type="submit" className="join-btn" disabled={isSubmitting}>
+                {isSubmitting ? 'Joining...' : 'Join'}
+              </button>
             </form>
           </div>
         </div>
