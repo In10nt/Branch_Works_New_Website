@@ -12,7 +12,7 @@ const ComingSoon = () => {
   const [charCount, setCharCount] = useState(0);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(true);
+  const [showSuccess, setShowSuccess] = useState(false);
   const [countdown, setCountdown] = useState(5);
 
   useEffect(() => {
