@@ -32,7 +32,7 @@ const ComingSoon = () => {
     setSubmitStatus({ type: '', message: '' });
 
     try {
-      const response = await axios.post('/api/waitlist', formData);
+      await axios.post('/api/waitlist', formData);
       
       setSubmitStatus({
         type: 'success',
