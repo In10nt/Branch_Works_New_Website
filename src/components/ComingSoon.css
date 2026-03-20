@@ -11,7 +11,19 @@ body, html {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
-    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    body, html {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 769px) {
+    body, html {
+        overflow: hidden;
+    }
 }
 
 .coming-soon-container {
@@ -51,7 +63,10 @@ body, html {
 /* Mobile: Adjust for smaller screens */
 @media (max-width: 768px) {
     .coming-soon-container {
-        padding: 101px 16px;
+        padding: 20px 16px;
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
     }
 }
 
@@ -218,8 +233,9 @@ body, html {
 /* Mobile: Main text 342x102 */
 @media (max-width: 768px) {
     .main-text {
-        width: 342px;
-        height: 102px;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
         opacity: 1;
         margin-top: 20px;
     }
@@ -228,8 +244,8 @@ body, html {
         font-family: 'Inter', sans-serif;
         font-weight: 600;
         font-style: normal;
-        font-size: 28px;
-        line-height: 34px;
+        font-size: 24px;
+        line-height: 30px;
         letter-spacing: -0.02em;
         color: #FFFFFF;
     }
@@ -287,18 +303,36 @@ body, html {
         width: 18px;
         height: 22px;
         opacity: 1;
+        font-family: 'Font Awesome 5 Brands', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
     }
     
     .social-icon.linkedin svg {
         width: 18px;
         height: 22px;
         opacity: 1;
+        font-family: 'Font Awesome 5 Brands', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
     }
     
-    .social-icon.twitter svg {
+    .social-icon.facebook svg {
         width: 20px;
         height: 22px;
         opacity: 1;
+        font-family: 'Font Awesome 5 Brands', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
     }
 }
 
@@ -672,26 +706,26 @@ body, html {
         max-width: 393px;
         height: auto;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
         justify-content: flex-start;
+        align-items: center;
     }
     
     .left-section {
         width: 100%;
         height: auto;
-        min-height: 300px;
-        padding: 20px;
+        min-height: auto;
+        padding: 20px 20px 20px 20px;
+        max-width: 100%;
     }
     
     .right-section {
-        width: 361px;
-        height: 566px;
+        width: 100%;
+        max-width: 361px;
+        height: auto;
         gap: 24px;
         opacity: 1;
-        padding-top: 24px;
-        padding-right: 40px;
-        padding-bottom: 40px;
-        padding-left: 40px;
+        padding: 24px;
         border-radius: 24px;
         border-width: 3px;
         background: #F5F5F5;
@@ -705,8 +739,54 @@ body, html {
         margin-bottom: 20px;
     }
     
+    .logo img {
+        width: 100px;
+        height: 100px;
+    }
+    
     .main-text {
         margin-top: 20px;
+        margin-bottom: 80px;
+        width: 100%;
+    }
+    
+    .main-text h1 {
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: -0.02em;
+        white-space: normal;
+    }
+    
+    .social-icons {
+        margin-top: 10px;
+        margin-bottom: 120px;
+        gap: 16px;
+    }
+    
+    .social-icon {
+        width: auto;
+        height: 22px;
+    }
+    
+    .social-icon svg {
+        width: 20px;
+        height: 22px;
+        font-family: 'Font Awesome 5 Brands', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
+    }
+    
+    .brand-name {
+        margin-bottom: 20px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0%;
     }
     
     .form-group:nth-child(1) input,
