@@ -156,18 +156,18 @@ body, html {
 
 .logo {
     position: relative;
-    top: 0;
-    left: 0;
+    top: -55px;
+    left: -10px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 10px;
     opacity: 1;
-    margin-bottom: 20px;
+    margin-bottom: -50px;
 }
 
 .logo img {
-    width: 120px;
-    height: 120px;
+    width: 220px;
+    height: 220px;
     object-fit: contain;
 }
 
@@ -735,13 +735,13 @@ body, html {
     
     .logo {
         position: relative;
-        left: 0;
+        left: -10px;
         margin-bottom: 20px;
     }
     
     .logo img {
-        width: 100px;
-        height: 100px;
+        width: 220px;
+        height: 220px;
     }
     
     .main-text {
