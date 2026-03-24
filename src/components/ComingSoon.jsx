@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import emailjs from '@emailjs/browser';
 import './ComingSoon.css';
 
 const ComingSoon = () => {
@@ -44,9 +45,8 @@ const ComingSoon = () => {
     setSubmitStatus({ type: '', message: '' });
 
     try {
-      // Use relative URL when deployed on same server, or env variable for separate deployment
+      // First, save to backend database
       const apiUrl = process.env.REACT_APP_API_URL || '';
-      
       const response = await fetch(`${apiUrl}/api/waitlist`, {
         method: 'POST',
         headers: {
@@ -58,6 +58,25 @@ const ComingSoon = () => {
       const data = await response.json();
 
       if (response.ok && data.success) {
+        // Send email via EmailJS
+        try {
+          await emailjs.send(
+            'service_nshr2mn',
+            'template_sreg9kp',
+            {
+              from_name: formData.name,
+              company: formData.company,
+              company_size: formData.companySize,
+              message: formData.message,
+              submission_date: new Date().toLocaleString()
+            },
+            'W5xkyvnZYjv1Bk4zf'
+          );
+          console.log('Email sent successfully');
+        } catch (emailError) {
+          console.error('Email failed but form saved:', emailError);
+        }
+
         setShowSuccess(true);
         setFormData({
           name: '',
