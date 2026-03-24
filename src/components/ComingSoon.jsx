@@ -43,20 +43,42 @@ const ComingSoon = () => {
     setIsSubmitting(true);
     setSubmitStatus({ type: '', message: '' });
 
-    // Simulate submission delay
-    setTimeout(() => {
-      setShowSuccess(true);
-      
-      // Reset form
-      setFormData({
-        name: '',
-        company: '',
-        companySize: '0 - 5',
-        message: ''
+    try {
+      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:7000';
+      const response = await fetch(`${apiUrl}/api/waitlist`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
       });
-      setCharCount(0);
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setShowSuccess(true);
+        setFormData({
+          name: '',
+          company: '',
+          companySize: '0 - 5',
+          message: ''
+        });
+        setCharCount(0);
+      } else {
+        setSubmitStatus({
+          type: 'error',
+          message: data.message || 'Failed to join waitlist. Please try again.'
+        });
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus({
+        type: 'error',
+        message: 'Network error. Please check your connection and try again.'
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 500);
+    }
   };
 
   const handleBackToForm = () => {
