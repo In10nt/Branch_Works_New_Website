@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 public class WaitlistService {
 
     private final WaitlistRepository waitlistRepository;
+    private final EmailService emailService;
 
     @Transactional
     public WaitlistResponse addToWaitlist(WaitlistRequest request) {
@@ -31,6 +32,9 @@ public class WaitlistService {
         
         WaitlistEntry savedEntry = waitlistRepository.save(entry);
         log.info("Successfully added entry with ID: {}", savedEntry.getId());
+        
+        // Send email notification
+        emailService.sendWaitlistNotification(request);
         
         return mapToResponse(savedEntry);
     }
