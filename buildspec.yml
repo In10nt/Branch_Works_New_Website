@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+      nodejs: 18
+  
+  pre_build:
+    commands:
+      - echo Installing frontend dependencies...
+      - npm install --legacy-peer-deps
+  
+  build:
+    commands:
+      - echo Building React frontend...
+      - npm run build
+      - echo Building Spring Boot backend...
+      - cd backend
+      - mvn clean package -DskipTests
+      - cd ..
+
+artifacts:
+  files:
+    - backend/target/coming-soon-backend-0.0.1-SNAPSHOT.jar
+  discard-paths: yes
