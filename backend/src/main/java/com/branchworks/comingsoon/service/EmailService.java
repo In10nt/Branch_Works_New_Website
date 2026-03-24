@@ -15,11 +15,16 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${company.email}")
+    @Value("${company.email:}")
     private String companyEmail;
 
     public void sendWaitlistNotification(WaitlistRequest request) {
         try {
+            if (companyEmail == null || companyEmail.isEmpty()) {
+                log.warn("Company email not configured, skipping email notification");
+                return;
+            }
+            
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(companyEmail);
             message.setSubject("New Waitlist Entry - " + request.getName());
@@ -28,7 +33,7 @@ public class EmailService {
             mailSender.send(message);
             log.info("Email sent successfully to {}", companyEmail);
         } catch (Exception e) {
-            log.error("Failed to send email", e);
+            log.error("Failed to send email: {}", e.getMessage());
             // Don't throw exception - we still want to save the entry even if email fails
         }
     }
