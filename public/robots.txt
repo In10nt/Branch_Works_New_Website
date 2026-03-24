@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://branchworksglobal.com/sitemap.xml
+Sitemap: https://www.branchworksglobal.com/sitemap.xml
