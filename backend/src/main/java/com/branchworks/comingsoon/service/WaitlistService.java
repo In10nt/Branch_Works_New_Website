@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class WaitlistService {
 
     private final WaitlistRepository waitlistRepository;
-    private final SendGridEmailService sendGridEmailService;
+    private final EmailService emailService;
 
     @Transactional
     public WaitlistResponse addToWaitlist(WaitlistRequest request) {
@@ -33,9 +33,9 @@ public class WaitlistService {
         WaitlistEntry savedEntry = waitlistRepository.save(entry);
         log.info("Successfully added entry with ID: {}", savedEntry.getId());
         
-        // Send email notification via SendGrid - don't fail if email fails
+        // Send email notification - don't fail if email fails
         try {
-            sendGridEmailService.sendWaitlistNotification(request);
+            emailService.sendWaitlistNotification(request);
         } catch (Exception e) {
             log.error("Email notification failed but entry was saved: {}", e.getMessage());
         }
