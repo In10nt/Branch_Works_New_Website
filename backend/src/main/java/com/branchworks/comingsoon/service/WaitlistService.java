@@ -33,8 +33,12 @@ public class WaitlistService {
         WaitlistEntry savedEntry = waitlistRepository.save(entry);
         log.info("Successfully added entry with ID: {}", savedEntry.getId());
         
-        // Send email notification
-        emailService.sendWaitlistNotification(request);
+        // Send email notification - don't fail if email fails
+        try {
+            emailService.sendWaitlistNotification(request);
+        } catch (Exception e) {
+            log.error("Email notification failed but entry was saved: {}", e.getMessage());
+        }
         
         return mapToResponse(savedEntry);
     }
