@@ -2,7 +2,7 @@
 nixPkgs = ['nodejs-18_x', 'maven', 'jdk17']
 
 [phases.install]
-cmds = ['npm ci']
+cmds = ['npm install --legacy-peer-deps']
 
 [phases.build]
 cmds = [
