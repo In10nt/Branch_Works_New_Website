@@ -44,7 +44,9 @@ const ComingSoon = () => {
     setSubmitStatus({ type: '', message: '' });
 
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:7000';
+      // Use relative URL when deployed on same server, or env variable for separate deployment
+      const apiUrl = process.env.REACT_APP_API_URL || '';
+      
       const response = await fetch(`${apiUrl}/api/waitlist`, {
         method: 'POST',
         headers: {
@@ -74,7 +76,7 @@ const ComingSoon = () => {
       console.error('Error submitting form:', error);
       setSubmitStatus({
         type: 'error',
-        message: 'Network error. Please check your connection and try again.'
+        message: error.message || 'Network error. Please check your connection and try again.'
       });
     } finally {
       setIsSubmitting(false);
