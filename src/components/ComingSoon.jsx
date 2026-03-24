@@ -46,13 +46,17 @@ const ComingSoon = () => {
     try {
       // Submit to FormSubmit.co (sends email directly)
       const formSubmitData = new FormData();
-      formSubmitData.append('name', formData.name);
-      formSubmitData.append('company', formData.company);
-      formSubmitData.append('companySize', formData.companySize);
-      formSubmitData.append('message', formData.message);
-      formSubmitData.append('_subject', `New Waitlist Entry - ${formData.name}`);
+      formSubmitData.append('Name', formData.name);
+      formSubmitData.append('Company', formData.company);
+      formSubmitData.append('Company Size', formData.companySize);
+      formSubmitData.append('Message', formData.message);
+      formSubmitData.append('Submitted At', new Date().toLocaleString('en-US', { 
+        dateStyle: 'full', 
+        timeStyle: 'short' 
+      }));
+      formSubmitData.append('_subject', `🎉 New Waitlist Entry - ${formData.name} from ${formData.company}`);
       formSubmitData.append('_captcha', 'false');
-      formSubmitData.append('_template', 'table');
+      formSubmitData.append('_template', 'box');
 
       await fetch('https://formsubmit.co/nuwangimahesha@gmail.com', {
         method: 'POST',
