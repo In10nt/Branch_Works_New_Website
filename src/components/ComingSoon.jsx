@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import './ComingSoon.css';
 
 const ComingSoon = () => {
@@ -13,6 +12,19 @@ const ComingSoon = () => {
   const [charCount, setCharCount] = useState(0);
   const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [countdown, setCountdown] = useState(5);
+
+  useEffect(() => {
+    let timer;
+    if (showSuccess && countdown > 0) {
+      timer = setTimeout(() => setCountdown(countdown - 1), 1000);
+    } else if (showSuccess && countdown === 0) {
+      setShowSuccess(false);
+      setCountdown(5);
+    }
+    return () => clearTimeout(timer);
+  }, [showSuccess, countdown]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,13 +43,9 @@ const ComingSoon = () => {
     setIsSubmitting(true);
     setSubmitStatus({ type: '', message: '' });
 
-    try {
-      const response = await axios.post('/api/waitlist', formData);
-      
-      setSubmitStatus({
-        type: 'success',
-        message: 'Thank you for joining! We\'ll be in touch soon.'
-      });
+    // Simulate submission delay
+    setTimeout(() => {
+      setShowSuccess(true);
       
       // Reset form
       setFormData({
@@ -47,14 +55,13 @@ const ComingSoon = () => {
         message: ''
       });
       setCharCount(0);
-    } catch (error) {
-      setSubmitStatus({
-        type: 'error',
-        message: error.response?.data?.message || 'Something went wrong. Please try again.'
-      });
-    } finally {
       setIsSubmitting(false);
-    }
+    }, 500);
+  };
+
+  const handleBackToForm = () => {
+    setShowSuccess(false);
+    setCountdown(5);
   };
 
   return (
@@ -83,81 +90,96 @@ const ComingSoon = () => {
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-icon twitter">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon facebook">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
               </svg>
             </a>
           </div>
-          <div className="brand-name">@branchworks</div>
+          <div className="brand-name">@branchworksglobal</div>
         </div>
         <div className="right-section">
-          <div className="form-container">
-            <h2>Join the first wave</h2>
-            
-            {submitStatus.message && (
-              <div className={`status-message ${submitStatus.type}`}>
-                {submitStatus.message}
+          {showSuccess ? (
+            <div className="success-container">
+              <h2>We got it, Thanks</h2>
+              <p className="success-subtitle">We'll be in touch soon.</p>
+              
+              <div className="success-icon">
+                <img src={`${process.env.PUBLIC_URL}/images/book_img.png`} alt="Success" />
               </div>
-            )}
-            
-            <form onSubmit={handleSubmit}>
-              <div className="form-fields">
-                <div className="form-group">
-                  <label>Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="ex: John"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Company</label>
-                  <input
-                    type="text"
-                    name="company"
-                    placeholder="ex : Google"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Company Size</label>
-                  <select
-                    name="companySize"
-                    value={formData.companySize}
-                    onChange={handleInputChange}
-                    required
-                  >
-                    <option value="0 - 5">0 - 5</option>
-                    <option value="6 - 20">6 - 20</option>
-                    <option value="21 - 50">21 - 50</option>
-                    <option value="51 - 200">51 - 200</option>
-                    <option value="200+">200+</option>
-                  </select>
-                </div>
-                <div className="form-group">
-                  <label>Message</label>
-                  <textarea
-                    name="message"
-                    placeholder="I want to..."
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    maxLength={250}
-                    required
-                  />
-                  <div className="char-count">{charCount}/250</div>
-                </div>
-              </div>
-              <button type="submit" className="join-btn" disabled={isSubmitting}>
-                {isSubmitting ? 'Joining...' : 'Join'}
+              
+              <button className="back-btn" onClick={handleBackToForm}>
+                Back to forms in {countdown}s
               </button>
-            </form>
-          </div>
+            </div>
+          ) : (
+            <div className="form-container">
+              <h2>Let’s Get Started</h2>
+              
+              {submitStatus.message && (
+                <div className={`status-message ${submitStatus.type}`}>
+                  {submitStatus.message}
+                </div>
+              )}
+              
+              <form onSubmit={handleSubmit}>
+                <div className="form-fields">
+                  <div className="form-group">
+                    <label>Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="ex: John"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Company</label>
+                    <input
+                      type="text"
+                      name="company"
+                      placeholder="ex : Google"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>Company Size</label>
+                    <select
+                      name="companySize"
+                      value={formData.companySize}
+                      onChange={handleInputChange}
+                      required
+                    >
+                      <option value="0 - 5">0 - 5</option>
+                      <option value="6 - 20">6 - 20</option>
+                      <option value="21 - 50">21 - 50</option>
+                      <option value="51 - 200">51 - 200</option>
+                      <option value="200+">200+</option>
+                    </select>
+                  </div>
+                  <div className="form-group">
+                    <label>Message</label>
+                    <textarea
+                      name="message"
+                      placeholder="I want to..."
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      maxLength={250}
+                      required
+                    />
+                    <div className="char-count">{charCount}/250</div>
+                  </div>
+                </div>
+                <button type="submit" className="join-btn" disabled={isSubmitting}>
+                  {isSubmitting ? 'Joining...' : 'Join'}
+                </button>
+              </form>
+            </div>
+          )}
         </div>
       </div>
     </div>

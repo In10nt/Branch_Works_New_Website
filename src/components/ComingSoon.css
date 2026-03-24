@@ -13,30 +13,60 @@ body, html {
     padding: 0;
 }
 
+@media (max-width: 768px) {
+    body, html {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+@media (min-width: 769px) {
+    body, html {
+        overflow: hidden;
+    }
+}
+
 .coming-soon-container {
     width: 100vw;
     height: 100vh;
-    background-size: 120% 120%;
-    background-position: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     opacity: 1;
-    transform: rotate(0deg);
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    animation: cloudMove 30s ease-in-out infinite;
+    animation: none !important;
+    transition: none !important;
+    overflow: hidden;
+    padding: 101px 295px;
+    box-sizing: border-box;
 }
 
-@keyframes cloudMove {
-    0% {
-        background-position: 0% 50%;
+/* Large Web: Fixed gaps 101px top/bottom, 295px left/right */
+@media (min-width: 1201px) {
+    .coming-soon-container {
+        padding: 101px 295px;
     }
-    50% {
-        background-position: 100% 50%;
+}
+
+/* Standard Web: Fixed gaps 101px top/bottom, 175px left/right */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .coming-soon-container {
+        padding: 101px 175px;
     }
-    100% {
-        background-position: 0% 50%;
+}
+
+/* Mobile: Adjust for smaller screens */
+@media (max-width: 768px) {
+    .coming-soon-container {
+        padding: 20px 16px;
+        overflow-y: auto;
+        height: auto;
+        min-height: 100vh;
     }
 }
 
@@ -53,18 +83,20 @@ body, html {
 
 .content-layout {
     width: 850px;
+    max-width: 90vw;
     height: 566px;
     background: transparent;
     border-radius: 0;
     box-shadow: none;
     opacity: 1;
-    transform: rotate(0deg);
     display: flex;
     justify-content: space-between;
     padding: 0;
+    margin: 0;
     overflow: hidden;
     position: relative;
     z-index: 2;
+    flex-shrink: 0;
 }
 
 .left-section {
@@ -74,40 +106,78 @@ body, html {
     padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
     color: white;
     position: relative;
 }
 
+/* Large Web: Left section 314x564 */
+@media (min-width: 1201px) {
+    .left-section {
+        width: 380px;
+        height: 480px;
+        justify-content: flex-start;
+        opacity: 1;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+    
+    .logo {
+        margin-bottom: 30px;
+    }
+    
+    .main-text {
+        margin-bottom: 20px;
+    }
+    
+    .social-icons {
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+    
+    .brand-name {
+        margin-top: auto;
+        margin-bottom: 0;
+        padding-bottom: 5px;
+    }
+}
+
+/* Standard Web: Left section 342x564 */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .left-section {
+        width: 342px;
+        height: 564px;
+        justify-content: space-between;
+        opacity: 1;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+}
+
 .logo {
-    position: absolute;
-    top: 0;
-    left: 30px;
+    position: relative;
+    top: -55px;
+    left: -10px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     gap: 10px;
     opacity: 1;
-    transform: rotate(0deg);
+    margin-bottom: -50px;
 }
 
 .logo img {
-    width: 80px;
-    height: 80px;
+    width: 220px;
+    height: 220px;
     object-fit: contain;
 }
 
 .logo-text {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: #FFFFFF;
-    line-height: 1.2;
-    letter-spacing: 0.5px;
+    display: none;
 }
 
 .main-text {
-    margin-top: 120px;
-    margin-bottom: auto;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-right: 20px;
 }
 
@@ -115,18 +185,88 @@ body, html {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 48px;
+    line-height: 56px;
     letter-spacing: -0.02em;
     color: #FFFFFF;
     margin: 0;
 }
 
+/* Large Web: Main text 314x102 */
+@media (min-width: 1201px) {
+    .main-text {
+        width: 380px;
+        height: auto;
+        opacity: 1;
+    }
+    
+    .main-text h1 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 28px;
+        line-height: 34px;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+    }
+}
+
+/* Standard Web: Main text 342x102 */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .main-text {
+        width: 342px;
+        height: 102px;
+        opacity: 1;
+    }
+    
+    .main-text h1 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 28px;
+        line-height: 34px;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+    }
+}
+
+/* Mobile: Main text 342x102 */
+@media (max-width: 768px) {
+    .main-text {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        opacity: 1;
+        margin-top: 20px;
+    }
+    
+    .main-text h1 {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: -0.02em;
+        color: #FFFFFF;
+    }
+}
+
 .social-icons {
     display: flex;
-    gap: 12px;
-    margin-bottom: 20px;
-    margin-top: auto;
+    gap: 20px;
+    margin-bottom: 100px;
+    margin-top: 20px;
+}
+
+/* Large Web: Social icons 88x22 */
+@media (min-width: 1201px) {
+    .social-icons {
+        width: 88px;
+        height: 22px;
+        gap: 16px;
+        opacity: 1;
+        margin-bottom: 100px;
+    }
 }
 
 .social-icon {
@@ -138,7 +278,6 @@ body, html {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.3s ease;
     text-decoration: none;
 }
 
@@ -147,14 +286,63 @@ body, html {
 }
 
 .social-icon svg {
-    width: 18px;
-    height: 18px;
+    width: 32px;
+    height: 32px;
+}
+
+/* Large Web: Social icon SVG sizes */
+@media (min-width: 1201px) {
+    .social-icon {
+        width: auto;
+        height: 22px;
+        background: transparent;
+        border-radius: 0;
+    }
+    
+    .social-icon.instagram svg {
+        width: 18px;
+        height: 22px;
+        opacity: 1;
+        font-family: 'Font Awesome 5 Brands', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
+    }
+    
+    .social-icon.linkedin svg {
+        width: 18px;
+        height: 22px;
+        opacity: 1;
+        font-family: 'Font Awesome 5 Brands', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
+    }
+    
+    .social-icon.facebook svg {
+        width: 20px;
+        height: 22px;
+        opacity: 1;
+        font-family: 'Font Awesome 5 Brands', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
+    }
 }
 
 .brand-name {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
     margin-bottom: 0;
+    margin-top: auto;
+    padding-top: 0;
+    padding-bottom: 25px;
     opacity: 0.9;
 }
 
@@ -163,7 +351,6 @@ body, html {
     height: 566px;
     gap: 24px;
     opacity: 1;
-    transform: rotate(0deg);
     padding-top: 24px;
     padding-right: 32px;
     padding-bottom: 32px;
@@ -179,17 +366,59 @@ body, html {
     overflow: visible;
 }
 
+/* Large Web: Right section 421x566 */
+@media (min-width: 1201px) {
+    .right-section {
+        width: 360px;
+        height: 480px;
+        gap: 20px;
+        opacity: 1;
+        padding: 24px;
+        border-radius: 24px;
+        border-width: 3px;
+        background: #F5F5F5;
+        border-top: 4px solid #E5E5E5;
+        box-shadow: none;
+        align-self: center;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Standard Web: Right section 421x566 */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .right-section {
+        width: 421px;
+        height: 566px;
+        gap: 24px;
+        opacity: 1;
+        padding-top: 24px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        border-radius: 24px;
+        border-width: 3px;
+        background: #F5F5F5;
+        border-top: 4px solid #E5E5E5;
+        box-shadow: none;
+    }
+}
+
 .form-container {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .form-container form {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .form-fields {
@@ -198,11 +427,43 @@ body, html {
     flex-direction: column;
 }
 
+/* Large Web: Form fields 373x396 with 8px gap */
+@media (min-width: 1201px) {
+    .form-fields {
+        width: 100%;
+        height: auto;
+        gap: 0;
+        opacity: 1;
+    }
+    
+    .form-group:nth-child(1) input,
+    .form-group:nth-child(2) input,
+    .form-group:nth-child(3) select,
+    .form-group:nth-child(4) textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Standard Web: Form fields keeps default */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .form-fields {
+        gap: 8px;
+    }
+}
+
 .form-container h2 {
-    font-size: 24px;
+    width: 196px;
+    height: 26px;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
+    font-style: normal;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0%;
+    color: #000000;
+    opacity: 1;
+    margin-bottom: 12px;
 }
 
 .status-message {
@@ -234,49 +495,94 @@ body, html {
     transform: rotate(0deg);
     font-size: 14px;
     color: #666;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 500;
 }
 
 .form-group {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     display: flex;
     flex-direction: column;
 }
 
+/* Large Web: Form group with 8px gap */
+@media (min-width: 1201px) {
+    .form-group {
+        margin-bottom: 8px;
+    }
+    
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+}
+
 /* Name Input */
 .form-group:nth-child(1) input {
-    width: 373px;
-    height: 48px;
+    width: 100%;
+    height: 40px;
     gap: 4px;
     opacity: 1;
     transform: rotate(0deg);
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 0 15px;
+    padding: 0 10px;
     font-size: 14px;
     background: #f8f9fa;
     box-sizing: border-box;
 }
 
+/* Large Web: Name field 373x74 */
+@media (min-width: 1201px) {
+    .form-group:nth-child(1) {
+        width: 100%;
+        height: auto;
+        gap: 4px;
+        opacity: 1;
+    }
+}
+
+/* Standard Web: Name field 373x74 */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .form-group:nth-child(1) {
+        width: 373px;
+        height: 74px;
+        gap: 4px;
+        opacity: 1;
+    }
+}
+
+/* Mobile: Name field 313x74 */
+@media (max-width: 768px) {
+    .form-group:nth-child(1) {
+        width: 313px;
+        height: 74px;
+        gap: 4px;
+        opacity: 1;
+    }
+    
+    .form-group:nth-child(1) input {
+        width: 100%;
+    }
+}
+
 /* Company Input */
 .form-group:nth-child(2) {
-    width: 373px;
-    height: 74px;
+    width: 100%;
+    height: auto;
     gap: 4px;
     opacity: 1;
     transform: rotate(0deg);
 }
 
 .form-group:nth-child(2) input {
-    width: 373px;
-    height: 48px;
+    width: 100%;
+    height: 40px;
     gap: 4px;
     opacity: 1;
     transform: rotate(0deg);
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 0 15px;
+    padding: 0 10px;
     font-size: 14px;
     background: #f8f9fa;
     box-sizing: border-box;
@@ -284,14 +590,14 @@ body, html {
 
 /* Company Size Select */
 .form-group:nth-child(3) select {
-    width: 373px;
-    height: 48px;
+    width: 100%;
+    height: 40px;
     gap: 4px;
     opacity: 1;
     transform: rotate(0deg);
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 0 15px;
+    padding: 0 10px;
     font-size: 14px;
     background: #f8f9fa;
     box-sizing: border-box;
@@ -304,8 +610,8 @@ body, html {
 
 /* Message Textarea Container */
 .form-group:nth-child(4) {
-    width: 373px;
-    height: 124px;
+    width: 100%;
+    height: auto;
     gap: 4px;
     opacity: 1;
     transform: rotate(0deg);
@@ -313,14 +619,14 @@ body, html {
 }
 
 .form-group:nth-child(4) textarea {
-    width: 373px;
-    height: 124px;
+    width: 100%;
+    height: 80px;
     gap: 4px;
     opacity: 1;
     transform: rotate(0deg);
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px;
     font-size: 14px;
     background: #f8f9fa;
     resize: none;
@@ -341,21 +647,20 @@ body, html {
 
 .join-btn {
     /* Primary Button - Default State - Default Size */
-    width: 373px !important;
+    width: 100% !important;
     height: 40px !important;
     max-height: 40px !important;
     border-radius: 25px !important;
     gap: 4px;
     opacity: 1 !important;
-    transform: rotate(0deg) !important;
-    padding: 8px 16px !important;
+    padding: 2px 8px !important;
     background: #171717 !important;
     color: white !important;
     border: none !important;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
-    margin-top: 8px !important;
+    margin-top: 10px !important;
     display: block !important;
     text-align: center;
     box-sizing: border-box !important;
@@ -372,103 +677,197 @@ body, html {
     opacity: 0.6;
 }
 
-/* Responsive Design - Maintain Structure */
-@media (max-width: 1024px) {
+/* Responsive Design - Three Specific Breakpoints */
+
+/* Large Web: Content is 850x566 */
+@media (min-width: 1201px) {
     .content-layout {
-        width: 90vw;
-        max-width: 850px;
-        height: auto;
-        min-height: 566px;
-    }
-    
-    .left-section {
-        width: 50%;
-        min-width: 350px;
-    }
-    
-    .right-section {
-        width: 50%;
-        min-width: 350px;
-        height: auto;
-        min-height: 566px;
+        width: 800px;
+        height: 566px;
+        justify-content: space-between;
+        flex-shrink: 0;
     }
 }
 
+/* Standard Web: Content is 850x566 */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .content-layout {
+        width: 850px;
+        height: 566px;
+        justify-content: space-between;
+        flex-shrink: 0;
+    }
+}
+
+/* Mobile: Content stacks vertically */
 @media (max-width: 768px) {
     .content-layout {
-        width: 95vw;
-        max-width: 850px;
-        flex-direction: column;
+        width: 100%;
+        max-width: 393px;
         height: auto;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: flex-start;
+        align-items: center;
     }
     
     .left-section {
         width: 100%;
         height: auto;
-        min-height: 250px;
-        padding: 30px;
+        min-height: auto;
+        padding: 20px 20px 20px 20px;
+        max-width: 100%;
     }
     
     .right-section {
         width: 100%;
-        max-width: 421px;
+        max-width: 361px;
         height: auto;
-        min-height: 566px;
-        margin: 0 auto;
-    }
-    
-    .main-text {
-        margin-top: 60px;
-        text-align: center;
-    }
-    
-    .main-text h1 {
-        font-size: 24px;
-    }
-    
-    .form-container h2 {
-        font-size: 20px;
+        gap: 24px;
+        opacity: 1;
+        padding: 24px;
+        border-radius: 24px;
+        border-width: 3px;
+        background: #F5F5F5;
+        border-top: 4px solid #E5E5E5;
+        box-shadow: none;
     }
     
     .logo {
-        top: 20px;
-        left: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .content-layout {
-        width: 100vw;
-        padding: 10px;
+        position: relative;
+        left: -15px;
+        margin-bottom: -30px;
     }
     
-    .left-section {
-        padding: 20px;
-        min-height: 200px;
+    .logo img {
+        width: 220px;
+        height: 220px;
     }
     
-    .right-section {
+    .main-text {
+        margin-top: 20px;
+        margin-bottom: 20px;
         width: 100%;
-        max-width: 100%;
-        padding: 20px;
-        border-radius: 16px;
     }
     
     .main-text h1 {
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: -0.02em;
+        white-space: normal;
+    }
+    
+    .social-icons {
+        margin-top: 10px;
+        margin-bottom: 120px;
+        gap: 16px;
+    }
+    
+    .social-icon {
+        width: auto;
+        height: 22px;
+    }
+    
+    .social-icon svg {
+        width: 20px;
+        height: 22px;
+        font-family: 'Font Awesome 5 Brands', sans-serif;
+        font-weight: 400;
+        font-style: normal;
         font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -0.02em;
     }
     
-    .form-container h2 {
-        font-size: 18px;
+    .brand-name {
+        margin-bottom: 20px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 0%;
     }
     
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-        width: 100%;
-    }
-    
+    .form-group:nth-child(1) input,
+    .form-group:nth-child(2) input,
+    .form-group:nth-child(3) select,
+    .form-group:nth-child(4) textarea,
     .join-btn {
         width: 100% !important;
+        max-width: 100%;
     }
+    
+    .form-group:nth-child(2),
+    .form-group:nth-child(4) {
+        width: 100%;
+    }
+}
+
+
+/* Success Page Styles */
+.success-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 24px;
+    overflow: hidden;
+}
+
+.success-container h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.success-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #9CA3AF;
+    margin-bottom: 30px;
+}
+
+.success-icon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    margin-bottom: 30px;
+}
+
+.success-icon img {
+    max-width: 250px;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.back-btn {
+    width: 100%;
+    height: 40px;
+    border-radius: 25px;
+    padding: 2px 8px;
+    background: #171717;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+.back-btn:hover {
+    background: #333;
 }
