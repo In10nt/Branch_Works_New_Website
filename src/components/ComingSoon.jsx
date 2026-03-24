@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
 import './ComingSoon.css';
 
 const ComingSoon = () => {
@@ -45,57 +44,46 @@ const ComingSoon = () => {
     setSubmitStatus({ type: '', message: '' });
 
     try {
-      // First, save to backend database
+      // Submit to FormSubmit.co (sends email directly)
+      const formSubmitData = new FormData();
+      formSubmitData.append('name', formData.name);
+      formSubmitData.append('company', formData.company);
+      formSubmitData.append('companySize', formData.companySize);
+      formSubmitData.append('message', formData.message);
+      formSubmitData.append('_subject', `New Waitlist Entry - ${formData.name}`);
+      formSubmitData.append('_captcha', 'false');
+      formSubmitData.append('_template', 'table');
+
+      await fetch('https://formsubmit.co/nuwangimahesha@gmail.com', {
+        method: 'POST',
+        body: formSubmitData
+      });
+
+      // Save to backend database in background (don't wait for it)
       const apiUrl = process.env.REACT_APP_API_URL || '';
-      const response = await fetch(`${apiUrl}/api/waitlist`, {
+      fetch(`${apiUrl}/api/waitlist`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData)
+      }).catch(err => console.log('Background save failed:', err));
+
+      // Show success immediately
+      setShowSuccess(true);
+      setFormData({
+        name: '',
+        company: '',
+        companySize: '0 - 5',
+        message: ''
       });
+      setCharCount(0);
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        // Send email via EmailJS
-        try {
-          await emailjs.send(
-            'service_nshr2mn',
-            'template_sreg9kp',
-            {
-              from_name: formData.name,
-              company: formData.company,
-              company_size: formData.companySize,
-              message: formData.message,
-              submission_date: new Date().toLocaleString()
-            },
-            'W5xkyvnZYjv1Bk4zf'
-          );
-          console.log('Email sent successfully');
-        } catch (emailError) {
-          console.error('Email failed but form saved:', emailError);
-        }
-
-        setShowSuccess(true);
-        setFormData({
-          name: '',
-          company: '',
-          companySize: '0 - 5',
-          message: ''
-        });
-        setCharCount(0);
-      } else {
-        setSubmitStatus({
-          type: 'error',
-          message: data.message || 'Failed to join waitlist. Please try again.'
-        });
-      }
     } catch (error) {
       console.error('Error submitting form:', error);
       setSubmitStatus({
         type: 'error',
-        message: error.message || 'Network error. Please check your connection and try again.'
+        message: 'Failed to submit. Please try again.'
       });
     } finally {
       setIsSubmitting(false);

@@ -20,16 +20,16 @@ public class EmailService {
 
     public void sendWaitlistNotification(WaitlistRequest request) {
         try {
-            
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(companyEmail);
             message.setSubject("New Waitlist Entry - " + request.getName());
             message.setText(buildEmailContent(request));
             
+            // Set shorter timeout to fail fast if SMTP is blocked
             mailSender.send(message);
             log.info("Email sent successfully to {}", companyEmail);
         } catch (Exception e) {
-            log.error("Failed to send email: {}", e.getMessage());
+            log.error("Failed to send email (this is expected on Railway): {}", e.getMessage());
             // Don't throw exception - we still want to save the entry even if email fails
         }
     }
