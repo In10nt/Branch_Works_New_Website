@@ -15,15 +15,11 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${company.email:}")
+    @Value("${company.email}")
     private String companyEmail;
 
     public void sendWaitlistNotification(WaitlistRequest request) {
         try {
-            if (companyEmail == null || companyEmail.isEmpty()) {
-                log.warn("Company email not configured, skipping email notification");
-                return;
-            }
             
             SimpleMailMessage message = new SimpleMailMessage();
             message.setTo(companyEmail);
