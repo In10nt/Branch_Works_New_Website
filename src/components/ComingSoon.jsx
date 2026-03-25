@@ -54,7 +54,7 @@ const ComingSoon = () => {
       formSubmitData.append('_captcha', 'false');
       formSubmitData.append('_template', 'table');
 
-      await fetch('https://formsubmit.co/nuwangimahesha@gmail.com', {
+      await fetch('https://formsubmit.co/info@branchworksglobal.com', {
         method: 'POST',
         body: formSubmitData
       });
