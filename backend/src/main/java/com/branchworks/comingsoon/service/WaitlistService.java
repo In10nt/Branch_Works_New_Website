@@ -33,14 +33,8 @@ public class WaitlistService {
         WaitlistEntry savedEntry = waitlistRepository.save(entry);
         log.info("Successfully added entry with ID: {}", savedEntry.getId());
         
-        // Send email notification asynchronously - don't block response
-        new Thread(() -> {
-            try {
-                emailService.sendWaitlistNotification(request);
-            } catch (Exception e) {
-                log.error("Email notification failed but entry was saved: {}", e.getMessage());
-            }
-        }).start();
+        // Email is handled by FormSubmit.co on frontend - no backend email needed
+        // This prevents duplicate emails
         
         return mapToResponse(savedEntry);
     }
