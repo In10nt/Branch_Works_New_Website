@@ -1,50 +1,62 @@
-# Quick Start - Deploy to Railway
+# Quick Start - Fix Your Deployment Now
 
-## ✅ Your site is ready to deploy!
+## Current Status
+✅ Environment health improved: Severe → Info → Green
+⏳ Environment updating (replacing instance with correct configuration)
+❌ Pipeline source stage failing (needs to be triggered)
 
-## Deploy in 3 Steps
+## What I Fixed
 
-### 1. Push to GitHub
-```bash
-git add .
-git commit -m "Ready for Railway deployment"
-git push
+1. **Instance Type Error**: Changed from conflicting t1.micro to t3.small
+2. **Port Configuration**: Set port 5000 for Spring Boot application
+3. **Health Checks**: Configured /health endpoint with proper intervals
+4. **Configuration Files**: Consolidated all settings into one file
+
+## Run This Now
+
+### Automated (Recommended)
+```powershell
+./wait-and-deploy.ps1
 ```
 
-### 2. Deploy to Railway
-1. Go to [railway.app](https://railway.app)
-2. Click "New Project" → "Deploy from GitHub repo"
-3. Select your repository
-4. Click "Deploy Now"
+This will:
+- Wait for environment to be ready (~5-10 minutes)
+- Apply final port configuration
+- Commit and push changes to GitHub
+- Trigger CodePipeline deployment
+- Monitor progress
 
-### 3. Add Environment Variables
-In Railway dashboard, add:
-```
-MAIL_USERNAME=nuwangimahesha@gmail.com
-MAIL_PASSWORD=cdhmlvvueiqycbfb
-COMPANY_EMAIL=nuwangimahesha@gmail.com
+### Check Status Anytime
+```powershell
+./check-status.ps1
 ```
 
-### 4. Get Your URL
-- Go to Settings → Generate Domain
-- Your site will be at: `https://your-app.railway.app`
+## What to Expect
 
-## ✨ Done!
+1. **Next 5-10 minutes**: Environment finishes updating with new instance
+2. **After script runs**: Changes pushed to GitHub, pipeline triggered
+3. **Next 10-15 minutes**: Pipeline builds and deploys your application
+4. **Total time**: 15-25 minutes until your site is live
 
-Your full website (frontend + backend) is now live on Railway!
+## Your Application URL
 
-## What Changed
+http://Branchworks-coming-soon-env.eba-h4dbjcip.eu-north-1.elasticbeanstalk.com
 
-- ✅ Configured Railway to build both React and Spring Boot
-- ✅ Spring Boot now serves the React frontend
-- ✅ Everything runs on one Railway service
-- ✅ One URL for everything
-- ✅ No need for separate frontend/backend deployments
+## If Something Goes Wrong
 
-## Test Your Deployment
+See `DEPLOYMENT_FIX_GUIDE.md` for detailed troubleshooting steps.
 
-1. Visit your Railway URL
-2. Fill out the form
-3. Check email at nuwangimahesha@gmail.com
+## Files Changed
 
-For detailed instructions, see `RAILWAY_FULL_DEPLOYMENT.md`
+- ✅ `.ebextensions/environment.config` - Consolidated configuration
+- ✅ `buildspec.yml` - Fixed deployment packaging
+- ❌ Deleted duplicate config files (fix-port-config.config, healthcheck.config)
+
+## Next Action
+
+Run the automated script:
+```powershell
+./wait-and-deploy.ps1
+```
+
+Then wait 15-25 minutes and your site will be live!

@@ -1,0 +1,74 @@
+{
+  "name": "branchworks-pipeline",
+  "roleArn": "arn:aws:iam::672045063455:role/service-role/AWSCodePipelineServiceRole-eu-north-1-branchworks-pipeline",
+  "artifactStore": {
+    "type": "S3",
+    "location": "codepipeline-eu-north-1-d0b21a6a4e87-447a-b86b-d41b8b9bd376"
+  },
+  "stages": [
+    {
+      "name": "Source",
+      "actions": [
+        {
+          "name": "Source",
+          "actionTypeId": {
+            "category": "Source",
+            "owner": "AWS",
+            "provider": "CodeStarSourceConnection",
+            "version": "1"
+          },
+          "configuration": {
+            "DetectChanges": "true",
+            "ConnectionArn": "arn:aws:codeconnections:eu-north-1:672045063455:connection/f94bc59f-49b5-4adf-a288-da899026aea8",
+            "BranchName": "master",
+            "OutputArtifactFormat": "CODE_ZIP",
+            "FullRepositoryId": "In10nt/Branch_Works_New_Website"
+          },
+          "outputArtifacts": [
+            {
+              "name": "SourceArtifact"
+            }
+          ],
+          "inputArtifacts": [],
+          "region": "eu-north-1",
+          "namespace": "SourceVariables"
+        }
+      ],
+      "onFailure": {
+        "result": "RETRY"
+      }
+    },
+    {
+      "name": "Deploy",
+      "actions": [
+        {
+          "name": "Deploy",
+          "actionTypeId": {
+            "category": "Deploy",
+            "owner": "AWS",
+            "provider": "ElasticBeanstalk",
+            "version": "1"
+          },
+          "configuration": {
+            "ApplicationName": "branchworks-coming-soon",
+            "EnvironmentName": "Branchworks-coming-soon-env"
+          },
+          "outputArtifacts": [],
+          "inputArtifacts": [
+            {
+              "name": "SourceArtifact"
+            }
+          ],
+          "region": "eu-north-1",
+          "namespace": "DeployVariables"
+        }
+      ],
+      "onFailure": {
+        "result": "ROLLBACK"
+      }
+    }
+  ],
+  "version": 1,
+  "executionMode": "QUEUED",
+  "pipelineType": "V2"
+}

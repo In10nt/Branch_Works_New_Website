@@ -37,3 +37,41 @@ backend/*.ipr
 
 # Railway files (not needed for Netlify)
 railway.json
+
+# AWS Credentials - NEVER COMMIT
+aws_secret.txt
+aws_secret.md
+credentials
+.aws/
+*.pem
+*.key
+
+# Sensitive Configuration Files
+.env
+.env.local
+.env.*.local
+secrets.yml
+secrets.yaml
+config/secrets.properties
+
+# Never commit keys and passwords
+**/*-secret*
+**/*-password*
+**/*-api-key*
+**/*-token*
+**/*-credential*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# Build artifacts
+dist/
+out/
+*.class

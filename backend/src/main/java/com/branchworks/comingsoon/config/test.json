@@ -1,0 +1,212 @@
+{
+    "eventVersion": "1.08",
+    "userIdentity": {
+        "type": "Root",
+        "principalId": "672045063455",
+        "arn": "arn:aws:iam::672045063455:root",
+        "accountId": "672045063455",
+        "accessKeyId": "ASIAZY6IB3UP5Y5VQI2G",
+        "sessionContext": {
+            "sessionIssuer": {},
+            "webIdFederationData": {},
+            "attributes": {
+                "creationDate": "2026-03-24T10:39:39Z",
+                "mfaAuthenticated": "false"
+            }
+        }
+    },
+    "eventTime": "2026-03-24T11:53:44Z",
+    "eventSource": "codepipeline.amazonaws.com",
+    "eventName": "CreatePipeline",
+    "awsRegion": "eu-north-1",
+    "sourceIPAddress": "112.134.220.166",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+    "requestParameters": {
+        "pipeline": {
+            "name": "branchworks-pipeline",
+            "roleArn": "arn:aws:iam::672045063455:role/service-role/AWSCodePipelineServiceRole-eu-north-1-branchworks-pipeline",
+            "artifactStore": {
+                "type": "S3",
+                "location": "codepipeline-eu-north-1-d0b21a6a4e87-447a-b86b-d41b8b9bd376"
+            },
+            "stages": [
+                {
+                    "name": "Source",
+                    "actions": [
+                        {
+                            "name": "Source",
+                            "actionTypeId": {
+                                "category": "Source",
+                                "owner": "AWS",
+                                "provider": "CodeStarSourceConnection",
+                                "version": "1"
+                            },
+                            "configuration": {
+                                "DetectChanges": "true",
+                                "ConnectionArn": "arn:aws:codeconnections:eu-north-1:672045063455:connection/f94bc59f-49b5-4adf-a288-da899026aea8",
+                                "BranchName": "master",
+                                "OutputArtifactFormat": "CODE_ZIP",
+                                "FullRepositoryId": "In10nt/Branch_Works_New_Website"
+                            },
+                            "outputArtifacts": [
+                                {
+                                    "name": "SourceArtifact"
+                                }
+                            ],
+                            "inputArtifacts": [],
+                            "region": "eu-north-1",
+                            "namespace": "SourceVariables"
+                        }
+                    ],
+                    "onFailure": {
+                        "result": "RETRY"
+                    }
+                },
+                {
+                    "name": "Deploy",
+                    "actions": [
+                        {
+                            "name": "Deploy",
+                            "actionTypeId": {
+                                "category": "Deploy",
+                                "owner": "AWS",
+                                "provider": "ElasticBeanstalk",
+                                "version": "1"
+                            },
+                            "configuration": {
+                                "ApplicationName": "branchworks-coming-soon",
+                                "EnvironmentName": "Branchworks-coming-soon-env"
+                            },
+                            "outputArtifacts": [],
+                            "inputArtifacts": [
+                                {
+                                    "name": "SourceArtifact"
+                                }
+                            ],
+                            "region": "eu-north-1",
+                            "namespace": "DeployVariables"
+                        }
+                    ],
+                    "onFailure": {
+                        "result": "ROLLBACK"
+                    }
+                }
+            ],
+            "version": 1,
+            "executionMode": "QUEUED",
+            "pipelineType": "V2"
+        },
+        "suppressExecuteOnCreate": false
+    },
+    "responseElements": {
+        "pipeline": {
+            "name": "branchworks-pipeline",
+            "roleArn": "arn:aws:iam::672045063455:role/service-role/AWSCodePipelineServiceRole-eu-north-1-branchworks-pipeline",
+            "artifactStore": {
+                "type": "S3",
+                "location": "codepipeline-eu-north-1-d0b21a6a4e87-447a-b86b-d41b8b9bd376"
+            },
+            "stages": [
+                {
+                    "name": "Source",
+                    "actions": [
+                        {
+                            "name": "Source",
+                            "actionTypeId": {
+                                "category": "Source",
+                                "owner": "AWS",
+                                "provider": "CodeStarSourceConnection",
+                                "version": "1"
+                            },
+                            "runOrder": 1,
+                            "configuration": {
+                                "DetectChanges": "true",
+                                "ConnectionArn": "arn:aws:codeconnections:eu-north-1:672045063455:connection/f94bc59f-49b5-4adf-a288-da899026aea8",
+                                "BranchName": "master",
+                                "OutputArtifactFormat": "CODE_ZIP",
+                                "FullRepositoryId": "In10nt/Branch_Works_New_Website"
+                            },
+                            "outputArtifacts": [
+                                {
+                                    "name": "SourceArtifact"
+                                }
+                            ],
+                            "inputArtifacts": [],
+                            "region": "eu-north-1",
+                            "namespace": "SourceVariables"
+                        }
+                    ],
+                    "onFailure": {
+                        "result": "RETRY",
+                        "retryConfiguration": {
+                            "retryMode": "ALL_ACTIONS"
+                        }
+                    }
+                },
+                {
+                    "name": "Deploy",
+                    "actions": [
+                        {
+                            "name": "Deploy",
+                            "actionTypeId": {
+                                "category": "Deploy",
+                                "owner": "AWS",
+                                "provider": "ElasticBeanstalk",
+                                "version": "1"
+                            },
+                            "runOrder": 1,
+                            "configuration": {
+                                "ApplicationName": "branchworks-coming-soon",
+                                "EnvironmentName": "Branchworks-coming-soon-env"
+                            },
+                            "outputArtifacts": [],
+                            "inputArtifacts": [
+                                {
+                                    "name": "SourceArtifact"
+                                }
+                            ],
+                            "region": "eu-north-1",
+                            "namespace": "DeployVariables"
+                        }
+                    ],
+                    "onFailure": {
+                        "result": "ROLLBACK"
+                    }
+                }
+            ],
+            "version": 1,
+            "executionMode": "QUEUED",
+            "pipelineType": "V2",
+            "triggers": [
+                {
+                    "providerType": "CodeStarSourceConnection",
+                    "gitConfiguration": {
+                        "sourceActionName": "Source",
+                        "push": [
+                            {
+                                "branches": {
+                                    "includes": [
+                                        "master"
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "requestID": "e26333b6-fbbf-418f-89a6-156e527fe00b",
+    "eventID": "fc9f6c67-37c9-442e-ad82-3b30149b9e1a",
+    "readOnly": false,
+    "eventType": "AwsApiCall",
+    "managementEvent": true,
+    "recipientAccountId": "672045063455",
+    "eventCategory": "Management",
+    "tlsDetails": {
+        "tlsVersion": "TLSv1.3",
+        "cipherSuite": "TLS_AES_128_GCM_SHA256",
+        "clientProvidedHostHeader": "codepipeline.eu-north-1.amazonaws.com"
+    },
+    "sessionCredentialFromConsole": "true"
+}

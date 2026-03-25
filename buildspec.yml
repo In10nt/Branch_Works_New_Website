@@ -20,8 +20,20 @@ phases:
       - mvn clean package -DskipTests
       - cd ..
       - echo Build completed successfully
+      - mkdir -p deployment
+      - mkdir -p deployment/.ebextensions
+      - cp backend/target/coming-soon-backend-0.0.1-SNAPSHOT.jar deployment/
+      - cp backend/Procfile deployment/
+      - cp .ebextensions/*.config deployment/.ebextensions/
+      - echo Deployment package prepared
 
 artifacts:
   files:
-    - backend/target/coming-soon-backend-0.0.1-SNAPSHOT.jar
+    - deployment/**/*
   name: branchworks-app-$(date +%Y%m%d-%H%M%S)
+
+cache:
+  paths:
+    - '/root/.m2/**/*'
+    - 'node_modules/**/*'
+
