@@ -1,210 +1,206 @@
 # Branchworks Coming Soon Website
 
-A full-stack coming soon page with React frontend and Spring Boot backend.
+A modern coming soon page with email waitlist functionality, built with React and Spring Boot.
+
+## Features
+
+- 🎨 Modern, responsive design
+- 📧 Email waitlist with validation
+- ☁️ AWS Elastic Beanstalk deployment
+- 🔒 Secure email handling with Gmail SMTP
+- ✅ Health check endpoint
+
+## Tech Stack
+
+**Frontend:**
+- React 18
+- CSS3 with modern animations
+- Responsive design
+
+**Backend:**
+- Spring Boot 3.2.0
+- Java 17
+- H2 Database (in-memory)
+- JavaMail for email notifications
+
+**Deployment:**
+- AWS Elastic Beanstalk (Docker platform)
+- Amazon Linux 2023
+- Docker containerization
 
 ## Project Structure
 
 ```
-Branch Works_New_Website/
-├── src/                          # React Frontend
+├── src/                          # React frontend
 │   ├── components/
-│   │   ├── ComingSoon.jsx
-│   │   └── ComingSoon.css
-│   ├── App.js
-│   ├── App.css
-│   ├── index.js
-│   └── index.css
-├── backend/                      # Spring Boot Backend
-│   ├── src/main/java/com/branchworks/comingsoon/
-│   │   ├── ComingSoonApplication.java
-│   │   ├── controller/
-│   │   │   └── WaitlistController.java
-│   │   ├── service/
-│   │   │   └── WaitlistService.java
-│   │   ├── repository/
-│   │   │   └── WaitlistRepository.java
-│   │   ├── model/
-│   │   │   └── WaitlistEntry.java
-│   │   ├── dto/
-│   │   │   ├── WaitlistRequest.java
-│   │   │   └── WaitlistResponse.java
-│   │   ├── config/
-│   │   │   └── CorsConfig.java
-│   │   └── exception/
-│   │       └── GlobalExceptionHandler.java
-│   └── src/main/resources/
-│       └── application.properties
-├── images/                       # Static assets
-├── package.json
-└── pom.xml
+│   │   ├── ComingSoon.jsx       # Main component
+│   │   └── ComingSoon.css       # Styles
+│   └── App.js
+├── backend/                      # Spring Boot backend
+│   ├── src/main/java/
+│   │   └── com/branchworks/comingsoon/
+│   │       ├── controller/      # REST controllers
+│   │       ├── service/         # Business logic
+│   │       ├── model/           # Data models
+│   │       └── repository/      # Data access
+│   └── pom.xml
+├── deployment/
+│   └── Dockerfile               # Docker configuration
+├── .ebextensions/
+│   └── environment.config       # Beanstalk configuration
+└── buildspec.yml                # AWS CodeBuild configuration
 ```
 
-## Features
+## Local Development
 
-### Frontend (React)
-- Modern, responsive UI
-- Form validation
-- Real-time character counter
-- Success/error notifications
-- Axios for API calls
-- Mobile-friendly design
+### Prerequisites
 
-### Backend (Spring Boot)
-- RESTful API
-- JPA/Hibernate for database operations
-- Input validation
-- CORS configuration
-- Exception handling
-- H2 in-memory database (development)
-- PostgreSQL support (production)
-
-## Prerequisites
-
-- Node.js (v16 or higher)
-- Java 17 or higher
+- Node.js 18+
+- Java 17+
 - Maven 3.6+
 
-## Installation & Setup
+### Setup
 
-### Frontend Setup
-
-1. Install dependencies:
+1. **Clone the repository**
 ```bash
-npm install
+git clone <repository-url>
+cd Branch_Works_New_Website
 ```
 
-2. Start the development server:
+2. **Configure environment variables**
 ```bash
-npm start
+cp .env.example .env
+# Edit .env with your email credentials
 ```
 
-The React app will run on `http://localhost:3000`
-
-### Backend Setup
-
-1. Navigate to the backend directory:
+3. **Start the backend**
 ```bash
 cd backend
-```
-
-2. Build the project:
-```bash
-mvn clean install
-```
-
-3. Run the Spring Boot application:
-```bash
 mvn spring-boot:run
 ```
 
-The backend API will run on `http://localhost:7000`
+4. **Start the frontend** (in a new terminal)
+```bash
+npm install
+npm start
+```
+
+5. **Access the application**
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:7000
+- Health check: http://localhost:7000/health
+
+## Deployment to AWS
+
+### Quick Deploy
+
+```powershell
+# Install EB CLI (one-time)
+pip install awsebcli --upgrade --user
+
+# Deploy
+./deploy-working.ps1
+```
+
+### Manual Deployment
+
+See **DEPLOYMENT_GUIDE.md** for detailed instructions including:
+- EB CLI setup
+- Alternative deployment methods
+- Troubleshooting guide
+- Configuration details
+
+### Application URL
+
+Production: http://Branchworks-coming-soon-env.eba-h4dbjcip.eu-north-1.elasticbeanstalk.com
+
+## Configuration
+
+### Environment Variables
+
+**Backend (.env or Beanstalk environment):**
+```
+MAIL_USERNAME=your-email@gmail.com
+MAIL_PASSWORD=your-app-password
+COMPANY_EMAIL=notifications@yourcompany.com
+SERVER_PORT=7000
+```
+
+**Frontend (.env):**
+```
+REACT_APP_API_URL=http://localhost:7000
+```
+
+### Email Setup
+
+The application uses Gmail SMTP. To set up:
+
+1. Enable 2-factor authentication on your Gmail account
+2. Generate an app password: https://myaccount.google.com/apppasswords
+3. Use the app password in `MAIL_PASSWORD`
+
+See `backend/EMAIL_SETUP.md` for detailed instructions.
 
 ## API Endpoints
 
-### POST /api/waitlist
-Add a new entry to the waitlist
+### Waitlist
 
-**Request Body:**
+**POST** `/api/waitlist`
 ```json
 {
-  "name": "John Doe",
-  "company": "Google",
-  "companySize": "0 - 5",
-  "message": "I want to learn more about your services"
+  "email": "user@example.com"
 }
 ```
 
 **Response:**
 ```json
 {
-  "success": true,
-  "message": "Successfully joined the waitlist!",
-  "data": {
-    "id": 1,
-    "name": "John Doe",
-    "company": "Google",
-    "companySize": "0 - 5",
-    "message": "I want to learn more about your services",
-    "createdAt": "2024-03-19T10:30:00"
-  }
+  "message": "Successfully added to waitlist!",
+  "email": "user@example.com",
+  "timestamp": "2024-03-25T10:30:00"
 }
 ```
 
-### GET /api/waitlist
-Get all waitlist entries
+### Health Check
 
-### GET /api/waitlist/count
-Get total count of waitlist entries
-
-### GET /api/waitlist/stats
-Get statistics about waitlist entries
-
-## Database
-
-### Development (H2)
-- Access H2 Console: `http://localhost:8080/h2-console`
-- JDBC URL: `jdbc:h2:mem:comingsoondb`
-- Username: `sa`
-- Password: (leave empty)
-
-### Production (PostgreSQL)
-Update `application.properties`:
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/comingsoon
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+**GET** `/health`
+```json
+{
+  "status": "UP"
+}
 ```
 
-## Building for Production
+## Files Overview
 
-### Frontend
-```bash
-npm run build
-```
+- **deploy-working.ps1** - Deployment script (requires EB CLI)
+- **DEPLOYMENT_GUIDE.md** - Complete deployment documentation
+- **README_DEPLOYMENT.md** - Quick deployment summary
+- **buildspec.yml** - AWS CodeBuild configuration
+- **.ebextensions/environment.config** - Beanstalk settings
+- **deployment/Dockerfile** - Docker container configuration
 
-### Backend
-```bash
-cd backend
-mvn clean package
-java -jar target/coming-soon-backend-0.0.1-SNAPSHOT.jar
-```
+## Troubleshooting
 
-## Environment Variables
+### Common Issues
 
-### Frontend
-Create `.env` file:
-```
-REACT_APP_API_URL=http://localhost:8080
-```
+1. **Email not sending**
+   - Verify Gmail app password is correct
+   - Check 2FA is enabled on Gmail account
+   - Review backend logs for SMTP errors
 
-### Backend
-Update `application.properties` or use environment variables:
-```
-SERVER_PORT=8080
-CORS_ALLOWED_ORIGINS=http://localhost:3000
-```
+2. **CORS errors**
+   - Ensure `REACT_APP_API_URL` points to correct backend
+   - Check CORS configuration in `CorsConfig.java`
 
-## Technologies Used
-
-### Frontend
-- React 18
-- Axios
-- CSS3
-
-### Backend
-- Spring Boot 3.2
-- Spring Data JPA
-- Spring Validation
-- H2 Database
-- PostgreSQL
-- Lombok
-- Maven
+3. **Deployment fails**
+   - See DEPLOYMENT_GUIDE.md troubleshooting section
+   - Check AWS CloudWatch logs
+   - Verify Dockerfile is in deployment package
 
 ## License
 
-MIT License
+Private - Branchworks
 
-## Contact
+## Support
 
-For questions or support, contact: support@branchworks.com
+For deployment issues, see **DEPLOYMENT_GUIDE.md**
