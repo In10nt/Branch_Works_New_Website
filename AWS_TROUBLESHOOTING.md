@@ -1,4 +1,63 @@
-# AWS Elastic Beanstalk Troubleshooting - Connection Timeout
+# AWS Elastic Beanstalk Troubleshooting
+
+## 🔴 CRITICAL: 502 Bad Gateway Error
+
+### What This Means
+Nginx (web server) cannot connect to your Spring Boot backend on port 5000.
+
+### ✅ FIXED - Files Created
+
+I've created the following configuration files to fix this:
+
+1. **`.platform/nginx/conf.d/elasticbeanstalk/00_application.conf`**
+   - Proxies `/api` requests to Spring Boot backend on port 5000
+
+2. **`.platform/nginx/conf.d/elasticbeanstalk/01_static.conf`**
+   - Serves React frontend from `/build` directory
+
+3. **`Procfile`** (root level)
+   - Ensures Spring Boot starts on port 5000
+
+4. **`.ebextensions/01_nginx.config`**
+   - Additional nginx configuration
+
+### 🚀 Deploy the Fix
+
+```bash
+# 1. Commit all changes
+git add .
+git commit -m "Fix 502 Bad Gateway - Add nginx proxy configuration"
+git push origin main
+
+# 2. Wait for CodePipeline to deploy (5-10 minutes)
+# Monitor at: AWS Console → CodePipeline → branchworks-pipeline
+
+# 3. After deployment completes, test your site
+```
+
+### 🔍 Verify the Fix
+
+After deployment, check:
+
+1. **Environment Health**
+   - Should be Green in Elastic Beanstalk console
+
+2. **Backend is Running**
+   ```bash
+   # SSH into instance
+   eb ssh
+   
+   # Check Java process
+   ps aux | grep java
+   
+   # Check port 5000 is listening
+   sudo netstat -tlnp | grep 5000
+   ```
+
+3. **Test API Endpoint**
+   - Visit: `http://your-domain.com/api/waitlist` (should return 405 Method Not Allowed - this is correct)
+
+---
 
 ## Error: ERR_CONNECTION_TIMED_OUT
 

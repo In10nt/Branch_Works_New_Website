@@ -36,7 +36,10 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleGlobalException(Exception ex) {
-        log.error("Unexpected error occurred", ex);
+        // Don't log NoResourceFoundException for favicon and other static resources
+        if (!(ex instanceof org.springframework.web.servlet.resource.NoResourceFoundException)) {
+            log.error("Unexpected error occurred", ex);
+        }
         
         Map<String, Object> response = new HashMap<>();
         response.put("success", false);
