@@ -4,15 +4,24 @@ phases:
   install:
     runtime-versions:
       java: corretto17
+      nodejs: 18
+  
+  pre_build:
+    commands:
+      - echo Installing frontend dependencies...
+      - npm install --legacy-peer-deps
+      - echo Building React frontend...
+      - npm run build
   
   build:
     commands:
-      - echo Building Spring Boot backend...
+      - echo Building Spring Boot backend with embedded frontend...
       - cd backend
       - mvn clean package -DskipTests
       - cd ..
+      - echo Build completed successfully
 
 artifacts:
   files:
-    - backend/target/*.jar
-  discard-paths: yes
+    - backend/target/coming-soon-backend-0.0.1-SNAPSHOT.jar
+  name: branchworks-app-$(date +%Y%m%d-%H%M%S)
