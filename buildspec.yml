@@ -23,9 +23,10 @@ phases:
       - mkdir -p deployment
       - mkdir -p deployment/.ebextensions
       - cp backend/target/coming-soon-backend-0.0.1-SNAPSHOT.jar deployment/
-      - cp backend/Procfile deployment/
+      - cp deployment/Dockerfile deployment/Dockerfile
       - cp .ebextensions/*.config deployment/.ebextensions/
       - echo Deployment package prepared
+      - ls -la deployment/
 
 artifacts:
   files:
