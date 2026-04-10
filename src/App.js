@@ -1,11 +1,11 @@
 import React from 'react';
-import ComingSoon from './components/ComingSoon';
 import './App.css';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
     <div className="App">
-      <ComingSoon />
+      <HomePage />
     </div>
   );
 }
