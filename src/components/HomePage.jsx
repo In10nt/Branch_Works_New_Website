@@ -1,7 +1,41 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './HomePage.css';
 
 const HomePage = () => {
+  const statsHeadlineRef = useRef(null);
+  const statsCardsRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    if (statsHeadlineRef.current) {
+      observer.observe(statsHeadlineRef.current);
+    }
+    if (statsCardsRef.current) {
+      observer.observe(statsCardsRef.current);
+    }
+
+    return () => {
+      if (statsHeadlineRef.current) {
+        observer.unobserve(statsHeadlineRef.current);
+      }
+      if (statsCardsRef.current) {
+        observer.unobserve(statsCardsRef.current);
+      }
+    };
+  }, []);
   return (
     <div className="page-container">
       <header className="header-section">
@@ -108,6 +142,43 @@ const HomePage = () => {
               <source src={`${process.env.PUBLIC_URL}/Video/video_1.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+          </div>
+        </div>
+      </div>
+
+      <div className="stats-section">
+        <div className="stats-container">
+          <div className="stats-headline" ref={statsHeadlineRef}>
+            <h2 className="stats-title">
+              <span className="stats-title-black">We connect </span>
+              <span className="stats-title-gray">forward-thinking enterprises with rigorously vetted offshore professionals.</span>
+            </h2>
+          </div>
+
+          <div className="stats-cards" ref={statsCardsRef}>
+            <div className="stat-card">
+              <div className="stat-logo">
+                <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="stat-company-logo" />
+              </div>
+              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <div className="stat-value" style={{ color: '#0D9488' }}>70%</div>
+            </div>
+
+            <div className="stat-card">
+              <div className="stat-logo">
+                <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="stat-company-logo" />
+              </div>
+              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <div className="stat-value" style={{ color: '#EB4E00' }}>4x</div>
+            </div>
+
+            <div className="stat-card">
+              <div className="stat-logo">
+                <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="stat-company-logo" />
+              </div>
+              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <div className="stat-value" style={{ color: '#CA8A04' }}>60%</div>
+            </div>
           </div>
         </div>
       </div>
