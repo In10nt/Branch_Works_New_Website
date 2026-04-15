@@ -7,7 +7,11 @@ const HomePage = () => {
       <header className="header-section">
         <div className="header-content">
           <div className="logo">
-            <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Branchworks Logo" />
+            <div className="logo-background">
+              <div className="logo-circle">
+                <span className="logo-letter">B</span>
+              </div>
+            </div>
             <span className="logo-text">BRANCHWORKS<br />GLOBAL</span>
           </div>
           
