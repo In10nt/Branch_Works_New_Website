@@ -43,20 +43,52 @@ const HomePage = () => {
 
           <div className="logos-section">
             <div className="logos-container">
-              <div className="logo-item">
-                <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
-              </div>
-              <div className="logo-item">
-                <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
-              </div>
-              <div className="logo-item">
-                <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
-              </div>
-              <div className="logo-item">
-                <span className="company-name">inTrox</span>
-              </div>
-              <div className="logo-item">
-                <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
+              <div className="logos-wrapper">
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
+                </div>
+                <div className="logo-item">
+                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
+                </div>
               </div>
             </div>
           </div>

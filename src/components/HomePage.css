@@ -283,14 +283,48 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
+  margin-top: 80px;
+  justify-self: center;
+  align-self: center;
 }
 
 .logos-container {
   display: flex;
   align-items: center;
-  gap: 0;
   justify-content: center;
   width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.logos-container::before,
+.logos-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logos-container::before {
+  left: 0;
+  background: linear-gradient(to right, #FFFFFF, transparent);
+}
+
+.logos-container::after {
+  right: 0;
+  background: linear-gradient(to left, #FFFFFF, transparent);
+}
+
+.logos-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  animation: logoSwipe 37.5s linear infinite;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 .logo-item {
@@ -304,8 +338,17 @@
   flex-shrink: 0;
 }
 
+@keyframes logoSwipe {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-33.33% - 16px));
+  }
+}
+
 .company-logo {
-  height: 36px;
+  height: 48px;
   width: auto;
   flex-shrink: 0;
 }
