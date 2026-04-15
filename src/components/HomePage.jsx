@@ -12,7 +12,7 @@ const HomePage = () => {
                 <span className="logo-letter">B</span>
               </div>
             </div>
-            <span className="logo-text">BRANCHWORKS<br />GLOBAL</span>
+            <img src={`${process.env.PUBLIC_URL}/images/branchWorksGlobalNavText.svg`} alt="BRANCHWORKS GLOBAL" className="logo-text-svg" />
           </div>
           
           <nav className="nav-menu">
@@ -39,6 +39,26 @@ const HomePage = () => {
 
           <div className="cta-section">
             <button className="schedule-button">Schedule a Consultation</button>
+          </div>
+
+          <div className="logos-section">
+            <div className="logos-container">
+              <div className="logo-item">
+                <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
+              </div>
+              <div className="logo-item">
+                <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
+              </div>
+              <div className="logo-item">
+                <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
+              </div>
+              <div className="logo-item">
+                <span className="company-name">inTrox</span>
+              </div>
+              <div className="logo-item">
+                <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
+              </div>
+            </div>
           </div>
         </div>
       </div>
