@@ -1,13 +1,136 @@
 /* Mobile First - 393px width */
 .page-container {
   display: flex;
-  width: 393px;
+  width: 100%;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin: 0 auto;
   min-height: 100vh;
-  padding: 0 16px;
+  padding: 0;
   background-color: #FFFFFF;
+}
+
+/* Header Section */
+.header-section {
+  width: 100%;
+  position: relative;
+  margin-bottom: 0;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  display: flex;
+  width: 100%;
+  max-width: 866px;
+  padding: 8px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: #172554;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #525252;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover {
+  color: #172554;
+}
+
+.cta-button {
+  padding: 10px 24px;
+  background-color: #172554;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.cta-button:hover {
+  background-color: #0f1a3a;
+}
+
+/* Badge Chip Component */
+.badge-chip {
+  display: flex;
+  height: 40px;
+  max-height: 40px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.badge-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #525252;
+}
+
+/* Hero Layout Section */
+.hero-layout {
+  display: flex;
+  height: 768px;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  background: #FFFFFF;
+  width: 100%;
+  justify-content: flex-start;
+  padding-top: 60px;
 }
 
 /* Tablet - 768px and up */
@@ -16,6 +139,13 @@
     width: 768px;
     padding: 0 24px;
     background-color: #FFFFFF;
+  }
+
+  .header-content {
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
   }
 }
 
@@ -26,6 +156,13 @@
     padding: 0 40px;
     background-color: #FFFFFF;
   }
+
+  .header-content {
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
 }
 
 /* Large Screen - 1440px and up */
@@ -34,5 +171,12 @@
     width: 1440px;
     padding: 0 60px;
     background-color: #FFFFFF;
+  }
+
+  .header-content {
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
   }
 }
