@@ -182,6 +182,24 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      <div className="map-section">
+        <div className="map-container">
+          <div className="map-content">
+            <div className="map-text-box">
+              <h2 className="map-title">Supporting organisations worldwide with offshore expertise</h2>
+              <p className="map-description">
+                A trusted offshore partner supporting businesses <br />
+                across Australia, the United Kingdom, the United States, <br />
+                Europe, and the Asia-Pacific region
+              </p>
+            </div>
+          </div>
+          <div className="map-image-box">
+            <img src={`${process.env.PUBLIC_URL}/images/worldMap.png`} alt="World Map" className="world-map" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
