@@ -22,12 +22,17 @@ const HomePage = () => {
       </header>
 
       <div className="hero-layout">
-        <div className="badge-chip">
-          <span className="badge-icon">⭐</span>
-          <span className="badge-text">Trustpilot</span>
+        <div className="hero-content">
+          <div className="badge-chip">
+            <span className="badge-rating">4.8</span>
+            <img src={`${process.env.PUBLIC_URL}/images/trustpilot-logo.svg`} alt="Trustpilot" className="badge-trustpilot-logo" />
+          </div>
+          
+          <div className="headline-section">
+            <h1 className="main-headline">Global Talent.<br />Offshore Strategy.</h1>
+            <p className="headline-description">Exploring global talent, offshore strategy, and the economics shaping the future of work.</p>
+          </div>
         </div>
-        
-        {/* Hero content will go here */}
       </div>
     </div>
   );

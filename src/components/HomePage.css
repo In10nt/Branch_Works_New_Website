@@ -106,27 +106,45 @@
 /* Badge Chip Component */
 .badge-chip {
   display: flex;
-  height: 40px;
-  max-height: 40px;
-  padding: 8px 16px;
+  padding: 8px 16px 8px 8px;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  background-color: #F5F5F5;
-  border-radius: 8px;
-  margin-top: 0;
-  margin-bottom: 40px;
+  gap: 12px;
+  border-radius: 999px;
+  border: 2px solid #F5F5F5;
+  background: #FFFFFF;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.10);
 }
 
-.badge-icon {
-  font-size: 18px;
+.badge-rating {
+  font-size: 13px;
+  font-weight: 700;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   line-height: 1;
 }
 
+.badge-trustpilot-logo {
+  height: 20px;
+  width: auto;
+  flex-shrink: 0;
+}
+
 .badge-text {
-  font-size: 14px;
-  font-weight: 600;
-  color: #525252;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.39px;
+  white-space: nowrap;
+}
+
+.badge-trustpilot-logo {
+  height: 20px;
+  width: auto;
+  flex-shrink: 0;
 }
 
 /* Hero Layout Section */
@@ -141,7 +159,48 @@
   background: #FFFFFF;
   width: 100%;
   justify-content: flex-start;
-  padding-top: 60px;
+  padding-top: 40px;
+}
+
+/* Hero Content Section */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  flex: 1 0 0;
+  align-self: stretch;
+}
+
+/* Headline Section */
+.headline-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.main-headline {
+  font-size: 56px;
+  font-weight: 700;
+  color: #171717;
+  line-height: 1.2;
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  letter-spacing: -1.12px;
+}
+
+.headline-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #525252;
+  line-height: 1.6;
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  max-width: 600px;
 }
 
 /* Tablet - 768px and up */
