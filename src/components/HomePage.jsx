@@ -32,6 +32,10 @@ const HomePage = () => {
             <h1 className="main-headline">Global Talent.<br />Offshore Strategy.</h1>
             <p className="headline-description">Exploring global talent, offshore strategy, and the economics shaping the future of work.</p>
           </div>
+
+          <div className="cta-section">
+            <button className="schedule-button">Schedule a Consultation</button>
+          </div>
         </div>
       </div>
     </div>
