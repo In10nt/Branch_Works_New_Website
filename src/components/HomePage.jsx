@@ -5,6 +5,7 @@ const HomePage = () => {
   const statsHeadlineRef = useRef(null);
   const statsCardsRef = useRef(null);
   const facesHeaderRef = useRef(null);
+  const testimonialRef = useRef(null);
 
   useEffect(() => {
     const observerOptions = {
@@ -30,6 +31,9 @@ const HomePage = () => {
     if (facesHeaderRef.current) {
       observer.observe(facesHeaderRef.current);
     }
+    if (testimonialRef.current) {
+      observer.observe(testimonialRef.current);
+    }
 
     return () => {
       if (statsHeadlineRef.current) {
@@ -40,6 +44,9 @@ const HomePage = () => {
       }
       if (facesHeaderRef.current) {
         observer.unobserve(facesHeaderRef.current);
+      }
+      if (testimonialRef.current) {
+        observer.unobserve(testimonialRef.current);
       }
     };
   }, []);
@@ -376,7 +383,7 @@ const HomePage = () => {
 
       <div className="testimonial-section">
         <div className="testimonial-container">
-          <div className="testimonial-content">
+          <div className="testimonial-content" ref={testimonialRef}>
             <div className="testimonial-stars">
               <span className="star">★</span>
               <span className="star">★</span>
@@ -394,7 +401,7 @@ const HomePage = () => {
             </div>
             
             <div className="testimonial-source">
-              <p className="testimonial-company">Forbes</p>
+              <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="testimonial-logo" />
             </div>
             
             <div className="testimonial-profile">
