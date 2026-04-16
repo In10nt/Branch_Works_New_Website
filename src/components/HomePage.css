@@ -1,3 +1,8 @@
+/* Global Overflow Fix - Only for body to hide scrollbar */
+body {
+  overflow-x: hidden;
+}
+
 /* Mobile First - 393px width */
 .page-container {
   display: flex;
@@ -530,6 +535,18 @@
   }
 }
 
+/* Faces Section Text Animation */
+@keyframes fadeInUpFaces {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .stat-logo {
   width: auto;
   height: auto;
@@ -944,7 +961,7 @@
 /* New Section */
 .new-section {
   display: flex;
-  padding: 0;
+  padding: 0 0 64px 0;
   flex-direction: column;
   align-items: center;
   gap: 16px;
@@ -1213,4 +1230,640 @@
   font-weight: 400;
   line-height: 18px;
   margin: 0;
+}
+
+/* Faces Section - Responsive Design */
+.faces-section {
+  display: flex;
+  width: 100vw;
+  padding: 64px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  align-self: stretch;
+  background: #172554;
+  opacity: 1;
+  margin-top: 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  overflow: hidden;
+}
+
+.faces-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 768px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  padding: 64px 20px;
+  opacity: 1;
+}
+
+.faces-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+/* Desktop - Continuous Scrolling Animation */
+@media (min-width: 769px) {
+  .faces-grid {
+    overflow: hidden;
+    width: 100vw;
+    position: relative;
+  }
+
+  .faces-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    width: max-content;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: transform;
+    position: relative;
+  }
+
+  .faces-row-1 {
+    animation: scrollLeftFromCorner 40s linear infinite;
+    transform: translateX(-100px);
+  }
+
+  .faces-row-2 {
+    animation: scrollRightFromCorner 45s linear infinite;
+    transform: translateX(calc(-100vw - 100px));
+  }
+
+  .faces-row-3 {
+    animation: scrollLeftFromCorner 50s linear infinite;
+    transform: translateX(-100px);
+  }
+
+  @keyframes scrollLeftFromCorner {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100vw - 1000px));
+    }
+  }
+
+  @keyframes scrollRightFromCorner {
+    0% {
+      transform: translateX(calc(-100vw - 1000px));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+/* Mobile/Tablet - Static Grid Layout */
+@media (max-width: 768px) {
+  .faces-section {
+    padding: 40px 0;
+  }
+  
+  .faces-container {
+    min-height: auto;
+    padding: 40px 16px;
+  }
+  
+  .faces-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .faces-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .face-item {
+    width: 60px !important;
+    height: 60px !important;
+    min-width: 60px !important;
+    min-height: 60px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .faces-grid {
+    max-width: 400px;
+  }
+  
+  .faces-row {
+    gap: 6px;
+  }
+  
+  .face-item {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+  }
+}
+
+/* Face Items */
+.face-item {
+  width: 100px;
+  height: 100px;
+  min-width: 100px;
+  min-height: 100px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  opacity: 1;
+  overflow: hidden;
+  background: #E5E5E5;
+}
+
+.face-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+  .faces-grid {
+    padding: 0 20px;
+  }
+  
+  .faces-row {
+    gap: 12px;
+  }
+  
+  .face-item {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .faces-grid {
+    gap: 12px;
+    padding: 0 16px;
+  }
+  
+  .faces-row {
+    gap: 8px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+  
+  .face-item {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faces-row {
+    gap: 6px;
+  }
+  
+  .face-item {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.face-item:nth-child(odd) {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.face-item:nth-child(3n) {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.face-item:nth-child(4n) {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.face-item:nth-child(5n) {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+/* Responsive Design for Faces Section */
+@media (max-width: 1200px) {
+  .faces-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 64px 20px;
+  }
+  
+  .faces-grid {
+    overflow-x: auto;
+    padding: 0 20px;
+  }
+  
+  .faces-row {
+    min-width: 900px;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .faces-section {
+    padding: 40px 0;
+  }
+  
+  .faces-container {
+    height: auto;
+    padding: 40px 16px;
+  }
+  
+  .faces-header {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+  }
+  
+  .faces-title {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  .faces-description {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  
+  .faces-grid {
+    gap: 12px;
+    padding: 0 10px;
+  }
+  
+  .faces-row {
+    gap: 12px;
+    min-width: 600px;
+  }
+  
+  .face-item {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 393px) {
+  .faces-section {
+    padding: 32px 0;
+  }
+  
+  .faces-container {
+    padding: 32px 16px;
+  }
+  
+  .faces-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  .faces-description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .faces-cta-button {
+    font-size: 12px;
+    padding: 6px 12px;
+    height: 36px;
+  }
+  
+  .faces-row {
+    min-width: 500px;
+  }
+  
+  .face-item {
+    width: 48px;
+    height: 48px;
+  }
+}
+.faces-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  align-self: stretch;
+}
+
+.faces-header {
+  display: flex;
+  width: 100%;
+  max-width: 461px;
+  height: auto;
+  min-height: 244px;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.faces-header.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.faces-header.animate-in .faces-title {
+  animation: fadeInUpFaces 0.8s ease-out 0.2s both;
+}
+
+.faces-header.animate-in .faces-description {
+  animation: fadeInUpFaces 0.8s ease-out 0.4s both;
+}
+
+.faces-header.animate-in .faces-cta-button {
+  animation: fadeInUpFaces 0.8s ease-out 0.6s both;
+}
+
+.faces-title {
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -0.56px;
+  margin: 0;
+  width: 461px;
+  height: 68px;
+  opacity: 0;
+  transform: translateY(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faces-description {
+  color: #A3A3A3;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0%;
+  margin: 0;
+  width: 249px;
+  height: 72px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.faces-cta-button {
+  display: flex;
+  width: 89px;
+  height: 40px;
+  max-height: 40px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: #F5F5F5;
+  border: 1px solid #E5E5E5;
+  color: #171717;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 16px;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.faces-cta-button:hover {
+  background-color: #F5F5F5;
+}
+
+/* Mobile Header Responsive */
+@media (max-width: 768px) {
+  .faces-header {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+  
+  .faces-title {
+    font-size: 24px;
+    line-height: 30px;
+    max-width: 100%;
+  }
+  
+  .faces-description {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+/* Tomorrow Section */
+.tomorrow-section {
+  display: flex;
+  width: 100vw;
+  padding: 64px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  background: #172554;
+  opacity: 1;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.tomorrow-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 768px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 64px 20px;
+  opacity: 1;
+}
+
+.tomorrow-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  align-self: stretch;
+  height: 100%;
+  justify-content: center;
+}
+
+.tomorrow-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+
+.tomorrow-title {
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -1.92px;
+  margin: 0;
+}
+
+.tomorrow-description {
+  color: #A3A3A3;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.tomorrow-cta-button {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: none;
+  color: #171717;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tomorrow-cta-button:hover {
+  background-color: #F5F5F5;
+  transform: translateY(-2px);
+}
+
+.tomorrow-cards {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+}
+
+.tomorrow-card {
+  display: flex;
+  width: 251.33px;
+  height: 300px;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  background: #F5F5F5;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+  opacity: 1;
+}
+
+.tomorrow-card:hover {
+  transform: translateY(-8px);
+}
+
+.tomorrow-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* Responsive Design for Tomorrow Section */
+@media (max-width: 1200px) {
+  .tomorrow-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 40px 20px;
+  }
+  
+  .tomorrow-cards {
+    gap: 24px;
+  }
+  
+  .tomorrow-card {
+    width: 220px;
+    height: 263px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tomorrow-container {
+    height: auto;
+    padding: 40px 16px;
+  }
+  
+  .tomorrow-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .tomorrow-cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .tomorrow-card {
+    width: 200px;
+    height: 239px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tomorrow-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  
+  .tomorrow-card {
+    width: 180px;
+    height: 215px;
+  }
 }

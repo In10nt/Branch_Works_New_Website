@@ -4,6 +4,7 @@ import './HomePage.css';
 const HomePage = () => {
   const statsHeadlineRef = useRef(null);
   const statsCardsRef = useRef(null);
+  const facesHeaderRef = useRef(null);
 
   useEffect(() => {
     const observerOptions = {
@@ -26,6 +27,9 @@ const HomePage = () => {
     if (statsCardsRef.current) {
       observer.observe(statsCardsRef.current);
     }
+    if (facesHeaderRef.current) {
+      observer.observe(facesHeaderRef.current);
+    }
 
     return () => {
       if (statsHeadlineRef.current) {
@@ -34,8 +38,29 @@ const HomePage = () => {
       if (statsCardsRef.current) {
         observer.unobserve(statsCardsRef.current);
       }
+      if (facesHeaderRef.current) {
+        observer.unobserve(facesHeaderRef.current);
+      }
     };
   }, []);
+
+  // Generate face items for each row with enough duplicates for seamless scrolling across any screen size
+  const generateFaceItems = (startIndex, count = 100) => {
+    return Array.from({ length: count }, (_, index) => {
+      const imageNum = ((startIndex + index) % 10) || 10;
+      const extension = imageNum === 5 ? 'png' : 'jpg';
+      return (
+        <div key={`face-${startIndex}-${index}`} className="face-item">
+          <img 
+            src={`${process.env.PUBLIC_URL}/images/people${imageNum}.${extension}`} 
+            alt={`Person ${imageNum}`} 
+            className="face-image" 
+          />
+        </div>
+      );
+    });
+  };
+
   return (
     <div className="page-container">
       <header className="header-section">
@@ -278,6 +303,71 @@ const HomePage = () => {
                   <div className="new-expert-name">Alexandra</div>
                   <div className="new-expert-role">Finance Expert</div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="faces-section">
+        <div className="faces-container">
+          <div className="faces-content">
+            <div className="faces-header" ref={facesHeaderRef}>
+              <h2 className="faces-title">The real faces behind<br />every local insight</h2>
+              <p className="faces-description">
+                We work with an incredible<br />
+                global network of moderators<br />
+                researchers, and cultural experts
+              </p>
+              <button className="faces-cta-button">Join free</button>
+            </div>
+            
+            <div className="faces-grid">
+              {/* Row 1 - Scrolls Left from corner */}
+              <div className="faces-row faces-row-1">
+                {generateFaceItems(1, 100)}
+              </div>
+              
+              {/* Row 2 - Scrolls Right from corner */}
+              <div className="faces-row faces-row-2">
+                {generateFaceItems(5, 100)}
+              </div>
+              
+              {/* Row 3 - Scrolls Left from corner */}
+              <div className="faces-row faces-row-3">
+                {generateFaceItems(8, 100)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="tomorrow-section">
+        <div className="tomorrow-container">
+          <div className="tomorrow-content">
+            <div className="tomorrow-header">
+              <h2 className="tomorrow-title">Tomorrow,<br />today.</h2>
+              <p className="tomorrow-description">
+                We work with an incredible<br />
+                global network of moderators.
+              </p>
+              <button className="tomorrow-cta-button">
+                Talk to an expert
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            
+            <div className="tomorrow-cards">
+              <div className="tomorrow-card">
+                <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
+              </div>
+              <div className="tomorrow-card">
+                <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
+              </div>
+              <div className="tomorrow-card">
+                <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
               </div>
             </div>
           </div>
