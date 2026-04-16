@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -6,6 +6,7 @@ const HomePage = () => {
   const statsCardsRef = useRef(null);
   const facesHeaderRef = useRef(null);
   const testimonialRef = useRef(null);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   useEffect(() => {
     const observerOptions = {
@@ -66,6 +67,15 @@ const HomePage = () => {
         </div>
       );
     });
+  };
+
+  // Customer Stories carousel navigation
+  const handlePrevCard = () => {
+    setCurrentCardIndex((prev) => Math.max(0, prev - 1));
+  };
+
+  const handleNextCard = () => {
+    setCurrentCardIndex((prev) => Math.min(1, prev + 1)); // Max 1 to show cards 0-2 or 1-3
   };
 
   return (
@@ -412,6 +422,62 @@ const HomePage = () => {
                 <h3 className="testimonial-name">Julie Sweet</h3>
                 <p className="testimonial-role">Finance Expert - Company name</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="customer-stories-section">
+        <div className="customer-stories-container">
+          <div className="customer-stories-content">
+            <div className="customer-stories-header">
+              <div className="customer-stories-text">
+                <h2 className="customer-stories-title">Customer Stories</h2>
+                <p className="customer-stories-description">
+                  Companies like yours are building<br />
+                  better docs with Branchworks
+                </p>
+              </div>
+              <button className="customer-stories-cta">View All</button>
+            </div>
+            
+            <div className="customer-stories-cards">
+              <div className="cards-container" style={{ transform: `translateX(-${currentCardIndex * 262}px)` }}>
+                <div className="customer-story-card featured-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_section_image.png`} alt="Customer Story" className="story-card-image" />
+                  <button className="story-read-more">Read more</button>
+                </div>
+                <div className="customer-story-card placeholder-card">
+                  <div className="placeholder-content"></div>
+                </div>
+                <div className="customer-story-card placeholder-card">
+                  <div className="placeholder-content"></div>
+                </div>
+                <div className="customer-story-card placeholder-card">
+                  <div className="placeholder-content"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="customer-stories-navigation">
+              <button 
+                className="nav-arrow nav-prev" 
+                onClick={handlePrevCard}
+                disabled={currentCardIndex === 0}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <button 
+                className="nav-arrow nav-next" 
+                onClick={handleNextCard}
+                disabled={currentCardIndex === 1}
+              >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
             </div>
           </div>
         </div>
