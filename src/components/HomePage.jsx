@@ -200,6 +200,89 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      <div className="new-section">
+        <div className="new-section-container">
+          <div className="new-section-content">
+            <div className="new-section-header">
+              <h2 className="new-section-title">What you get with Branchworks</h2>
+              <p className="new-section-description">
+                Everything you need to run payments, manage money, and grow, without extra hassle.
+              </p>
+            </div>
+
+            <div className="new-section-tabs-wrapper">
+              <div className="new-section-tabs">
+                <button className="new-tab-button active">
+                  Finance
+                </button>
+                <button className="new-tab-button">
+                  IT
+                </button>
+                <button className="new-tab-button">
+                  HR
+                </button>
+                <button className="new-tab-button">
+                  BPO
+                </button>
+                <button className="new-tab-button">
+                  KPO
+                </button>
+              </div>
+            </div>
+
+            <div className="new-section-tab-content">
+              <div className="new-tab-content-left">
+                <p className="new-tab-description">
+                  Ttrue extension of their internal workforce, from our operational hub in Sri Lanka.
+                </p>
+                
+                <div className="new-services-list">
+                  <div className="new-service-item">
+                    <div className="new-service-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="16" fill="#172554"/>
+                        <path d="M11.3333 22C10.9667 22 10.6528 21.8694 10.3917 21.6083C10.1306 21.3472 10 21.0333 10 20.6667V11.3333C10 10.9667 10.1306 10.6528 10.3917 10.3917C10.6528 10.1306 10.9667 10 11.3333 10H20.6667C21.0333 10 21.3472 10.1306 21.6083 10.3917C21.8694 10.6528 22 10.9667 22 11.3333V20.6667C22 21.0333 21.8694 21.3472 21.6083 21.6083C21.3472 21.8694 21.0333 22 20.6667 22H11.3333ZM12.6667 19.3333H17.3333V18H12.6667V19.3333ZM12.6667 16.6667H19.3333V15.3333H12.6667V16.6667ZM12.6667 14H19.3333V12.6667H12.6667V14Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <h3 className="new-service-title">Accounting</h3>
+                  </div>
+                  
+                  <div className="new-service-item">
+                    <div className="new-service-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="16" fill="#172554"/>
+                        <path d="M11.3333 22C10.9667 22 10.6528 21.8694 10.3917 21.6083C10.1306 21.3472 10 21.0333 10 20.6667V11.3333C10 10.9667 10.1306 10.6528 10.3917 10.3917C10.6528 10.1306 10.9667 10 11.3333 10H20.6667C21.0333 10 21.3472 10.1306 21.6083 10.3917C21.8694 10.6528 22 10.9667 22 11.3333V20.6667C22 21.0333 21.8694 21.3472 21.6083 21.6083C21.3472 21.8694 21.0333 22 20.6667 22H11.3333ZM12.6667 19.3333H17.3333V18H12.6667V19.3333ZM12.6667 16.6667H19.3333V15.3333H12.6667V16.6667ZM12.6667 14H19.3333V12.6667H12.6667V14Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <h3 className="new-service-title">Finance Reporting</h3>
+                  </div>
+                  
+                  <div className="new-service-item">
+                    <div className="new-service-icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="16" fill="#172554"/>
+                        <path d="M11.3333 22C10.9667 22 10.6528 21.8694 10.3917 21.6083C10.1306 21.3472 10 21.0333 10 20.6667V11.3333C10 10.9667 10.1306 10.6528 10.3917 10.3917C10.6528 10.1306 10.9667 10 11.3333 10H20.6667C21.0333 10 21.3472 10.1306 21.6083 10.3917C21.8694 10.6528 22 10.9667 22 11.3333V20.6667C22 21.0333 21.8694 21.3472 21.6083 21.6083C21.3472 21.8694 21.0333 22 20.6667 22H11.3333ZM12.6667 19.3333H17.3333V18H12.6667V19.3333ZM12.6667 16.6667H19.3333V15.3333H12.6667V16.6667ZM12.6667 14H19.3333V12.6667H12.6667V14Z" fill="white"/>
+                      </svg>
+                    </div>
+                    <h3 className="new-service-title">Payroll</h3>
+                  </div>
+                </div>
+
+                <button className="new-cta-button">Talk to an expert</button>
+              </div>
+
+              <div className="new-tab-content-right">
+                <img src={`${process.env.PUBLIC_URL}/images/girlImageFinance.jpg`} alt="Alexandra - Finance Expert" className="new-expert-photo" />
+                <div className="new-expert-label">
+                  <div className="new-expert-name">Alexandra</div>
+                  <div className="new-expert-role">Finance Expert</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

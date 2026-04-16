@@ -705,3 +705,508 @@
   object-fit: contain;
   opacity: 1;
 }
+
+/* Services Section */
+.services-section {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  background: #FFFFFF;
+  width: 100%;
+}
+
+.services-container {
+  display: flex;
+  width: 850px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  padding: 64px 0;
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+}
+
+.services-header {
+  display: flex;
+  width: 421px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.services-title {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -0.56px;
+  margin: 0;
+}
+
+.services-description {
+  color: #404040;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.services-tabs-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  align-self: stretch;
+}
+
+.services-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  align-self: stretch;
+  width: 100%;
+}
+
+.tab-button {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #404040;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button:hover {
+  color: #172554;
+}
+
+.tab-button.active {
+  color: #172554;
+  border-bottom: 2px solid #172554;
+}
+
+.services-tab-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.tab-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  width: 100%;
+  gap: 0;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.service-item {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  box-shadow: 0 1px 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.service-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.service-item-title {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+}
+
+.service-item-description {
+  display: none;
+}
+
+.services-cta {
+  display: flex;
+  padding-left: 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  border-left: 2px solid #E5E5E5;
+  flex: 1 0 0;
+}
+
+.services-cta-button {
+  display: flex;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: #171717;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.services-cta-button:hover {
+  background-color: #0f1a3a;
+}
+
+.expert-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 532px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.expert-photo {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.expert-image {
+  display: none;
+}
+
+.expert-info {
+  display: none;
+}
+
+.expert-name {
+  display: none;
+}
+
+.expert-role {
+  display: none;
+}
+
+/* New Section */
+.new-section {
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  background: #FFFFFF;
+  width: 100%;
+}
+
+.new-section-container {
+  display: flex;
+  width: 850px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.new-section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  align-self: stretch;
+}
+
+.new-section-header {
+  display: flex;
+  width: 421px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.new-section-title {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -0.56px;
+  margin: 0;
+}
+
+.new-section-description {
+  color: #404040;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.new-section-tabs-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  align-self: stretch;
+}
+
+.new-section-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  align-self: stretch;
+  border-bottom: 2px solid #F5F5F5;
+  width: 100%;
+}
+
+.new-tab-button {
+  display: flex;
+  padding: 16px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #404040;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: -2px;
+}
+
+.new-tab-button:hover {
+  color: #172554;
+}
+
+.new-tab-button.active {
+  color: #172554;
+  border-bottom: 2px solid #172554;
+}
+/* New Section Tab Content */
+.new-section-tab-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.new-tab-content-left {
+  display: flex;
+  width: 314px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+  height: 268px;
+  gap: 16px;
+}
+
+.new-tab-description {
+  color: #404040;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.new-services-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  flex: 1;
+}
+
+.new-service-item {
+  display: flex;
+  width: 314px;
+  height: 56px;
+  padding: 12px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.new-service-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-service-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.new-service-title {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+  flex: 1;
+}
+
+.new-cta-button {
+  display: flex;
+  width: 141px;
+  height: 40px;
+  max-height: 40px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: #171717;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+  align-self: flex-start;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.new-cta-button:hover {
+  background-color: #0f1a3a;
+}
+
+.new-tab-content-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  width: 453px;
+  height: 532px;
+  padding: 16px;
+  border-radius: 24px;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  opacity: 1;
+}
+
+.new-expert-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.new-expert-label {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+}
+
+.new-expert-name {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+}
+
+.new-expert-role {
+  color: #737373;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+}
