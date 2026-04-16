@@ -373,6 +373,42 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      <div className="testimonial-section">
+        <div className="testimonial-container">
+          <div className="testimonial-content">
+            <div className="testimonial-stars">
+              <span className="star">★</span>
+              <span className="star">★</span>
+              <span className="star">★</span>
+              <span className="star">★</span>
+              <span className="star">★</span>
+            </div>
+            
+            <div className="testimonial-quote">
+              <p className="testimonial-text">
+                "Public earns high marks for ease-of-use and its<br />
+                investment selection - options traders will likely get excited<br />
+                about their PFOF rebate program"
+              </p>
+            </div>
+            
+            <div className="testimonial-source">
+              <p className="testimonial-company">Forbes</p>
+            </div>
+            
+            <div className="testimonial-profile">
+              <div className="testimonial-avatar">
+                <img src={`${process.env.PUBLIC_URL}/images/fobes_girl.jpg`} alt="Julie Sweet" className="testimonial-avatar-image" />
+              </div>
+              <div className="testimonial-info">
+                <h3 className="testimonial-name">Julie Sweet</h3>
+                <p className="testimonial-role">Finance Expert - Company name</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
