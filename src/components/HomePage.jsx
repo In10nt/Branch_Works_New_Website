@@ -582,6 +582,67 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      <footer className="footer-section">
+        <div className="footer-container">
+          <div className="footer-content">
+            <div className="footer-top">
+              <div className="footer-left">
+                <div className="footer-logo">
+                  <img src={`${process.env.PUBLIC_URL}/images/footer_logo.svg`} alt="BRANCHWORKS GLOBAL" className="footer-logo-image" />
+                </div>
+                <div className="footer-tagline">
+                  <h2 className="footer-title">On Demand Factory OS,<br />Delivered Overnight .</h2>
+                  <p className="footer-description">More than outsourcing<br />we build your international branch</p>
+                </div>
+              </div>
+              
+              <div className="footer-right">
+                <div className="footer-column">
+                  <h3 className="footer-column-title">Industry</h3>
+                  <ul className="footer-links">
+                    <li><a href="#finance">Finance</a></li>
+                    <li><a href="#it">Information Technology</a></li>
+                    <li><a href="#hr">HR</a></li>
+                    <li><a href="#bpo">BPO</a></li>
+                    <li><a href="#kpo">KPO</a></li>
+                  </ul>
+                </div>
+                
+                <div className="footer-column">
+                  <h3 className="footer-column-title">Quick links</h3>
+                  <ul className="footer-links">
+                    <li><a href="#about">About us</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <div className="footer-bottom">
+              <p className="footer-copyright">© 2026 Branchworks Global</p>
+              <div className="footer-social">
+                <a href="#instagram" className="social-icon" aria-label="Instagram">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 7C13.93 7 15.5 8.57 15.5 10.5C15.5 12.43 13.93 14 12 14C10.07 14 8.5 12.43 8.5 10.5C8.5 8.57 10.07 7 12 7ZM12 20C9.97 20 8.11 19.16 6.75 17.83C7.82 16.5 9.69 15.75 12 15.75C14.31 15.75 16.18 16.5 17.25 17.83C15.89 19.16 14.03 20 12 20Z" fill="currentColor"/>
+                  </svg>
+                </a>
+                <a href="#linkedin" className="social-icon" aria-label="LinkedIn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.9 20.1 3 19 3ZM9 17H6.5V10H9V17ZM7.75 8.75C6.92 8.75 6.25 8.08 6.25 7.25C6.25 6.42 6.92 5.75 7.75 5.75C8.58 5.75 9.25 6.42 9.25 7.25C9.25 8.08 8.58 8.75 7.75 8.75ZM17 17H14.5V13.5C14.5 12.4 13.6 11.5 12.5 11.5C11.4 11.5 10.5 12.4 10.5 13.5V17H8V10H10.5V11C11.1 10.2 12.2 9.75 13.25 9.75C15.32 9.75 17 11.43 17 13.5V17Z" fill="currentColor"/>
+                  </svg>
+                </a>
+                <a href="#twitter" className="social-icon" aria-label="Twitter">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.70 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z" fill="currentColor"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
