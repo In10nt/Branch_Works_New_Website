@@ -561,6 +561,27 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+
+      <div className="cta-expert-section">
+        <div className="cta-expert-container">
+          <div className="cta-expert-content">
+            <div className="cta-expert-card">
+              <div className="cta-expert-left">
+                <h2 className="cta-expert-title">Get trusted advice<br />when timing matters</h2>
+                <button className="cta-expert-button">
+                  Talk to an expert
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <div className="cta-expert-right">
+                <img src={`${process.env.PUBLIC_URL}/images/talkToAndExpert.jpg`} alt="Expert Team" className="cta-expert-image" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
