@@ -7,6 +7,7 @@ const HomePage = () => {
   const facesHeaderRef = useRef(null);
   const testimonialRef = useRef(null);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [expandedFaqIndex, setExpandedFaqIndex] = useState(-1); // All items collapsed by default
 
   useEffect(() => {
     const observerOptions = {
@@ -76,6 +77,11 @@ const HomePage = () => {
 
   const handleNextCard = () => {
     setCurrentCardIndex((prev) => Math.min(1, prev + 1)); // Max 1 to show cards 0-2 or 1-3
+  };
+
+  // FAQ accordion toggle
+  const toggleFaq = (index) => {
+    setExpandedFaqIndex(expandedFaqIndex === index ? -1 : index);
   };
 
   return (
@@ -282,30 +288,21 @@ const HomePage = () => {
                 <div className="new-services-list">
                   <div className="new-service-item">
                     <div className="new-service-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <circle cx="16" cy="16" r="16" fill="#172554"/>
-                        <path d="M11.3333 22C10.9667 22 10.6528 21.8694 10.3917 21.6083C10.1306 21.3472 10 21.0333 10 20.6667V11.3333C10 10.9667 10.1306 10.6528 10.3917 10.3917C10.6528 10.1306 10.9667 10 11.3333 10H20.6667C21.0333 10 21.3472 10.1306 21.6083 10.3917C21.8694 10.6528 22 10.9667 22 11.3333V20.6667C22 21.0333 21.8694 21.3472 21.6083 21.6083C21.3472 21.8694 21.0333 22 20.6667 22H11.3333ZM12.6667 19.3333H17.3333V18H12.6667V19.3333ZM12.6667 16.6667H19.3333V15.3333H12.6667V16.6667ZM12.6667 14H19.3333V12.6667H12.6667V14Z" fill="white"/>
-                      </svg>
+                      <img src={`${process.env.PUBLIC_URL}/images/Accounting.svg`} alt="Accounting" className="service-icon-image" />
                     </div>
                     <h3 className="new-service-title">Accounting</h3>
                   </div>
                   
                   <div className="new-service-item">
                     <div className="new-service-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <circle cx="16" cy="16" r="16" fill="#172554"/>
-                        <path d="M11.3333 22C10.9667 22 10.6528 21.8694 10.3917 21.6083C10.1306 21.3472 10 21.0333 10 20.6667V11.3333C10 10.9667 10.1306 10.6528 10.3917 10.3917C10.6528 10.1306 10.9667 10 11.3333 10H20.6667C21.0333 10 21.3472 10.1306 21.6083 10.3917C21.8694 10.6528 22 10.9667 22 11.3333V20.6667C22 21.0333 21.8694 21.3472 21.6083 21.6083C21.3472 21.8694 21.0333 22 20.6667 22H11.3333ZM12.6667 19.3333H17.3333V18H12.6667V19.3333ZM12.6667 16.6667H19.3333V15.3333H12.6667V16.6667ZM12.6667 14H19.3333V12.6667H12.6667V14Z" fill="white"/>
-                      </svg>
+                      <img src={`${process.env.PUBLIC_URL}/images/Finance Reporting.svg`} alt="Finance Reporting" className="service-icon-image" />
                     </div>
                     <h3 className="new-service-title">Finance Reporting</h3>
                   </div>
                   
                   <div className="new-service-item">
                     <div className="new-service-icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
-                        <circle cx="16" cy="16" r="16" fill="#172554"/>
-                        <path d="M11.3333 22C10.9667 22 10.6528 21.8694 10.3917 21.6083C10.1306 21.3472 10 21.0333 10 20.6667V11.3333C10 10.9667 10.1306 10.6528 10.3917 10.3917C10.6528 10.1306 10.9667 10 11.3333 10H20.6667C21.0333 10 21.3472 10.1306 21.6083 10.3917C21.8694 10.6528 22 10.9667 22 11.3333V20.6667C22 21.0333 21.8694 21.3472 21.6083 21.6083C21.3472 21.8694 21.0333 22 20.6667 22H11.3333ZM12.6667 19.3333H17.3333V18H12.6667V19.3333ZM12.6667 16.6667H19.3333V15.3333H12.6667V16.6667ZM12.6667 14H19.3333V12.6667H12.6667V14Z" fill="white"/>
-                      </svg>
+                      <img src={`${process.env.PUBLIC_URL}/images/Payroll.svg`} alt="Payroll" className="service-icon-image" />
                     </div>
                     <h3 className="new-service-title">Payroll</h3>
                   </div>
@@ -478,6 +475,88 @@ const HomePage = () => {
                   <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="faq-section">
+        <div className="faq-container">
+          <div className="faq-content">
+            <div className="faq-header">
+              <h2 className="faq-title">
+                <span className="faq-title-black">Got questions?</span><br />
+                <span className="faq-title-gray">Here's the answers.</span>
+              </h2>
+            </div>
+            
+            <div className="faq-list">
+              <div className="faq-items">
+                <div className={`faq-item ${expandedFaqIndex === 0 ? 'expanded' : ''}`} onClick={() => toggleFaq(0)}>
+                  <div className="faq-question">
+                    <span>What services does your offshore company provide?</span>
+                    <button className="faq-toggle">{expandedFaqIndex === 0 ? '−' : '+'}</button>
+                  </div>
+                  {expandedFaqIndex === 0 && (
+                    <div className="faq-answer">
+                      <p>Flexible Finance Account is a flexible line of credit where, once opened, you can reuse your line of credit to make further purchases from Apple and choose how long you want to make your repayments for.</p>
+                    </div>
+                  )}
+                </div>
+                
+                <div className={`faq-item ${expandedFaqIndex === 1 ? 'expanded' : ''}`} onClick={() => toggleFaq(1)}>
+                  <div className="faq-question">
+                    <span>How do you ensure communication and collaboration with offshore teams?</span>
+                    <button className="faq-toggle">{expandedFaqIndex === 1 ? '−' : '+'}</button>
+                  </div>
+                  {expandedFaqIndex === 1 && (
+                    <div className="faq-answer">
+                      <p>We use modern communication tools and establish clear protocols to ensure seamless collaboration with our offshore teams across different time zones.</p>
+                    </div>
+                  )}
+                </div>
+                
+                <div className={`faq-item ${expandedFaqIndex === 2 ? 'expanded' : ''}`} onClick={() => toggleFaq(2)}>
+                  <div className="faq-question">
+                    <span>What time zone coverage can your team support?</span>
+                    <button className="faq-toggle">{expandedFaqIndex === 2 ? '−' : '+'}</button>
+                  </div>
+                  {expandedFaqIndex === 2 && (
+                    <div className="faq-answer">
+                      <p>Our teams provide coverage across multiple time zones to ensure 24/7 support for your business operations.</p>
+                    </div>
+                  )}
+                </div>
+                
+                <div className={`faq-item ${expandedFaqIndex === 3 ? 'expanded' : ''}`} onClick={() => toggleFaq(3)}>
+                  <div className="faq-question">
+                    <span>How do you handle data security and confidentiality?</span>
+                    <button className="faq-toggle">{expandedFaqIndex === 3 ? '−' : '+'}</button>
+                  </div>
+                  {expandedFaqIndex === 3 && (
+                    <div className="faq-answer">
+                      <p>We implement industry-standard security measures and strict confidentiality protocols to protect your sensitive data.</p>
+                    </div>
+                  )}
+                </div>
+                
+                <div className={`faq-item ${expandedFaqIndex === 4 ? 'expanded' : ''}`} onClick={() => toggleFaq(4)}>
+                  <div className="faq-question">
+                    <span>What is your onboarding process for new clients and teams?</span>
+                    <button className="faq-toggle">{expandedFaqIndex === 4 ? '−' : '+'}</button>
+                  </div>
+                  {expandedFaqIndex === 4 && (
+                    <div className="faq-answer">
+                      <p>Our streamlined onboarding process ensures quick integration of new clients and teams with comprehensive training and support.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+              
+              <div className="faq-footer">
+                <p className="faq-footer-text">Don't see what you want?</p>
+                <a href="#contact" className="faq-contact-link">Send us an email</a>
+              </div>
             </div>
           </div>
         </div>
