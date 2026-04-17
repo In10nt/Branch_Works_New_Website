@@ -1222,7 +1222,12 @@ body.mobile-menu-open {
   .mobile-menu *,
   .mobile-menu-header,
   .mobile-menu-nav,
-  .mobile-menu-cta {
+  .mobile-menu-cta,
+  .mobile-menu .logo,
+  .mobile-menu .cta-button,
+  .mobile-menu nav,
+  .mobile-menu a,
+  .mobile-menu-close {
     display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
@@ -1234,5 +1239,344 @@ body.mobile-menu-open {
     height: 0 !important;
     overflow: hidden !important;
     z-index: -1 !important;
+  }
+}
+
+/* ========================================
+   TABLET RESPONSIVE STYLES
+   Breakpoint: 768px - 1199px
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* CRITICAL: Completely hide mobile menu elements on tablet */
+  .mobile-menu-toggle,
+  .mobile-menu-overlay,
+  .mobile-menu,
+  .mobile-menu *,
+  .mobile-menu-header,
+  .mobile-menu-nav,
+  .mobile-menu-cta,
+  .mobile-menu .logo,
+  .mobile-menu .cta-button,
+  .mobile-menu nav,
+  .mobile-menu a,
+  .mobile-menu-close {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -10000px !important;
+    top: -10000px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    z-index: -999 !important;
+  }
+
+  /* Force hide any active mobile menu states */
+  .mobile-menu.active,
+  .mobile-menu-overlay.active {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Ensure desktop navigation is visible and properly structured */
+  .header-content {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .logo {
+    display: flex !important;
+  }
+
+  .nav-menu {
+    display: flex !important;
+  }
+
+  .cta-button {
+    display: flex !important;
+  }
+
+  /* Page container for tablet */
+  .page-container {
+    width: 100% !important;
+    max-width: 1024px !important;
+    padding: 0 40px !important;
+    margin: 0 auto;
+  }
+
+  /* Header adjustments for tablet */
+  .header-section {
+    padding: 20px 40px;
+  }
+
+  .header-content {
+    max-width: 944px;
+    padding: 12px 24px;
+    margin: 0 auto;
+  }
+
+  /* Logo sizing for tablet */
+  .logo-circle {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-letter {
+    font-size: 24px;
+  }
+
+  .logo-text-svg {
+    height: 24px;
+  }
+
+  /* Navigation styling for tablet */
+  .nav-menu {
+    gap: 32px;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+  }
+
+  /* CTA button styling for tablet */
+  .cta-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    height: 40px;
+  }
+
+  /* Hero section for tablet */
+  .hero-layout {
+    height: 768px;
+    margin-top: -130px;
+  }
+
+  .main-headline {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  .headline-description {
+    width: 422px;
+  }
+
+  /* Video section for tablet */
+  .video-content {
+    width: 850px;
+  }
+
+  .video-placeholder {
+    width: 850px;
+    height: 640px;
+  }
+
+  /* Stats section for tablet */
+  .stats-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .stats-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .stats-cards {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .stat-card {
+    width: 280px;
+  }
+
+  /* Map section for tablet */
+  .map-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .map-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  /* Services section for tablet */
+  .new-section-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .new-section-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .new-section-tab-content {
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .new-tab-content-left {
+    width: 50%;
+  }
+
+  .new-tab-content-right {
+    width: 50%;
+    height: 400px;
+  }
+
+  /* Faces section for tablet */
+  .faces-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .faces-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .face-item {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Tomorrow section for tablet */
+  .tomorrow-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .tomorrow-content {
+    flex-direction: row;
+  }
+
+  .tomorrow-title {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  /* Testimonial section for tablet */
+  .testimonial-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .testimonial-text {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  /* Customer stories for tablet */
+  .customer-stories-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .customer-stories-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  /* FAQ section for tablet */
+  .faq-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .faq-title {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .faq-items {
+    max-width: 800px;
+  }
+
+  .faq-item {
+    padding: 32px;
+  }
+
+  /* CTA Expert section for tablet */
+  .cta-expert-container {
+    max-width: 944px;
+    margin: 0 auto;
+  }
+
+  .cta-expert-card {
+    flex-direction: row;
+    gap: 48px;
+  }
+
+  .cta-expert-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  /* Footer for tablet */
+  .footer-container {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    flex-direction: row;
+    gap: 64px;
+  }
+
+  .footer-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+/* CRITICAL FIX: Force hide mobile menu on tablet and desktop */
+@media (min-width: 394px) {
+  .mobile-menu-toggle,
+  .mobile-menu-overlay,
+  .mobile-menu,
+  .mobile-menu.active,
+  .mobile-menu-overlay.active {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    z-index: -9999 !important;
+    transform: translateX(-9999px) !important;
+  }
+
+  /* Ensure desktop navigation is visible */
+  .header-content .logo,
+  .header-content .nav-menu,
+  .header-content .cta-button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 100 !important;
+  }
+
+  /* Hide mobile menu toggle specifically */
+  .header-content .mobile-menu-toggle {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 }

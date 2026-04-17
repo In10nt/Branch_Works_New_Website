@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './HomePage.css';
 import './mobile-responsive.css';
-import './tablet-responsive.css';
 
 const HomePage = () => {
   const statsHeadlineRef = useRef(null);
