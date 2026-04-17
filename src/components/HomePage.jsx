@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './HomePage.css';
+import './mobile-responsive.css';
 
 const HomePage = () => {
   const statsHeadlineRef = useRef(null);
@@ -308,7 +309,7 @@ const HomePage = () => {
                   </div>
                 </div>
 
-                <button className="new-cta-button">Talk to an expert</button>
+                <button className="new-cta-button">Know more</button>
               </div>
 
               <div className="new-tab-content-right">

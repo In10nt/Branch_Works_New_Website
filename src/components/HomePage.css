@@ -1206,16 +1206,18 @@ body {
 
 .new-expert-label {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 55px;
+  left: 55px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
   padding: 12px 16px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(4px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 120px;
 }
 
 .new-expert-name {
@@ -1336,62 +1338,6 @@ body {
   }
 }
 
-/* Mobile/Tablet - Static Grid Layout */
-@media (max-width: 768px) {
-  .faces-section {
-    padding: 40px 0;
-  }
-  
-  .faces-container {
-    min-height: auto;
-    padding: 40px 16px;
-  }
-  
-  .faces-grid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  .faces-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    animation: none !important;
-    transform: none !important;
-  }
-
-  .face-item {
-    width: 60px !important;
-    height: 60px !important;
-    min-width: 60px !important;
-    min-height: 60px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .faces-grid {
-    max-width: 400px;
-  }
-  
-  .faces-row {
-    gap: 6px;
-  }
-  
-  .face-item {
-    width: 50px !important;
-    height: 50px !important;
-    min-width: 50px !important;
-    min-height: 50px !important;
-  }
-}
-
 /* Face Items */
 .face-item {
   width: 100px;
@@ -1412,52 +1358,6 @@ body {
   border-radius: 50%;
 }
 
-/* Responsive Grid */
-@media (max-width: 1200px) {
-  .faces-grid {
-    padding: 0 20px;
-  }
-  
-  .faces-row {
-    gap: 12px;
-  }
-  
-  .face-item {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-@media (max-width: 768px) {
-  .faces-grid {
-    gap: 12px;
-    padding: 0 16px;
-  }
-  
-  .faces-row {
-    gap: 8px;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 8px;
-  }
-  
-  .face-item {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-@media (max-width: 480px) {
-  .faces-row {
-    gap: 6px;
-  }
-  
-  .face-item {
-    width: 48px;
-    height: 48px;
-  }
-}
-
 .face-item:nth-child(odd) {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 }
@@ -1473,104 +1373,7 @@ body {
 .face-item:nth-child(5n) {
   background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
 }
-/* Responsive Design for Faces Section */
-@media (max-width: 1200px) {
-  .faces-container {
-    width: 100%;
-    max-width: 1200px;
-    padding: 64px 20px;
-  }
-  
-  .faces-grid {
-    overflow-x: auto;
-    padding: 0 20px;
-  }
-  
-  .faces-row {
-    min-width: 900px;
-    justify-content: flex-start;
-  }
-}
-
-@media (max-width: 768px) {
-  .faces-section {
-    padding: 40px 0;
-  }
-  
-  .faces-container {
-    height: auto;
-    padding: 40px 16px;
-  }
-  
-  .faces-header {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-  }
-  
-  .faces-title {
-    width: 100%;
-    height: auto;
-    font-size: 24px;
-    line-height: 30px;
-  }
-  
-  .faces-description {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-  }
-  
-  .faces-grid {
-    gap: 12px;
-    padding: 0 10px;
-  }
-  
-  .faces-row {
-    gap: 12px;
-    min-width: 600px;
-  }
-  
-  .face-item {
-    width: 60px;
-    height: 60px;
-  }
-}
-
-@media (max-width: 393px) {
-  .faces-section {
-    padding: 32px 0;
-  }
-  
-  .faces-container {
-    padding: 32px 16px;
-  }
-  
-  .faces-title {
-    font-size: 20px;
-    line-height: 26px;
-  }
-  
-  .faces-description {
-    font-size: 14px;
-    line-height: 20px;
-  }
-  
-  .faces-cta-button {
-    font-size: 12px;
-    padding: 6px 12px;
-    height: 36px;
-  }
-  
-  .faces-row {
-    min-width: 500px;
-  }
-  
-  .face-item {
-    width: 48px;
-    height: 48px;
-  }
-}
+/* Faces Content and Header Styles */
 .faces-content {
   display: flex;
   flex-direction: column;
@@ -2953,14 +2756,14 @@ body {
   }
   
   .faq-title {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 28px;
+    line-height: 34px;
     height: auto;
   }
   
   .faq-list {
     height: auto;
-    gap: 24px;
+    gap: 48px;
   }
   
   .faq-items {
@@ -2970,13 +2773,13 @@ body {
 
 @media (max-width: 480px) {
   .faq-title {
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 24px;
+    line-height: 30px;
   }
   
   .faq-question span {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
