@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './HomePage.css';
 import './mobile-responsive.css';
+import './tablet-responsive.css';
 
 const HomePage = () => {
   const statsHeadlineRef = useRef(null);
@@ -54,31 +55,37 @@ const HomePage = () => {
       });
     }, observerOptions);
 
-    if (statsHeadlineRef.current) {
-      observer.observe(statsHeadlineRef.current);
+    // Store current ref values
+    const statsHeadline = statsHeadlineRef.current;
+    const statsCards = statsCardsRef.current;
+    const facesHeader = facesHeaderRef.current;
+    const testimonial = testimonialRef.current;
+
+    if (statsHeadline) {
+      observer.observe(statsHeadline);
     }
-    if (statsCardsRef.current) {
-      observer.observe(statsCardsRef.current);
+    if (statsCards) {
+      observer.observe(statsCards);
     }
-    if (facesHeaderRef.current) {
-      observer.observe(facesHeaderRef.current);
+    if (facesHeader) {
+      observer.observe(facesHeader);
     }
-    if (testimonialRef.current) {
-      observer.observe(testimonialRef.current);
+    if (testimonial) {
+      observer.observe(testimonial);
     }
 
     return () => {
-      if (statsHeadlineRef.current) {
-        observer.unobserve(statsHeadlineRef.current);
+      if (statsHeadline) {
+        observer.unobserve(statsHeadline);
       }
-      if (statsCardsRef.current) {
-        observer.unobserve(statsCardsRef.current);
+      if (statsCards) {
+        observer.unobserve(statsCards);
       }
-      if (facesHeaderRef.current) {
-        observer.unobserve(facesHeaderRef.current);
+      if (facesHeader) {
+        observer.unobserve(facesHeader);
       }
-      if (testimonialRef.current) {
-        observer.unobserve(testimonialRef.current);
+      if (testimonial) {
+        observer.unobserve(testimonial);
       }
     };
   }, []);
