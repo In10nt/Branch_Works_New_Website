@@ -1206,8 +1206,8 @@ body {
 
 .new-expert-label {
   position: absolute;
-  bottom: 55px;
-  left: 55px;
+  bottom: 30px;
+  left: 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

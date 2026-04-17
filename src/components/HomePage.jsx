@@ -9,6 +9,35 @@ const HomePage = () => {
   const testimonialRef = useRef(null);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [expandedFaqIndex, setExpandedFaqIndex] = useState(-1); // All items collapsed by default
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Mobile menu toggle functions
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Close mobile menu when clicking overlay
+  const handleOverlayClick = () => {
+    closeMobileMenu();
+  };
+
+  // Handle body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+    };
+  }, [isMobileMenuOpen]);
 
   useEffect(() => {
     const observerOptions = {
@@ -105,6 +134,54 @@ const HomePage = () => {
           </nav>
           
           <button className="cta-button">Talk to an expert</button>
+          
+          {/* Mobile Menu Toggle */}
+          <button 
+            className={`mobile-menu-toggle ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        <div 
+          className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}
+          onClick={handleOverlayClick}
+        ></div>
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+          <div className="mobile-menu-header">
+            <div className="logo">
+              <div className="logo-background">
+                <div className="logo-circle">
+                  <span className="logo-letter">B</span>
+                </div>
+              </div>
+              <img src={`${process.env.PUBLIC_URL}/images/branchWorksGlobalNavText.svg`} alt="BRANCHWORKS GLOBAL" className="logo-text-svg" />
+            </div>
+            <button 
+              className="mobile-menu-close"
+              onClick={closeMobileMenu}
+              aria-label="Close mobile menu"
+            >
+              ×
+            </button>
+          </div>
+          
+          <nav className="mobile-menu-nav">
+            <a href="#industry" onClick={closeMobileMenu}>Industry</a>
+            <a href="#roles" onClick={closeMobileMenu}>Our Roles</a>
+            <a href="#about" onClick={closeMobileMenu}>About</a>
+          </nav>
+          
+          <div className="mobile-menu-cta">
+            <button className="cta-button" onClick={closeMobileMenu}>Talk to an expert</button>
+          </div>
         </div>
       </header>
 
@@ -296,7 +373,7 @@ const HomePage = () => {
                   
                   <div className="new-service-item">
                     <div className="new-service-icon">
-                      <img src={`${process.env.PUBLIC_URL}/images/Finance Reporting.svg`} alt="Finance Reporting" className="service-icon-image" />
+                      <img src={`${process.env.PUBLIC_URL}/images/financeReporting.svg`} alt="Finance Reporting" className="service-icon-image" />
                     </div>
                     <h3 className="new-service-title">Finance Reporting</h3>
                   </div>
