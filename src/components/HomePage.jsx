@@ -211,49 +211,49 @@ const HomePage = () => {
             <div className="logos-container">
               <div className="logos-wrapper">
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Monday" className="company-logo google-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Hubstaff" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Deputy" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Myob" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="Quickbooks" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Monday" className="company-logo google-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Hubstaff" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Deputy" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Myob" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="Quickbooks" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Monday" className="company-logo google-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Hubstaff" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Deputy" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Myob" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
                 </div>
                 <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="Quickbooks" className="company-logo" />
+                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
                 </div>
               </div>
             </div>
@@ -292,26 +292,24 @@ const HomePage = () => {
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="stat-company-logo" />
               </div>
-              <p className="stat-description">CFOs are prioritising finance transformation
-                PwC</p>
-              <div className="stat-value" style={{ color: '#60A5FA' }}>65%</div>
+              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <div className="stat-value" style={{ color: '#0D9488' }}>70%</div>
             </div>
 
             <div className="stat-card">
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="stat-company-logo" />
               </div>
-              <p className="stat-description">Businesses use offshore teams to scale faster Deloitte</p>
-              <div className="stat-value" style={{ color: '#60A5FA' }}>54%</div>
+              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <div className="stat-value" style={{ color: '#EB4E00' }}>4x</div>
             </div>
 
             <div className="stat-card">
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="stat-company-logo" />
               </div>
-              <p className="stat-description">Companies invest in automation to improve efficiency
-                McKinsey</p>
-              <div className="stat-value" style={{ color: '#60A5FA' }}>45%</div>
+              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <div className="stat-value" style={{ color: '#CA8A04' }}>60%</div>
             </div>
           </div>
         </div>
@@ -323,12 +321,14 @@ const HomePage = () => {
             <div className="map-text-box">
               <h2 className="map-title">Supporting organisations worldwide with offshore expertise</h2>
               <p className="map-description">
-                A trusted offshore partner supporting businesses globally
+                A trusted offshore partner supporting businesses <br />
+                across Australia, the United Kingdom, the United States, <br />
+                Europe, and the Asia-Pacific region
               </p>
             </div>
           </div>
           <div className="map-image-box">
-            <img src={`${process.env.PUBLIC_URL}/images/worldMap.jpg`} alt="World Map" className="world-map" />
+            <img src={`${process.env.PUBLIC_URL}/images/worldMap.png`} alt="World Map" className="world-map" />
           </div>
         </div>
       </div>
@@ -419,30 +419,21 @@ const HomePage = () => {
               </p>
               <button className="faces-cta-button">Join free</button>
             </div>
-
+            
             <div className="faces-grid">
+              {/* Row 1 - Scrolls Left from corner */}
               <div className="faces-row faces-row-1">
-                <div className="faces-strip-container">
-                  <img src="/images/faces1.png" alt="Face 1" className="face-strip-image" />
-                  <img src="/images/faces2.png" alt="Face 2" className="face-strip-image" />
-                  <img src="/images/faces3.png" alt="Face 3" className="face-strip-image" />
-                  <img src="/images/faces4.png" alt="Face 4" className="face-strip-image" />
-                  <img src="/images/faces5.png" alt="Face 5" className="face-strip-image" />
-                </div>
-                <div className="faces-strip-container">
-                  <img src="/images/faces1.png" alt="Face 1" className="face-strip-image" />
-                  <img src="/images/faces2.png" alt="Face 2" className="face-strip-image" />
-                  <img src="/images/faces3.png" alt="Face 3" className="face-strip-image" />
-                  <img src="/images/faces4.png" alt="Face 4" className="face-strip-image" />
-                  <img src="/images/faces5.png" alt="Face 5" className="face-strip-image" />
-                </div>
-                <div className="faces-strip-container">
-                  <img src="/images/faces1.png" alt="Face 1" className="face-strip-image" />
-                  <img src="/images/faces2.png" alt="Face 2" className="face-strip-image" />
-                  <img src="/images/faces3.png" alt="Face 3" className="face-strip-image" />
-                  <img src="/images/faces4.png" alt="Face 4" className="face-strip-image" />
-                  <img src="/images/faces5.png" alt="Face 5" className="face-strip-image" />
-                </div>
+                {generateFaceItems(1, 100)}
+              </div>
+              
+              {/* Row 2 - Scrolls Right from corner */}
+              <div className="faces-row faces-row-2">
+                {generateFaceItems(5, 100)}
+              </div>
+              
+              {/* Row 3 - Scrolls Left from corner */}
+              <div className="faces-row faces-row-3">
+                {generateFaceItems(8, 100)}
               </div>
             </div>
           </div>
@@ -494,8 +485,9 @@ const HomePage = () => {
             
             <div className="testimonial-quote">
               <p className="testimonial-text">
-                "We moved from reactive bookkeeping to a structured finance function.<br />
-                The visibility and control we now have has changed how we operate."
+                "Public earns high marks for ease-of-use and its<br />
+                investment selection - options traders will likely get excited<br />
+                about their PFOF rebate program"
               </p>
             </div>
             
@@ -508,8 +500,8 @@ const HomePage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/fobes_girl.jpg`} alt="Julie Sweet" className="testimonial-avatar-image" />
               </div>
               <div className="testimonial-info">
-                <h3 className="testimonial-name">CFO</h3>
-                <p className="testimonial-role">SME Business</p>
+                <h3 className="testimonial-name">Julie Sweet</h3>
+                <p className="testimonial-role">Finance Expert - Company name</p>
               </div>
             </div>
           </div>

@@ -194,40 +194,6 @@
     height: auto;
     padding: 40px 0;
     margin-top: 0;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    background: linear-gradient(180deg, #0189EC 0%, #87CEEB 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-layout::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../public/images/background image.png') left center / cover no-repeat;
-    transform: scaleX(-1);
-    z-index: 1;
-  }
-
-  .hero-layout::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../public/images/background image.png') right center / cover no-repeat;
-    z-index: 1;
-  }
-
-  .hero-layout > * {
-    position: relative;
-    z-index: 2;
   }
 
   .hero-content {
@@ -296,10 +262,6 @@
     height: auto;
     margin-top: -50px;
     padding: 40px 0;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    background: #172554;
   }
 
   .video-content {
@@ -1395,40 +1357,6 @@ body.mobile-menu-open {
   .hero-layout {
     height: 768px;
     margin-top: -130px;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    background: linear-gradient(180deg, #0189EC 0%, #87CEEB 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero-layout::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../public/images/background image.png') left center / cover no-repeat;
-    transform: scaleX(-1);
-    z-index: 1;
-  }
-
-  .hero-layout::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: url('../../public/images/background image.png') right center / cover no-repeat;
-    z-index: 1;
-  }
-
-  .hero-layout > * {
-    position: relative;
-    z-index: 2;
   }
 
   .main-headline {
@@ -1441,13 +1369,6 @@ body.mobile-menu-open {
   }
 
   /* Video section for tablet */
-  .video-section {
-    background: #172554;
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-  }
-
   .video-content {
     width: 850px;
   }
