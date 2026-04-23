@@ -135,8 +135,8 @@ const HomePage = () => {
           
           <nav className="nav-menu">
             <a href="#industry">Industry</a>
-            <a href="#roles">Our Roles</a>
             <a href="#about">About</a>
+            <a href="#careers">Careers</a>
           </nav>
           
           <button className="cta-button">Talk to an expert</button>
@@ -181,8 +181,8 @@ const HomePage = () => {
           
           <nav className="mobile-menu-nav">
             <a href="#industry" onClick={closeMobileMenu}>Industry</a>
-            <a href="#roles" onClick={closeMobileMenu}>Our Roles</a>
             <a href="#about" onClick={closeMobileMenu}>About</a>
+            <a href="#careers" onClick={closeMobileMenu}>Careers</a>
           </nav>
           
           <div className="mobile-menu-cta">
@@ -210,51 +210,9 @@ const HomePage = () => {
           <div className="logos-section">
             <div className="logos-container">
               <div className="logos-wrapper">
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="company-logo google-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/heineken.svg`} alt="Heineken" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/intrax.png`} alt="Intrax" className="company-logo" />
-                </div>
-                <div className="logo-item">
-                  <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="company-logo" />
-                </div>
+                <img src={`${process.env.PUBLIC_URL}/images/Brands.svg`} alt="Brand Partners" className="brands-svg" />
+                <img src={`${process.env.PUBLIC_URL}/images/Brands.svg`} alt="Brand Partners" className="brands-svg" />
+                <img src={`${process.env.PUBLIC_URL}/images/Brands.svg`} alt="Brand Partners" className="brands-svg" />
               </div>
             </div>
           </div>
@@ -328,7 +286,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="map-image-box">
-            <img src={`${process.env.PUBLIC_URL}/images/worldMap.png`} alt="World Map" className="world-map" />
+            <img src={`${process.env.PUBLIC_URL}/images/Map.svg`} alt="World Map" className="world-map" />
           </div>
         </div>
       </div>
@@ -370,26 +328,7 @@ const HomePage = () => {
                 </p>
                 
                 <div className="new-services-list">
-                  <div className="new-service-item">
-                    <div className="new-service-icon">
-                      <img src={`${process.env.PUBLIC_URL}/images/Accounting.svg`} alt="Accounting" className="service-icon-image" />
-                    </div>
-                    <h3 className="new-service-title">Accounting</h3>
-                  </div>
-                  
-                  <div className="new-service-item">
-                    <div className="new-service-icon">
-                      <img src={`${process.env.PUBLIC_URL}/images/financeReporting.svg`} alt="Finance Reporting" className="service-icon-image" />
-                    </div>
-                    <h3 className="new-service-title">Finance Reporting</h3>
-                  </div>
-                  
-                  <div className="new-service-item">
-                    <div className="new-service-icon">
-                      <img src={`${process.env.PUBLIC_URL}/images/Payroll.svg`} alt="Payroll" className="service-icon-image" />
-                    </div>
-                    <h3 className="new-service-title">Payroll</h3>
-                  </div>
+                  <img src={`${process.env.PUBLIC_URL}/images/Container.svg`} alt="Services" className="services-container-svg" />
                 </div>
 
                 <button className="new-cta-button">Know more</button>

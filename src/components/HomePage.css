@@ -343,6 +343,13 @@ body {
   flex-shrink: 0;
 }
 
+.brands-svg {
+  height: 48px;
+  width: auto;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
 @keyframes logoSwipe {
   0% {
     transform: translateX(0);
@@ -1077,10 +1084,10 @@ body {
   display: flex;
   width: 314px;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   align-self: stretch;
-  height: 268px;
+  height: 532px;
 }
 
 .new-tab-description {
@@ -1102,8 +1109,16 @@ body {
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
-  margin-top: 200px;
-  margin-bottom: 16px;
+  margin-top: 120px;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.services-container-svg {
+  width: 100%;
+  max-width: 314px;
+  height: auto;
+  display: block;
 }
 
 .new-service-item {
@@ -1175,7 +1190,7 @@ body {
   flex-shrink: 0;
   opacity: 1;
   box-sizing: border-box;
-  margin-top: 16px;
+  margin-top: auto;
 }
 
 .new-cta-button:hover {
