@@ -343,6 +343,13 @@ body {
   flex-shrink: 0;
 }
 
+.brands-svg {
+  height: 48px;
+  width: auto;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
 @keyframes logoSwipe {
   0% {
     transform: translateX(0);
@@ -1102,8 +1109,15 @@ body {
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
-  margin-top: 200px;
-  margin-bottom: 16px;
+  margin-top: 120px;
+  margin-bottom: 24px;
+}
+
+.services-container-svg {
+  width: 100%;
+  max-width: 314px;
+  height: auto;
+  display: block;
 }
 
 .new-service-item {
@@ -1175,7 +1189,7 @@ body {
   flex-shrink: 0;
   opacity: 1;
   box-sizing: border-box;
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .new-cta-button:hover {
