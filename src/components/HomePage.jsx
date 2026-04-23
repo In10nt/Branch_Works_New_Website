@@ -10,6 +10,37 @@ const HomePage = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [expandedFaqIndex, setExpandedFaqIndex] = useState(-1); // All items collapsed by default
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('Finance');
+
+  // Tab switching function
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
+
+  // Tab content data
+  const tabContent = {
+    Finance: {
+      description: "True extension of their internal workforce, from our operational hub in Sri Lanka.",
+      expertName: "Alexandra",
+      expertRole: "Finance Expert",
+      expertImage: "girlImageFinance.jpg",
+      showContainer: true
+    },
+    "Technology Support": {
+      description: "Secure systems and infrastructure that enable your teams to operate efficiently and scale with confidence.",
+      expertName: "Alexandra",
+      expertRole: "Technology Specialist",
+      expertImage: "girlImageFinance.jpg",
+      showContainer: false
+    },
+    "Offshore Hiring": {
+      description: "Dedicated offshore teams aligned with your business processes, working as an extension of your internal workforce.",
+      expertName: "Alexandra",
+      expertRole: "Offshore Hiring Expert",
+      expertImage: "girlImageFinance.jpg",
+      showContainer: false
+    }
+  };
 
   // Mobile menu toggle functions
   const toggleMobileMenu = () => {
@@ -107,12 +138,16 @@ const HomePage = () => {
   };
 
   // Customer Stories carousel navigation
+  const totalCards = 8; // Total number of cards
+  const cardsPerView = 3; // Number of full cards visible at once (plus half of next one)
+  const maxIndex = totalCards - cardsPerView; // Maximum index we can scroll to
+
   const handlePrevCard = () => {
     setCurrentCardIndex((prev) => Math.max(0, prev - 1));
   };
 
   const handleNextCard = () => {
-    setCurrentCardIndex((prev) => Math.min(1, prev + 1)); // Max 1 to show cards 0-2 or 1-3
+    setCurrentCardIndex((prev) => Math.min(maxIndex, prev + 1));
   };
 
   // FAQ accordion toggle
@@ -250,7 +285,7 @@ const HomePage = () => {
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="stat-company-logo" />
               </div>
-              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <p className="stat-description">We connect forward-thinking enterprises with rigorously vetted offshore professionals.</p>
               <div className="stat-value" style={{ color: '#0D9488' }}>70%</div>
             </div>
 
@@ -258,7 +293,7 @@ const HomePage = () => {
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="stat-company-logo" />
               </div>
-              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <p className="stat-description">We connect forward-thinking enterprises with rigorously vetted offshore professionals.</p>
               <div className="stat-value" style={{ color: '#EB4E00' }}>4x</div>
             </div>
 
@@ -266,7 +301,7 @@ const HomePage = () => {
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="stat-company-logo" />
               </div>
-              <p className="stat-description">We connects forward-thinking with rigorously</p>
+              <p className="stat-description">We connect forward-thinking enterprises with rigorously vetted offshore professionals.</p>
               <div className="stat-value" style={{ color: '#CA8A04' }}>60%</div>
             </div>
           </div>
@@ -303,20 +338,23 @@ const HomePage = () => {
 
             <div className="new-section-tabs-wrapper">
               <div className="new-section-tabs">
-                <button className="new-tab-button active">
+                <button 
+                  className={`new-tab-button ${activeTab === 'Finance' ? 'active' : ''}`}
+                  onClick={() => handleTabClick('Finance')}
+                >
                   Finance
                 </button>
-                <button className="new-tab-button">
-                  IT
+                <button 
+                  className={`new-tab-button ${activeTab === 'Technology Support' ? 'active' : ''}`}
+                  onClick={() => handleTabClick('Technology Support')}
+                >
+                  Technology Support
                 </button>
-                <button className="new-tab-button">
-                  HR
-                </button>
-                <button className="new-tab-button">
-                  BPO
-                </button>
-                <button className="new-tab-button">
-                  KPO
+                <button 
+                  className={`new-tab-button ${activeTab === 'Offshore Hiring' ? 'active' : ''}`}
+                  onClick={() => handleTabClick('Offshore Hiring')}
+                >
+                  Offshore Hiring
                 </button>
               </div>
             </div>
@@ -324,21 +362,23 @@ const HomePage = () => {
             <div className="new-section-tab-content">
               <div className="new-tab-content-left">
                 <p className="new-tab-description">
-                  Ttrue extension of their internal workforce, from our operational hub in Sri Lanka.
+                  {tabContent[activeTab].description}
                 </p>
                 
-                <div className="new-services-list">
-                  <img src={`${process.env.PUBLIC_URL}/images/Container.svg`} alt="Services" className="services-container-svg" />
-                </div>
+                {tabContent[activeTab].showContainer && (
+                  <div className="new-services-list">
+                    <img src={`${process.env.PUBLIC_URL}/images/Container.svg`} alt="Services" className="services-container-svg" />
+                  </div>
+                )}
 
                 <button className="new-cta-button">Know more</button>
               </div>
 
               <div className="new-tab-content-right">
-                <img src={`${process.env.PUBLIC_URL}/images/girlImageFinance.jpg`} alt="Alexandra - Finance Expert" className="new-expert-photo" />
+                <img src={`${process.env.PUBLIC_URL}/images/${tabContent[activeTab].expertImage}`} alt={`${tabContent[activeTab].expertName} - ${tabContent[activeTab].expertRole}`} className="new-expert-photo" />
                 <div className="new-expert-label">
-                  <div className="new-expert-name">Alexandra</div>
-                  <div className="new-expert-role">Finance Expert</div>
+                  <div className="new-expert-name">{tabContent[activeTab].expertName}</div>
+                  <div className="new-expert-role">{tabContent[activeTab].expertRole}</div>
                 </div>
               </div>
             </div>
@@ -424,9 +464,7 @@ const HomePage = () => {
             
             <div className="testimonial-quote">
               <p className="testimonial-text">
-                "Public earns high marks for ease-of-use and its<br />
-                investment selection - options traders will likely get excited<br />
-                about their PFOF rebate program"
+                "We moved from reactive bookkeeping to a structured finance function. The visibility and control we now have has changed how we operate."
               </p>
             </div>
             
@@ -462,19 +500,78 @@ const HomePage = () => {
             </div>
             
             <div className="customer-stories-cards">
-              <div className="cards-container" style={{ transform: `translateX(-${currentCardIndex * 262}px)` }}>
-                <div className="customer-story-card featured-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_section_image.png`} alt="Customer Story" className="story-card-image" />
-                  <button className="story-read-more">Read more</button>
+              <div className="customer-stories-grid" style={{ transform: `translateX(-${currentCardIndex * 296.67}px)` }}>
+                {/* Individual Cards */}
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="#" className="story-read-more-link">Read more</a>
+                  </div>
                 </div>
-                <div className="customer-story-card placeholder-card">
-                  <div className="placeholder-content"></div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="#" className="story-read-more-link">Read more</a>
+                  </div>
                 </div>
-                <div className="customer-story-card placeholder-card">
-                  <div className="placeholder-content"></div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="#" className="story-read-more-link">Read more</a>
+                  </div>
                 </div>
-                <div className="customer-story-card placeholder-card">
-                  <div className="placeholder-content"></div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
+                    <a href="#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
+                    <a href="#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Digital Transformation: Scaling Teams Globally</h3>
+                    <a href="#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 22, 2026</div>
+                    <h3 className="story-title">Cost Optimization: 40% Savings with Offshore Teams</h3>
+                    <a href="#" className="story-read-more-link">Read more</a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -492,7 +589,7 @@ const HomePage = () => {
               <button 
                 className="nav-arrow nav-next" 
                 onClick={handleNextCard}
-                disabled={currentCardIndex === 1}
+                disabled={currentCardIndex === maxIndex}
               >
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
