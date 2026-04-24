@@ -162,7 +162,7 @@ const HomePage = () => {
           <div className="logo">
             <div className="logo-background">
               <div className="logo-circle">
-                <span className="logo-letter">B</span>
+                <img src={`${process.env.PUBLIC_URL}/images/Eclipse.png`} alt="Branchworks Logo" className="logo-icon" />
               </div>
             </div>
             <img src={`${process.env.PUBLIC_URL}/images/branchWorksGlobalNavText.svg`} alt="BRANCHWORKS GLOBAL" className="logo-text-svg" />
@@ -200,7 +200,7 @@ const HomePage = () => {
             <div className="logo">
               <div className="logo-background">
                 <div className="logo-circle">
-                  <span className="logo-letter">B</span>
+                  <img src={`${process.env.PUBLIC_URL}/images/Eclipse.png`} alt="Branchworks Logo" className="logo-icon" />
                 </div>
               </div>
               <img src={`${process.env.PUBLIC_URL}/images/branchWorksGlobalNavText.svg`} alt="BRANCHWORKS GLOBAL" className="logo-text-svg" />
