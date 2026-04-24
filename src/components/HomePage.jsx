@@ -399,20 +399,77 @@ const HomePage = () => {
               <button className="faces-cta-button">Join free</button>
             </div>
             
-            <div className="faces-grid">
-              {/* Row 1 - Scrolls Left from corner */}
-              <div className="faces-row faces-row-1">
-                {generateFaceItems(1, 100)}
+            <div className="real-faces-grid">
+              <div className="real-face-item real-face-1">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_1.png`} 
+                  alt="Real Face 1" 
+                  className="real-face-image" 
+                />
               </div>
-              
-              {/* Row 2 - Scrolls Right from corner */}
-              <div className="faces-row faces-row-2">
-                {generateFaceItems(5, 100)}
+              <div className="real-face-item real-face-2">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_2.png`} 
+                  alt="Real Face 2" 
+                  className="real-face-image" 
+                />
               </div>
-              
-              {/* Row 3 - Scrolls Left from corner */}
-              <div className="faces-row faces-row-3">
-                {generateFaceItems(8, 100)}
+              <div className="real-face-item real-face-3">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_3.png`} 
+                  alt="Real Face 3" 
+                  className="real-face-image" 
+                />
+              </div>
+              <div className="real-face-item real-face-4">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_4.png`} 
+                  alt="Real Face 4" 
+                  className="real-face-image" 
+                />
+              </div>
+              <div className="real-face-item real-face-5">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_5.png`} 
+                  alt="Real Face 5" 
+                  className="real-face-image" 
+                />
+              </div>
+              {/* Duplicate for seamless scrolling */}
+              <div className="real-face-item real-face-1">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_1.png`} 
+                  alt="Real Face 1" 
+                  className="real-face-image" 
+                />
+              </div>
+              <div className="real-face-item real-face-2">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_2.png`} 
+                  alt="Real Face 2" 
+                  className="real-face-image" 
+                />
+              </div>
+              <div className="real-face-item real-face-3">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_3.png`} 
+                  alt="Real Face 3" 
+                  className="real-face-image" 
+                />
+              </div>
+              <div className="real-face-item real-face-4">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_4.png`} 
+                  alt="Real Face 4" 
+                  className="real-face-image" 
+                />
+              </div>
+              <div className="real-face-item real-face-5">
+                <img 
+                  src={`${process.env.PUBLIC_URL}/images/realFace_5.png`} 
+                  alt="Real Face 5" 
+                  className="real-face-image" 
+                />
               </div>
             </div>
           </div>
