@@ -285,24 +285,24 @@ const HomePage = () => {
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="stat-company-logo" />
               </div>
-              <p className="stat-description">We connect forward-thinking enterprises with rigorously vetted offshore professionals.</p>
-              <div className="stat-value" style={{ color: '#0D9488' }}>70%</div>
+              <p className="stat-description">CFOs are prioritising finance transformation</p>
+              <div className="stat-value" style={{ color: '#60A5FA' }}>65%</div>
             </div>
 
             <div className="stat-card">
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="stat-company-logo" />
               </div>
-              <p className="stat-description">We connect forward-thinking enterprises with rigorously vetted offshore professionals.</p>
-              <div className="stat-value" style={{ color: '#EB4E00' }}>4x</div>
+              <p className="stat-description">Businesses use offshore teams to scale faster</p>
+              <div className="stat-value" style={{ color: '#60A5FA' }}>54%</div>
             </div>
 
             <div className="stat-card">
               <div className="stat-logo">
                 <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="stat-company-logo" />
               </div>
-              <p className="stat-description">We connect forward-thinking enterprises with rigorously vetted offshore professionals.</p>
-              <div className="stat-value" style={{ color: '#CA8A04' }}>60%</div>
+              <p className="stat-description">Companies invest in automation to improve efficiency</p>
+              <div className="stat-value" style={{ color: '#60A5FA' }}>60%</div>
             </div>
           </div>
         </div>
