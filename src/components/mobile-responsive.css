@@ -380,9 +380,14 @@
 
   .new-section-tabs {
     justify-content: flex-start;
-    overflow-x: auto;
+    overflow-x: hidden;
     gap: 0;
-    padding-bottom: 8px;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  .new-section-tabs::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
   }
 
   .new-tab-button {
