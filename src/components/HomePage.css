@@ -44,6 +44,12 @@ body {
   gap: 12px;
   flex-shrink: 0;
   position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo:hover {
+  text-decoration: none;
 }
 
 .logo-background {

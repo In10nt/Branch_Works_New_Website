@@ -1,0 +1,473 @@
+/* ========================================
+   ABOUT PAGE MOBILE RESPONSIVE STYLES
+   ======================================== */
+
+/* Mobile - 393px and below */
+@media (max-width: 393px) {
+  /* About Hero Section */
+  .about-hero-layout {
+    height: auto;
+    padding: 40px 0;
+    margin-top: 0;
+  }
+
+  .about-hero-layout .hero-content {
+    gap: 40px;
+  }
+
+  .about-hero-layout .main-headline {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.28px;
+  }
+
+  .about-hero-layout .headline-description {
+    width: 100%;
+    max-width: 361px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .about-hero-layout .schedule-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    height: auto;
+  }
+
+  /* About Section Two - Mobile */
+  .about-section-two {
+    padding: 40px 0;
+  }
+
+  .about-section-two-container {
+    width: 100%;
+    max-width: 361px;
+    padding: 0 16px;
+  }
+
+  .about-section-two-content {
+    gap: 20px;
+  }
+
+  .about-section-two-title {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.96px;
+    width: 100%;
+  }
+
+  .about-section-two-description {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* About Section Three - Mobile */
+  .about-section-three {
+    padding: 40px 0;
+  }
+
+  .about-section-three-container {
+    width: 100%;
+    max-width: 361px;
+    padding: 0 16px;
+  }
+
+  .about-section-three-content {
+    gap: 20px;
+  }
+
+  .about-section-three-title {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.96px;
+    width: 100%;
+  }
+
+  .about-section-three-description {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Map Section - Mobile (Inherited but can be customized) */
+  .about-hero-layout ~ .map-section .map-container {
+    width: 100%;
+    max-width: 361px;
+  }
+
+  .about-hero-layout ~ .map-section .map-title {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .about-hero-layout ~ .map-section .map-description {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  /* Tomorrow Section - Mobile (Inherited but can be customized) */
+  .about-hero-layout ~ .tomorrow-section .tomorrow-container {
+    width: 100%;
+    max-width: 361px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  /* CTA Expert Section - Mobile (Inherited but can be customized) */
+  .about-hero-layout ~ .cta-expert-section .cta-expert-card {
+    width: 100%;
+    max-width: 361px;
+  }
+
+  .about-hero-layout ~ .cta-expert-section .cta-expert-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+/* ========================================
+   ABOUT PAGE TABLET RESPONSIVE STYLES
+   Breakpoint: 394px - 767px
+   ======================================== */
+
+@media (min-width: 394px) and (max-width: 767px) {
+  /* About Hero Section - Small Tablet */
+  .about-hero-layout {
+    height: auto;
+    padding: 60px 0;
+    margin-top: -50px;
+  }
+
+  .about-hero-layout .main-headline {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1.6px;
+  }
+
+  .about-hero-layout .headline-description {
+    width: 100%;
+    max-width: 500px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  /* About Section Two - Small Tablet */
+  .about-section-two {
+    padding: 50px 0;
+  }
+
+  .about-section-two-container {
+    max-width: 600px;
+    padding: 0 24px;
+  }
+
+  .about-section-two-title {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.28px;
+  }
+
+  .about-section-two-description {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 500px;
+  }
+
+  /* About Section Three - Small Tablet */
+  .about-section-three {
+    padding: 50px 0;
+  }
+
+  .about-section-three-container {
+    max-width: 600px;
+    padding: 0 24px;
+  }
+
+  .about-section-three-title {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.28px;
+  }
+
+  .about-section-three-description {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 500px;
+  }
+}
+
+/* ========================================
+   ABOUT PAGE TABLET RESPONSIVE STYLES
+   Breakpoint: 768px - 1199px
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* About Hero Section - Tablet */
+  .about-hero-layout {
+    height: 768px;
+    margin-top: -130px;
+  }
+
+  .about-hero-layout .main-headline {
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -1.92px;
+  }
+
+  .about-hero-layout .headline-description {
+    width: 422px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .about-hero-layout .schedule-button {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+
+  /* About Section Two - Tablet */
+  .about-section-two {
+    padding: 64px 0;
+  }
+
+  .about-section-two-container {
+    max-width: 944px;
+    padding: 0 40px;
+  }
+
+  .about-section-two-title {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -1.44px;
+  }
+
+  .about-section-two-description {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 700px;
+  }
+
+  /* About Section Three - Tablet */
+  .about-section-three {
+    padding: 64px 0;
+  }
+
+  .about-section-three-container {
+    max-width: 944px;
+    padding: 0 40px;
+  }
+
+  .about-section-three-title {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -1.44px;
+  }
+
+  .about-section-three-description {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 700px;
+  }
+
+  /* Map Section - Tablet */
+  .about-hero-layout ~ .map-section .map-container {
+    max-width: 944px;
+  }
+
+  .about-hero-layout ~ .map-section .map-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  /* Tomorrow Section - Tablet */
+  .about-hero-layout ~ .tomorrow-section .tomorrow-container {
+    max-width: 944px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  /* CTA Expert Section - Tablet */
+  .about-hero-layout ~ .cta-expert-section .cta-expert-container {
+    max-width: 944px;
+  }
+
+  .about-hero-layout ~ .cta-expert-section .cta-expert-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+/* ========================================
+   ABOUT PAGE DESKTOP RESPONSIVE STYLES
+   Breakpoint: 1200px and above
+   ======================================== */
+
+@media (min-width: 1200px) {
+  /* About Hero Section - Desktop */
+  .about-hero-layout {
+    height: 768px;
+    margin-top: -100px;
+  }
+
+  .about-hero-layout .main-headline {
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -1.92px;
+  }
+
+  .about-hero-layout .headline-description {
+    width: 422px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .about-hero-layout .schedule-button {
+    padding: 16px;
+    font-size: 16px;
+    max-height: 48px;
+  }
+
+  /* About Section Two - Desktop */
+  .about-section-two {
+    padding: 64px 0;
+  }
+
+  .about-section-two-container {
+    max-width: 850px;
+    padding: 0 20px;
+  }
+
+  .about-section-two-title {
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -1.92px;
+  }
+
+  .about-section-two-description {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 600px;
+  }
+
+  /* About Section Three - Desktop */
+  .about-section-three {
+    padding: 64px 0;
+  }
+
+  .about-section-three-container {
+    max-width: 850px;
+    padding: 0 20px;
+  }
+
+  .about-section-three-title {
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -1.92px;
+  }
+
+  .about-section-three-description {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 600px;
+  }
+
+  /* Map Section - Desktop */
+  .about-hero-layout ~ .map-section .map-container {
+    max-width: 1040px;
+  }
+
+  .about-hero-layout ~ .map-section .map-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  /* Tomorrow Section - Desktop */
+  .about-hero-layout ~ .tomorrow-section .tomorrow-container {
+    max-width: 1200px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-title {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  /* CTA Expert Section - Desktop */
+  .about-hero-layout ~ .cta-expert-section .cta-expert-container {
+    max-width: 1200px;
+  }
+
+  .about-hero-layout ~ .cta-expert-section .cta-expert-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+/* ========================================
+   LARGE DESKTOP RESPONSIVE STYLES
+   Breakpoint: 1440px and above
+   ======================================== */
+
+@media (min-width: 1440px) {
+  /* About Hero Section - Large Desktop */
+  .about-hero-layout {
+    height: 768px;
+    margin-top: -100px;
+  }
+
+  .about-hero-layout .main-headline {
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -2.24px;
+  }
+
+  .about-hero-layout .headline-description {
+    width: 500px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* About Section Two - Large Desktop */
+  .about-section-two-container {
+    max-width: 1200px;
+  }
+
+  .about-section-two-title {
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -2.24px;
+  }
+
+  .about-section-two-description {
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 700px;
+  }
+
+  /* About Section Three - Large Desktop */
+  .about-section-three-container {
+    max-width: 1200px;
+  }
+
+  .about-section-three-title {
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -2.24px;
+  }
+
+  .about-section-three-description {
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 700px;
+  }
+}

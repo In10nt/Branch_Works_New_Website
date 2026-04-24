@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './HomePage.css';
 import './mobile-responsive.css';
 
@@ -142,18 +143,18 @@ const HomePage = () => {
     <div className="page-container">
       <header className="header-section">
         <div className="header-content">
-          <div className="logo">
+          <Link to="/" className="logo">
             <div className="logo-background">
               <div className="logo-circle">
                 <img src={`${process.env.PUBLIC_URL}/images/Eclipse.png`} alt="Branchworks Logo" className="logo-icon" />
               </div>
             </div>
             <img src={`${process.env.PUBLIC_URL}/images/branchWorksGlobalNavText.svg`} alt="BRANCHWORKS GLOBAL" className="logo-text-svg" />
-          </div>
+          </Link>
           
           <nav className="nav-menu">
             <a href="#industry">Industry</a>
-            <a href="#about">About</a>
+            <Link to="/about">About</Link>
             <a href="#careers">Careers</a>
           </nav>
           
@@ -199,7 +200,7 @@ const HomePage = () => {
           
           <nav className="mobile-menu-nav">
             <a href="#industry" onClick={closeMobileMenu}>Industry</a>
-            <a href="#about" onClick={closeMobileMenu}>About</a>
+            <Link to="/about" onClick={closeMobileMenu}>About</Link>
             <a href="#careers" onClick={closeMobileMenu}>Careers</a>
           </nav>
           
