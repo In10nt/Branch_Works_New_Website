@@ -7,8 +7,9 @@
   /* About Hero Section */
   .about-hero-layout {
     height: auto;
-    padding: 40px 0;
+    padding: 40px 0 40px 0;
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .about-hero-layout .hero-content {
@@ -37,6 +38,8 @@
   /* About Section Two - Mobile */
   .about-section-two {
     padding: 40px 0;
+    background: #FFFFFF;
+    margin-top: 0;
   }
 
   .about-section-two-container {
@@ -47,13 +50,16 @@
 
   .about-section-two-content {
     gap: 20px;
+    align-items: flex-start;
+    text-align: left;
   }
 
   .about-section-two-title {
     font-size: 24px;
     line-height: 30px;
-    letter-spacing: -0.96px;
+    letter-spacing: -0.48px;
     width: 100%;
+    max-width: 100%;
   }
 
   .about-section-two-description {
@@ -61,6 +67,18 @@
     line-height: 20px;
     width: 100%;
     max-width: 100%;
+    color: #525252;
+  }
+
+  .about-section-two-image {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  .about-team-image {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
   }
 
   /* About Section Three - Mobile */
@@ -142,8 +160,9 @@
   /* About Hero Section - Small Tablet */
   .about-hero-layout {
     height: auto;
-    padding: 60px 0;
+    padding: 60px 0 60px 0;
     margin-top: -50px;
+    margin-bottom: 0;
   }
 
   .about-hero-layout .main-headline {
@@ -162,6 +181,8 @@
   /* About Section Two - Small Tablet */
   .about-section-two {
     padding: 50px 0;
+    background: #FFFFFF;
+    margin-top: 0;
   }
 
   .about-section-two-container {
@@ -169,16 +190,28 @@
     padding: 0 24px;
   }
 
+  .about-section-two-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .about-section-two-title {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.28px;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.56px;
+    max-width: 100%;
   }
 
   .about-section-two-description {
     font-size: 16px;
     line-height: 24px;
-    max-width: 500px;
+    max-width: 100%;
+    color: #525252;
+  }
+
+  .about-team-image {
+    max-width: 100%;
+    border-radius: 20px;
   }
 
   /* About Section Three - Small Tablet */
@@ -214,6 +247,7 @@
   .about-hero-layout {
     height: 768px;
     margin-top: -130px;
+    margin-bottom: 0;
   }
 
   .about-hero-layout .main-headline {
@@ -236,6 +270,8 @@
   /* About Section Two - Tablet */
   .about-section-two {
     padding: 64px 0;
+    background: #FFFFFF;
+    margin-top: 0;
   }
 
   .about-section-two-container {
@@ -243,16 +279,28 @@
     padding: 0 40px;
   }
 
+  .about-section-two-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .about-section-two-title {
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: -1.44px;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.56px;
+    max-width: 450px;
   }
 
   .about-section-two-description {
     font-size: 16px;
     line-height: 24px;
-    max-width: 700px;
+    max-width: 600px;
+    color: #525252;
+  }
+
+  .about-team-image {
+    max-width: 866px;
+    border-radius: 24px;
   }
 
   /* About Section Three - Tablet */
@@ -318,6 +366,7 @@
   .about-hero-layout {
     height: 768px;
     margin-top: -100px;
+    margin-bottom: 0;
   }
 
   .about-hero-layout .main-headline {
@@ -341,6 +390,8 @@
   /* About Section Two - Desktop */
   .about-section-two {
     padding: 64px 0;
+    background: #FFFFFF;
+    margin-top: 0;
   }
 
   .about-section-two-container {
@@ -348,16 +399,28 @@
     padding: 0 20px;
   }
 
+  .about-section-two-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .about-section-two-title {
-    font-size: 48px;
-    line-height: 58px;
-    letter-spacing: -1.92px;
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.56px;
+    max-width: 350px;
   }
 
   .about-section-two-description {
     font-size: 16px;
     line-height: 24px;
-    max-width: 600px;
+    max-width: 480px;
+    color: #525252;
+  }
+
+  .about-team-image {
+    max-width: 866px;
+    border-radius: 24px;
   }
 
   /* About Section Three - Desktop */
@@ -423,6 +486,7 @@
   .about-hero-layout {
     height: 768px;
     margin-top: -100px;
+    margin-bottom: 0;
   }
 
   .about-hero-layout .main-headline {
@@ -438,20 +502,36 @@
   }
 
   /* About Section Two - Large Desktop */
+  .about-section-two {
+    margin-top: 0;
+  }
+  
   .about-section-two-container {
     max-width: 1200px;
   }
 
+  .about-section-two-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
   .about-section-two-title {
-    font-size: 56px;
-    line-height: 64px;
-    letter-spacing: -2.24px;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.64px;
+    max-width: 450px;
   }
 
   .about-section-two-description {
     font-size: 18px;
     line-height: 28px;
-    max-width: 700px;
+    max-width: 600px;
+    color: #525252;
+  }
+
+  .about-team-image {
+    max-width: 1000px;
+    border-radius: 24px;
   }
 
   /* About Section Three - Large Desktop */

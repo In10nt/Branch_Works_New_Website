@@ -7,6 +7,11 @@ import './AboutPage-mobile-responsive.css';
 
 const AboutPage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const sectionTwoRef = useRef(null);
+  const sectionThreeRef = useRef(null);
+  const mapSectionRef = useRef(null);
+  const tomorrowHeaderRef = useRef(null);
+  const ctaExpertRef = useRef(null);
 
   // Mobile menu toggle functions
   const toggleMobileMenu = () => {
@@ -35,6 +40,64 @@ const AboutPage = () => {
       document.body.classList.remove('mobile-menu-open');
     };
   }, [isMobileMenuOpen]);
+
+  // Animation observer for sections
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Store current ref values
+    const sectionTwo = sectionTwoRef.current;
+    const sectionThree = sectionThreeRef.current;
+    const mapSection = mapSectionRef.current;
+    const tomorrowHeader = tomorrowHeaderRef.current;
+    const ctaExpert = ctaExpertRef.current;
+
+    if (sectionTwo) {
+      observer.observe(sectionTwo);
+    }
+    if (sectionThree) {
+      observer.observe(sectionThree);
+    }
+    if (mapSection) {
+      observer.observe(mapSection);
+    }
+    if (tomorrowHeader) {
+      observer.observe(tomorrowHeader);
+    }
+    if (ctaExpert) {
+      observer.observe(ctaExpert);
+    }
+
+    return () => {
+      if (sectionTwo) {
+        observer.unobserve(sectionTwo);
+      }
+      if (sectionThree) {
+        observer.unobserve(sectionThree);
+      }
+      if (mapSection) {
+        observer.unobserve(mapSection);
+      }
+      if (tomorrowHeader) {
+        observer.unobserve(tomorrowHeader);
+      }
+      if (ctaExpert) {
+        observer.unobserve(ctaExpert);
+      }
+    };
+  }, []);
 
   return (
     <div className="page-container">
@@ -124,27 +187,20 @@ const AboutPage = () => {
           <div className="cta-section">
             <button className="schedule-button">Schedule a Consultation</button>
           </div>
-
-          <div className="logos-section">
-            <div className="logos-container">
-              <div className="logos-wrapper">
-                <img src={`${process.env.PUBLIC_URL}/images/Brands.svg`} alt="Brand Partners" className="brands-svg" />
-                <img src={`${process.env.PUBLIC_URL}/images/Brands.svg`} alt="Brand Partners" className="brands-svg" />
-                <img src={`${process.env.PUBLIC_URL}/images/Brands.svg`} alt="Brand Partners" className="brands-svg" />
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
-      {/* Second Section - To be designed */}
+      {/* Second Section - Company Introduction */}
       <div className="about-section-two">
         <div className="about-section-two-container">
-          <div className="about-section-two-content">
-            <h2 className="about-section-two-title">Section Two Title</h2>
+          <div className="about-section-two-content" ref={sectionTwoRef}>
+            <h2 className="about-section-two-title">Branchworks Global is a forward-thinking leader in modern offshoring solutions</h2>
             <p className="about-section-two-description">
-              This is the second section content. Please provide the design details for this section.
+              Providing specialized support for business needs with a deep understanding of the ever-evolving landscape of growing businesses in today's digital age.
             </p>
+            <div className="about-section-two-image">
+              <img src={`${process.env.PUBLIC_URL}/images/about_us_page_group_image.jpg`} alt="Branchworks Global Team" className="about-team-image" />
+            </div>
           </div>
         </div>
       </div>
@@ -152,7 +208,7 @@ const AboutPage = () => {
       {/* Third Section - To be designed */}
       <div className="about-section-three">
         <div className="about-section-three-container">
-          <div className="about-section-three-content">
+          <div className="about-section-three-content" ref={sectionThreeRef}>
             <h2 className="about-section-three-title">Section Three Title</h2>
             <p className="about-section-three-description">
               This is the third section content. Please provide the design details for this section.
@@ -164,7 +220,7 @@ const AboutPage = () => {
       {/* Fourth Section - Supporting organisations worldwide (Map Section) */}
       <div className="map-section">
         <div className="map-container">
-          <div className="map-content">
+          <div className="map-content" ref={mapSectionRef}>
             <div className="map-text-box">
               <h2 className="map-title">Supporting organisations worldwide with offshore expertise</h2>
               <p className="map-description">
@@ -184,7 +240,7 @@ const AboutPage = () => {
       <div className="tomorrow-section">
         <div className="tomorrow-container">
           <div className="tomorrow-content">
-            <div className="tomorrow-header">
+            <div className="tomorrow-header" ref={tomorrowHeaderRef}>
               <h2 className="tomorrow-title">Tomorrow,<br />today.</h2>
               <p className="tomorrow-description">
                 We work with an incredible<br />
@@ -216,7 +272,7 @@ const AboutPage = () => {
       {/* Sixth Section - Get trusted advice when timing matters */}
       <div className="cta-expert-section">
         <div className="cta-expert-container">
-          <div className="cta-expert-content">
+          <div className="cta-expert-content" ref={ctaExpertRef}>
             <div className="cta-expert-card">
               <div className="cta-expert-left">
                 <h2 className="cta-expert-title">Get trusted advice<br />when timing matters</h2>
