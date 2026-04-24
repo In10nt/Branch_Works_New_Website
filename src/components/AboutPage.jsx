@@ -205,14 +205,60 @@ const AboutPage = () => {
         </div>
       </div>
 
-      {/* Third Section - To be designed */}
+      {/* Third Section - Our Values */}
       <div className="about-section-three">
         <div className="about-section-three-container">
-          <div className="about-section-three-content" ref={sectionThreeRef}>
-            <h2 className="about-section-three-title">Section Three Title</h2>
-            <p className="about-section-three-description">
-              This is the third section content. Please provide the design details for this section.
-            </p>
+          <div className="about-section-three-grid" ref={sectionThreeRef}>
+            {/* Header takes first position */}
+            <div className="about-section-three-header">
+              <h2 className="about-section-three-main-title">Our Values</h2>
+              <p className="about-section-three-subtitle">Where everything starts</p>
+            </div>
+            
+            {/* Card 1 - Customer-Centric Innovation */}
+            <div className="value-card">
+              <div className="value-icon">
+                <img src={`${process.env.PUBLIC_URL}/images/valueIcon_1.png`} alt="Customer-Centric Innovation" />
+              </div>
+              <h3 className="value-card-title">Customer-Centric Innovation</h3>
+              <p className="value-card-description">Prioritises user needs by designing intuitive, user-friendly digital solutions that solve real business problems.</p>
+            </div>
+
+            {/* Card 2 - Scalable Growth Mindset */}
+            <div className="value-card">
+              <div className="value-icon">
+                <img src={`${process.env.PUBLIC_URL}/images/valueIcon_2.png`} alt="Scalable Growth Mindset" />
+              </div>
+              <h3 className="value-card-title">Scalable Growth Mindset</h3>
+              <p className="value-card-description">develops systems that are built to grow with businesses, supporting long-term expansion and adaptability.</p>
+            </div>
+
+            {/* Card 3 - Agile & Efficient Execution */}
+            <div className="value-card">
+              <div className="value-icon">
+                <img src={`${process.env.PUBLIC_URL}/images/valueIcon_3.png`} alt="Agile & Efficient Execution" />
+              </div>
+              <h3 className="value-card-title">Agile & Efficient Execution</h3>
+              <p className="value-card-description">Deliver high-quality solutions quickly and iteratively.</p>
+            </div>
+
+            {/* Card 4 - Data-Driven Decision Making */}
+            <div className="value-card">
+              <div className="value-icon">
+                <img src={`${process.env.PUBLIC_URL}/images/valueIcon_4.png`} alt="Data-Driven Decision Making" />
+              </div>
+              <h3 className="value-card-title">Data-Driven Decision Making</h3>
+              <p className="value-card-description">Analytics and insights to guide smarter business strategies and product outcomes.</p>
+            </div>
+
+            {/* Card 5 - Reliability & Continuous Support */}
+            <div className="value-card">
+              <div className="value-icon">
+                <img src={`${process.env.PUBLIC_URL}/images/valueIcon_5.png`} alt="Reliability & Continuous Support" />
+              </div>
+              <h3 className="value-card-title">Reliability & Continuous Support</h3>
+              <p className="value-card-description">Committed to dependable performance with ongoing support and system maintenance.</p>
+            </div>
           </div>
         </div>
       </div>

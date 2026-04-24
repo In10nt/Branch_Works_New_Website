@@ -84,29 +84,52 @@
   /* About Section Three - Mobile */
   .about-section-three {
     padding: 40px 0;
+    background: #EFF6FF;
   }
 
   .about-section-three-container {
     width: 100%;
     max-width: 361px;
     padding: 0 16px;
+    gap: 32px;
+    flex-direction: column;
+  }
+
+  .about-section-three-header {
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .about-section-three-main-title {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.48px;
+  }
+
+  .about-section-three-subtitle {
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .about-section-three-content {
     gap: 20px;
-  }
-
-  .about-section-three-title {
-    font-size: 24px;
-    line-height: 30px;
-    letter-spacing: -0.96px;
     width: 100%;
   }
 
-  .about-section-three-description {
-    font-size: 14px;
-    line-height: 20px;
+  .values-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
     width: 100%;
+  }
+
+  .value-card {
+    max-width: 100%;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .value-card-description {
     max-width: 100%;
   }
 
@@ -217,23 +240,33 @@
   /* About Section Three - Small Tablet */
   .about-section-three {
     padding: 50px 0;
+    background: #EFF6FF;
   }
 
   .about-section-three-container {
-    max-width: 600px;
+    max-width: 700px;
     padding: 0 24px;
+    flex-direction: column;
   }
 
-  .about-section-three-title {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.28px;
+  .about-section-three-header {
+    width: 100%;
   }
 
-  .about-section-three-description {
-    font-size: 16px;
-    line-height: 24px;
-    max-width: 500px;
+  .about-section-three-main-title {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.56px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+
+  .value-card {
+    max-width: 100%;
   }
 }
 
@@ -306,23 +339,35 @@
   /* About Section Three - Tablet */
   .about-section-three {
     padding: 64px 0;
+    background: #EFF6FF;
   }
 
   .about-section-three-container {
-    max-width: 944px;
+    max-width: 866px;
     padding: 0 40px;
+    margin: 0 auto;
+    flex-direction: row;
   }
 
-  .about-section-three-title {
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: -1.44px;
+  .about-section-three-header {
+    width: 280px;
+    flex-shrink: 0;
   }
 
-  .about-section-three-description {
-    font-size: 16px;
-    line-height: 24px;
-    max-width: 700px;
+  .about-section-three-main-title {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.56px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .value-card {
+    max-width: 100%;
   }
 
   /* Map Section - Tablet */
@@ -426,23 +471,35 @@
   /* About Section Three - Desktop */
   .about-section-three {
     padding: 64px 0;
+    background: #EFF6FF;
   }
 
   .about-section-three-container {
-    max-width: 850px;
+    max-width: 866px;
     padding: 0 20px;
+    margin: 0 auto;
+    flex-direction: row;
   }
 
-  .about-section-three-title {
-    font-size: 48px;
-    line-height: 58px;
-    letter-spacing: -1.92px;
+  .about-section-three-header {
+    width: 280px;
+    flex-shrink: 0;
   }
 
-  .about-section-three-description {
-    font-size: 16px;
-    line-height: 24px;
-    max-width: 600px;
+  .about-section-three-main-title {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.56px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 100%;
+  }
+
+  .value-card {
+    max-width: 100%;
   }
 
   /* Map Section - Desktop */
@@ -535,19 +592,34 @@
   }
 
   /* About Section Three - Large Desktop */
+  .about-section-three {
+    background: #EFF6FF;
+  }
+
   .about-section-three-container {
-    max-width: 1200px;
+    max-width: 866px;
+    margin: 0 auto;
+    flex-direction: row;
   }
 
-  .about-section-three-title {
-    font-size: 56px;
-    line-height: 64px;
-    letter-spacing: -2.24px;
+  .about-section-three-header {
+    width: 280px;
+    flex-shrink: 0;
   }
 
-  .about-section-three-description {
-    font-size: 18px;
-    line-height: 28px;
-    max-width: 700px;
+  .about-section-three-main-title {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.64px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 100%;
+  }
+
+  .value-card {
+    max-width: 100%;
   }
 }
