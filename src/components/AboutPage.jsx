@@ -117,12 +117,12 @@ const AboutPage = () => {
           </div>
           
           <div className="headline-section">
-            <h1 className="main-headline">About Branchworks.<br />Our Story.</h1>
-            <p className="headline-description">Building global teams that work as one, delivering excellence through offshore expertise and dedicated partnership.</p>
+            <h1 className="main-headline">Driven by<br />Real Experience</h1>
+            <p className="headline-description">We started Branchworks Teams from a genuine need within our own business.</p>
           </div>
 
           <div className="cta-section">
-            <button className="schedule-button">Learn More About Us</button>
+            <button className="schedule-button">Schedule a Consultation</button>
           </div>
 
           <div className="logos-section">
