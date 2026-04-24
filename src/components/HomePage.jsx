@@ -712,7 +712,7 @@ const HomePage = () => {
                   <img src={`${process.env.PUBLIC_URL}/images/footer_logo.svg`} alt="BRANCHWORKS GLOBAL" className="footer-logo-image" />
                 </div>
                 <div className="footer-tagline">
-                  <h2 className="footer-title">On Demand Factory OS,<br />Delivered Overnight .</h2>
+                  <h2 className="footer-title">Dedicated teams,<br />built to scale with control</h2>
                   <p className="footer-description">More than outsourcing<br />we build your international branch</p>
                 </div>
               </div>
@@ -722,10 +722,8 @@ const HomePage = () => {
                   <h3 className="footer-column-title">Industry</h3>
                   <ul className="footer-links">
                     <li><a href="#finance">Finance</a></li>
-                    <li><a href="#it">Information Technology</a></li>
-                    <li><a href="#hr">HR</a></li>
-                    <li><a href="#bpo">BPO</a></li>
-                    <li><a href="#kpo">KPO</a></li>
+                    <li><a href="#it">Technology Support</a></li>
+                    <li><a href="#hr">Offshore Hiring</a></li>
                   </ul>
                 </div>
                 
