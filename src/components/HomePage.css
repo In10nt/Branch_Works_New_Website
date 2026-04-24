@@ -1054,10 +1054,11 @@ body {
   border-bottom: 2px solid #F5F5F5;
   width: 100%;
   flex-wrap: nowrap;
-  overflow-x: hidden;
+  overflow-x: visible;
   justify-content: space-between;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
+  position: relative;
 }
 
 .new-section-tabs::-webkit-scrollbar {
@@ -1083,8 +1084,9 @@ body {
   line-height: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-bottom: -2px;
   white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 .new-tab-button:hover {
@@ -3446,7 +3448,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow: visible;
   position: relative;
   opacity: 1;
   flex-shrink: 0;
@@ -3491,9 +3493,10 @@ body {
   width: 300px;
   height: 400px;
   background: transparent;
-  border-radius: 999px;
+  border-radius: 0px;
   transform: rotate(0deg);
   opacity: 1;
+  overflow: visible;
 }
 
 .real-face-4 {
@@ -3561,7 +3564,6 @@ body {
   .real-face-3 {
     width: 300px;
     height: 400px;
-    border-radius: 999px;
   }
   
   .real-face-4 {
@@ -3597,7 +3599,6 @@ body {
   .real-face-3 {
     width: 300px;
     height: 400px;
-    border-radius: 999px;
   }
   
   .real-face-4 {
