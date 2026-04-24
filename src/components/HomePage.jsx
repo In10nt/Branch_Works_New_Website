@@ -120,23 +120,6 @@ const HomePage = () => {
     };
   }, []);
 
-  // Generate face items for each row with enough duplicates for seamless scrolling across any screen size
-  const generateFaceItems = (startIndex, count = 100) => {
-    return Array.from({ length: count }, (_, index) => {
-      const imageNum = ((startIndex + index) % 10) || 10;
-      const extension = imageNum === 5 ? 'png' : 'jpg';
-      return (
-        <div key={`face-${startIndex}-${index}`} className="face-item">
-          <img 
-            src={`${process.env.PUBLIC_URL}/images/people${imageNum}.${extension}`} 
-            alt={`Person ${imageNum}`} 
-            className="face-image" 
-          />
-        </div>
-      );
-    });
-  };
-
   // Customer Stories carousel navigation
   const totalCards = 8; // Total number of cards
   const cardsPerView = 3; // Number of full cards visible at once (plus half of next one)
@@ -564,7 +547,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 18, 2026</div>
                     <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="#" className="story-read-more-link">Read more</a>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
                 </div>
                 
@@ -573,7 +556,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 18, 2026</div>
                     <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="#" className="story-read-more-link">Read more</a>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
                 </div>
                 
@@ -582,7 +565,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 18, 2026</div>
                     <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="#" className="story-read-more-link">Read more</a>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
                 </div>
                 
@@ -591,7 +574,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 18, 2026</div>
                     <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="#" className="story-read-more-link">Read more</a>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
                 </div>
 
@@ -600,7 +583,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 20, 2026</div>
                     <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <a href="#" className="story-read-more-link">Read more</a>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
                 </div>
                 
@@ -609,7 +592,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 20, 2026</div>
                     <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <a href="#" className="story-read-more-link">Read more</a>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
                 </div>
                 
@@ -618,7 +601,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 20, 2026</div>
                     <h3 className="story-title">Digital Transformation: Scaling Teams Globally</h3>
-                    <a href="#" className="story-read-more-link">Read more</a>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
                 </div>
                 
@@ -627,7 +610,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 22, 2026</div>
                     <h3 className="story-title">Cost Optimization: 40% Savings with Offshore Teams</h3>
-                    <a href="#" className="story-read-more-link">Read more</a>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
                 </div>
               </div>
