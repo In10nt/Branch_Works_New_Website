@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './PrivacyPolicy.css';
+import './Terms.css';
 import './mobile-responsive.css';
 
-const PrivacyPolicy = () => {
+const Terms = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
   };
 
   return (
-    <div className="privacy-policy-layout">
+    <div className="terms-layout">
       {/* Navigation Bar - Same as HomePage */}
       <header className="header-section">
         <div className="header-content">
@@ -86,63 +86,62 @@ const PrivacyPolicy = () => {
         </div>
       </header>
 
-      {/* Privacy Policy Content */}
-      <main className="privacy-policy-main">
-        <div className="privacy-policy-container">
-          <h1 className="privacy-policy-title">Privacy Policy</h1>
-          <p className="privacy-policy-last-updated">Last updated: 2025-10-01</p>
+      {/* Terms Content */}
+      <main className="terms-main">
+        <div className="terms-container">
+          <h1 className="terms-title">Terms</h1>
+          <p className="terms-last-updated">Last updated: 2025-10-01</p>
           
-          <div className="privacy-policy-content">
-            <div className="privacy-policy-intro">
+          <div className="terms-content">
+            <div className="terms-intro">
               <p>
-                Luma, Inc. ("us", "we", or "our") operates luma.com (the "Service"). This page informs you of our policies regarding the collection, use and disclosure of Personal Information we receive from users of the Service. We use your Personal Information only for providing and improving the Service. By using the Service, you agree to the collection and use of information in accordance with this policy.
+                Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the Branchworks Global website (the "Service") operated by Branchworks Global ("us", "we", or "our"). Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms. These Terms apply to all visitors, users and others who access or use the Service.
               </p>
             </div>
 
-            <div className="privacy-policy-section">
-              <h2 className="privacy-policy-section-title">Information Collection And Use</h2>
-              <p className="privacy-policy-section-text">
-                While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you. Personally identifiable information may include, but is not limited to your name and email address ("Personal Information").
+            <div className="terms-section">
+              <h2 className="terms-section-title">Acceptance of Terms</h2>
+              <p className="terms-section-text">
+                By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part of the terms then you may not access the Service.
               </p>
             </div>
 
-            <div className="privacy-policy-section">
-              <p className="privacy-policy-section-text">
-                We may share your personal data with third-parties to provide necessary services, including:
+            <div className="terms-section">
+              <h2 className="terms-section-title">Use of Service</h2>
+              <p className="terms-section-text">
+                You may use our Service only for lawful purposes and in accordance with these Terms. You agree not to use the Service:
               </p>
-              <ul className="privacy-policy-list">
-                <li>if you are the host of an event, we will share your personal data with your guests;</li>
-                <li>when you register for an event, we will share your personal data with the event host; and</li>
-                <li>when you purchase ticket for an event, we will share relevant information with Stripe, our payment processor.</li>
+              <ul className="terms-list">
+                <li>In any way that violates any applicable national or international law or regulation.</li>
+                <li>To transmit, or procure the sending of, any advertising or promotional material without our prior written consent.</li>
+                <li>To impersonate or attempt to impersonate the Company, a Company employee, another user, or any other person or entity.</li>
               </ul>
-              <p className="privacy-policy-section-text">
-                We make it clear to you throughout the Service when we share your personal data with third-parties. We have no control over, and are not responsible or liable for the ways those third-parties use your personal data.
+            </div>
+
+            <div className="terms-section">
+              <h2 className="terms-section-title">Intellectual Property</h2>
+              <p className="terms-section-text">
+                The Service and its original content, features and functionality are and will remain the exclusive property of Branchworks Global and its licensors. The Service is protected by copyright, trademark, and other laws of both the United States and foreign countries.
+              </p>
+              <p className="terms-section-text">
+                Our trademarks and trade dress may not be used in connection with any product or service without the prior written consent of Branchworks Global.
               </p>
             </div>
 
-            <div className="privacy-policy-section">
-              <h2 className="privacy-policy-section-title">Log Data</h2>
-              <p className="privacy-policy-section-text">
-                Like many site operators, we collect information that your browser sends whenever you visit our Service ("Log Data").
+            <div className="terms-section">
+              <h2 className="terms-section-title">Termination</h2>
+              <p className="terms-section-text">
+                We may terminate or suspend your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.
               </p>
-              <p className="privacy-policy-section-text">
-                This Log Data may include information such as your computer's Internet Protocol ("IP") address, browser type, browser version, the pages of our Service that you visit, the time and date of your visit, the time spent on those pages and other statistics. In addition, we may use third party services such as Google Analytics that collect data about your visit.
-              </p>
-              <p className="privacy-policy-section-text">
-                We make it clear to you throughout the Service when we share your personal data with third-parties. We have no control over, and are not responsible or liable for the ways those third-parties use your personal data.
+              <p className="terms-section-text">
+                All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.
               </p>
             </div>
 
-            <div className="privacy-policy-section">
-              <h2 className="privacy-policy-section-title">Cookies</h2>
-              <p className="privacy-policy-section-text">
-                Cookies are files with small amount of data, which may include an anonymous unique identifier. Cookies are sent to your browser from a web site and stored on your computer's hard drive.
-              </p>
-              <p className="privacy-policy-section-text">
-                Like many sites, we use "cookies" to collect information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our Service.
-              </p>
-              <p className="privacy-policy-section-text">
-                We make it clear to you throughout the Service when we share your personal data with third-parties. We have no control over, and are not responsible or liable for the ways those third-parties use your personal data.
+            <div className="terms-section">
+              <h2 className="terms-section-title">Limitation of Liability</h2>
+              <p className="terms-section-text">
+                In no event shall Branchworks Global, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.
               </p>
             </div>
           </div>
@@ -212,4 +211,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default Terms;

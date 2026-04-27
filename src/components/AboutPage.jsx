@@ -378,7 +378,7 @@ const AboutPage = () => {
                 <p className="footer-copyright">© 2026 Branchworks Global</p>
                 <div className="footer-policy-terms">
                   <Link to="/privacy-policy" className="footer-link-bottom">Policy</Link>
-                  <a href="#terms" className="footer-link-bottom">Terms</a>
+                  <Link to="/terms" className="footer-link-bottom">Terms</Link>
                 </div>
               </div>
               <div className="footer-social">
