@@ -508,7 +508,7 @@ body {
 
 .stats-cards {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 8px;
   align-self: stretch;
   width: 100%;
