@@ -41,6 +41,11 @@ const AboutPage = () => {
     };
   }, [isMobileMenuOpen]);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Animation observer for sections
   useEffect(() => {
     const observerOptions = {
@@ -277,7 +282,7 @@ const AboutPage = () => {
             </div>
           </div>
           <div className="map-image-box">
-            <img src={`${process.env.PUBLIC_URL}/images/Map.svg`} alt="World Map" className="world-map" />
+            <img src={`${process.env.PUBLIC_URL}/images/worldMap.png`} alt="World Map" className="world-map" />
           </div>
         </div>
       </div>
@@ -305,10 +310,13 @@ const AboutPage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
               </div>
               <div className="tomorrow-card">
+                <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+              </div>
+              <div className="tomorrow-card">
                 <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
               </div>
               <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+                <img src={`${process.env.PUBLIC_URL}/images/teamMember4.jpg`} alt="Team Member 4" className="tomorrow-card-image" />
               </div>
             </div>
           </div>

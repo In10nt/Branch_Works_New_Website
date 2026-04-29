@@ -334,7 +334,7 @@
   /* About Hero Section - Tablet */
   .about-hero-layout {
     height: 768px;
-    margin-top: -130px;
+    margin-top: -180px;
     margin-bottom: 0;
   }
 
@@ -465,7 +465,7 @@
   /* About Hero Section - Desktop */
   .about-hero-layout {
     height: 768px;
-    margin-top: -100px;
+    margin-top: -150px;
     margin-bottom: 0;
   }
 

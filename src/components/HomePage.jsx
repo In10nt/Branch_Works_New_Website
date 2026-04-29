@@ -267,7 +267,7 @@ const HomePage = () => {
           <div className="stats-cards" ref={statsCardsRef}>
             <div className="stat-card">
               <div className="stat-logo">
-                <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="stat-company-logo" />
+                <img src={`${process.env.PUBLIC_URL}/images/pwc.png`} alt="pwc" className="stat-company-logo" />
               </div>
               <p className="stat-description">CFOs are prioritising finance transformation</p>
               <div className="stat-value" style={{ color: '#60A5FA' }}>65%</div>
@@ -275,7 +275,7 @@ const HomePage = () => {
 
             <div className="stat-card">
               <div className="stat-logo">
-                <img src={`${process.env.PUBLIC_URL}/images/linkedin-logo.svg`} alt="LinkedIn" className="stat-company-logo" />
+                <img src={`${process.env.PUBLIC_URL}/images/deloitte.png`} alt="Deloitte" className="stat-company-logo" />
               </div>
               <p className="stat-description">Businesses use offshore teams to scale faster</p>
               <div className="stat-value" style={{ color: '#60A5FA' }}>54%</div>
@@ -283,7 +283,7 @@ const HomePage = () => {
 
             <div className="stat-card">
               <div className="stat-logo">
-                <img src={`${process.env.PUBLIC_URL}/images/google_icon.svg`} alt="Google" className="stat-company-logo" />
+                <img src={`${process.env.PUBLIC_URL}/images/mcKinsey.png`} alt="mcKinsey" className="stat-company-logo" />
               </div>
               <p className="stat-description">Companies invest in automation to improve efficiency</p>
               <div className="stat-value" style={{ color: '#60A5FA' }}>60%</div>
@@ -305,7 +305,7 @@ const HomePage = () => {
             </div>
           </div>
           <div className="map-image-box">
-            <img src={`${process.env.PUBLIC_URL}/images/Map.svg`} alt="World Map" className="world-map" />
+            <img src={`${process.env.PUBLIC_URL}/images/worldMap.png`} alt="World Map" className="world-map" />
           </div>
         </div>
       </div>
@@ -482,10 +482,13 @@ const HomePage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
               </div>
               <div className="tomorrow-card">
+                <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+              </div>
+              <div className="tomorrow-card">
                 <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
               </div>
               <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+                <img src={`${process.env.PUBLIC_URL}/images/teamMember4.jpg`} alt="Team Member 4" className="tomorrow-card-image" />
               </div>
             </div>
           </div>

@@ -1,5 +1,60 @@
 /* Responsive Design - Mobile, Tablet, and Large Screen Support */
 
+/* Mobile Map Section - Broader mobile support */
+@media (max-width: 767px) {
+  .map-section {
+    padding: 40px 0 !important;
+  }
+
+  .map-container {
+    width: 100% !important;
+    max-width: 361px !important;
+    padding: 0 20px !important;
+  }
+
+  .map-content {
+    width: 100% !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .map-text-box {
+    width: 100% !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .map-title {
+    font-size: 24px !important;
+    line-height: 30px !important;
+    width: 100% !important;
+    text-align: left !important;
+    margin-bottom: 16px !important;
+  }
+
+  .map-description {
+    text-align: left !important;
+    width: 361px !important;
+    height: 96px !important;
+    max-width: 361px !important;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: 0% !important;
+    color: #525252 !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+  }
+
+  .world-map {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 361px !important;
+    margin-top: 32px !important;
+  }
+}
+
 /* Mobile - 393px and below */
 @media (max-width: 393px) {
   .page-container {
@@ -322,35 +377,55 @@
 
   /* Map Mobile */
   .map-section {
-    padding: 40px 0;
+    padding: 40px 0 !important;
   }
 
   .map-container {
-    width: 100%;
-    max-width: 361px;
-    padding: 0;
+    width: 100% !important;
+    max-width: 361px !important;
+    padding: 0 20px !important;
   }
 
   .map-content {
-    width: 100%;
+    width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .map-text-box {
+    width: 100% !important;
+    align-items: center !important;
+    text-align: center !important;
   }
 
   .map-title {
-    font-size: 24px;
-    line-height: 30px;
-    width: 100%;
-    text-align: center;
+    font-size: 24px !important;
+    line-height: 30px !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 16px !important;
   }
 
   .map-description {
-    text-align: center;
-    max-width: 100%;
+    text-align: center !important;
+    width: 361px !important;
+    height: 96px !important;
+    max-width: 361px !important;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    letter-spacing: 0% !important;
+    color: #525252 !important;
+    opacity: 1 !important;
+    margin: 0 auto !important;
   }
 
   .world-map {
-    width: 100%;
-    height: auto;
-    max-width: 361px;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 361px !important;
+    margin-top: 32px !important;
   }
 
   /* Services Mobile */
