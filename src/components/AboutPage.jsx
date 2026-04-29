@@ -364,7 +364,7 @@ const AboutPage = () => {
                 <div className="footer-column">
                   <h3 className="footer-column-title">Industry</h3>
                   <ul className="footer-links">
-                    <li><a href="#finance">Finance</a></li>
+                    <li><Link to="/finance">Finance</Link></li>
                     <li><a href="#it">Technology Support</a></li>
                     <li><a href="#hr">Offshore Hiring</a></li>
                   </ul>

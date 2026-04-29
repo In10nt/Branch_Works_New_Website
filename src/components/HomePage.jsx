@@ -286,7 +286,7 @@ const HomePage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/mcKinsey.png`} alt="mcKinsey" className="stat-company-logo" />
               </div>
               <p className="stat-description">Companies invest in automation to improve efficiency</p>
-              <div className="stat-value" style={{ color: '#60A5FA' }}>60%</div>
+              <div className="stat-value" style={{ color: '#60A5FA' }}>45%</div>
             </div>
           </div>
         </div>
@@ -765,7 +765,7 @@ const HomePage = () => {
                 <div className="footer-column">
                   <h3 className="footer-column-title">Industry</h3>
                   <ul className="footer-links">
-                    <li><a href="#finance">Finance</a></li>
+                    <li><Link to="/finance">Finance</Link></li>
                     <li><a href="#it">Technology Support</a></li>
                     <li><a href="#hr">Offshore Hiring</a></li>
                   </ul>
