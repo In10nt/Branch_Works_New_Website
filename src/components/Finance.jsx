@@ -184,13 +184,11 @@ const Finance = () => {
       <div className="hero-layout">
         <div className="hero-content">
           <div className="badge-chip">
-            <span className="badge-rating">4.8</span>
-            <img src={`${process.env.PUBLIC_URL}/images/trustpilot-logo.svg`} alt="Trustpilot" className="badge-trustpilot-logo" />
+            <span className="badge-text">Finance</span>
           </div>
           
           <div className="headline-section">
-            <h1 className="main-headline">Global Finance.
-              <br />Simplified. Secured.</h1>
+            <h1 className="main-headline">Global Finance.<br />Simplified. Secured.</h1>
             <p className="headline-description">Empowering global businesses and individuals with trusted offshore finance and asset protection services.</p>
           </div>
 

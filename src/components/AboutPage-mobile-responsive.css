@@ -7,13 +7,37 @@
   /* About Hero Section */
   .about-hero-layout {
     height: auto;
-    padding: 40px 0 40px 0;
+    padding: 20px 0 40px 0;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   .about-hero-layout .hero-content {
-    gap: 40px;
+    gap: 28px;
+  }
+
+  .about-hero-layout .badge-chip {
+    display: flex !important;
+    padding: 8px 16px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    border-radius: 999px !important;
+    border: none !important;
+    background: #DBEAFE !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .about-hero-layout .badge-text {
+    color: #2563EB !important;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    line-height: 20px !important;
+    white-space: nowrap !important;
   }
 
   .about-hero-layout .main-headline {
@@ -33,6 +57,8 @@
     padding: 12px 24px;
     font-size: 16px;
     height: auto;
+    background: #172554 !important;
+    white-space: nowrap !important;
   }
 
   /* About Section Two - Mobile */

@@ -9,6 +9,124 @@
   background: #FFFFFF;
 }
 
+/* Finance Page Hero Section Overrides */
+.finance-layout .hero-background-image {
+  display: none !important;
+}
+
+.finance-layout .hero-layout {
+  background: #FFFFFF !important;
+}
+
+.finance-layout .badge-chip {
+  display: flex !important;
+  padding: 8px 16px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  border-radius: 999px !important;
+  border: none !important;
+  background: #EFF6FF !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.finance-layout .badge-rating {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2563EB;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1;
+}
+
+.finance-layout .badge-text {
+  color: #2563EB !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
+  letter-spacing: 0px !important;
+  white-space: nowrap !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+}
+
+.finance-layout .main-headline {
+  color: #171717 !important;
+  text-align: center !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 48px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 58px !important;
+  letter-spacing: -1.92px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.finance-layout .headline-description {
+  width: 422px !important;
+  color: #404040 !important;
+  text-align: center !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  margin: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+.finance-layout .schedule-button {
+  display: flex !important;
+  max-height: 48px !important;
+  padding: 16px 24px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 4px !important;
+  border-radius: 999px !important;
+  background: #172554 !important;
+  border: none !important;
+  color: #FFFFFF !important;
+  text-align: center !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 16px !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  line-height: 24px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(23, 37, 84, 0.3) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  animation: none !important;
+  transform: none !important;
+  white-space: nowrap !important;
+}
+
+.finance-layout .schedule-button:hover {
+  background-color: #0f1a3a !important;
+  box-shadow: 0 4px 12px rgba(23, 37, 84, 0.4) !important;
+}
+
+.finance-layout .schedule-button:hover {
+  background-color: #1E40AF !important;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4) !important;
+}
+
 /* Ensure stats section displays properly on Finance page */
 .finance-layout .stats-section {
   display: flex;
@@ -139,13 +257,13 @@
 .finance-scaling-section {
   display: flex;
   width: 100%;
-  padding: 0;
+  padding: 64px 0 0 0;
   flex-direction: column;
   align-items: center;
   gap: 0;
   background: #FFFFFF;
   opacity: 1;
-  margin-top: -120px;
+  margin-top: 0;
   margin-bottom: 0;
 }
 

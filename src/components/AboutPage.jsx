@@ -97,6 +97,7 @@ const AboutPage = () => {
     const sectionThree = sectionThreeRef.current;
     const mapSection = mapSectionRef.current;
     const tomorrowHeader = tomorrowHeaderRef.current;
+    const tomorrowCards = tomorrowCardsRef.current;
     const ctaExpert = ctaExpertRef.current;
 
     if (sectionTwo) {
@@ -113,6 +114,25 @@ const AboutPage = () => {
     }
     if (ctaExpert) {
       observer.observe(ctaExpert);
+    }
+
+    // Sequential animation for tomorrow cards
+    if (tomorrowCards) {
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.tomorrow-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add('card-animate-in');
+              }, index * 150); // 150ms delay between each card
+            });
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      cardObserver.observe(tomorrowCards);
     }
 
     return () => {
@@ -267,8 +287,7 @@ const AboutPage = () => {
       <div className="hero-layout about-hero-layout">
         <div className="hero-content">
           <div className="badge-chip">
-            <span className="badge-rating">4.8</span>
-            <img src={`${process.env.PUBLIC_URL}/images/trustpilot-logo.svg`} alt="Trustpilot" className="badge-trustpilot-logo" />
+            <span className="badge-text">About</span>
           </div>
           
           <div className="headline-section">
@@ -399,7 +418,7 @@ const AboutPage = () => {
               </button>
             </div>
             
-            <div className="tomorrow-cards">
+            <div className="tomorrow-cards" ref={tomorrowCardsRef}>
               <div className={`tomorrow-card ${flippedCards.includes(0) ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
