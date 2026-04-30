@@ -37,10 +37,10 @@ const HomePage = () => {
   // Tab content data
   const tabContent = {
     Finance: {
-      description: "True extension of their internal workforce, from our operational hub in Sri Lanka.",
+      description: "A structured extension of your finance function, aligned with your systems, processes, and reporting.",
       expertName: "Alexandra",
       expertRole: "Finance Expert",
-      expertImage: "girlImageFinance.jpg",
+      expertImage: "teamMember5.jpg",
       showContainer: true
     },
     "Technology Support": {
@@ -387,7 +387,7 @@ const HomePage = () => {
             <div className="new-section-header">
               <h2 className="new-section-title">What you get with Branchworks</h2>
               <p className="new-section-description">
-                Everything you need to run payments, manage money, and grow, without extra hassle.
+                End-to-end support across finance, technology, and offshore teams, helping you manage operations effectively and scale with confidence
               </p>
             </div>
 
