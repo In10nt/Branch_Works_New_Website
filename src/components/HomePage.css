@@ -1866,6 +1866,25 @@ body {
     width: 200px;
     height: 239px;
   }
+
+  /* Mobile flip card - tap to flip */
+  .tomorrow-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .team-member-name {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .team-member-designation {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .flip-card-content {
+    padding: 24px 16px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1877,6 +1896,20 @@ body {
   .tomorrow-card {
     width: 180px;
     height: 215px;
+  }
+
+  .team-member-name {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .team-member-designation {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  .flip-card-content {
+    padding: 20px 12px;
   }
 }
 /* Testimonial Section */

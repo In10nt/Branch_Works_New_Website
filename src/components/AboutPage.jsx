@@ -10,11 +10,23 @@ const AboutPage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
+  const [flippedCards, setFlippedCards] = useState([]);
   const sectionTwoRef = useRef(null);
   const sectionThreeRef = useRef(null);
   const mapSectionRef = useRef(null);
   const tomorrowHeaderRef = useRef(null);
   const ctaExpertRef = useRef(null);
+
+  // Toggle flip card on mobile
+  const handleCardClick = (index) => {
+    if (window.innerWidth <= 768) {
+      setFlippedCards(prev => 
+        prev.includes(index) 
+          ? prev.filter(i => i !== index)
+          : [...prev, index]
+      );
+    }
+  };
 
   // Mobile menu toggle functions
   const toggleMobileMenu = () => {
@@ -387,7 +399,7 @@ const AboutPage = () => {
             </div>
             
             <div className="tomorrow-cards">
-              <div className="tomorrow-card">
+              <div className={`tomorrow-card ${flippedCards.includes(0) ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
@@ -400,7 +412,7 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="tomorrow-card">
+              <div className={`tomorrow-card ${flippedCards.includes(1) ? 'flipped' : ''}`} onClick={() => handleCardClick(1)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
@@ -413,7 +425,7 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="tomorrow-card">
+              <div className={`tomorrow-card ${flippedCards.includes(2) ? 'flipped' : ''}`} onClick={() => handleCardClick(2)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
@@ -426,7 +438,7 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="tomorrow-card">
+              <div className={`tomorrow-card ${flippedCards.includes(3) ? 'flipped' : ''}`} onClick={() => handleCardClick(3)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
