@@ -15,6 +15,18 @@ const HomePage = () => {
   const [activeTab, setActiveTab] = useState('Finance');
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
+  const [flippedCards, setFlippedCards] = useState([]);
+
+  // Toggle flip card on mobile
+  const handleCardClick = (index) => {
+    if (window.innerWidth <= 768) {
+      setFlippedCards(prev => 
+        prev.includes(index) 
+          ? prev.filter(i => i !== index)
+          : [...prev, index]
+      );
+    }
+  };
 
   // Tab switching function
   const handleTabClick = (tabName) => {
@@ -550,17 +562,57 @@ const HomePage = () => {
             </div>
             
             <div className="tomorrow-cards">
-              <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
+              <div className={`tomorrow-card ${flippedCards.includes(0) ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Sarah Johnson</h3>
+                      <p className="team-member-designation">Senior Finance Manager</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+              <div className={`tomorrow-card ${flippedCards.includes(1) ? 'flipped' : ''}`} onClick={() => handleCardClick(1)}>
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Priya Sharma</h3>
+                      <p className="team-member-designation">Technology Lead</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
+              <div className={`tomorrow-card ${flippedCards.includes(2) ? 'flipped' : ''}`} onClick={() => handleCardClick(2)}>
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Michael Chen</h3>
+                      <p className="team-member-designation">Operations Director</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
+              <div className={`tomorrow-card ${flippedCards.includes(3) ? 'flipped' : ''}`} onClick={() => handleCardClick(3)}>
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Rajesh Kumar</h3>
+                      <p className="team-member-designation">Business Analyst</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

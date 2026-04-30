@@ -299,13 +299,13 @@ const AboutPage = () => {
       {/* Third Section - Our Values */}
       <div className="about-section-three">
         <div className="about-section-three-container">
+          {/* Header outside the grid */}
+          <div className="about-section-three-header">
+            <h2 className="about-section-three-main-title">Our Values</h2>
+            <p className="about-section-three-subtitle">Where everything starts</p>
+          </div>
+
           <div className="about-section-three-grid" ref={sectionThreeRef}>
-            {/* Header takes first position */}
-            <div className="about-section-three-header">
-              <h2 className="about-section-three-main-title">Our Values</h2>
-              <p className="about-section-three-subtitle">Where everything starts</p>
-            </div>
-            
             {/* Card 1 - Integrity in every engagement */}
             <div className="value-card">
               <div className="value-icon">
