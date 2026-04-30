@@ -1740,28 +1740,48 @@
   .finance-scaling-section {
     width: 100%;
     height: auto;
-    padding: 40px 20px;
+    padding: 60px 20px 40px 20px;
     margin-top: -60px;
   }
 
   .finance-scaling-container {
     width: 100%;
     height: auto;
-    padding: 40px 0;
+    padding: 0;
   }
 
   .finance-scaling-content {
     width: 100%;
     gap: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  .finance-scaling-title {
-    font-size: 32px;
-    line-height: 40px;
+  .finance-scaling-header {
+    width: 100%;
     text-align: center;
   }
 
+  .finance-scaling-title {
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .finance-scaling-title-black {
+    color: #171717;
+    font-weight: 600;
+  }
+
+  .finance-scaling-title-gray {
+    color: #737373;
+    font-weight: 400;
+  }
+
   .finance-scaling-cards {
+    display: flex;
     flex-direction: column;
     gap: 16px;
     width: 100%;
@@ -1769,13 +1789,45 @@
 
   .finance-scaling-card {
     width: 100%;
-    min-height: 150px;
-    padding: 16px;
+    min-height: 160px;
+    padding: 24px 20px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .finance-scaling-card-primary {
+    background: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
+  }
+
+  .finance-scaling-card-secondary {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+  }
+
+  .finance-scaling-card-description {
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    margin: 0;
+  }
+
+  .finance-scaling-card-secondary .finance-scaling-card-description {
+    color: #475569;
   }
 
   .finance-scaling-card-value {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+  }
+
+  .finance-scaling-card-secondary .finance-scaling-card-value {
+    color: #60A5FA;
   }
 
   /* Finance Services Section Mobile */
@@ -1798,76 +1850,132 @@
 
   .finance-hero-card {
     width: 100%;
-    height: 300px;
-    padding: 32px 24px;
+    height: auto;
+    min-height: 400px;
+    padding: 24px 20px;
+    border-radius: 16px;
+    background-position: 60% center !important;
+    background-size: cover !important;
+    display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: space-between;
   }
 
   .finance-hero-content {
     max-width: 100%;
     margin-right: 0;
+    align-items: flex-start;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .finance-hero-icon {
+    width: 56px;
+    height: 56px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
     align-items: center;
+    justify-content: center;
+  }
+
+  .finance-hero-icon img {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
   }
 
   .finance-hero-text-content {
     width: 100%;
     height: auto;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .finance-hero-title {
-    font-size: 18px;
-    line-height: 22px;
-    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: left;
+    font-weight: 600;
+    color: white;
   }
 
   .finance-hero-description {
-    font-size: 12px;
-    line-height: 18px;
-    text-align: center;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .finance-hero-button {
-    width: 140px;
-    height: 36px;
-    font-size: 12px;
-    padding: 8px 12px;
+    width: auto;
+    height: 48px;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    background: white;
+    color: #0F172A;
+    font-weight: 600;
+    margin-top: 8px;
   }
 
   .finance-services-grid {
     width: 100%;
     height: auto;
-    margin-top: 40px;
-    flex-direction: column;
-    gap: 16px;
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
   }
 
   .finance-service-card {
     width: 100%;
     height: auto;
-    min-height: 120px;
+    min-height: 180px;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .finance-service-title {
     width: 100%;
     height: auto;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .finance-service-description {
     width: 100%;
     height: auto;
+    font-size: 11px;
+    line-height: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    overflow: visible;
   }
 
   .finance-tools-logo {
     width: 100%;
-    padding: 16px 0;
+    padding: 24px 0 0 0;
+    display: flex;
+    justify-content: center;
   }
 
   .finance-logo-image {
-    width: 280px;
-    height: 28px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
   /* Finance Tax Section Mobile */
@@ -1889,67 +1997,127 @@
 
   .finance-tax-hero-card {
     width: 100%;
-    height: 300px;
-    padding: 32px 24px;
+    height: auto;
+    min-height: 400px;
+    padding: 24px 20px;
+    border-radius: 16px;
+    background-position: 60% center !important;
+    background-size: cover !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .finance-tax-hero-content {
     max-width: 100%;
     margin-right: 0;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .finance-tax-hero-icon {
+    width: 56px;
+    height: 56px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .finance-tax-hero-icon img {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
   }
 
   .finance-tax-hero-text-content {
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .finance-tax-hero-title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: white;
   }
 
   .finance-tax-hero-description {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .finance-tax-hero-button {
-    width: 140px;
-    height: 36px;
-    font-size: 12px;
-    padding: 8px 12px;
+    width: auto;
+    height: 48px;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    background: white;
+    color: #0F172A;
+    font-weight: 600;
+    margin-top: 8px;
   }
 
   .finance-tax-services-grid {
     width: 100%;
     height: auto;
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
   }
 
   .finance-tax-service-card {
     width: 100%;
     height: auto;
-    min-height: 100px;
+    min-height: 180px;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .finance-tax-service-title {
     width: 100%;
     height: auto;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .finance-tax-service-description {
     width: 100%;
     height: auto;
+    font-size: 11px;
+    line-height: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    overflow: visible;
   }
 
   .finance-tax-tools-logo {
     width: 100%;
+    padding: 24px 0 0 0;
+    display: flex;
+    justify-content: center;
   }
 
   .finance-tax-logo-image {
-    width: 280px;
-    height: 28px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
   /* Finance Payroll Section Mobile */
@@ -1971,67 +2139,127 @@
 
   .finance-payroll-hero-card {
     width: 100%;
-    height: 300px;
-    padding: 32px 24px;
+    height: auto;
+    min-height: 400px;
+    padding: 24px 20px;
+    border-radius: 16px;
+    background-position: 60% center !important;
+    background-size: cover !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .finance-payroll-hero-content {
     max-width: 100%;
     margin-right: 0;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .finance-payroll-hero-icon {
+    width: 56px;
+    height: 56px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .finance-payroll-hero-icon img {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
   }
 
   .finance-payroll-hero-text-content {
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .finance-payroll-hero-title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: white;
   }
 
   .finance-payroll-hero-description {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .finance-payroll-hero-button {
-    width: 140px;
-    height: 36px;
-    font-size: 12px;
-    padding: 8px 12px;
+    width: auto;
+    height: 48px;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    background: white;
+    color: #0F172A;
+    font-weight: 600;
+    margin-top: 8px;
   }
 
   .finance-payroll-services-grid {
     width: 100%;
     height: auto;
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
   }
 
   .finance-payroll-service-card {
     width: 100%;
     height: auto;
-    min-height: 120px;
+    min-height: 180px;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .finance-payroll-service-title {
     width: 100%;
     height: auto;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .finance-payroll-service-description {
     width: 100%;
     height: auto;
+    font-size: 11px;
+    line-height: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    overflow: visible;
   }
 
   .finance-payroll-tools-logo {
     width: 100%;
+    padding: 24px 0 0 0;
+    display: flex;
+    justify-content: center;
   }
 
   .finance-payroll-logo-image {
-    width: 280px;
-    height: 28px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
   /* Finance Management Section Mobile */
@@ -2053,178 +2281,272 @@
 
   .finance-management-hero-card {
     width: 100%;
-    height: 300px;
-    padding: 32px 24px;
+    height: auto;
+    min-height: 400px;
+    padding: 24px 20px;
+    border-radius: 16px;
+    background-position: 60% center !important;
+    background-size: cover !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .finance-management-hero-content {
     max-width: 100%;
     margin-right: 0;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .finance-management-hero-icon {
+    width: 56px;
+    height: 56px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .finance-management-hero-icon img {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
   }
 
   .finance-management-hero-text-content {
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
   }
 
   .finance-management-hero-title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    color: white;
   }
 
   .finance-management-hero-description {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .finance-management-hero-button {
-    width: 140px;
-    height: 36px;
-    font-size: 12px;
-    padding: 8px 12px;
+    width: auto;
+    height: 48px;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 24px;
+    background: white;
+    color: #0F172A;
+    font-weight: 600;
+    margin-top: 8px;
   }
 
   .finance-management-services-grid {
     width: 100%;
     height: auto;
-    flex-direction: column;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
   }
 
   .finance-management-service-card {
     width: 100%;
     height: auto;
-    min-height: 100px;
+    min-height: 180px;
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 
   .finance-management-service-title {
     width: 100%;
     height: auto;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 
   .finance-management-service-description {
     width: 100%;
     height: auto;
+    font-size: 11px;
+    line-height: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    overflow: visible;
   }
 
   .finance-management-tools-logo {
     width: 100%;
+    padding: 24px 0 0 0;
+    display: flex;
+    justify-content: center;
   }
 
   .finance-management-logo-image {
-    width: 280px;
-    height: 28px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
   /* Finance Testimonial Section Mobile */
   .finance-testimonial-section {
     width: 100%;
     height: auto;
-    padding: 40px 20px;
-    margin: -60px auto 20px auto;
+    padding: 60px 20px;
+    margin: 0 auto;
+    background: #FAFAFA;
   }
 
   .finance-testimonial-container {
     width: 100%;
-    max-width: 361px;
-    gap: 24px;
+    max-width: 100%;
+    padding: 0;
   }
 
   .finance-testimonial-content {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
+    background: white;
+    padding: 32px 24px;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 
   .finance-testimonial-stars {
-    margin-bottom: 16px;
+    display: flex;
+    gap: 4px;
+    margin-bottom: 0;
   }
 
   .finance-star {
-    font-size: 20px !important;
+    font-size: 24px !important;
+    color: #FCD34D;
   }
 
   .finance-testimonial-quote {
     width: 100%;
-    max-width: 361px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
   }
 
   .finance-testimonial-text {
-    font-size: 20px !important;
-    line-height: 26px !important;
+    font-size: 18px !important;
+    line-height: 28px !important;
     width: 100% !important;
-    max-width: 361px !important;
+    max-width: 100% !important;
+    color: #171717;
+    font-weight: 500;
+    margin: 0;
   }
 
   .finance-testimonial-source {
     width: 100%;
-    max-width: 361px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: flex-start;
   }
 
   .finance-testimonial-logo {
-    height: 48px !important;
+    height: 32px !important;
+    width: auto;
   }
 
   .finance-testimonial-profile {
+    display: flex;
+    align-items: center;
     gap: 12px;
+    margin-top: 8px;
   }
 
   .finance-testimonial-avatar {
-    width: 40px !important;
-    height: 40px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .finance-testimonial-avatar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .finance-testimonial-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .finance-testimonial-name {
-    font-size: 14px !important;
-    line-height: 18px !important;
+    font-size: 16px !important;
+    line-height: 20px !important;
+    font-weight: 600;
+    color: #171717;
+    margin: 0;
   }
 
   .finance-testimonial-role {
-    font-size: 12px !important;
-    line-height: 16px !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    color: #737373;
+    margin: 0;
   }
 
   /* Customer Stories Section Mobile */
   .customer-stories-section {
     width: 100%;
     height: auto;
-    padding: 40px 20px;
+    padding: 60px 20px;
+    background: white;
   }
 
   .customer-stories-container {
     width: 100%;
     max-width: 100%;
-    gap: 32px;
+    padding: 0;
   }
 
   .customer-stories-content {
     width: 100%;
-    gap: 32px;
+    gap: 24px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .customer-stories-header {
     width: 100%;
-    max-width: 361px;
-    height: 72px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    margin-bottom: 32px;
-    opacity: 1;
+    margin-bottom: 16px;
   }
 
   .customer-stories-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    gap: 8px;
     flex: 1;
   }
 
@@ -2232,9 +2554,9 @@
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: -0.56px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.48px;
     color: #171717;
     text-align: left;
     margin: 0;
@@ -2244,20 +2566,23 @@
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0%;
-    color: #525252;
+    font-size: 14px;
+    line-height: 20px;
+    color: #737373;
     text-align: left;
     margin: 0;
   }
 
   .customer-stories-cta {
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 0;
+    padding: 8px 16px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
   }
 
   .customer-stories-cards {
@@ -2266,16 +2591,24 @@
     overflow-y: hidden;
     display: flex;
     gap: 16px;
-    padding-bottom: 20px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    padding-bottom: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: #E5E5E5 transparent;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    justify-content: flex-start;
   }
 
   .customer-stories-cards::-webkit-scrollbar {
-    display: none;
+    height: 6px;
+  }
+
+  .customer-stories-cards::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .customer-stories-cards::-webkit-scrollbar-thumb {
+    background: #E5E5E5;
+    border-radius: 3px;
   }
 
   .customer-stories-grid {
@@ -2299,11 +2632,12 @@
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid #E5E5E5;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 
   .story-card-image {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 0;
     margin-bottom: 0;
@@ -2312,20 +2646,21 @@
   .story-card-content {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
     padding: 16px;
   }
 
   .story-date {
-    font-size: 14px;
-    line-height: 20px;
-    color: #737373;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A3A3A3;
     margin: 0;
+    font-weight: 500;
   }
 
   .story-title {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 16px;
+    line-height: 24px;
     font-weight: 600;
     color: #171717;
     margin: 0;
@@ -2333,13 +2668,19 @@
   }
 
   .story-read-more-link {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 14px;
+    line-height: 20px;
     color: #2563EB;
     font-weight: 600;
     text-decoration: none;
-    margin-top: 8px;
-    display: inline-block;
+    margin-top: 4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .story-read-more-link:hover {
+    text-decoration: underline;
   }
 
   .customer-stories-navigation {
@@ -2347,14 +2688,13 @@
     justify-content: center;
     align-items: center;
     gap: 16px;
-    margin-top: 32px;
+    margin-top: 24px;
     width: 100%;
-    margin-left: 0;
   }
 
   .nav-arrow {
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     border: 1px solid #E5E5E5;
     background: #FFFFFF;
@@ -2365,8 +2705,9 @@
     transition: all 0.3s ease;
   }
 
-  .nav-arrow:hover {
+  .nav-arrow:hover:not(:disabled) {
     background: #F5F5F5;
+    border-color: #D4D4D4;
   }
 
   .nav-arrow:disabled {
@@ -2377,6 +2718,7 @@
   .nav-arrow svg {
     width: 20px;
     height: 20px;
+    color: #171717;
   }
 
   /* CTA Expert Section Mobile */

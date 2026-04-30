@@ -569,8 +569,8 @@ const HomePage = () => {
                   </div>
                   <div className="flip-card-back">
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Sarah Johnson</h3>
-                      <p className="team-member-designation">Senior Finance Manager</p>
+                      <h3 className="team-member-name">Niluka Jayasinghe</h3>
+                      <p className="team-member-designation">Chief Operating Officer</p>
                     </div>
                   </div>
                 </div>
@@ -582,8 +582,8 @@ const HomePage = () => {
                   </div>
                   <div className="flip-card-back">
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Priya Sharma</h3>
-                      <p className="team-member-designation">Technology Lead</p>
+                      <h3 className="team-member-name">Achini Dharmasirwardhana</h3>
+                      <p className="team-member-designation">Chief Executive Officer</p>
                     </div>
                   </div>
                 </div>
@@ -595,8 +595,8 @@ const HomePage = () => {
                   </div>
                   <div className="flip-card-back">
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Michael Chen</h3>
-                      <p className="team-member-designation">Operations Director</p>
+                      <h3 className="team-member-name">Amila Fernando</h3>
+                      <p className="team-member-designation">Director – Chief Strategy Officer</p>
                     </div>
                   </div>
                 </div>
@@ -608,8 +608,8 @@ const HomePage = () => {
                   </div>
                   <div className="flip-card-back">
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Rajesh Kumar</h3>
-                      <p className="team-member-designation">Business Analyst</p>
+                      <h3 className="team-member-name">Chandika Witharana</h3>
+                      <p className="team-member-designation">Chief Technology Officer</p>
                     </div>
                   </div>
                 </div>
@@ -852,7 +852,7 @@ const HomePage = () => {
               
               <div className="faq-footer">
                 <p className="faq-footer-text">Don't see what you want?</p>
-                <a href="#contact" className="faq-contact-link">Send us an email</a>
+                <a href="mailto:info@branchworksglobal.com" className="faq-contact-link">Send us an email</a>
               </div>
             </div>
           </div>

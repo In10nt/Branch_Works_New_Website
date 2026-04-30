@@ -406,8 +406,8 @@ const AboutPage = () => {
                   </div>
                   <div className="flip-card-back">
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Sarah Johnson</h3>
-                      <p className="team-member-designation">Senior Finance Manager</p>
+                      <h3 className="team-member-name">Niluka Jayasinghe</h3>
+                      <p className="team-member-designation">Managing Director (Global Bookkeeping Solutions)</p>
                     </div>
                   </div>
                 </div>
@@ -419,8 +419,8 @@ const AboutPage = () => {
                   </div>
                   <div className="flip-card-back">
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Priya Sharma</h3>
-                      <p className="team-member-designation">Technology Lead</p>
+                      <h3 className="team-member-name">Achini Dharmasirwardhana</h3>
+                      <p className="team-member-designation">-</p>
                     </div>
                   </div>
                 </div>
@@ -432,8 +432,8 @@ const AboutPage = () => {
                   </div>
                   <div className="flip-card-back">
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Michael Chen</h3>
-                      <p className="team-member-designation">Operations Director</p>
+                      <h3 className="team-member-name">Amila Fernando</h3>
+                      <p className="team-member-designation">Director – Strategy & Performance (Global Bookkeeping Solutions)</p>
                     </div>
                   </div>
                 </div>
@@ -445,8 +445,8 @@ const AboutPage = () => {
                   </div>
                   <div className="flip-card-back">
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Rajesh Kumar</h3>
-                      <p className="team-member-designation">Business Analyst</p>
+                      <h3 className="team-member-name">Chandika Witharana</h3>
+                      <p className="team-member-designation">-</p>
                     </div>
                   </div>
                 </div>

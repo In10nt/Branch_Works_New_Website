@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Finance.css';
 
 const ChevronIcon = ({ isExpanded }) => (
@@ -19,6 +20,7 @@ const ChevronIcon = ({ isExpanded }) => (
 );
 
 const FooterExpandable = () => {
+  const navigate = useNavigate();
   const [expandedSections, setExpandedSections] = useState({
     industry: false,
     quickLinks: false,
@@ -31,15 +33,21 @@ const FooterExpandable = () => {
     }));
   };
 
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="footer-section blue-accent">
       <div className="footer-container">
         <div className="footer-hero-container">
           {/* Logo and Tagline Section */}
           <div className="footer-logo-section">
-            <div className="footer-logo">
+            <Link to="/" className="footer-logo" onClick={handleHomeClick}>
               <img src="/images/footer_logo.svg" alt="BranchWorks Global" />
-            </div>
+            </Link>
 
             <div className="footer-tagline-container">
               <h2 className="footer-tagline">
@@ -83,7 +91,8 @@ const FooterExpandable = () => {
               </div>
               <div className={`footer-expandable-content ${expandedSections.quickLinks ? 'expanded' : ''}`}>
                 <div className="footer-expandable-links">
-                  <a href="/about" className="footer-expandable-link">About us</a>
+                  <Link to="/" className="footer-expandable-link" onClick={handleHomeClick}>Home</Link>
+                  <Link to="/about" className="footer-expandable-link">About us</Link>
                   <a href="/blog" className="footer-expandable-link">Blog</a>
                   <a href="/careers" className="footer-expandable-link">Careers</a>
                 </div>
@@ -106,7 +115,7 @@ const FooterExpandable = () => {
 
           <div className="footer-social-links">
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/branchworksglobal" 
               className="footer-social-icon" 
               aria-label="Instagram"
               target="_blank"
@@ -115,7 +124,7 @@ const FooterExpandable = () => {
               <img src="/images/instagram.png" alt="Instagram" style={{ width: '18px', height: '18px' }} />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/company/branchworksglobal" 
               className="footer-social-icon" 
               aria-label="LinkedIn"
               target="_blank"
@@ -124,7 +133,7 @@ const FooterExpandable = () => {
               <img src="/images/linkedin.png" alt="LinkedIn" style={{ width: '18px', height: '18px' }} />
             </a>
             <a 
-              href="https://twitter.com" 
+              href="https://twitter.com/branchworksglobal" 
               className="footer-social-icon" 
               aria-label="Twitter"
               target="_blank"

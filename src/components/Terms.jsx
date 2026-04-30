@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Terms.css';
 import './Terms-mobile-responsive.css';
 import './mobile-responsive.css';
 
 const Terms = () => {
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
@@ -13,6 +14,12 @@ const Terms = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleHomeClick = (e) => {
+    e.preventDefault();
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -233,9 +240,9 @@ const Terms = () => {
           <div className="footer-content">
             <div className="footer-top">
               <div className="footer-left">
-                <div className="footer-logo">
+                <Link to="/" className="footer-logo" onClick={handleHomeClick}>
                   <img src={`${process.env.PUBLIC_URL}/images/footer_logo.svg`} alt="BRANCHWORKS GLOBAL" className="footer-logo-image" />
-                </div>
+                </Link>
                 <div className="footer-tagline">
                   <h2 className="footer-title">Dedicated teams,<br />built to scale with control</h2>
                   <p className="footer-description">More than outsourcing<br />we build your international branch</p>
@@ -255,6 +262,7 @@ const Terms = () => {
                 <div className="footer-column">
                   <h3 className="footer-column-title">Quick links</h3>
                   <ul className="footer-links">
+                    <li><Link to="/" onClick={handleHomeClick}>Home</Link></li>
                     <li><Link to="/about">About us</Link></li>
                     <li><a href="#blog">Blog</a></li>
                     <li><a href="#careers">Careers</a></li>
@@ -272,13 +280,13 @@ const Terms = () => {
                 </div>
               </div>
               <div className="footer-social">
-                <a href="#instagram" className="social-icon" aria-label="Instagram">
+                <a href="https://www.instagram.com/branchworksglobal" className="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                   <img src="/images/instagram.png" alt="Instagram" width="18" height="22" />
                 </a>
-                <a href="#linkdin" className="social-icon" aria-label="LinkdIn">
-                  <img src="/images/linkedin.png" alt="Linkdin" width="18" height="22" />
+                <a href="https://www.linkedin.com/company/branchworksglobal" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                  <img src="/images/linkedin.png" alt="LinkedIn" width="18" height="22" />
                 </a>
-                <a href="#twitter" className="social-icon" aria-label="Twitter">
+                <a href="https://twitter.com/branchworksglobal" className="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
                   <img src="/images/twitter.png" alt="Twitter" width="18" height="22" />
                 </a>
               </div>
