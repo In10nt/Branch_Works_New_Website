@@ -55,21 +55,24 @@ const HomePage = () => {
       expertName: "Alexandra",
       expertRole: "Finance Expert",
       expertImage: "teamMember5.jpg",
-      showContainer: true
+      showContainer: true,
+      containerImage: "Container.svg"
     },
     "Technology Support": {
       description: "Secure systems and infrastructure that enable your teams to operate efficiently and scale with confidence.",
       expertName: "Alexandra",
-      expertRole: "Technology Specialist",
-      expertImage: "girlImageFinance.jpg",
-      showContainer: false
+      expertRole: "Finance Expert",
+      expertImage: "teamMember6.jpg",
+      showContainer: true,
+      containerImage: "ContainerTechnology.svg"
     },
     "Offshore Hiring": {
       description: "Dedicated offshore teams aligned with your business processes, working as an extension of your internal workforce.",
       expertName: "Alexandra",
-      expertRole: "Offshore Hiring Expert",
-      expertImage: "girlImageFinance.jpg",
-      showContainer: false
+      expertRole: "Finance Expert",
+      expertImage: "teamMember7.jpg",
+      showContainer: true,
+      containerImage: "ContainerOffshore.svg"
     }
   };
 
@@ -457,7 +460,7 @@ const HomePage = () => {
                 
                 {tabContent[activeTab].showContainer && (
                   <div className="new-services-list">
-                    <img src={`${process.env.PUBLIC_URL}/images/Container.svg`} alt="Services" className="services-container-svg" />
+                    <img src={`${process.env.PUBLIC_URL}/images/${tabContent[activeTab].containerImage}`} alt="Services" className="services-container-svg" />
                   </div>
                 )}
 
@@ -661,18 +664,11 @@ const HomePage = () => {
                 "We moved from reactive bookkeeping to a structured finance function. The visibility and control we now have has changed how we operate."
               </p>
             </div>
-            
-            <div className="testimonial-source">
-              <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="testimonial-logo" />
-            </div>
-            
+
             <div className="testimonial-profile">
-              <div className="testimonial-avatar">
-                <img src={`${process.env.PUBLIC_URL}/images/fobes_girl.jpg`} alt="Julie Sweet" className="testimonial-avatar-image" />
-              </div>
               <div className="testimonial-info">
-                <h3 className="testimonial-name">Julie Sweet</h3>
-                <p className="testimonial-role">Finance Expert - Company name</p>
+                <p className="testimonial-role">Finance Expert</p>
+                <p className="testimonial-company">Small-to-Medium Enterprise (Australia)</p>
               </div>
             </div>
           </div>

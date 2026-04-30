@@ -23,6 +23,7 @@ body {
   padding: 16px 20px;
   display: flex;
   justify-content: center;
+  z-index: 100;
 }
 
 .header-content {
@@ -32,10 +33,13 @@ body {
   padding: 8px;
   justify-content: space-between;
   align-items: center;
-  border-radius: 999px;
-  border: 1px solid #E5E5E5;
-  background: #FFFFFF;
+  border-radius: 999px !important;
+  border: 1px solid #E5E5E5 !important;
+  background: #FFFFFF !important;
   margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 100;
 }
 
 .logo {
@@ -1260,9 +1264,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 16px;
   align-self: stretch;
-  margin-top: 120px;
+  margin-top: 32px;
   margin-bottom: 24px;
   flex: 1;
 }
@@ -1277,10 +1281,11 @@ body {
 .new-service-item {
   display: flex;
   width: 314px;
-  height: 56px;
-  padding: 12px;
-  align-items: center;
-  gap: 8px;
+  min-height: 72px;
+  height: auto;
+  padding: 16px 20px;
+  align-items: flex-start;
+  gap: 16px;
   border-radius: 8px;
   background: #FFFFFF;
   border: 1px solid #E5E5E5;
@@ -1295,6 +1300,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 0;
 }
 
 .new-service-icon svg {
@@ -1309,14 +1315,16 @@ body {
 }
 
 .new-service-title {
-  color: #171717;
+  color: #2563EB;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 24px;
+  line-height: 28px;
   margin: 0;
   flex: 1;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .new-cta-button {
@@ -2186,10 +2194,21 @@ body {
   font-style: normal;
   font-weight: 600;
   line-height: 20px;
-  margin: 0;
+  margin: 0 0 4px 0;
 }
 
 .testimonial-role {
+  color: #737373;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  margin: 0;
+}
+
+.testimonial-company {
   color: #737373;
   text-align: center;
   font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

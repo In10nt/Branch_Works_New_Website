@@ -72,6 +72,9 @@
     max-width: 361px;
     padding: 8px 16px;
     justify-content: space-between;
+    border-radius: 999px !important;
+    border: 1px solid #E5E5E5 !important;
+    background: #FFFFFF !important;
   }
 
   .logo {
@@ -2421,6 +2424,9 @@
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
+    border-radius: 999px !important;
+    border: 1px solid #E5E5E5 !important;
+    background: #FFFFFF !important;
   }
 
   .logo {
@@ -2452,6 +2458,9 @@
     max-width: 944px;
     padding: 12px 24px;
     margin: 0 auto;
+    border-radius: 999px !important;
+    border: 1px solid #E5E5E5 !important;
+    background: #FFFFFF !important;
   }
 
   /* Logo sizing for tablet */
