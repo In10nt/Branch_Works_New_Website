@@ -730,35 +730,45 @@
   }
 
   .new-services-list {
-    margin-top: 0;
+    margin-top: 16px;
+    margin-bottom: 16px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 6px;
   }
 
   .new-service-item {
     width: 100%;
+    max-width: 100%;
     justify-content: flex-start;
-    padding: 12px 16px;
-    gap: 12px;
+    padding: 6px 10px;
+    gap: 8px;
+    min-height: 32px;
+    height: auto;
   }
 
   .new-service-icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
   }
 
   .service-icon-image {
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
   }
 
   .new-service-title {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 16px;
     text-align: left;
+  }
+
+  .services-container-svg {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 
   .new-cta-button {
@@ -766,7 +776,7 @@
     align-self: flex-start;
     padding: 10px 20px;
     font-size: 14px;
-    margin-top: 8px;
+    margin-top: 16px;
   }
 
   .new-tab-content-right {

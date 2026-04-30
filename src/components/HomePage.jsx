@@ -458,7 +458,67 @@ const HomePage = () => {
                   {tabContent[activeTab].description}
                 </p>
                 
-                {tabContent[activeTab].showContainer && (
+                {activeTab === 'Technology Support' ? (
+                  <div className="new-services-list">
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/technology_icon1.png`} alt="Data Analytics Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Data, Analytics & Cloud Architecture</h3>
+                    </div>
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/technology_icon2.png`} alt="ERP Solutions Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Tailored Industry ERP Solutions</h3>
+                    </div>
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/technology_icon3.png`} alt="IT Infrastructure Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Secure IT Infrastructure, Cybersecurity & Managed Operations</h3>
+                    </div>
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/technology_icon14.png`} alt="Software Engineering Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Software Engineering, Automation & Digital Transformation</h3>
+                    </div>
+                  </div>
+                ) : activeTab === 'Offshore Hiring' ? (
+                  <div className="new-services-list">
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/offshore_icon1.png`} alt="Recruitment Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Recruitment & Talent Acquisition</h3>
+                    </div>
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/offshore_icon2.png`} alt="Onboarding Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Onboarding & Training</h3>
+                    </div>
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/offshore_icon3.png`} alt="Payroll Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Payroll & Compliance Management</h3>
+                    </div>
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/offshore_icon4.png`} alt="Performance Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Performance Monitoring & Reporting</h3>
+                    </div>
+                    <div className="new-service-item">
+                      <div className="new-service-icon">
+                        <img src={`${process.env.PUBLIC_URL}/images/offshore_icon5.png`} alt="Workforce Icon" className="service-icon-image" />
+                      </div>
+                      <h3 className="new-service-title">Scalable Workforce Solutions</h3>
+                    </div>
+                  </div>
+                ) : tabContent[activeTab].showContainer && (
                   <div className="new-services-list">
                     <img src={`${process.env.PUBLIC_URL}/images/${tabContent[activeTab].containerImage}`} alt="Services" className="services-container-svg" />
                   </div>
