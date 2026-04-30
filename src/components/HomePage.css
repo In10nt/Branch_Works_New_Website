@@ -1398,22 +1398,27 @@ body {
   background: #172554;
   opacity: 1;
   margin-top: 0;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  margin-left: 0;
+  margin-right: 0;
   overflow: hidden;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .faces-container {
   display: flex;
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   height: auto;
   min-height: 768px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 64px;
-  padding: 64px 20px;
+  padding: 64px 0;
   opacity: 1;
 }
 
@@ -1425,8 +1430,9 @@ body {
   width: 100vw;
   overflow: hidden;
   position: relative;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
 }
 
 /* Desktop - Continuous Scrolling Animation */
@@ -1451,32 +1457,29 @@ body {
   }
 
   .faces-row-1 {
-    animation: scrollLeftFromCorner 40s linear infinite;
-    transform: translateX(-100px);
+    animation: scrollLeftToRight 40s linear infinite;
   }
 
   .faces-row-2 {
-    animation: scrollRightFromCorner 45s linear infinite;
-    transform: translateX(calc(-100vw - 100px));
+    animation: scrollRightToLeft 45s linear infinite;
   }
 
   .faces-row-3 {
-    animation: scrollLeftFromCorner 50s linear infinite;
-    transform: translateX(-100px);
+    animation: scrollLeftToRight 50s linear infinite;
   }
 
-  @keyframes scrollLeftFromCorner {
+  @keyframes scrollLeftToRight {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-100vw - 1000px));
+      transform: translateX(calc(100vw - 100%));
     }
   }
 
-  @keyframes scrollRightFromCorner {
+  @keyframes scrollRightToLeft {
     0% {
-      transform: translateX(calc(-100vw - 1000px));
+      transform: translateX(calc(100vw - 100%));
     }
     100% {
       transform: translateX(0);
