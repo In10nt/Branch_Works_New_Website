@@ -1,5 +1,64 @@
 /* Responsive Design - Mobile, Tablet, and Large Screen Support */
 
+/* Global Mobile Overflow Fix */
+@media (max-width: 767px) {
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  * {
+    max-width: 100%;
+  }
+
+  img, video, svg {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Full-width sections that need to break out of container padding */
+  .faces-section,
+  .tomorrow-section,
+  .footer-section {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+  }
+
+  .faces-section {
+    background: #172554 !important;
+  }
+
+  .tomorrow-section {
+    background: #172554 !important;
+  }
+
+  .footer-section {
+    background: #172554 !important;
+  }
+
+  .faces-grid,
+  .real-faces-grid {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
 /* Mobile Map Section - Broader mobile support */
 @media (max-width: 767px) {
   .map-section {
@@ -870,8 +929,15 @@
   /* Faces Mobile - 3 Rows with Horizontal Scrolling Animation */
   .faces-section {
     padding: 40px 0;
-    width: 100vw;
+    width: 100vw !important;
+    max-width: 100vw !important;
     overflow: hidden;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    background: #172554 !important;
   }
 
   .faces-container {
@@ -923,16 +989,13 @@
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    width: 100vw;
+    width: 100vw !important;
+    max-width: 100vw !important;
     overflow: hidden;
     margin-left: 0;
     margin-right: 0;
     padding: 0;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
   }
 
   .faces-row {
@@ -992,14 +1055,11 @@
   /* Tomorrow Mobile */
   .tomorrow-section {
     padding: 40px 0;
-    width: 100vw;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
     position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
     overflow: hidden;
   }
 
@@ -1654,8 +1714,9 @@
      ======================================== */
   
   .footer-section {
-    width: 393px;
-    height: 1180px;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: auto;
     padding: 64px 0;
     background: #172554;
     display: flex;
@@ -1665,12 +1726,17 @@
     flex: none;
     order: 1;
     flex-grow: 0;
+    margin-left: calc(-50vw + 50%) !important;
+    margin-right: calc(-50vw + 50%) !important;
+    overflow-x: hidden;
+    position: relative;
   }
 
   .footer-container {
-    width: 361px;
-    height: 1052px;
-    padding: 0;
+    width: 100%;
+    max-width: 361px;
+    height: auto;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1679,11 +1745,13 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    box-sizing: border-box;
   }
 
   .footer-hero-container {
-    width: 361px;
-    height: 882px;
+    width: 100%;
+    max-width: 361px;
+    height: auto;
     padding: 64px 0;
     display: flex;
     flex-direction: column;
@@ -1697,8 +1765,9 @@
 
   /* Logo Section */
   .footer-logo-section {
-    width: 361px;
-    height: 322px;
+    width: 100%;
+    max-width: 361px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
