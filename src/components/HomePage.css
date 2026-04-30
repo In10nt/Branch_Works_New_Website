@@ -1810,6 +1810,10 @@ body {
   font-weight: 600;
   line-height: 32px;
   margin: 0 0 12px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
 }
 
 .team-member-designation {
@@ -1819,6 +1823,10 @@ body {
   font-weight: 400;
   line-height: 24px;
   margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
 }
 
 .tomorrow-card-image {
@@ -1873,17 +1881,47 @@ body {
   }
 
   .team-member-name {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 11px;
+    line-height: 16px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    hyphens: none;
+    letter-spacing: -0.5px;
+    padding: 0 4px;
   }
 
   .team-member-designation {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 10px;
+    line-height: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    padding: 0 4px;
   }
 
   .flip-card-content {
-    padding: 24px 16px;
+    padding: 16px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 8px;
+  }
+
+  .flip-card-back {
+    overflow: visible;
+    padding: 4px;
+  }
+
+  .tomorrow-card {
+    width: 165px;
+    height: 205px;
   }
 }
 
@@ -1899,17 +1937,47 @@ body {
   }
 
   .team-member-name {
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 11px;
+    line-height: 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    hyphens: none;
+    letter-spacing: -0.5px;
+    padding: 0 4px;
   }
 
   .team-member-designation {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 10px;
+    line-height: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    max-width: 100%;
+    padding: 0 4px;
   }
 
   .flip-card-content {
-    padding: 20px 12px;
+    padding: 14px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 6px;
+  }
+
+  .flip-card-back {
+    overflow: visible;
+    padding: 4px;
+  }
+
+  .tomorrow-card {
+    width: 185px;
+    height: 245px;
   }
 }
 /* Testimonial Section */

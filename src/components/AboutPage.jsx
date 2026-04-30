@@ -15,6 +15,7 @@ const AboutPage = () => {
   const sectionThreeRef = useRef(null);
   const mapSectionRef = useRef(null);
   const tomorrowHeaderRef = useRef(null);
+  const tomorrowCardsRef = useRef(null);
   const ctaExpertRef = useRef(null);
 
   // Toggle flip card on mobile
@@ -22,8 +23,8 @@ const AboutPage = () => {
     if (window.innerWidth <= 768) {
       setFlippedCards(prev => 
         prev.includes(index) 
-          ? prev.filter(i => i !== index)
-          : [...prev, index]
+          ? [] // Close the card if it's already open
+          : [index] // Open only this card, close all others
       );
     }
   };
@@ -407,7 +408,7 @@ const AboutPage = () => {
                   <div className="flip-card-back">
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Niluka Jayasinghe</h3>
-                      <p className="team-member-designation">Managing Director (Global Bookkeeping Solutions)</p>
+                      <p className="team-member-designation">Chief Operating Officer</p>
                     </div>
                   </div>
                 </div>
@@ -420,7 +421,7 @@ const AboutPage = () => {
                   <div className="flip-card-back">
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Achini Dharmasirwardhana</h3>
-                      <p className="team-member-designation">-</p>
+                      <p className="team-member-designation">Chief Executive Officer</p>
                     </div>
                   </div>
                 </div>
@@ -433,7 +434,7 @@ const AboutPage = () => {
                   <div className="flip-card-back">
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Amila Fernando</h3>
-                      <p className="team-member-designation">Director – Strategy & Performance (Global Bookkeeping Solutions)</p>
+                      <p className="team-member-designation">Director – Chief Strategy Officer</p>
                     </div>
                   </div>
                 </div>
@@ -446,7 +447,7 @@ const AboutPage = () => {
                   <div className="flip-card-back">
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Chandika Witharana</h3>
-                      <p className="team-member-designation">-</p>
+                      <p className="team-member-designation">Chief Technology Officer</p>
                     </div>
                   </div>
                 </div>

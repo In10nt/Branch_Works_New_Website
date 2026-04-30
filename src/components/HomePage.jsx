@@ -9,6 +9,7 @@ const HomePage = () => {
   const statsCardsRef = useRef(null);
   const facesHeaderRef = useRef(null);
   const testimonialRef = useRef(null);
+  const tomorrowCardsRef = useRef(null);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [expandedFaqIndex, setExpandedFaqIndex] = useState(-1); // All items collapsed by default
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,8 +23,8 @@ const HomePage = () => {
     if (window.innerWidth <= 768) {
       setFlippedCards(prev => 
         prev.includes(index) 
-          ? prev.filter(i => i !== index)
-          : [...prev, index]
+          ? [] // Close the card if it's already open
+          : [index] // Open only this card, close all others
       );
     }
   };
@@ -120,6 +121,7 @@ const HomePage = () => {
     const statsCards = statsCardsRef.current;
     const facesHeader = facesHeaderRef.current;
     const testimonial = testimonialRef.current;
+    const tomorrowCards = tomorrowCardsRef.current;
 
     if (statsHeadline) {
       observer.observe(statsHeadline);
@@ -132,6 +134,25 @@ const HomePage = () => {
     }
     if (testimonial) {
       observer.observe(testimonial);
+    }
+
+    // Sequential animation for tomorrow cards
+    if (tomorrowCards) {
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const cards = entry.target.querySelectorAll('.tomorrow-card');
+            cards.forEach((card, index) => {
+              setTimeout(() => {
+                card.classList.add('card-animate-in');
+              }, index * 150); // 150ms delay between each card
+            });
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+      
+      cardObserver.observe(tomorrowCards);
     }
 
     return () => {
@@ -561,7 +582,7 @@ const HomePage = () => {
               </button>
             </div>
             
-            <div className="tomorrow-cards">
+            <div className="tomorrow-cards" ref={tomorrowCardsRef}>
               <div className={`tomorrow-card ${flippedCards.includes(0) ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
