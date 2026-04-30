@@ -1,0 +1,2465 @@
+/* ========================================
+   FINANCE PAGE STYLES
+   ======================================== */
+
+.finance-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+
+/* Ensure stats section displays properly on Finance page */
+.finance-layout .stats-section {
+  display: flex;
+  height: 768px;
+  padding: 64px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  align-self: stretch;
+  background: #FFFFFF;
+  width: 100%;
+}
+
+.finance-layout .stats-container {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+}
+
+.finance-layout .stats-headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex: 1 0 0;
+  align-self: stretch;
+  padding: 0;
+  gap: 0;
+  margin-bottom: 64px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.finance-layout .stats-title {
+  align-self: stretch;
+  color: #171717;
+  text-align: left;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -1.92px;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 750px;
+}
+
+.finance-layout .stats-title-black {
+  color: #171717;
+  font-weight: 600;
+}
+
+.finance-layout .stats-title-gray {
+  color: #A3A3A3;
+  font-weight: 600;
+}
+
+.finance-layout .stats-cards {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  align-self: stretch;
+  width: 100%;
+}
+
+.finance-layout .stat-card {
+  display: flex;
+  padding: 16px 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+  background: #EFF6FF;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.finance-layout .stat-logo {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.finance-layout .stat-company-logo {
+  height: 60px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.finance-layout .stat-description {
+  align-self: stretch;
+  color: #404040;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+  width: 280px;
+  word-wrap: break-word;
+}
+
+.finance-layout .stat-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 60px;
+  letter-spacing: -2.4px;
+  margin: 0;
+}
+
+/* Finance Scaling Section */
+.finance-scaling-section {
+  display: flex;
+  width: 100%;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  background: #FFFFFF;
+  opacity: 1;
+  margin-top: -120px;
+  margin-bottom: 0;
+}
+
+.finance-scaling-container {
+  display: flex;
+  width: 850px;
+  height: 600px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  padding-top: 0;
+  padding-bottom: 72px;
+  opacity: 1;
+}
+
+.finance-scaling-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.finance-scaling-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  width: 100%;
+}
+
+.finance-scaling-title {
+  color: #171717;
+  text-align: left;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -1.92px;
+  margin: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  width: 100%;
+}
+
+.finance-scaling-title-black {
+  color: #525252;
+  font-weight: 600;
+}
+
+.finance-scaling-title-gray {
+  color: #A3A3A3;
+  font-weight: 600;
+}
+
+.finance-scaling-cards {
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.finance-scaling-card {
+  display: flex;
+  width: 272.67px;
+  height: 202px;
+  padding-top: 16px;
+  padding-right: 20px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 64px;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+  opacity: 1;
+  justify-content: space-between;
+}
+
+.finance-scaling-card-primary {
+  background: #1E3A8A;
+  color: #FFFFFF;
+}
+
+.finance-scaling-card-secondary {
+  background: #EFF6FF;
+  color: #171717;
+}
+
+.finance-scaling-card-description {
+  align-self: stretch;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+  word-wrap: break-word;
+}
+
+.finance-scaling-card-primary .finance-scaling-card-description {
+  color: #BFDBFE;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.finance-scaling-card-secondary .finance-scaling-card-description {
+  color: #525252;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0%;
+}
+
+.finance-scaling-card-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 56px;
+  letter-spacing: -1.92px;
+  margin: 0;
+  margin-top: auto;
+}
+
+.finance-scaling-card-primary .finance-scaling-card-value {
+  color: #FFFFFF;
+}
+
+/* Finance Services Section */
+.finance-services-section {
+  display: flex;
+  width: 1200px;
+  height: 1040px;
+  padding-top: 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  opacity: 1;
+  margin: 0 auto;
+  margin-top: 40px;
+  clear: both;
+}
+
+.finance-services-container {
+  display: flex;
+  width: 866px;
+  height: 488px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 1;
+}
+
+.finance-services-content {
+  display: flex;
+  width: 866px;
+  height: 1040px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  opacity: 1;
+}
+
+/* Finance Hero Card */
+.finance-hero-card {
+  display: flex;
+  width: 866px;
+  height: 400px;
+  max-height: 400px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 24px;
+  padding: 64px 64px 64px 40px;
+  background: linear-gradient(90deg, #0F172A -6.12%, rgba(15, 23, 42, 0) 65%);
+  opacity: 1;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.finance-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 320px;
+  z-index: 2;
+  position: relative;
+  margin-right: 120px;
+  margin-left: 0;
+}
+
+.finance-hero-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.finance-hero-text-content {
+  display: flex;
+  width: 381px;
+  height: 162px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  opacity: 1;
+}
+
+.finance-hero-title {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.finance-hero-description {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -1%;
+  margin: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.finance-hero-button {
+  display: flex;
+  width: 179px;
+  height: 40px;
+  max-height: 40px;
+  padding: 12px 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 20px;
+  border: 2px solid #E5E5E5;
+  background: #FFFFFF;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -2%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.finance-hero-button:hover {
+  background: #F8FAFC;
+  transform: translateY(-2px);
+}
+
+/* Finance Services Grid */
+.finance-services-grid {
+  display: flex;
+  width: 866px;
+  height: 424px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 24px;
+  margin-top: 32px;
+  opacity: 1;
+}
+
+.finance-service-card {
+  display: flex;
+  width: 272px;
+  height: 200px;
+  max-height: 200px;
+  padding: 24px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  border-radius: 16px;
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.finance-service-title {
+  width: 224px;
+  height: 22px;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  margin: 0;
+  margin-bottom: 12px;
+  opacity: 1;
+}
+
+.finance-service-description {
+  width: 224px;
+  height: 66px;
+  color: #525252;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.14px;
+  margin: 0;
+  opacity: 1;
+}
+
+/* Finance Tools Logo */
+.finance-tools-logo {
+  display: flex;
+  width: 866px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
+  opacity: 1;
+}
+
+.finance-logo-image {
+  width: 330.36px;
+  height: 32px;
+  opacity: 0.4;
+}
+
+/* Finance Tax Section */
+.finance-tax-section {
+  display: flex;
+  width: 1200px;
+  height: 1070px;
+  padding-top: 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  opacity: 1;
+  margin: 0 auto;
+  margin-top: 40px;
+  clear: both;
+}
+
+.finance-tax-container {
+  display: flex;
+  width: 866px;
+  height: 488px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 1;
+}
+
+.finance-tax-content {
+  display: flex;
+  width: 866px;
+  height: 1070px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  opacity: 1;
+}
+
+/* Finance Tax Hero Card */
+.finance-tax-hero-card {
+  display: flex;
+  width: 866px;
+  height: 400px;
+  max-height: 400px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 24px;
+  padding: 64px 64px 64px 40px;
+  background: linear-gradient(90deg, #0F172A -6.12%, rgba(15, 23, 42, 0) 70%);
+  opacity: 1;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.finance-tax-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 320px;
+  z-index: 2;
+  position: relative;
+  margin-right: 120px;
+  margin-left: 0;
+}
+
+.finance-tax-hero-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.finance-tax-hero-text-content {
+  display: flex;
+  width: 381px;
+  height: 162px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  opacity: 1;
+}
+
+.finance-tax-hero-title {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.finance-tax-hero-description {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -1%;
+  margin: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.finance-tax-hero-button {
+  display: flex;
+  width: 179px;
+  height: 40px;
+  max-height: 40px;
+  padding: 12px 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 20px;
+  border: 2px solid #E5E5E5;
+  background: #FFFFFF;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -2%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.finance-tax-hero-button:hover {
+  background: #F8FAFC;
+  transform: translateY(-2px);
+}
+
+/* Finance Tax Services Grid */
+.finance-tax-services-grid {
+  display: flex;
+  width: 866px;
+  height: 462px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 24px;
+  margin-top: 32px;
+  opacity: 1;
+}
+
+.finance-tax-service-card {
+  display: flex;
+  width: 420px;
+  height: 138px;
+  max-height: 138px;
+  padding: 24px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  border-radius: 16px;
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.finance-tax-service-title {
+  width: 380px;
+  height: 22px;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  margin: 0;
+  margin-bottom: 12px;
+  opacity: 1;
+}
+
+.finance-tax-service-description {
+  width: 380px;
+  height: 66px;
+  color: #525252;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.14px;
+  margin: 0;
+  opacity: 1;
+}
+
+/* Finance Tax Tools Logo */
+.finance-tax-tools-logo {
+  display: flex;
+  width: 866px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
+  opacity: 1;
+}
+
+.finance-tax-logo-image {
+  width: 330.36px;
+  height: 32px;
+  opacity: 0.4;
+}
+
+/* Finance Payroll Section */
+.finance-payroll-section {
+  display: flex;
+  width: 1200px;
+  height: 1070px;
+  padding-top: 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  opacity: 1;
+  margin: 0 auto;
+  margin-top: 40px;
+  clear: both;
+}
+
+.finance-payroll-container {
+  display: flex;
+  width: 866px;
+  height: 488px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 1;
+}
+
+.finance-payroll-content {
+  display: flex;
+  width: 866px;
+  height: 1070px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  opacity: 1;
+}
+
+/* Finance Payroll Hero Card */
+.finance-payroll-hero-card {
+  display: flex;
+  width: 866px;
+  height: 400px;
+  max-height: 400px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 24px;
+  padding: 64px 64px 64px 40px;
+  background: linear-gradient(90deg, #0F172A -6.12%, rgba(15, 23, 42, 0) 70%);
+  opacity: 1;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.finance-payroll-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 320px;
+  z-index: 2;
+  position: relative;
+  margin-right: 120px;
+  margin-left: 0;
+}
+
+.finance-payroll-hero-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.finance-payroll-hero-text-content {
+  display: flex;
+  width: 381px;
+  height: 162px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  opacity: 1;
+}
+
+.finance-payroll-hero-title {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.finance-payroll-hero-description {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -1%;
+  margin: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.finance-payroll-hero-button {
+  display: flex;
+  width: 179px;
+  height: 40px;
+  max-height: 40px;
+  padding: 12px 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 20px;
+  border: 2px solid #E5E5E5;
+  background: #FFFFFF;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -2%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.finance-payroll-hero-button:hover {
+  background: #F8FAFC;
+  transform: translateY(-2px);
+}
+
+/* Finance Payroll Services Grid */
+.finance-payroll-services-grid {
+  display: flex;
+  width: 866px;
+  height: 424px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 24px;
+  margin-top: 32px;
+  opacity: 1;
+}
+
+.finance-payroll-service-card {
+  display: flex;
+  width: 272px;
+  height: 200px;
+  max-height: 200px;
+  padding: 24px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  border-radius: 16px;
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.finance-payroll-service-title {
+  width: 224px;
+  height: 22px;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  margin: 0;
+  margin-bottom: 12px;
+  opacity: 1;
+}
+
+.finance-payroll-service-description {
+  width: 224px;
+  height: 66px;
+  color: #525252;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.14px;
+  margin: 0;
+  opacity: 1;
+}
+
+/* Finance Payroll Tools Logo */
+.finance-payroll-tools-logo {
+  display: flex;
+  width: 866px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
+  opacity: 1;
+  padding-top: 6.4px;
+  padding-bottom: 6.4px;
+  gap: 3.2px;
+}
+
+.finance-payroll-logo-image {
+  width: 385.05px;
+  height: 32px;
+  opacity: 0.4;
+}
+
+/* Finance Management Accounting Section */
+.finance-management-section {
+  display: flex;
+  width: 1200px;
+  height: 1070px;
+  padding-top: 64px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #FFFFFF;
+  opacity: 1;
+  margin: 0 auto;
+  margin-top: 40px;
+  clear: both;
+}
+
+.finance-management-container {
+  display: flex;
+  width: 866px;
+  height: 488px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 1;
+}
+
+.finance-management-content {
+  display: flex;
+  width: 866px;
+  height: 1070px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  opacity: 1;
+}
+
+/* Finance Management Accounting Hero Card */
+.finance-management-hero-card {
+  display: flex;
+  width: 866px;
+  height: 400px;
+  max-height: 400px;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 24px;
+  padding: 64px 64px 64px 40px;
+  background: linear-gradient(90deg, #0F172A -6.12%, rgba(15, 23, 42, 0) 70%);
+  opacity: 1;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.finance-management-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 320px;
+  z-index: 2;
+  position: relative;
+  margin-right: 120px;
+  margin-left: 0;
+}
+
+.finance-management-hero-icon {
+  display: flex;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.finance-management-hero-text-content {
+  display: flex;
+  width: 381px;
+  height: 162px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  opacity: 1;
+}
+
+.finance-management-hero-title {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.finance-management-hero-description {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -1%;
+  margin: 0;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.finance-management-hero-button {
+  display: flex;
+  width: 179px;
+  height: 40px;
+  max-height: 40px;
+  padding: 12px 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  border-radius: 20px;
+  border: 2px solid #E5E5E5;
+  background: #FFFFFF;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -2%;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.finance-management-hero-button:hover {
+  background: #F8FAFC;
+  transform: translateY(-2px);
+}
+
+/* Finance Management Accounting Services Grid */
+.finance-management-services-grid {
+  display: flex;
+  width: 866px;
+  height: 462px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 24px;
+  margin-top: 32px;
+  opacity: 1;
+}
+
+.finance-management-service-card {
+  display: flex;
+  width: 420px;
+  height: 138px;
+  max-height: 138px;
+  padding: 24px 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  border-radius: 16px;
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  opacity: 1;
+  box-sizing: border-box;
+}
+
+.finance-management-service-title {
+  width: 380px;
+  height: 22px;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  margin: 0;
+  margin-bottom: 12px;
+  opacity: 1;
+}
+
+.finance-management-service-description {
+  width: 380px;
+  height: 66px;
+  color: #525252;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: -0.14px;
+  margin: 0;
+  opacity: 1;
+}
+
+/* Finance Management Accounting Tools Logo */
+.finance-management-tools-logo {
+  display: flex;
+  width: 866px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 40px;
+  opacity: 1;
+}
+
+.finance-management-logo-image {
+  width: 330.36px;
+  height: 32px;
+  opacity: 0.4;
+}
+
+/* Finance Testimonial Section */
+.finance-testimonial-section {
+  display: flex;
+  width: 100%;
+  max-width: 1440px;
+  height: 656px;
+  padding: 64px 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  margin: -270px auto 40px auto;
+  opacity: 1;
+}
+
+.finance-testimonial-container {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  opacity: 1;
+}
+
+.finance-testimonial-content {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+  opacity: 1;
+}
+
+.finance-testimonial-stars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.finance-star {
+  color: #F59E0B !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  display: inline-block !important;
+}
+
+.finance-testimonial-quote {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.finance-testimonial-text {
+  color: #171717 !important;
+  text-align: center !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 600 !important;
+  line-height: 34px !important;
+  letter-spacing: -0.56px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: 850px !important;
+}
+
+.finance-testimonial-source {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.finance-testimonial-logo {
+  height: 64px !important;
+  width: auto !important;
+  opacity: 1 !important;
+}
+
+.finance-testimonial-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.finance-testimonial-avatar {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: #F5F5F5 !important;
+}
+
+.finance-testimonial-avatar-image {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+.finance-testimonial-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.finance-testimonial-name {
+  color: #171717 !important;
+  text-align: center !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 20px !important;
+  margin: 0 !important;
+}
+
+.finance-testimonial-role {
+  color: #737373 !important;
+  text-align: center !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 18px !important;
+  margin: 0 !important;
+}
+
+/* Customer Stories Section - Same as HomePage */
+.customer-stories-section {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  min-height: 600px;
+  padding: 64px 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  background: #FFFFFF;
+  opacity: 1;
+  margin: 0 auto;
+}
+
+.customer-stories-container {
+  display: flex;
+  width: 100%;
+  max-width: 950px;
+  height: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  opacity: 1;
+}
+
+.customer-stories-content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 0;
+  opacity: 1;
+  position: relative;
+}
+
+.customer-stories-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  opacity: 1;
+}
+
+.customer-stories-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  opacity: 1;
+}
+
+.customer-stories-title {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -0.56px;
+  margin: 0;
+}
+
+.customer-stories-description {
+  color: #404040;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.customer-stories-cta {
+  display: flex;
+  height: 40px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: #171717;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  opacity: 1;
+  white-space: nowrap;
+}
+
+.customer-stories-cta:hover {
+  background-color: #0f1a3a;
+}
+
+.customer-stories-cards {
+  display: flex;
+  width: 950px;
+  align-items: flex-start;
+  opacity: 1;
+  overflow: hidden;
+  position: relative;
+  justify-content: flex-start;
+}
+
+.customer-stories-grid {
+  display: flex;
+  transition: transform 0.5s ease;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.customer-story-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  background: #FFFFFF;
+  width: 272.67px;
+  min-width: 272.67px;
+  height: 268px;
+  border: 1px solid #E5E5E5;
+  box-shadow: none;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.customer-story-card:hover {
+  transform: translateY(-4px);
+}
+
+.story-card-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.story-card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  background: #FFFFFF;
+  flex: 1;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.story-date {
+  color: #6B7280;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+  display: block;
+}
+
+.story-title {
+  color: #111827;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  margin: 0;
+  display: block;
+  flex: 1;
+  min-height: 44px;
+}
+
+.story-read-more-link {
+  color: #3B82F6;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: block;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.story-read-more-link:hover {
+  color: #1D4ED8;
+}
+
+.customer-stories-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  width: 100%;
+  position: static;
+}
+
+.nav-arrow {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #F5F5F5;
+  border: 1px solid #E5E5E5;
+  color: #737373;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-arrow:hover:not(:disabled) {
+  background: #E5E5E5;
+  color: #171717;
+}
+
+.nav-arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* CTA Expert Section - Same as HomePage */
+.cta-expert-section {
+  display: flex;
+  width: 1200px;
+  height: 673px;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+  background: #FFFFFF;
+  opacity: 1;
+  margin: 0 auto;
+}
+
+.cta-expert-container {
+  display: flex;
+  width: 866px;
+  height: 673px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  opacity: 1;
+}
+
+.cta-expert-content {
+  display: flex;
+  width: 866px;
+  height: 545px;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  padding: 64px 0;
+  opacity: 1;
+}
+
+.cta-expert-card {
+  display: flex;
+  width: 866px;
+  height: 417px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-radius: 24px;
+  border: 2px solid #E5E5E5;
+  background: #172554;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.cta-expert-left {
+  display: flex;
+  width: 350px;
+  height: 385px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  padding-left: 0;
+}
+
+.cta-expert-title {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -0.56px;
+  margin: 0;
+  text-align: center;
+}
+
+.cta-expert-button {
+  display: flex;
+  width: 165px;
+  height: 40px;
+  max-height: 40px;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: 2px solid #E5E5E5;
+  color: #171717;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.28px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-expert-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cta-expert-button:hover {
+  background-color: #F5F5F5;
+  transform: translateY(-2px);
+}
+
+.cta-expert-right {
+  display: flex;
+  width: 450px;
+  height: 385px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #E5E5E5;
+}
+
+.cta-expert-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Responsive Design for CTA Expert Section */
+@media (max-width: 1200px) {
+  .cta-expert-section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+  
+  .cta-expert-container {
+    width: 100%;
+    max-width: 866px;
+  }
+  
+  .cta-expert-content {
+    width: 100%;
+  }
+  
+  .cta-expert-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-expert-section {
+    height: auto;
+    padding: 40px 16px;
+  }
+  
+  .cta-expert-container {
+    height: auto;
+    padding: 40px 0;
+  }
+  
+  .cta-expert-content {
+    height: auto;
+    padding: 40px 0;
+  }
+  
+  .cta-expert-card {
+    height: auto;
+    flex-direction: column;
+    padding: 24px;
+    gap: 32px;
+  }
+  
+  .cta-expert-left {
+    width: 100%;
+    height: auto;
+    gap: 24px;
+  }
+  
+  .cta-expert-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  .cta-expert-right {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .finance-layout {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  /* Finance Scaling Section Mobile */
+  .finance-scaling-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    margin-top: -60px;
+  }
+
+  .finance-scaling-container {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .finance-scaling-content {
+    width: 100%;
+    gap: 32px;
+  }
+
+  .finance-scaling-title {
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+  }
+
+  .finance-scaling-cards {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .finance-scaling-card {
+    width: 100%;
+    min-height: 150px;
+    padding: 16px;
+  }
+
+  .finance-scaling-card-value {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  /* Finance Services Section Mobile */
+  .finance-services-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    margin-top: 20px;
+  }
+
+  .finance-services-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-services-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-hero-card {
+    width: 100%;
+    height: 300px;
+    padding: 32px 24px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .finance-hero-content {
+    max-width: 100%;
+    margin-right: 0;
+    align-items: center;
+  }
+
+  .finance-hero-text-content {
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .finance-hero-title {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+  }
+
+  .finance-hero-description {
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+  }
+
+  .finance-hero-button {
+    width: 140px;
+    height: 36px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .finance-services-grid {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .finance-service-card {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+  }
+
+  .finance-service-title {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-service-description {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-tools-logo {
+    width: 100%;
+    padding: 16px 0;
+  }
+
+  .finance-logo-image {
+    width: 280px;
+    height: 28px;
+  }
+
+  /* Finance Tax Section Mobile */
+  .finance-tax-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .finance-tax-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-tax-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-tax-hero-card {
+    width: 100%;
+    height: 300px;
+    padding: 32px 24px;
+  }
+
+  .finance-tax-hero-content {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .finance-tax-hero-text-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-tax-hero-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .finance-tax-hero-description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .finance-tax-hero-button {
+    width: 140px;
+    height: 36px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .finance-tax-services-grid {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .finance-tax-service-card {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+  }
+
+  .finance-tax-service-title {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-tax-service-description {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-tax-tools-logo {
+    width: 100%;
+  }
+
+  .finance-tax-logo-image {
+    width: 280px;
+    height: 28px;
+  }
+
+  /* Finance Payroll Section Mobile */
+  .finance-payroll-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .finance-payroll-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-payroll-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-payroll-hero-card {
+    width: 100%;
+    height: 300px;
+    padding: 32px 24px;
+  }
+
+  .finance-payroll-hero-content {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .finance-payroll-hero-text-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-payroll-hero-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .finance-payroll-hero-description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .finance-payroll-hero-button {
+    width: 140px;
+    height: 36px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .finance-payroll-services-grid {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .finance-payroll-service-card {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+  }
+
+  .finance-payroll-service-title {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-payroll-service-description {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-payroll-tools-logo {
+    width: 100%;
+  }
+
+  .finance-payroll-logo-image {
+    width: 280px;
+    height: 28px;
+  }
+
+  /* Finance Management Section Mobile */
+  .finance-management-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .finance-management-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-management-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-management-hero-card {
+    width: 100%;
+    height: 300px;
+    padding: 32px 24px;
+  }
+
+  .finance-management-hero-content {
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .finance-management-hero-text-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-management-hero-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .finance-management-hero-description {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .finance-management-hero-button {
+    width: 140px;
+    height: 36px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .finance-management-services-grid {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .finance-management-service-card {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+  }
+
+  .finance-management-service-title {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-management-service-description {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-management-tools-logo {
+    width: 100%;
+  }
+
+  .finance-management-logo-image {
+    width: 280px;
+    height: 28px;
+  }
+
+  /* Finance Testimonial Section Mobile */
+  .finance-testimonial-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    margin: -60px auto 20px auto;
+  }
+
+  .finance-testimonial-container {
+    width: 100%;
+    max-width: 361px;
+    gap: 24px;
+  }
+
+  .finance-testimonial-content {
+    width: 100%;
+    max-width: 361px;
+    gap: 24px;
+  }
+
+  .finance-testimonial-stars {
+    margin-bottom: 16px;
+  }
+
+  .finance-star {
+    font-size: 20px !important;
+  }
+
+  .finance-testimonial-quote {
+    width: 100%;
+    max-width: 361px;
+    margin-bottom: 16px;
+  }
+
+  .finance-testimonial-text {
+    font-size: 20px !important;
+    line-height: 26px !important;
+    width: 100% !important;
+    max-width: 361px !important;
+  }
+
+  .finance-testimonial-source {
+    width: 100%;
+    max-width: 361px;
+    margin-bottom: 16px;
+  }
+
+  .finance-testimonial-logo {
+    height: 48px !important;
+  }
+
+  .finance-testimonial-profile {
+    gap: 12px;
+  }
+
+  .finance-testimonial-avatar {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .finance-testimonial-name {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+
+  .finance-testimonial-role {
+    font-size: 12px !important;
+    line-height: 16px !important;
+  }
+
+  /* Customer Stories Section Mobile */
+  .customer-stories-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .customer-stories-container {
+    width: 100%;
+    max-width: 361px;
+    gap: 32px;
+  }
+
+  .customer-stories-content {
+    width: 100%;
+    gap: 24px;
+  }
+
+  .customer-stories-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .customer-stories-text {
+    align-items: center;
+  }
+
+  .customer-stories-title {
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  .customer-stories-description {
+    text-align: center;
+  }
+
+  .customer-stories-cards {
+    width: 100%;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .customer-stories-grid {
+    gap: 16px;
+  }
+
+  .customer-story-card {
+    width: 280px;
+    min-width: 280px;
+    height: 240px;
+  }
+
+  .story-card-image {
+    height: 100px;
+  }
+
+  .story-card-content {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .story-title {
+    font-size: 14px;
+    line-height: 18px;
+    min-height: 36px;
+  }
+
+  .customer-stories-navigation {
+    margin-top: 24px;
+  }
+
+  .nav-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .nav-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* CTA Expert Section Mobile */
+  .cta-expert-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .cta-expert-container {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .cta-expert-content {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .cta-expert-card {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    padding: 24px;
+    gap: 32px;
+  }
+
+  .cta-expert-left {
+    width: 100%;
+    height: auto;
+    gap: 24px;
+  }
+
+  .cta-expert-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .cta-expert-button {
+    width: 140px;
+    height: 36px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .cta-expert-right {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .finance-scaling-container {
+    max-width: 944px;
+    padding: 40px 20px;
+  }
+
+  .finance-scaling-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .finance-scaling-cards {
+    gap: 20px;
+  }
+
+  .finance-scaling-card {
+    width: 240px;
+  }
+
+  .finance-services-section,
+  .finance-tax-section,
+  .finance-payroll-section,
+  .finance-management-section {
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .finance-services-container,
+  .finance-tax-container,
+  .finance-payroll-container,
+  .finance-management-container {
+    width: 100%;
+    max-width: 944px;
+  }
+
+  .finance-hero-card,
+  .finance-tax-hero-card,
+  .finance-payroll-hero-card,
+  .finance-management-hero-card {
+    width: 100%;
+    padding: 48px 32px;
+  }
+
+  .finance-services-grid,
+  .finance-payroll-services-grid {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .finance-service-card,
+  .finance-payroll-service-card {
+    width: calc(50% - 10px);
+  }
+
+  .finance-tax-services-grid,
+  .finance-management-services-grid {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .finance-tax-service-card,
+  .finance-management-service-card {
+    width: 100%;
+  }
+
+  .finance-testimonial-container {
+    max-width: 944px;
+  }
+
+  .finance-testimonial-text {
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+
+  .customer-stories-container {
+    max-width: 944px;
+  }
+
+  .customer-stories-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .cta-expert-container {
+    max-width: 944px;
+  }
+
+  .cta-expert-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .finance-scaling-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .finance-scaling-container {
+    width: 100%;
+    height: auto;
+    padding: 40px 0;
+  }
+
+  .finance-scaling-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .finance-scaling-cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .finance-scaling-card {
+    width: 100%;
+    min-height: 150px;
+  }
+
+  .finance-scaling-card-value {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .finance-services-section {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .finance-services-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-services-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-hero-card {
+    width: 100%;
+    height: 300px;
+    padding: 32px 24px;
+  }
+
+  .finance-hero-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .finance-services-grid {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    flex-direction: column;
+  }
+
+  .finance-service-card {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+  }
+
+  .finance-service-title {
+    width: 100%;
+    height: auto;
+  }
+
+  .finance-service-description {
+    width: 100%;
+    height: auto;
+  }
+}
