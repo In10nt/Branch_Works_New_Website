@@ -730,18 +730,11 @@ const Finance = () => {
                 "We moved from reactive bookkeeping to a structured finance function. The visibility and control we now have has changed how we operate."
               </p>
             </div>
-            
-            <div className="finance-testimonial-source">
-              <img src={`${process.env.PUBLIC_URL}/images/forbes.svg`} alt="Forbes" className="finance-testimonial-logo" />
-            </div>
-            
+
             <div className="finance-testimonial-profile">
-              <div className="finance-testimonial-avatar">
-                <img src={`${process.env.PUBLIC_URL}/images/fobes_girl.jpg`} alt="Julie Sweet" className="finance-testimonial-avatar-image" />
-              </div>
               <div className="finance-testimonial-info">
-                <h3 className="finance-testimonial-name">Julie Sweet</h3>
-                <p className="finance-testimonial-role">Finance Expert - Company name</p>
+                <p className="finance-testimonial-role">Finance Expert</p>
+                <p className="finance-testimonial-company">Small-to-Medium Enterprise (Australia)</p>
               </div>
             </div>
           </div>

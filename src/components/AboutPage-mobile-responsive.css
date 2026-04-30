@@ -7,37 +7,52 @@
   /* About Hero Section */
   .about-hero-layout {
     height: auto;
-    padding: 20px 0 40px 0;
+    min-height: auto;
+    padding: 10px 0 20px 0;
     margin-top: 0;
     margin-bottom: 0;
   }
 
+  /* Logos Section - Mobile */
+  .about-hero-layout ~ .logos-section {
+    margin-top: -40px;
+  }
+
+  /* Video Section - Mobile */
+  .about-hero-layout ~ .video-section {
+    margin-top: -60px;
+  }
+
   .about-hero-layout .hero-content {
-    gap: 28px;
+    gap: 20px;
+    padding-top: 0;
+    min-height: auto;
+  }
+
+  .about-hero-layout .hero-background-image {
+    display: none;
   }
 
   .about-hero-layout .badge-chip {
-    display: flex !important;
-    padding: 8px 16px !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 12px !important;
-    border-radius: 999px !important;
-    border: none !important;
-    background: #DBEAFE !important;
-    box-shadow: none !important;
-    opacity: 1 !important;
-    visibility: visible !important;
+    display: flex;
+    padding: 8px 16px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    border-radius: 999px;
+    border: none;
+    background: #DBEAFE;
+    box-shadow: none;
   }
 
   .about-hero-layout .badge-text {
-    color: #2563EB !important;
-    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-    font-size: 14px !important;
-    font-style: normal !important;
-    font-weight: 600 !important;
-    line-height: 20px !important;
-    white-space: nowrap !important;
+    color: #2563EB;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    white-space: nowrap;
   }
 
   .about-hero-layout .main-headline {
@@ -57,8 +72,8 @@
     padding: 12px 24px;
     font-size: 16px;
     height: auto;
-    background: #172554 !important;
-    white-space: nowrap !important;
+    background: #172554;
+    white-space: nowrap;
   }
 
   /* About Section Two - Mobile */
@@ -202,21 +217,11 @@
   }
 
   .value-card-description {
-    font-size: 12px;
-    line-height: 18px;
-    font-weight: 400;
-    color: #525252;
-    margin: 0;
-    width: 100%;
-  }
-
-  .value-card-description {
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
     color: #525252;
     margin: 0;
-    margin-top: 0;
     width: 100%;
     max-width: 100%;
   }
@@ -240,25 +245,153 @@
   }
 
   /* Tomorrow Section - Mobile (Inherited but can be customized) */
+  .about-hero-layout ~ .tomorrow-section {
+    padding: 40px 0;
+    width: 100vw;
+    margin-left: 0;
+    margin-right: 0;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    overflow: hidden;
+  }
+
   .about-hero-layout ~ .tomorrow-section .tomorrow-container {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-content {
+    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
   }
 
   .about-hero-layout ~ .tomorrow-section .tomorrow-title {
-    font-size: 28px;
-    line-height: 36px;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-description {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #A3A3A3;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-cta-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+    max-width: 361px;
+    height: auto;
+    opacity: 1;
+    margin: 0 auto;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-card {
+    width: 100%;
+    height: 218px;
+    border-radius: 16px;
+    overflow: hidden;
+    opacity: 1;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-card:first-child {
+    width: 100%;
+    max-width: 100%;
+    height: 218px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   /* CTA Expert Section - Mobile (Inherited but can be customized) */
+  .about-hero-layout ~ .cta-expert-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .about-hero-layout ~ .cta-expert-section .cta-expert-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .about-hero-layout ~ .cta-expert-section .cta-expert-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
   .about-hero-layout ~ .cta-expert-section .cta-expert-card {
-    width: 100%;
-    max-width: 361px;
+    width: calc(100% - 10px);
+    max-width: 100%;
+    padding: 24px;
+    gap: 32px;
+    border-radius: 24px;
+    background: #172554;
+    margin: 0 0 0 10px;
   }
 
   .about-hero-layout ~ .cta-expert-section .cta-expert-title {
     font-size: 24px;
     line-height: 30px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  .about-hero-layout ~ .cta-expert-section .cta-expert-button {
+    width: 140px;
+    height: 36px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .about-hero-layout ~ .cta-expert-section .cta-expert-right {
+    width: 100%;
+    height: 280px;
+    order: -1;
+  }
+
+  .about-hero-layout ~ .cta-expert-section .cta-expert-left {
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -271,9 +404,29 @@
   /* About Hero Section - Small Tablet */
   .about-hero-layout {
     height: auto;
-    padding: 60px 0 60px 0;
-    margin-top: -50px;
+    min-height: auto;
+    padding: 20px 0 30px 0;
+    margin-top: 0;
     margin-bottom: 0;
+  }
+
+  /* Logos Section - Small Tablet */
+  .about-hero-layout ~ .logos-section {
+    margin-top: -60px;
+  }
+
+  /* Video Section - Small Tablet */
+  .about-hero-layout ~ .video-section {
+    margin-top: -80px;
+  }
+
+  .about-hero-layout .hero-content {
+    gap: 24px;
+    min-height: auto;
+  }
+
+  .about-hero-layout .hero-background-image {
+    display: none;
   }
 
   .about-hero-layout .main-headline {
@@ -381,6 +534,16 @@
     margin-bottom: 0;
   }
 
+  /* Logos Section - Tablet */
+  .about-hero-layout ~ .logos-section {
+    margin-top: -80px;
+  }
+
+  /* Video Section - Tablet */
+  .about-hero-layout ~ .video-section {
+    margin-top: -100px;
+  }
+
   .about-hero-layout .main-headline {
     font-size: 48px;
     line-height: 58px;
@@ -485,13 +648,54 @@
   }
 
   /* Tomorrow Section - Tablet */
+  .about-hero-layout ~ .tomorrow-section {
+    padding: 64px 0;
+  }
+
   .about-hero-layout ~ .tomorrow-section .tomorrow-container {
     max-width: 944px;
+    margin: 0 auto;
+    padding: 64px 20px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
   }
 
   .about-hero-layout ~ .tomorrow-section .tomorrow-title {
     font-size: 40px;
     line-height: 48px;
+    text-align: center;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-description {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-card {
+    width: 220px;
+    height: 263px;
   }
 
   /* CTA Expert Section - Tablet */
@@ -516,6 +720,16 @@
     height: 768px;
     margin-top: -150px;
     margin-bottom: 0;
+  }
+
+  /* Logos Section - Desktop */
+  .about-hero-layout ~ .logos-section {
+    margin-top: -80px;
+  }
+
+  /* Video Section - Desktop */
+  .about-hero-layout ~ .video-section {
+    margin-top: -120px;
   }
 
   .about-hero-layout .main-headline {
@@ -623,13 +837,57 @@
   }
 
   /* Tomorrow Section - Desktop */
+  .about-hero-layout ~ .tomorrow-section {
+    padding: 64px 0;
+  }
+
   .about-hero-layout ~ .tomorrow-section .tomorrow-container {
     max-width: 1200px;
+    margin: 0 auto;
+    height: 768px;
+    padding: 64px 20px;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    align-self: stretch;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
   }
 
   .about-hero-layout ~ .tomorrow-section .tomorrow-title {
     font-size: 48px;
     line-height: 58px;
+    text-align: center;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-description {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-cards {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  .about-hero-layout ~ .tomorrow-section .tomorrow-card {
+    width: 251.33px;
+    height: 300px;
   }
 
   /* CTA Expert Section - Desktop */
@@ -654,6 +912,16 @@
     height: 768px;
     margin-top: -100px;
     margin-bottom: 0;
+  }
+
+  /* Logos Section - Large Desktop */
+  .about-hero-layout ~ .logos-section {
+    margin-top: -80px;
+  }
+
+  /* Video Section - Large Desktop */
+  .about-hero-layout ~ .video-section {
+    margin-top: -120px;
   }
 
   .about-hero-layout .main-headline {

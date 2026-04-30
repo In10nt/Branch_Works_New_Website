@@ -314,8 +314,8 @@
   /* Hero Mobile */
   .hero-layout {
     height: auto;
-    min-height: 850px;
-    padding: 0px 20px 120px 20px;
+    min-height: auto;
+    padding: 10px 20px 80px 20px;
     margin-top: 0;
     position: relative;
     overflow: visible;
@@ -324,20 +324,20 @@
   .hero-background-image {
     max-width: none;
     width: 230%;
-    height: 900px;
+    height: 700px;
     background-size: contain;
     background-position: center bottom;
-    bottom: 300px;
+    bottom: 200px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
   }
 
   .hero-content {
-    gap: 24px;
+    gap: 20px;
     position: relative;
     z-index: 10;
-    padding-top: 10px;
+    padding-top: 0;
   }
 
   .badge-chip {
@@ -387,7 +387,7 @@
   .logos-section {
     width: 100%;
     max-width: 100%;
-    margin-top: 30px;
+    margin-top: -20px;
     position: relative;
     z-index: 10;
   }
@@ -452,7 +452,7 @@
   /* Video Mobile */
   .video-section {
     height: auto;
-    margin-top: -50px;
+    margin-top: -80px;
     padding: 40px 0;
   }
 
@@ -1143,11 +1143,12 @@
     margin-top: 0;
   }
 
+  .customer-stories-cta,
   .customer-stories-cta button,
   .customer-stories-cta .customer-stories-cta-button {
     padding: 12px 24px;
-    background: #171717;
-    color: #FFFFFF;
+    background: #171717 !important;
+    color: #FFFFFF !important;
     border: none;
     border-radius: 999px;
     font-size: 16px;
@@ -1155,7 +1156,15 @@
     cursor: pointer;
     white-space: nowrap;
     text-decoration: none;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .customer-stories-cta:hover,
+  .customer-stories-cta button:hover,
+  .customer-stories-cta .customer-stories-cta-button:hover {
+    background: #0f1a3a !important;
   }
 
   .customer-stories-cards {
@@ -1524,27 +1533,41 @@
   .cta-expert-section {
     width: 100%;
     height: auto;
-    padding: 40px 16px;
+    padding: 60px 0 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cta-expert-container {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cta-expert-content {
     width: 100%;
     height: auto;
     padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .cta-expert-card {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
     height: auto;
     flex-direction: column;
-    padding: 16px;
-    gap: 16px;
+    padding: 24px;
+    gap: 32px;
+    border-radius: 24px;
+    background: #172554;
+    margin: 0 0 0 10px;
   }
 
   .cta-expert-right {
@@ -1560,12 +1583,23 @@
     align-items: center;
     text-align: center;
     gap: 24px;
+    display: flex;
+    flex-direction: column;
   }
 
   .cta-expert-title {
     width: 100%;
     font-size: 24px;
     line-height: 30px;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  .cta-expert-button {
+    width: 140px;
+    height: 36px;
+    font-size: 12px;
+    padding: 8px 12px;
   }
 
   /* ========================================
