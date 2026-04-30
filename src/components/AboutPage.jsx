@@ -425,6 +425,7 @@ const AboutPage = () => {
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
                   </div>
                   <div className="flip-card-back">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Niluka Jayasinghe</h3>
                       <p className="team-member-designation">Chief Operating Officer</p>
@@ -438,6 +439,7 @@ const AboutPage = () => {
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
                   </div>
                   <div className="flip-card-back">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Achini Dharmasirwardhana</h3>
                       <p className="team-member-designation">Chief Executive Officer</p>
@@ -451,6 +453,7 @@ const AboutPage = () => {
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
                   </div>
                   <div className="flip-card-back">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Amila Fernando</h3>
                       <p className="team-member-designation">Director – Chief Strategy Officer</p>
@@ -464,6 +467,7 @@ const AboutPage = () => {
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
                   </div>
                   <div className="flip-card-back">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Chandika Witharana</h3>
                       <p className="team-member-designation">Chief Technology Officer</p>

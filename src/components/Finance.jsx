@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 import './Finance.css';
@@ -11,6 +11,19 @@ const Finance = () => {
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
   
+  // Animation refs
+  const scalingHeaderRef = useRef(null);
+  const scalingCardsRef = useRef(null);
+  const servicesHeroRef = useRef(null);
+  const servicesGridRef = useRef(null);
+  const taxHeroRef = useRef(null);
+  const taxGridRef = useRef(null);
+  const payrollHeroRef = useRef(null);
+  const payrollGridRef = useRef(null);
+  const managementHeroRef = useRef(null);
+  const managementGridRef = useRef(null);
+  const testimonialRef = useRef(null);
+  
   // Calculate max index for carousel (total cards - visible cards)
   const totalCards = 8; // Total number of story cards
   const visibleCards = 3; // Number of visible cards at once
@@ -19,6 +32,63 @@ const Finance = () => {
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Animation observer effect
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Store current ref values
+    const scalingHeader = scalingHeaderRef.current;
+    const scalingCards = scalingCardsRef.current;
+    const servicesHero = servicesHeroRef.current;
+    const servicesGrid = servicesGridRef.current;
+    const taxHero = taxHeroRef.current;
+    const taxGrid = taxGridRef.current;
+    const payrollHero = payrollHeroRef.current;
+    const payrollGrid = payrollGridRef.current;
+    const managementHero = managementHeroRef.current;
+    const managementGrid = managementGridRef.current;
+    const testimonial = testimonialRef.current;
+
+    // Observe all elements
+    if (scalingHeader) observer.observe(scalingHeader);
+    if (scalingCards) observer.observe(scalingCards);
+    if (servicesHero) observer.observe(servicesHero);
+    if (servicesGrid) observer.observe(servicesGrid);
+    if (taxHero) observer.observe(taxHero);
+    if (taxGrid) observer.observe(taxGrid);
+    if (payrollHero) observer.observe(payrollHero);
+    if (payrollGrid) observer.observe(payrollGrid);
+    if (managementHero) observer.observe(managementHero);
+    if (managementGrid) observer.observe(managementGrid);
+    if (testimonial) observer.observe(testimonial);
+
+    return () => {
+      if (scalingHeader) observer.unobserve(scalingHeader);
+      if (scalingCards) observer.unobserve(scalingCards);
+      if (servicesHero) observer.unobserve(servicesHero);
+      if (servicesGrid) observer.unobserve(servicesGrid);
+      if (taxHero) observer.unobserve(taxHero);
+      if (taxGrid) observer.unobserve(taxGrid);
+      if (payrollHero) observer.unobserve(payrollHero);
+      if (payrollGrid) observer.unobserve(payrollGrid);
+      if (managementHero) observer.unobserve(managementHero);
+      if (managementGrid) observer.unobserve(managementGrid);
+      if (testimonial) observer.unobserve(testimonial);
+    };
   }, []);
 
   const toggleMobileMenu = () => {
@@ -212,14 +282,14 @@ const Finance = () => {
       <div className="finance-scaling-section">
         <div className="finance-scaling-container">
           <div className="finance-scaling-content">
-            <div className="finance-scaling-header">
+            <div className="finance-scaling-header" ref={scalingHeaderRef}>
               <h2 className="finance-scaling-title">
                 <span className="finance-scaling-title-black">How businesses are<br /></span>
                 <span className="finance-scaling-title-gray">scaling finance more efficiently</span>
               </h2>
             </div>
 
-            <div className="finance-scaling-cards">
+            <div className="finance-scaling-cards" ref={scalingCardsRef}>
               <div className="finance-scaling-card finance-scaling-card-primary">
                 <p className="finance-scaling-card-description">Businesses are restructuring finance to improve efficiency</p>
                 <div className="finance-scaling-card-value">70%</div>
@@ -246,6 +316,7 @@ const Finance = () => {
             {/* Hero Card with Background Image */}
             <div 
               className="finance-hero-card"
+              ref={servicesHeroRef}
               style={{
                 backgroundImage: `linear-gradient(90deg, #0F172A -6.12%, rgba(15, 23, 42, 0) 70%), url('${process.env.PUBLIC_URL}/images/finance_image1.png')`,
                 backgroundSize: 'cover',
@@ -283,7 +354,7 @@ const Finance = () => {
             </div>
 
             {/* Services Grid */}
-            <div className="finance-services-grid">
+            <div className="finance-services-grid" ref={servicesGridRef}>
               <div className="finance-service-card">
                 <h3 className="finance-service-title">Processing Bills & Invoices</h3>
                 <p className="finance-service-description">
@@ -346,6 +417,7 @@ const Finance = () => {
             {/* Tax Hero Card with Background Image */}
             <div 
               className="finance-tax-hero-card"
+              ref={taxHeroRef}
               style={{
                 backgroundImage: `linear-gradient(90deg, #0F172A -6.12%, rgba(15, 23, 42, 0) 70%), url('${process.env.PUBLIC_URL}/images/finance_image2.png')`,
                 backgroundSize: 'cover',
@@ -383,7 +455,7 @@ const Finance = () => {
             </div>
 
             {/* Tax Services Grid */}
-            <div className="finance-tax-services-grid">
+            <div className="finance-tax-services-grid" ref={taxGridRef}>
               <div className="finance-tax-service-card">
                 <h3 className="finance-tax-service-title">BAS Lodgment (Australia)</h3>
                 <p className="finance-tax-service-description">
@@ -446,6 +518,7 @@ const Finance = () => {
             {/* Payroll Hero Card with Background Image */}
             <div 
               className="finance-payroll-hero-card"
+              ref={payrollHeroRef}
               style={{
                 backgroundImage: `linear-gradient(90deg, #0F172A -6.12%, rgba(15, 23, 42, 0) 70%), url('${process.env.PUBLIC_URL}/images/finance_image3.png')`,
                 backgroundSize: 'cover',
@@ -483,7 +556,7 @@ const Finance = () => {
             </div>
 
             {/* Payroll Services Grid */}
-            <div className="finance-payroll-services-grid">
+            <div className="finance-payroll-services-grid" ref={payrollGridRef}>
               <div className="finance-payroll-service-card">
                 <h3 className="finance-payroll-service-title">Payroll Processing</h3>
                 <p className="finance-payroll-service-description">
@@ -546,6 +619,7 @@ const Finance = () => {
             {/* Management Accounting Hero Card with Background Image */}
             <div 
               className="finance-management-hero-card"
+              ref={managementHeroRef}
               style={{
                 backgroundImage: `linear-gradient(90deg, #0F172A -6.12%, rgba(15, 23, 42, 0) 70%), url('${process.env.PUBLIC_URL}/images/finance_image4.png')`,
                 backgroundSize: 'cover',
@@ -583,7 +657,7 @@ const Finance = () => {
             </div>
 
             {/* Management Accounting Services Grid */}
-            <div className="finance-management-services-grid">
+            <div className="finance-management-services-grid" ref={managementGridRef}>
               <div className="finance-management-service-card">
                 <h3 className="finance-management-service-title">Budgeting & Forecasting</h3>
                 <p className="finance-management-service-description">
@@ -642,7 +716,7 @@ const Finance = () => {
       {/* Seventh Section - Testimonial */}
       <div className="finance-testimonial-section">
         <div className="finance-testimonial-container">
-          <div className="finance-testimonial-content">
+          <div className="finance-testimonial-content" ref={testimonialRef}>
             <div className="finance-testimonial-stars">
               <span className="finance-star">★</span>
               <span className="finance-star">★</span>

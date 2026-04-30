@@ -19,19 +19,15 @@
 }
 
 .finance-layout .badge-chip {
-  display: flex !important;
-  padding: 8px 16px !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 12px !important;
-  border-radius: 999px !important;
-  border: none !important;
-  background: #EFF6FF !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  animation: none !important;
-  transform: none !important;
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 999px;
+  border: none;
+  background: #EFF6FF;
+  box-shadow: none;
 }
 
 .finance-layout .badge-rating {
@@ -43,88 +39,71 @@
 }
 
 .finance-layout .badge-text {
-  color: #2563EB !important;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-size: 16px !important;
-  font-style: normal !important;
-  font-weight: 600 !important;
-  line-height: 20px !important;
-  letter-spacing: 0px !important;
-  white-space: nowrap !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: inline-block !important;
+  color: #2563EB;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  white-space: nowrap;
 }
 
 .finance-layout .main-headline {
-  color: #171717 !important;
-  text-align: center !important;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-size: 48px !important;
-  font-style: normal !important;
-  font-weight: 600 !important;
-  line-height: 58px !important;
-  letter-spacing: -1.92px !important;
-  margin: 0 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: block !important;
-  animation: none !important;
-  transform: none !important;
+  color: #171717;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -1.92px;
+  margin: 0;
 }
 
 .finance-layout .headline-description {
-  width: 422px !important;
-  color: #404040 !important;
-  text-align: center !important;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-size: 16px !important;
-  font-style: normal !important;
-  font-weight: 400 !important;
-  line-height: 24px !important;
-  margin: 0 !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  display: block !important;
-  animation: none !important;
-  transform: none !important;
+  width: 422px;
+  color: #404040;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
 }
 
 .finance-layout .schedule-button {
-  display: flex !important;
-  max-height: 48px !important;
-  padding: 16px 24px !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 4px !important;
-  border-radius: 999px !important;
-  background: #172554 !important;
-  border: none !important;
-  color: #FFFFFF !important;
-  text-align: center !important;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
-  font-size: 16px !important;
-  font-style: normal !important;
-  font-weight: 600 !important;
-  line-height: 24px !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 2px 8px rgba(23, 37, 84, 0.3) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  animation: none !important;
-  transform: none !important;
-  white-space: nowrap !important;
+  display: flex;
+  max-height: 48px;
+  padding: 16px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  background: #172554;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(23, 37, 84, 0.3);
+  white-space: nowrap;
 }
 
 .finance-layout .schedule-button:hover {
-  background-color: #0f1a3a !important;
-  box-shadow: 0 4px 12px rgba(23, 37, 84, 0.4) !important;
+  background-color: #0f1a3a;
+  box-shadow: 0 4px 12px rgba(23, 37, 84, 0.4);
 }
 
 .finance-layout .schedule-button:hover {
-  background-color: #1E40AF !important;
-  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4) !important;
+  background-color: #1E40AF;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
 }
 
 /* Ensure stats section displays properly on Finance page */
@@ -3945,4 +3924,366 @@
   .footer-links-section {
     gap: 48px;
   }
+}
+
+/* ========================================
+   FINANCE PAGE ANIMATIONS
+   ======================================== */
+
+/* Hero Section Animations */
+.finance-layout .badge-chip {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInUpStagger 0.8s ease-out 0.2s both;
+}
+
+.finance-layout .main-headline {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUpStagger 1s ease-out 0.5s both;
+}
+
+.finance-layout .headline-description {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpStagger 0.8s ease-out 0.8s both;
+}
+
+.finance-layout .schedule-button {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpStagger 0.8s ease-out 1.1s both;
+}
+
+.finance-layout .logos-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUpStagger 0.8s ease-out 1.4s both;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUpStagger {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Finance Scaling Section Animations */
+.finance-scaling-header {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.finance-scaling-header.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.finance-scaling-cards {
+  opacity: 1;
+}
+
+.finance-scaling-card {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.finance-scaling-cards.animate-in .finance-scaling-card {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.finance-scaling-cards.animate-in .finance-scaling-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.finance-scaling-cards.animate-in .finance-scaling-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.finance-scaling-cards.animate-in .finance-scaling-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+/* Finance Services Section Animations */
+.finance-hero-card {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.finance-hero-card.animate-in {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.finance-services-grid {
+  opacity: 1;
+}
+
+.finance-service-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.finance-services-grid.animate-in .finance-service-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.finance-services-grid.animate-in .finance-service-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.finance-services-grid.animate-in .finance-service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.finance-services-grid.animate-in .finance-service-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.finance-services-grid.animate-in .finance-service-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.finance-services-grid.animate-in .finance-service-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.finance-services-grid.animate-in .finance-service-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Finance Tax Section Animations */
+.finance-tax-hero-card {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.finance-tax-hero-card.animate-in {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.finance-tax-services-grid {
+  opacity: 1;
+}
+
+.finance-tax-service-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.finance-tax-services-grid.animate-in .finance-tax-service-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.finance-tax-services-grid.animate-in .finance-tax-service-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.finance-tax-services-grid.animate-in .finance-tax-service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.finance-tax-services-grid.animate-in .finance-tax-service-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.finance-tax-services-grid.animate-in .finance-tax-service-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.finance-tax-services-grid.animate-in .finance-tax-service-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.finance-tax-services-grid.animate-in .finance-tax-service-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Finance Payroll Section Animations */
+.finance-payroll-hero-card {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.finance-payroll-hero-card.animate-in {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.finance-payroll-services-grid {
+  opacity: 1;
+}
+
+.finance-payroll-service-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.finance-payroll-services-grid.animate-in .finance-payroll-service-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.finance-payroll-services-grid.animate-in .finance-payroll-service-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.finance-payroll-services-grid.animate-in .finance-payroll-service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.finance-payroll-services-grid.animate-in .finance-payroll-service-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.finance-payroll-services-grid.animate-in .finance-payroll-service-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.finance-payroll-services-grid.animate-in .finance-payroll-service-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.finance-payroll-services-grid.animate-in .finance-payroll-service-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Finance Management Section Animations */
+.finance-management-hero-card {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.finance-management-hero-card.animate-in {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.finance-management-services-grid {
+  opacity: 1;
+}
+
+.finance-management-service-card {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.finance-management-services-grid.animate-in .finance-management-service-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.finance-management-services-grid.animate-in .finance-management-service-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.finance-management-services-grid.animate-in .finance-management-service-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.finance-management-services-grid.animate-in .finance-management-service-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.finance-management-services-grid.animate-in .finance-management-service-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.finance-management-services-grid.animate-in .finance-management-service-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.finance-management-services-grid.animate-in .finance-management-service-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Finance Testimonial Section Animations */
+.finance-testimonial-content {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.finance-testimonial-content.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.finance-testimonial-content.animate-in .finance-testimonial-stars {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.finance-testimonial-content.animate-in .finance-star:nth-child(1) {
+  animation: fadeInUp 0.6s ease-out 0.3s both;
+}
+
+.finance-testimonial-content.animate-in .finance-star:nth-child(2) {
+  animation: fadeInUp 0.6s ease-out 0.4s both;
+}
+
+.finance-testimonial-content.animate-in .finance-star:nth-child(3) {
+  animation: fadeInUp 0.6s ease-out 0.5s both;
+}
+
+.finance-testimonial-content.animate-in .finance-star:nth-child(4) {
+  animation: fadeInUp 0.6s ease-out 0.6s both;
+}
+
+.finance-testimonial-content.animate-in .finance-star:nth-child(5) {
+  animation: fadeInUp 0.6s ease-out 0.7s both;
+}
+
+.finance-testimonial-content.animate-in .finance-testimonial-text {
+  animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.finance-testimonial-content.animate-in .finance-testimonial-source {
+  animation: fadeInUp 0.8s ease-out 1s both;
+}
+
+.finance-testimonial-content.animate-in .finance-testimonial-profile {
+  animation: fadeInUp 0.8s ease-out 1.2s both;
 }
