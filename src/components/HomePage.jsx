@@ -488,7 +488,7 @@ const HomePage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
               </div>
               <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember4.jpg`} alt="Team Member 4" className="tomorrow-card-image" />
+                <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
               </div>
             </div>
           </div>

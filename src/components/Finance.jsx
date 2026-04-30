@@ -115,12 +115,13 @@ const Finance = () => {
           </div>
           
           <div className="headline-section">
-            <h1 className="main-headline">Driven by<br />Real Experience</h1>
-            <p className="headline-description">We started Branchworks Teams from a genuine need within our own business.</p>
+            <h1 className="main-headline">Global Finance.
+              <br />Simplified. Secured.</h1>
+            <p className="headline-description">Empowering global businesses and individuals with trusted offshore finance and asset protection services.</p>
           </div>
 
           <div className="cta-section">
-            <button className="schedule-button">Schedule a Consultation</button>
+            <button className="schedule-button">Book a free 30-minute demo</button>
           </div>
 
           <div className="logos-section">
@@ -182,10 +183,13 @@ const Finance = () => {
             >
               <div className="finance-hero-content">
                 <div className="finance-hero-icon">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <rect width="48" height="48" rx="8" fill="#2563EB"/>
-                    <path d="M16 20h16v2H16v-2zm0 4h16v2H16v-2zm0 4h10v2H16v-2z" fill="white"/>
-                  </svg>
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/images/finance_mini_icon1.jpg`} 
+                    alt="Bookkeeping Icon" 
+                    width="48" 
+                    height="48"
+                    style={{ borderRadius: '8px' }}
+                  />
                 </div>
                 <div className="finance-hero-text-content">
                   <h2 className="finance-hero-title">Bookkeeping & Accounting</h2>
@@ -279,10 +283,13 @@ const Finance = () => {
             >
               <div className="finance-tax-hero-content">
                 <div className="finance-tax-hero-icon">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <rect width="48" height="48" rx="8" fill="#2563EB"/>
-                    <path d="M16 20h16v2H16v-2zm0 4h16v2H16v-2zm0 4h10v2H16v-2z" fill="white"/>
-                  </svg>
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/images/finance_mini_icon2.jpg`} 
+                    alt="Taxation Icon" 
+                    width="48" 
+                    height="48"
+                    style={{ borderRadius: '8px' }}
+                  />
                 </div>
                 <div className="finance-tax-hero-text-content">
                   <h2 className="finance-tax-hero-title">Taxation</h2>
@@ -351,7 +358,7 @@ const Finance = () => {
             {/* Tax Tools Logo */}
             <div className="finance-tax-tools-logo">
               <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_1.png`} 
+                src={`${process.env.PUBLIC_URL}/images/finance_logo_2.png`}
                 alt="Tax Tools - QuickBooks, Xero" 
                 className="finance-tax-logo-image"
               />
@@ -376,10 +383,13 @@ const Finance = () => {
             >
               <div className="finance-payroll-hero-content">
                 <div className="finance-payroll-hero-icon">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <rect width="48" height="48" rx="8" fill="#2563EB"/>
-                    <path d="M16 20h16v2H16v-2zm0 4h16v2H16v-2zm0 4h10v2H16v-2z" fill="white"/>
-                  </svg>
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/images/finance_mini_icon3.jpg`} 
+                    alt="Payroll Icon" 
+                    width="48" 
+                    height="48"
+                    style={{ borderRadius: '8px' }}
+                  />
                 </div>
                 <div className="finance-payroll-hero-text-content">
                   <h2 className="finance-payroll-hero-title">Payroll & Admin</h2>
@@ -448,7 +458,7 @@ const Finance = () => {
             {/* Payroll Tools Logo */}
             <div className="finance-payroll-tools-logo">
               <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_2.png`} 
+                src={`${process.env.PUBLIC_URL}/images/finance_logo_3.png`}
                 alt="Payroll Tools - Deputy, HubStaff, Harvest, Monday, QuickBooks" 
                 className="finance-payroll-logo-image"
               />
@@ -473,10 +483,13 @@ const Finance = () => {
             >
               <div className="finance-management-hero-content">
                 <div className="finance-management-hero-icon">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                    <rect width="48" height="48" rx="8" fill="#2563EB"/>
-                    <path d="M16 20h16v2H16v-2zm0 4h16v2H16v-2zm0 4h10v2H16v-2z" fill="white"/>
-                  </svg>
+                  <img 
+                    src={`${process.env.PUBLIC_URL}/images/finance_mini_icon4.jpg`} 
+                    alt="Management Accounting Icon" 
+                    width="48" 
+                    height="48"
+                    style={{ borderRadius: '8px' }}
+                  />
                 </div>
                 <div className="finance-management-hero-text-content">
                   <h2 className="finance-management-hero-title">Management Accounting</h2>
@@ -545,7 +558,7 @@ const Finance = () => {
             {/* Management Accounting Tools Logo */}
             <div className="finance-management-tools-logo">
               <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_1.png`} 
+                src={`${process.env.PUBLIC_URL}/images/finance_logo_4.png`}
                 alt="Management Accounting Tools" 
                 className="finance-management-logo-image"
               />

@@ -158,7 +158,7 @@
   align-items: center;
   gap: 0;
   padding-top: 0;
-  padding-bottom: 72px;
+  padding-bottom: 170px;
   opacity: 1;
 }
 
@@ -301,7 +301,7 @@
   background: #FFFFFF;
   opacity: 1;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 80px;
   clear: both;
 }
 
@@ -489,12 +489,19 @@
   align-items: center;
   margin-top: 40px;
   opacity: 1;
+  padding-top: 6.4px;
+  padding-bottom: 6.4px;
+  gap: 3.2px;
 }
 
 .finance-logo-image {
-  width: 330.36px;
-  height: 32px;
-  opacity: 0.4;
+  width: auto;
+  height: 48px;
+  max-width: 400px;
+  opacity: 0.6;
+  filter: none;
+  mix-blend-mode: normal;
+  object-fit: contain;
 }
 
 /* Finance Tax Section */
@@ -509,7 +516,7 @@
   background: #FFFFFF;
   opacity: 1;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 80px;
   clear: both;
 }
 
@@ -697,12 +704,19 @@
   align-items: center;
   margin-top: 40px;
   opacity: 1;
+  padding-top: 6.4px;
+  padding-bottom: 6.4px;
+  gap: 3.2px;
 }
 
 .finance-tax-logo-image {
-  width: 330.36px;
-  height: 32px;
-  opacity: 0.4;
+  width: auto;
+  height: 48px;
+  max-width: 400px;
+  opacity: 0.6;
+  filter: none;
+  mix-blend-mode: normal;
+  object-fit: contain;
 }
 
 /* Finance Payroll Section */
@@ -717,7 +731,7 @@
   background: #FFFFFF;
   opacity: 1;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 80px;
   clear: both;
 }
 
@@ -911,9 +925,13 @@
 }
 
 .finance-payroll-logo-image {
-  width: 385.05px;
-  height: 32px;
-  opacity: 0.4;
+  width: auto;
+  height: 48px;
+  max-width: 400px;
+  opacity: 0.6;
+  filter: none;
+  mix-blend-mode: normal;
+  object-fit: contain;
 }
 
 /* Finance Management Accounting Section */
@@ -928,7 +946,7 @@
   background: #FFFFFF;
   opacity: 1;
   margin: 0 auto;
-  margin-top: 40px;
+  margin-top: 80px;
   clear: both;
 }
 
@@ -1116,12 +1134,19 @@
   align-items: center;
   margin-top: 40px;
   opacity: 1;
+  padding-top: 6.4px;
+  padding-bottom: 6.4px;
+  gap: 3.2px;
 }
 
 .finance-management-logo-image {
-  width: 330.36px;
-  height: 32px;
-  opacity: 0.4;
+  width: auto;
+  height: 48px;
+  max-width: 400px;
+  opacity: 1;
+  filter: none;
+  mix-blend-mode: normal;
+  object-fit: contain;
 }
 
 /* Finance Testimonial Section */
