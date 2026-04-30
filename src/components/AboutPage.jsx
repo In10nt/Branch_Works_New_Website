@@ -388,16 +388,56 @@ const AboutPage = () => {
             
             <div className="tomorrow-cards">
               <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Sarah Johnson</h3>
+                      <p className="team-member-designation">Senior Finance Manager</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Priya Sharma</h3>
+                      <p className="team-member-designation">Technology Lead</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Michael Chen</h3>
+                      <p className="team-member-designation">Operations Director</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="tomorrow-card">
-                <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Rajesh Kumar</h3>
+                      <p className="team-member-designation">Business Analyst</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
