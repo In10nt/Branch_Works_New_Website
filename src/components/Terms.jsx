@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Terms.css';
+import './Terms-mobile-responsive.css';
 import './mobile-responsive.css';
 
 const Terms = () => {

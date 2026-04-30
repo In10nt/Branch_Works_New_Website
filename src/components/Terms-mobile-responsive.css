@@ -1,0 +1,827 @@
+/* ========================================
+   TERMS OF SERVICE PAGE MOBILE RESPONSIVE STYLES
+   ======================================== */
+
+/* Mobile - 393px and below */
+@media (max-width: 393px) {
+  /* Terms Main Content */
+  .terms-main {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .terms-container {
+    width: 100%;
+    max-width: 361px;
+    height: auto;
+    padding: 0;
+  }
+
+  .terms-title {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.28px;
+    margin-bottom: 8px;
+  }
+
+  .terms-last-updated {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 100%;
+  }
+
+  .terms-content {
+    gap: 40px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .terms-intro p {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 100%;
+  }
+
+  .terms-section {
+    gap: 12px;
+  }
+
+  .terms-section-title {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    max-width: 100%;
+  }
+
+  .terms-section-text {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 100%;
+  }
+
+  .terms-list {
+    font-size: 14px;
+    line-height: 20px;
+    margin: 12px 0;
+    padding-left: 16px;
+    max-width: 100%;
+  }
+
+  .terms-list li {
+    margin-bottom: 6px;
+  }
+
+  /* Footer Mobile Adjustments */
+  .footer-section {
+    padding: 40px 16px;
+  }
+
+  .footer-container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: 361px;
+    height: auto;
+    gap: 40px;
+  }
+
+  .footer-top {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-left {
+    width: 100%;
+    height: auto;
+    gap: 32px;
+  }
+
+  .footer-logo-image {
+    width: 120px;
+    height: 28px;
+  }
+
+  .footer-tagline {
+    width: 100%;
+    height: auto;
+    gap: 16px;
+    padding-left: 16px;
+    padding-right: 0;
+  }
+
+  .footer-title {
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.48px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-description {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-right {
+    width: 100%;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .footer-column {
+    width: auto;
+    height: auto;
+    gap: 16px;
+  }
+
+  .footer-column-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .footer-links {
+    gap: 12px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .footer-bottom {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .footer-left-group {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+    line-height: 18px;
+    width: auto;
+    height: auto;
+  }
+
+  .footer-policy-terms {
+    gap: 16px;
+    height: auto;
+  }
+
+  .footer-link-bottom {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .footer-social {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 16px;
+    height: auto;
+  }
+}
+
+/* ========================================
+   TERMS PAGE TABLET RESPONSIVE STYLES
+   Breakpoint: 394px - 767px
+   ======================================== */
+
+@media (min-width: 394px) and (max-width: 767px) {
+  /* Terms Main Content */
+  .terms-main {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .terms-container {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    padding: 0;
+  }
+
+  .terms-title {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1.6px;
+    margin-bottom: 8px;
+  }
+
+  .terms-last-updated {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%;
+  }
+
+  .terms-content {
+    gap: 48px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .terms-intro p {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%;
+  }
+
+  .terms-section {
+    gap: 14px;
+  }
+
+  .terms-section-title {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    max-width: 100%;
+  }
+
+  .terms-section-text {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%;
+  }
+
+  .terms-list {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 14px 0;
+    padding-left: 18px;
+    max-width: 100%;
+  }
+
+  .terms-list li {
+    margin-bottom: 8px;
+  }
+
+  /* Footer Tablet Adjustments */
+  .footer-section {
+    padding: 50px 24px;
+  }
+
+  .footer-container {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    gap: 48px;
+  }
+
+  .footer-top {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .footer-left {
+    width: 100%;
+    height: auto;
+    gap: 40px;
+  }
+
+  .footer-tagline {
+    width: 100%;
+    height: auto;
+    gap: 20px;
+    padding-left: 20px;
+  }
+
+  .footer-title {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.56px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-description {
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-right {
+    width: 100%;
+    gap: 64px;
+  }
+
+  .footer-column {
+    width: auto;
+    height: auto;
+  }
+
+  .footer-bottom {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .footer-left-group {
+    width: 100%;
+    flex-direction: row;
+    gap: 40px;
+    height: auto;
+  }
+
+  .footer-social {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+/* ========================================
+   TERMS PAGE TABLET RESPONSIVE STYLES
+   Breakpoint: 768px - 1199px
+   ======================================== */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  /* Terms Main Content */
+  .terms-main {
+    padding-top: 120px;
+    padding-bottom: 64px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .terms-container {
+    width: 100%;
+    max-width: 866px;
+    height: auto;
+    padding: 0;
+  }
+
+  .terms-title {
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -1.92px;
+  }
+
+  .terms-last-updated {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .terms-content {
+    gap: 64px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .terms-intro p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .terms-section {
+    gap: 16px;
+  }
+
+  .terms-section-title {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+  }
+
+  .terms-section-text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .terms-list {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 16px 0;
+    padding-left: 20px;
+  }
+
+  .terms-list li {
+    margin-bottom: 8px;
+  }
+
+  /* Footer Tablet Adjustments */
+  .footer-section {
+    padding: 64px 40px;
+  }
+
+  .footer-container {
+    max-width: 866px;
+    padding: 0;
+  }
+
+  .footer-content {
+    width: 100%;
+    max-width: 866px;
+    height: auto;
+    gap: 64px;
+  }
+
+  .footer-top {
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+  }
+
+  .footer-left {
+    width: auto;
+    max-width: 429px;
+    height: auto;
+    gap: 48px;
+  }
+
+  .footer-tagline {
+    width: 100%;
+    max-width: 429px;
+    height: auto;
+    gap: 24px;
+  }
+
+  .footer-title {
+    font-size: 28px;
+    line-height: 34px;
+    letter-spacing: -0.56px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-description {
+    font-size: 16px;
+    line-height: 24px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-right {
+    gap: 80px;
+  }
+
+  .footer-column {
+    width: auto;
+    height: auto;
+  }
+
+  .footer-bottom {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left-group {
+    flex-direction: row;
+    gap: 60px;
+    height: auto;
+  }
+
+  .footer-social {
+    width: auto;
+  }
+}
+
+/* ========================================
+   TERMS PAGE DESKTOP RESPONSIVE STYLES
+   Breakpoint: 1200px and above
+   ======================================== */
+
+@media (min-width: 1200px) {
+  /* Terms Main Content */
+  .terms-main {
+    padding-top: 120px;
+    padding-bottom: 64px;
+  }
+
+  .terms-container {
+    width: 866px;
+    max-width: 866px;
+    height: auto;
+    padding: 0 20px;
+  }
+
+  .terms-title {
+    font-size: 48px;
+    line-height: 58px;
+    letter-spacing: -1.92px;
+  }
+
+  .terms-last-updated {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 422px;
+  }
+
+  .terms-content {
+    gap: 64px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .terms-intro p {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 866px;
+  }
+
+  .terms-section {
+    gap: 16px;
+  }
+
+  .terms-section-title {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    max-width: 866px;
+  }
+
+  .terms-section-text {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 866px;
+  }
+
+  .terms-list {
+    font-size: 16px;
+    line-height: 24px;
+    margin: 16px 0;
+    padding-left: 20px;
+    max-width: 866px;
+  }
+
+  .terms-list li {
+    margin-bottom: 8px;
+  }
+
+  /* Footer Desktop Adjustments */
+  .footer-section {
+    padding: 64px 0;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+
+  .footer-content {
+    width: 866px;
+    height: auto;
+    gap: 64px;
+  }
+
+  .footer-top {
+    width: 866px;
+    height: auto;
+    justify-content: space-between;
+  }
+
+  .footer-left {
+    width: 429px;
+    height: auto;
+    gap: 64px;
+  }
+
+  .footer-tagline {
+    width: 429px;
+    height: auto;
+    gap: 24px;
+  }
+
+  .footer-title {
+    font-size: 34px;
+    line-height: 38px;
+    letter-spacing: -0.68px;
+    width: 381px;
+    height: auto;
+  }
+
+  .footer-description {
+    font-size: 16px;
+    line-height: 24px;
+    width: 257px;
+    height: auto;
+  }
+
+  .footer-right {
+    gap: 96px;
+  }
+
+  .footer-column {
+    width: 85px;
+    height: auto;
+  }
+
+  .footer-bottom {
+    width: 866px;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left-group {
+    flex-direction: row;
+    gap: 80px;
+    height: 18px;
+  }
+
+  .footer-copyright {
+    width: 161px;
+    height: 18px;
+  }
+
+  .footer-social {
+    width: 88px;
+    height: 22px;
+  }
+}
+
+/* ========================================
+   LARGE DESKTOP RESPONSIVE STYLES
+   Breakpoint: 1440px and above
+   ======================================== */
+
+@media (min-width: 1440px) {
+  /* Terms Main Content */
+  .terms-main {
+    padding-top: 140px;
+    padding-bottom: 80px;
+  }
+
+  .terms-container {
+    width: 900px;
+    max-width: 900px;
+    height: auto;
+    padding: 0 20px;
+  }
+
+  .terms-title {
+    font-size: 56px;
+    line-height: 64px;
+    letter-spacing: -2.24px;
+  }
+
+  .terms-last-updated {
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 500px;
+  }
+
+  .terms-content {
+    gap: 72px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .terms-intro p {
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 900px;
+  }
+
+  .terms-section {
+    gap: 18px;
+  }
+
+  .terms-section-title {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 600;
+    max-width: 900px;
+  }
+
+  .terms-section-text {
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 900px;
+  }
+
+  .terms-list {
+    font-size: 18px;
+    line-height: 28px;
+    margin: 18px 0;
+    padding-left: 24px;
+    max-width: 900px;
+  }
+
+  .terms-list li {
+    margin-bottom: 10px;
+  }
+
+  /* Footer Large Desktop Adjustments */
+  .footer-section {
+    padding: 80px 0;
+  }
+
+  .footer-container {
+    max-width: 1400px;
+    padding: 0 40px;
+  }
+
+  .footer-content {
+    width: 1000px;
+    height: auto;
+    gap: 80px;
+  }
+
+  .footer-top {
+    width: 1000px;
+    height: auto;
+  }
+
+  .footer-left {
+    width: 500px;
+    height: auto;
+    gap: 72px;
+  }
+
+  .footer-tagline {
+    width: 500px;
+    height: auto;
+    gap: 28px;
+  }
+
+  .footer-title {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -0.8px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-description {
+    font-size: 18px;
+    line-height: 28px;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-right {
+    gap: 120px;
+  }
+
+  .footer-column {
+    width: auto;
+    height: auto;
+  }
+
+  .footer-column-title {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .footer-links a {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .footer-bottom {
+    width: 1000px;
+    height: auto;
+  }
+
+  .footer-left-group {
+    gap: 100px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+    line-height: 20px;
+    width: auto;
+    height: auto;
+  }
+
+  .footer-link-bottom {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .footer-social {
+    width: auto;
+    height: auto;
+  }
+}

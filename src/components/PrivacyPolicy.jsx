@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './PrivacyPolicy.css';
+import './PrivacyPolicy-mobile-responsive.css';
 import './mobile-responsive.css';
 
 const PrivacyPolicy = () => {
