@@ -663,7 +663,9 @@ const HomePage = () => {
                   </div>
                   {expandedFaqIndex === 0 && (
                     <div className="faq-answer">
-                      <p>Flexible Finance Account is a flexible line of credit where, once opened, you can reuse your line of credit to make further purchases from Apple and choose how long you want to make your repayments for.</p>
+                      <p>BranchWorks Global delivers integrated offshore solutions across three core areas: Finance & Accounting BPO, Offshore Staffing, and Enterprise-Grade IT Solutions.</p>
+                      <p>Our Finance & Accounting services include bookkeeping, accounts payable and receivable, payroll processing, bank reconciliation, tax compliance (BAS, VAT, STP, FBT), financial reporting, and management accounting. Our Offshore Staffing solutions cover end-to-end talent acquisition, onboarding, HR, and performance management for dedicated remote teams. Our IT capabilities span infrastructure management, software development, data analytics, and ERP implementation.</p>
+                      <p>All services are delivered through a single, integrated operating model — so finance, people, and technology work together seamlessly for your business.</p>
                     </div>
                   )}
                 </div>
@@ -675,7 +677,9 @@ const HomePage = () => {
                   </div>
                   {expandedFaqIndex === 1 && (
                     <div className="faq-answer">
-                      <p>We use modern communication tools and establish clear protocols to ensure seamless collaboration with our offshore teams across different time zones.</p>
+                      <p>We treat communication as a core part of our service — not an afterthought. Each client is assigned a dedicated team aligned specifically to their business, which means you work with the same people every day. There are no rotating staff or unfamiliar faces.</p>
+                      <p>We operate using your preferred collaboration tools — whether that is email, Microsoft Teams, Slack, or video calls — and we establish structured check-ins, reporting cadences, and escalation protocols from day one. Our onboarding process includes a full communication plan so expectations are clear on both sides from the start.</p>
+                      <p>Transparency is built into everything we do. You always have visibility into what your team is working on, when deliverables are due, and how performance is tracking.</p>
                     </div>
                   )}
                 </div>
@@ -687,7 +691,8 @@ const HomePage = () => {
                   </div>
                   {expandedFaqIndex === 2 && (
                     <div className="faq-answer">
-                      <p>Our teams provide coverage across multiple time zones to ensure 24/7 support for your business operations.</p>
+                      <p>Our head office is based in Sri Lanka (IST, UTC+5:30), which gives us strong natural overlap with our primary client markets. For Australian clients, our team operates during AEST business hours, ensuring real-time responsiveness throughout the working day. For UK and US clients, we offer flexible scheduling to align with your core hours.</p>
+                      <p>We are experienced in managing time zone differences as part of a structured delivery model — with agreed turnaround times, end-of-day handovers, and cloud-based reporting that ensures nothing falls through the gap overnight. Whether you need same-day responses or a reliable overnight processing cycle, we design our working hours around your business needs.</p>
                     </div>
                   )}
                 </div>
@@ -699,7 +704,9 @@ const HomePage = () => {
                   </div>
                   {expandedFaqIndex === 3 && (
                     <div className="faq-answer">
-                      <p>We implement industry-standard security measures and strict confidentiality protocols to protect your sensitive data.</p>
+                      <p>Data security and client confidentiality are fundamental to how we operate. All client engagements are covered by a Non-Disclosure Agreement (NDA) from the outset, and our team members are bound by strict confidentiality obligations as part of their contracts.</p>
+                      <p>We use cloud-based platforms — including Xero, QuickBooks, and MYOB — that carry their own enterprise-grade security, including two-factor authentication, role-based access controls, and encrypted data storage. Access to client data is restricted strictly to the team members working on that account.</p>
+                      <p>We operate in alignment with international data handling best practices and are happy to work within any specific data governance requirements your organisation has in place. If you have questions about our security protocols, our team is available to walk you through them in detail.</p>
                     </div>
                   )}
                 </div>
@@ -711,7 +718,9 @@ const HomePage = () => {
                   </div>
                   {expandedFaqIndex === 4 && (
                     <div className="faq-answer">
-                      <p>Our streamlined onboarding process ensures quick integration of new clients and teams with comprehensive training and support.</p>
+                      <p>We have built a structured onboarding process designed to get you operational quickly and confidently — with no disruption to your existing workflows.</p>
+                      <p>It begins with a discovery session to understand your business, current processes, tools, and goals. From there, we set up your systems — including Xero, QuickBooks, or MYOB migration if required — and handle all data transfer at no additional cost. Your dedicated team is then introduced, communication protocols are established, and a clear service schedule is agreed upon.</p>
+                      <p>Most clients are fully onboarded within one to two weeks. We also offer a complimentary two-week trial — up to 50 transactions or 6 hours of work — so you can experience the quality of our service before making any long-term commitment. For new offshore teams, we manage the full recruitment, onboarding, and HR setup so your team is ready to perform from day one.</p>
                     </div>
                   )}
                 </div>
