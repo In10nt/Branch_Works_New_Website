@@ -348,9 +348,7 @@ const AboutPage = () => {
             <div className="map-text-box">
               <h2 className="map-title">Supporting organisations worldwide with offshore expertise</h2>
               <p className="map-description">
-                A trusted offshore partner supporting businesses <br />
-                across Australia, the United Kingdom, the United States, <br />
-                Europe, and the Asia-Pacific region
+                A trusted offshore partner supporting businesses across Australia, the United Kingdom, the United States, Europe, and the Asia-Pacific region
               </p>
             </div>
           </div>

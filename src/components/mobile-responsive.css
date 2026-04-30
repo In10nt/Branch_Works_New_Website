@@ -398,83 +398,130 @@
   .stats-section {
     height: auto;
     padding: 40px 0;
+    width: 100%;
   }
 
   .stats-container {
     width: 100%;
-    max-width: 361px;
-    gap: 40px;
+    max-width: 100%;
+    padding: 0;
+    gap: 32px;
   }
 
   .stats-headline {
-    margin-bottom: 0;
+    margin-bottom: 32px;
+    width: 100%;
+    padding: 0 20px;
   }
 
   .stats-title {
     font-size: 24px;
     line-height: 30px;
     width: 100%;
-    text-align: center;
+    text-align: left;
+    letter-spacing: -0.96px;
   }
 
   .stats-cards {
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
     width: 100%;
+    height: auto;
+    padding: 0 20px;
   }
 
   .stat-card {
     width: 100%;
-    padding: 24px;
-    text-align: center;
+    max-width: 100%;
+    height: auto;
+    min-height: 220px;
+    padding: 24px 20px;
+    text-align: left;
+    align-items: flex-start;
+    gap: 16px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-logo {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0;
+    display: flex;
     align-items: center;
   }
 
   .stat-company-logo {
-    height: 48px;
+    height: 32px;
+    width: auto;
+  }
+
+  .stat-description {
+    font-size: 14px;
+    line-height: 20px;
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    flex: 1;
   }
 
   .stat-value {
-    font-size: 48px;
-    line-height: 48px;
+    font-size: 56px;
+    line-height: 56px;
+    letter-spacing: -2.24px;
+    width: 100%;
+    margin-top: auto;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
   }
 
   /* Map Mobile */
   .map-section {
     padding: 40px 0 !important;
+    width: 100%;
   }
 
   .map-container {
     width: 100% !important;
-    max-width: 361px !important;
+    max-width: 100% !important;
     padding: 0 20px !important;
   }
 
   .map-content {
     width: 100% !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
   }
 
   .map-text-box {
     width: 100% !important;
-    align-items: center !important;
-    text-align: center !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    gap: 16px !important;
   }
 
   .map-title {
     font-size: 24px !important;
     line-height: 30px !important;
     width: 100% !important;
-    text-align: center !important;
-    margin-bottom: 16px !important;
+    max-width: 100% !important;
+    text-align: left !important;
+    margin-bottom: 12px !important;
+    letter-spacing: -0.96px !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
   }
 
   .map-description {
-    text-align: center !important;
-    width: 361px !important;
-    height: 96px !important;
-    max-width: 361px !important;
+    text-align: left !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
     font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     font-weight: 400 !important;
     font-size: 16px !important;
@@ -482,14 +529,22 @@
     letter-spacing: 0% !important;
     color: #525252 !important;
     opacity: 1 !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+  }
+
+  .map-image-box {
+    width: 100% !important;
+    margin-top: 32px !important;
   }
 
   .world-map {
     width: 100% !important;
     height: auto !important;
-    max-width: 361px !important;
-    margin-top: 32px !important;
+    max-width: 100% !important;
+    margin-top: 0 !important;
   }
 
   /* Services Mobile */
