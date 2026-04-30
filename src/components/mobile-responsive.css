@@ -215,6 +215,70 @@
     color: #172554;
   }
 
+  /* Mobile Industry Dropdown */
+  .mobile-nav-item-dropdown {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mobile-nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 16px 20px;
+    color: #525252;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-bottom: 1px solid #F5F5F5;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-nav-dropdown-toggle:hover {
+    background: #F5F5F5;
+    color: #172554;
+  }
+
+  .mobile-industry-dropdown {
+    display: flex;
+    flex-direction: column;
+    background: #F9FAFB;
+    animation: mobileDropdownSlide 0.3s ease-out;
+  }
+
+  @keyframes mobileDropdownSlide {
+    from {
+      opacity: 0;
+      max-height: 0;
+    }
+    to {
+      opacity: 1;
+      max-height: 300px;
+    }
+  }
+
+  .mobile-dropdown-item {
+    display: block;
+    padding: 14px 20px 14px 40px;
+    color: #525252;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    border-bottom: 1px solid #E5E5E5;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-dropdown-item:hover {
+    background: #FFFFFF;
+    color: #172554;
+    padding-left: 44px;
+  }
+
   .mobile-menu-cta {
     padding: 20px;
     border-top: 1px solid #E5E5E5;

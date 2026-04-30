@@ -12,10 +12,26 @@ const HomePage = () => {
   const [expandedFaqIndex, setExpandedFaqIndex] = useState(-1); // All items collapsed by default
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('Finance');
+  const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
+  const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
 
   // Tab switching function
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
+  };
+
+  // Industry dropdown toggle
+  const toggleIndustryDropdown = () => {
+    setIsIndustryDropdownOpen(!isIndustryDropdownOpen);
+  };
+
+  const closeIndustryDropdown = () => {
+    setIsIndustryDropdownOpen(false);
+  };
+
+  // Mobile industry dropdown toggle
+  const toggleMobileIndustry = () => {
+    setIsMobileIndustryOpen(!isMobileIndustryOpen);
   };
 
   // Tab content data
@@ -153,7 +169,31 @@ const HomePage = () => {
           </Link>
           
           <nav className="nav-menu">
-            <a href="#industry">Industry</a>
+            <div 
+              className="nav-item-dropdown"
+              onMouseEnter={toggleIndustryDropdown}
+              onMouseLeave={closeIndustryDropdown}
+            >
+              <a href="#industry" className="nav-link-dropdown" onClick={(e) => e.preventDefault()}>
+                Industry
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ marginLeft: '4px' }}>
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+              {isIndustryDropdownOpen && (
+                <div className="industry-dropdown-menu">
+                  <Link to="/finance" className="dropdown-item">
+                    Finance
+                  </Link>
+                  <Link to="/technology-support" className="dropdown-item">
+                    Technology Support
+                  </Link>
+                  <Link to="/offshore-hiring" className="dropdown-item">
+                    Offshore Hiring
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/about">About</Link>
             <a href="#careers">Careers</a>
           </nav>
@@ -199,7 +239,40 @@ const HomePage = () => {
           </div>
           
           <nav className="mobile-menu-nav">
-            <a href="#industry" onClick={closeMobileMenu}>Industry</a>
+            <div className="mobile-nav-item-dropdown">
+              <button 
+                className="mobile-nav-dropdown-toggle" 
+                onClick={toggleMobileIndustry}
+              >
+                Industry
+                <svg 
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 12 12" 
+                  fill="none" 
+                  style={{ 
+                    marginLeft: '8px',
+                    transform: isMobileIndustryOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    transition: 'transform 0.3s ease'
+                  }}
+                >
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              {isMobileIndustryOpen && (
+                <div className="mobile-industry-dropdown">
+                  <Link to="/finance" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                    Finance
+                  </Link>
+                  <Link to="/technology-support" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                    Technology Support
+                  </Link>
+                  <Link to="/offshore-hiring" className="mobile-dropdown-item" onClick={closeMobileMenu}>
+                    Offshore Hiring
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/about" onClick={closeMobileMenu}>About</Link>
             <a href="#careers" onClick={closeMobileMenu}>Careers</a>
           </nav>

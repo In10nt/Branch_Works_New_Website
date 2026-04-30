@@ -129,6 +129,90 @@ body {
   color: #172554;
 }
 
+/* Industry Dropdown Styles */
+.nav-item-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link-dropdown {
+  text-decoration: none;
+  color: #525252;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-link-dropdown:hover {
+  color: #172554;
+}
+
+.industry-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 12px 0;
+  min-width: 200px;
+  z-index: 1000;
+  animation: dropdownFadeIn 0.2s ease-out;
+}
+
+/* Add invisible bridge between trigger and dropdown */
+.nav-item-dropdown::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: transparent;
+  z-index: 999;
+}
+
+@keyframes dropdownFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 24px;
+  color: #525252;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background: #F5F5F5;
+  color: #172554;
+}
+
+/* Hide desktop dropdown on mobile */
+@media (max-width: 768px) {
+  .nav-item-dropdown {
+    display: none;
+  }
+}
+
 .cta-button {
   display: flex;
   height: 40px;

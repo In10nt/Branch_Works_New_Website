@@ -5,6 +5,8 @@ import './mobile-responsive.css';
 
 const PrivacyPolicy = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
+  const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -19,6 +21,20 @@ const PrivacyPolicy = () => {
     } else {
       document.body.classList.remove('mobile-menu-open');
     }
+  };
+
+  // Industry dropdown toggle
+  const toggleIndustryDropdown = () => {
+    setIsIndustryDropdownOpen(!isIndustryDropdownOpen);
+  };
+
+  const closeIndustryDropdown = () => {
+    setIsIndustryDropdownOpen(false);
+  };
+
+  // Mobile industry dropdown toggle
+  const toggleMobileIndustry = () => {
+    setIsMobileIndustryOpen(!isMobileIndustryOpen);
   };
 
   return (
@@ -36,7 +52,31 @@ const PrivacyPolicy = () => {
           </Link>
           
           <nav className="nav-menu">
-            <a href="#industry">Industry</a>
+            <div 
+              className="nav-item-dropdown"
+              onMouseEnter={toggleIndustryDropdown}
+              onMouseLeave={closeIndustryDropdown}
+            >
+              <a href="#industry" className="nav-link-dropdown" onClick={(e) => e.preventDefault()}>
+                Industry
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ marginLeft: '4px' }}>
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </a>
+              {isIndustryDropdownOpen && (
+                <div className="industry-dropdown-menu">
+                  <Link to="/finance" className="dropdown-item">
+                    Finance
+                  </Link>
+                  <Link to="/technology-support" className="dropdown-item">
+                    Technology Support
+                  </Link>
+                  <Link to="/offshore-hiring" className="dropdown-item">
+                    Offshore Hiring
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/about">About</Link>
             <a href="#careers">Careers</a>
           </nav>
@@ -82,7 +122,40 @@ const PrivacyPolicy = () => {
           </div>
           
           <nav className="mobile-menu-nav">
-            <a href="#industry" onClick={() => setIsMobileMenuOpen(false)}>Industry</a>
+            <div className="mobile-nav-item-dropdown">
+              <button 
+                className="mobile-nav-dropdown-toggle" 
+                onClick={toggleMobileIndustry}
+              >
+                Industry
+                <svg 
+                  width="12" 
+                  height="12" 
+                  viewBox="0 0 12 12" 
+                  fill="none" 
+                  style={{ 
+                    marginLeft: '8px',
+                    transform: isMobileIndustryOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                    transition: 'transform 0.3s ease'
+                  }}
+                >
+                  <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              {isMobileIndustryOpen && (
+                <div className="mobile-industry-dropdown">
+                  <Link to="/finance" className="mobile-dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
+                    Finance
+                  </Link>
+                  <Link to="/technology-support" className="mobile-dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
+                    Technology Support
+                  </Link>
+                  <Link to="/offshore-hiring" className="mobile-dropdown-item" onClick={() => setIsMobileMenuOpen(false)}>
+                    Offshore Hiring
+                  </Link>
+                </div>
+              )}
+            </div>
             <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
             <a href="#careers" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
           </nav>
