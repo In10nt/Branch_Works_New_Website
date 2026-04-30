@@ -358,8 +358,9 @@ const HomePage = () => {
               muted
               loop
               playsInline
+              preload="metadata"
             >
-              <source src={`${process.env.PUBLIC_URL}/Video/video_1.mp4`} type="video/mp4" />
+              <source src="/Video/video_1.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
