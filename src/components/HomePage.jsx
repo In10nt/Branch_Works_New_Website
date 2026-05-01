@@ -359,7 +359,8 @@ const HomePage = () => {
               loop
               playsInline
               preload="auto"
-              poster=""
+              controls={false}
+              webkit-playsinline="true"
             >
               <source src={`${process.env.PUBLIC_URL}/Video/video_2.mp4`} type="video/mp4" />
               <source src="/Video/video_2.mp4" type="video/mp4" />
