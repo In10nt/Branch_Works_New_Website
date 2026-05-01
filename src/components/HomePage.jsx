@@ -10,6 +10,7 @@ const HomePage = () => {
   const facesHeaderRef = useRef(null);
   const testimonialRef = useRef(null);
   const tomorrowCardsRef = useRef(null);
+  const videoRef = useRef(null);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [expandedFaqIndex, setExpandedFaqIndex] = useState(-1); // All items collapsed by default
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -103,6 +104,15 @@ const HomePage = () => {
       document.body.classList.remove('mobile-menu-open');
     };
   }, [isMobileMenuOpen]);
+
+  // Force video to play
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(error => {
+        console.log('Video autoplay failed:', error);
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const observerOptions = {
@@ -353,6 +363,7 @@ const HomePage = () => {
         <div className="video-content">
           <div className="video-placeholder">
             <video 
+              ref={videoRef}
               className="main-video"
               autoPlay
               muted
