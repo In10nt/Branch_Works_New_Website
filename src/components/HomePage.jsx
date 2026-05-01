@@ -105,13 +105,27 @@ const HomePage = () => {
     };
   }, [isMobileMenuOpen]);
 
-  // Force video to play
+  // Force video to play with better error handling
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(error => {
-        console.log('Video autoplay failed:', error);
-      });
-    }
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          // Wait a bit for video to load
+          await new Promise(resolve => setTimeout(resolve, 100));
+          await videoRef.current.play();
+          console.log('Video playing successfully');
+        } catch (error) {
+          console.error('Video autoplay failed:', error);
+          // Try again after a delay
+          setTimeout(() => {
+            if (videoRef.current) {
+              videoRef.current.play().catch(e => console.error('Retry failed:', e));
+            }
+          }, 1000);
+        }
+      }
+    };
+    playVideo();
   }, []);
 
   useEffect(() => {
@@ -370,10 +384,7 @@ const HomePage = () => {
               loop
               playsInline
               preload="auto"
-              controls={false}
-              webkit-playsinline="true"
             >
-              <source src={`${process.env.PUBLIC_URL}/Video/video_2.mp4`} type="video/mp4" />
               <source src="/Video/video_2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
