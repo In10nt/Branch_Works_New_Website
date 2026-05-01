@@ -2832,7 +2832,7 @@
 }
 
 /* CRITICAL FIX: Force hide mobile menu on tablet and desktop */
-@media (min-width: 394px) {
+@media (min-width: 768px) {
   .mobile-menu-toggle,
   .mobile-menu-overlay,
   .mobile-menu,
