@@ -377,6 +377,7 @@ const HomePage = () => {
         <div className="video-content">
           <div className="video-placeholder">
             <video 
+              key="main-video"
               ref={videoRef}
               className="main-video"
               autoPlay
@@ -384,6 +385,13 @@ const HomePage = () => {
               loop
               playsInline
               preload="auto"
+              onLoadedData={(e) => {
+                console.log('Video loaded, attempting to play...');
+                e.target.play().catch(err => console.error('Play failed:', err));
+              }}
+              onError={(e) => {
+                console.error('Video error:', e.target.error);
+              }}
             >
               <source src="/Video/video_2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
