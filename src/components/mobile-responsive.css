@@ -67,7 +67,7 @@
 
   .map-container {
     width: 100% !important;
-    max-width: 361px !important;
+    max-width: 100% !important;
     padding: 0 20px !important;
   }
 
@@ -114,8 +114,8 @@
   }
 }
 
-/* Mobile - 393px and below */
-@media (max-width: 393px) {
+/* Mobile - 767px and below (covers all phones including iPhones) */
+@media (max-width: 767px) {
   .page-container {
     width: 100%;
     padding: 0 16px;
@@ -128,7 +128,7 @@
 
   .header-content {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
     padding: 8px 16px;
     justify-content: space-between;
     border-radius: 999px !important;
@@ -2472,7 +2472,7 @@
 }
 
 /* Ensure mobile menu elements are properly positioned */
-@media (max-width: 393px) {
+@media (max-width: 767px) {
   .mobile-menu-toggle {
     z-index: 1000;
   }
