@@ -3026,7 +3026,7 @@
    ======================================== */
 
 /* Mobile - 393px and below */
-@media (max-width: 393px) {
+@media (max-width: 767px) {
   /* About Hero Section */
   .about-hero-layout {
     height: auto;
@@ -3046,7 +3046,7 @@
 
   .about-hero-layout .headline-description {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
     font-size: 16px;
     line-height: 24px;
   }
@@ -3064,7 +3064,7 @@
 
   .about-section-two-container {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
     padding: 0 16px;
   }
 
@@ -3093,7 +3093,7 @@
 
   .about-section-three-container {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
     padding: 0 16px;
   }
 
