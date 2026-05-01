@@ -2,8 +2,8 @@
    ABOUT PAGE MOBILE RESPONSIVE STYLES
    ======================================== */
 
-/* Mobile - 393px and below */
-@media (max-width: 393px) {
+/* Mobile - 767px and below (All mobile devices including all iPhones) */
+@media (max-width: 767px) {
   /* About Hero Section */
   .about-hero-layout {
     height: auto;
@@ -63,7 +63,7 @@
 
   .about-hero-layout .headline-description {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
     font-size: 16px;
     line-height: 24px;
   }
@@ -85,7 +85,7 @@
 
   .about-section-two-container {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
     padding: 0 16px;
   }
 
@@ -229,7 +229,7 @@
   /* Map Section - Mobile (Inherited but can be customized) */
   .about-hero-layout ~ .map-section .map-container {
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
   }
 
   .about-hero-layout ~ .map-section .map-title {
@@ -307,7 +307,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     width: 100%;
-    max-width: 361px;
+    max-width: 100%;
     height: auto;
     opacity: 1;
     margin: 0 auto;
@@ -392,132 +392,6 @@
     gap: 24px;
     display: flex;
     flex-direction: column;
-  }
-}
-
-/* ========================================
-   ABOUT PAGE TABLET RESPONSIVE STYLES
-   Breakpoint: 394px - 767px
-   ======================================== */
-
-@media (min-width: 394px) and (max-width: 767px) {
-  /* About Hero Section - Small Tablet */
-  .about-hero-layout {
-    height: auto;
-    min-height: auto;
-    padding: 20px 0 30px 0;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-  /* Logos Section - Small Tablet */
-  .about-hero-layout ~ .logos-section {
-    margin-top: -60px;
-  }
-
-  /* Video Section - Small Tablet */
-  .about-hero-layout ~ .video-section {
-    margin-top: -80px;
-  }
-
-  .about-hero-layout .hero-content {
-    gap: 24px;
-    min-height: auto;
-  }
-
-  .about-hero-layout .hero-background-image {
-    display: none;
-  }
-
-  .about-hero-layout .main-headline {
-    font-size: 40px;
-    line-height: 48px;
-    letter-spacing: -1.6px;
-  }
-
-  .about-hero-layout .headline-description {
-    width: 100%;
-    max-width: 500px;
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  /* About Section Two - Small Tablet */
-  .about-section-two {
-    padding: 50px 0;
-    background: #FFFFFF;
-    margin-top: 0;
-  }
-
-  .about-section-two-container {
-    max-width: 600px;
-    padding: 0 24px;
-  }
-
-  .about-section-two-content {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .about-section-two-title {
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: -0.56px;
-    max-width: 100%;
-  }
-
-  .about-section-two-description {
-    font-size: 16px;
-    line-height: 24px;
-    max-width: 100%;
-    color: #525252;
-  }
-
-  .about-team-image {
-    max-width: 100%;
-    border-radius: 20px;
-  }
-
-  /* About Section Three - Small Tablet */
-  .about-section-three {
-    padding: 50px 0;
-    background: #EFF6FF;
-  }
-
-  .about-section-three-container {
-    max-width: 700px;
-    padding: 0 24px;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .about-section-three-header {
-    width: 100%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .about-section-three-main-title {
-    font-size: 28px;
-    line-height: 34px;
-    letter-spacing: -0.56px;
-  }
-
-  .about-section-three-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 16px;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .value-card {
-    width: calc(50% - 8px);
-    max-width: 340px;
-    height: auto;
-    min-height: 224px;
   }
 }
 
