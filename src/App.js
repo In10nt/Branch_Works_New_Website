@@ -6,6 +6,8 @@ import AboutPage from './components/AboutPage';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import Terms from './components/Terms';
 import Finance from './components/Finance';
+import TechnologySupport from './components/TechnologySupport';
+import OffshoreHiring from './components/OffshoreHiring';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/finance" element={<Finance />} />
+          <Route path="/technology-support" element={<TechnologySupport />} />
+          <Route path="/offshore-hiring" element={<OffshoreHiring />} />
         </Routes>
       </div>
     </Router>
