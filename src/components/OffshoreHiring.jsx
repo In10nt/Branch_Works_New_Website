@@ -297,8 +297,8 @@ const OffshoreHiring = () => {
               <div className="finance-hero-content">
                 <div className="finance-hero-icon">
                   <img 
-                    src={`${process.env.PUBLIC_URL}/images/logo.png`} 
-                    alt="Service Icon" 
+                    src={`${process.env.PUBLIC_URL}/images/offshore_mini_icon1.png`} 
+                    alt="Recruitment Icon" 
                     width="48" 
                     height="48"
                     style={{ borderRadius: '8px' }}
@@ -367,8 +367,8 @@ const OffshoreHiring = () => {
               <div className="finance-tax-hero-content">
                 <div className="finance-tax-hero-icon">
                   <img 
-                    src={`${process.env.PUBLIC_URL}/images/logo.png`} 
-                    alt="Service Icon" 
+                    src={`${process.env.PUBLIC_URL}/images/offshore_mini_icon2.png`} 
+                    alt="Onboarding Icon" 
                     width="48" 
                     height="48"
                     style={{ borderRadius: '8px' }}
@@ -437,8 +437,8 @@ const OffshoreHiring = () => {
               <div className="finance-payroll-hero-content">
                 <div className="finance-payroll-hero-icon">
                   <img 
-                    src={`${process.env.PUBLIC_URL}/images/logo.png`} 
-                    alt="Service Icon" 
+                    src={`${process.env.PUBLIC_URL}/images/offshore_mini_icon3.png`} 
+                    alt="Payroll Icon" 
                     width="48" 
                     height="48"
                     style={{ borderRadius: '8px' }}
@@ -507,8 +507,8 @@ const OffshoreHiring = () => {
               <div className="finance-management-hero-content">
                 <div className="finance-management-hero-icon">
                   <img 
-                    src={`${process.env.PUBLIC_URL}/images/logo.png`} 
-                    alt="Service Icon" 
+                    src={`${process.env.PUBLIC_URL}/images/offshore_mini_icon4.png`} 
+                    alt="Performance Icon" 
                     width="48" 
                     height="48"
                     style={{ borderRadius: '8px' }}
