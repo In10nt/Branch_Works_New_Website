@@ -1,0 +1,407 @@
+/* ========================================
+   BLOG DETAIL PAGE STYLES
+   ======================================== */
+
+.blog-detail-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+
+/* Blog Detail Badge Override */
+.blog-detail-layout .badge-chip {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 999px;
+  border: none;
+  background: #EFF6FF;
+  box-shadow: none;
+}
+
+.blog-detail-layout .badge-text {
+  color: #2563EB;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+/* Blog Detail Hero Override - Use Finance page structure */
+.blog-detail-layout .hero-layout {
+  background: #FFFFFF !important;
+  min-height: 500px;
+  padding: 120px 0;
+}
+
+.blog-detail-layout .hero-content {
+  gap: 32px;
+}
+
+.blog-detail-layout .headline-section {
+  gap: 24px;
+}
+
+.blog-detail-layout .main-headline {
+  color: #171717;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 58px;
+  letter-spacing: -1.92px;
+  margin: 0;
+}
+
+.blog-detail-date {
+  color: #737373;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+/* Similar Reading Section Alignment */
+.blog-detail-layout .customer-stories-section {
+  padding: 80px 0;
+}
+
+.blog-detail-layout .customer-stories-container {
+  max-width: 866px;
+  padding: 0 20px;
+}
+
+.blog-detail-layout .customer-stories-header {
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.blog-detail-layout .customer-stories-text {
+  text-align: left;
+}
+
+.blog-detail-layout .customer-stories-title {
+  text-align: left;
+}
+
+.blog-detail-layout .customer-stories-description {
+  text-align: left;
+}
+
+.blog-detail-layout .customer-stories-cards {
+  width: 100%;
+  max-width: 866px;
+}
+
+/* Content Section */
+.blog-detail-content-section {
+  display: flex;
+  width: 100%;
+  padding: 80px 0;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+}
+
+.blog-detail-content-container {
+  display: flex;
+  width: 100%;
+  max-width: 866px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.blog-detail-article {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+}
+
+.blog-detail-article-title {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0px;
+  margin: 0 0 24px 0;
+}
+
+.blog-detail-intro {
+  color: #737373;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  margin: 0;
+}
+
+.blog-detail-paragraph {
+  color: #737373;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  margin: 0;
+}
+
+.blog-detail-heading {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px;
+  letter-spacing: 0px;
+  margin: 40px 0 24px 0;
+}
+
+.blog-detail-list {
+  color: #737373;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.blog-detail-list li {
+  margin-bottom: 8px;
+}
+
+.blog-detail-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 767px) {
+  .blog-detail-hero {
+    padding: 80px 0 60px 0;
+    min-height: auto;
+  }
+
+  .blog-detail-hero-content {
+    gap: 20px;
+  }
+
+  .blog-detail-title {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.28px;
+  }
+
+  .blog-detail-date {
+    font-size: 12px;
+  }
+
+  .blog-detail-content-section {
+    padding: 40px 0;
+  }
+
+  .blog-detail-content-container {
+    gap: 24px;
+  }
+
+  .blog-detail-article {
+    gap: 20px;
+  }
+
+  .blog-detail-intro {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .blog-detail-paragraph {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .blog-detail-heading {
+    font-size: 22px;
+    line-height: 30px;
+    margin: 24px 0 12px 0;
+  }
+
+  .blog-detail-list {
+    font-size: 14px;
+    line-height: 22px;
+    padding-left: 20px;
+  }
+
+  .blog-detail-list li {
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Blog Detail Mobile Responsive Overrides */
+@media (max-width: 767px) {
+  /* Hero Section Mobile */
+  .blog-detail-layout .hero-layout {
+    padding: 80px 20px 60px 20px !important;
+    min-height: auto !important;
+  }
+
+  .blog-detail-layout .hero-content {
+    gap: 20px !important;
+  }
+
+  .blog-detail-layout .headline-section {
+    gap: 16px !important;
+  }
+
+  .blog-detail-layout .main-headline {
+    font-size: 32px !important;
+    line-height: 40px !important;
+    letter-spacing: -1.28px !important;
+  }
+
+  .blog-detail-date {
+    font-size: 14px !important;
+  }
+
+  /* Article Title Mobile */
+  .blog-detail-article-title {
+    font-size: 18px !important;
+    line-height: 26px !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  /* Similar Reading Section Mobile - Same as Customer Stories */
+  .blog-detail-layout .customer-stories-section {
+    padding: 60px 20px !important;
+    min-height: auto !important;
+  }
+
+  .blog-detail-layout .customer-stories-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .blog-detail-layout .customer-stories-header {
+    flex-direction: column !important;
+    gap: 20px !important;
+    align-items: flex-start !important;
+    margin-bottom: 32px !important;
+  }
+
+  .blog-detail-layout .customer-stories-title {
+    font-size: 28px !important;
+    line-height: 36px !important;
+  }
+
+  .blog-detail-layout .customer-stories-description {
+    font-size: 14px !important;
+    line-height: 22px !important;
+  }
+
+  .blog-detail-layout .customer-stories-cards {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  .blog-detail-layout .customer-stories-cards::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .blog-detail-layout .customer-stories-grid {
+    display: flex !important;
+    gap: 16px !important;
+    width: auto !important;
+    transform: none !important;
+  }
+
+  .blog-detail-layout .customer-story-card {
+    min-width: 280px !important;
+    max-width: 280px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .blog-detail-layout .story-card-image {
+    height: 160px !important;
+  }
+
+  .blog-detail-layout .story-title {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+
+  .blog-detail-layout .customer-stories-navigation {
+    display: flex !important;
+    margin-top: 24px !important;
+  }
+
+  /* CTA Expert Section Mobile */
+  .blog-detail-layout .cta-expert-section {
+    padding: 60px 20px !important;
+  }
+
+  .blog-detail-layout .cta-expert-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .blog-detail-layout .cta-expert-content {
+    width: 100% !important;
+  }
+
+  .blog-detail-layout .cta-expert-card {
+    flex-direction: column !important;
+    height: auto !important;
+    max-width: 100% !important;
+    border-radius: 16px !important;
+  }
+
+  .blog-detail-layout .cta-expert-left {
+    padding: 32px 24px !important;
+    gap: 20px !important;
+  }
+
+  .blog-detail-layout .cta-expert-title {
+    font-size: 24px !important;
+    line-height: 32px !important;
+    letter-spacing: -0.48px !important;
+  }
+
+  .blog-detail-layout .cta-expert-button {
+    padding: 12px 24px !important;
+    font-size: 14px !important;
+  }
+
+  .blog-detail-layout .cta-expert-right {
+    width: 100% !important;
+    height: 240px !important;
+  }
+
+  .blog-detail-layout .cta-expert-image {
+    border-radius: 0 0 16px 16px !important;
+  }
+}

@@ -780,7 +780,7 @@ const HomePage = () => {
                   better docs with Branchworks
                 </p>
               </div>
-              <button className="customer-stories-cta">View All</button>
+              <Link to="/blog" className="customer-stories-cta">View All</Link>
             </div>
             
             <div className="customer-stories-cards">
@@ -791,7 +791,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 18, 2026</div>
                     <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
                   </div>
                 </div>
                 
@@ -800,7 +800,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 18, 2026</div>
                     <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
                   </div>
                 </div>
                 
@@ -809,7 +809,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 18, 2026</div>
                     <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
                   </div>
                 </div>
                 
@@ -818,7 +818,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 18, 2026</div>
                     <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
                   </div>
                 </div>
 
@@ -827,7 +827,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 20, 2026</div>
                     <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
                   </div>
                 </div>
                 
@@ -836,7 +836,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 20, 2026</div>
                     <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
                   </div>
                 </div>
                 
@@ -845,7 +845,7 @@ const HomePage = () => {
                   <div className="story-card-content">
                     <div className="story-date">Apr 20, 2026</div>
                     <h3 className="story-title">Digital Transformation: Scaling Teams Globally</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
                   </div>
                 </div>
                 

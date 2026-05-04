@@ -2611,10 +2611,12 @@ body {
   transition: background-color 0.3s ease;
   opacity: 1;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .customer-stories-cta:hover {
   background-color: #0f1a3a;
+  text-decoration: none;
 }
 
 .customer-stories-cards {

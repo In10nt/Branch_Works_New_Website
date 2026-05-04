@@ -234,7 +234,7 @@ const Blog = () => {
               <div className="blog-post-content">
                 <div className="blog-post-date">Apr 18, 2026</div>
                 <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <a href="/#" className="blog-read-more">Read more</a>
+                <Link to="/blog/1" className="blog-read-more">Read more</Link>
               </div>
             </div>
 
@@ -243,7 +243,7 @@ const Blog = () => {
               <div className="blog-post-content">
                 <div className="blog-post-date">Apr 18, 2026</div>
                 <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <a href="/#" className="blog-read-more">Read more</a>
+                <Link to="/blog/1" className="blog-read-more">Read more</Link>
               </div>
             </div>
 
@@ -252,7 +252,7 @@ const Blog = () => {
               <div className="blog-post-content">
                 <div className="blog-post-date">Apr 18, 2026</div>
                 <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <a href="/#" className="blog-read-more">Read more</a>
+                <Link to="/blog/1" className="blog-read-more">Read more</Link>
               </div>
             </div>
 
@@ -262,7 +262,7 @@ const Blog = () => {
               <div className="blog-post-content">
                 <div className="blog-post-date">Apr 18, 2026</div>
                 <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <a href="/#" className="blog-read-more">Read more</a>
+                <Link to="/blog/1" className="blog-read-more">Read more</Link>
               </div>
             </div>
 
@@ -271,7 +271,7 @@ const Blog = () => {
               <div className="blog-post-content">
                 <div className="blog-post-date">Apr 18, 2026</div>
                 <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <a href="/#" className="blog-read-more">Read more</a>
+                <Link to="/blog/1" className="blog-read-more">Read more</Link>
               </div>
             </div>
 
@@ -280,7 +280,7 @@ const Blog = () => {
               <div className="blog-post-content">
                 <div className="blog-post-date">Apr 18, 2026</div>
                 <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <a href="/#" className="blog-read-more">Read more</a>
+                <Link to="/blog/1" className="blog-read-more">Read more</Link>
               </div>
             </div>
           </div>
