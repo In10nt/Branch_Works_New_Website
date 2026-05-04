@@ -684,13 +684,13 @@ const HomePage = () => {
               <div className={`tomorrow-card ${flippedCards.includes(0) ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.png`} alt="Team Member 1" className="tomorrow-card-image" />
                   </div>
                   <div className="flip-card-back">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.jpg`} alt="Team Member 1" className="tomorrow-card-image" />
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.png`} alt="Team Member 1" className="tomorrow-card-image" />
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Niluka Jayasinghe</h3>
-                      <p className="team-member-designation">Chief Operating Officer</p>
+                      <h3 className="team-member-name">Achini Dharmasirwardhana</h3>
+                      <p className="team-member-designation">Chief Executive Officer</p>
                     </div>
                   </div>
                 </div>
@@ -703,8 +703,8 @@ const HomePage = () => {
                   <div className="flip-card-back">
                     <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
                     <div className="flip-card-content">
-                      <h3 className="team-member-name">Achini Dharmasirwardhana</h3>
-                      <p className="team-member-designation">Chief Executive Officer</p>
+                      <h3 className="team-member-name">Niluka Jayasinghe</h3>
+                      <p className="team-member-designation">Chief Operating Officer</p>
                     </div>
                   </div>
                 </div>

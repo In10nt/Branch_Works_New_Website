@@ -1,0 +1,676 @@
+/* ========================================
+   BLOG PAGE STYLES
+   ======================================== */
+
+.blog-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+
+/* Blog Page Badge Override - Same as Finance */
+.blog-layout .badge-chip {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 999px;
+  border: none;
+  background: #EFF6FF;
+  box-shadow: none;
+}
+
+.blog-layout .badge-text {
+  color: #2563EB;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0px;
+  white-space: nowrap;
+}
+
+/* Blog Testimonial Section Override */
+.blog-layout .finance-testimonial-section {
+  margin-top: 64px !important;
+  margin-bottom: 64px !important;
+  height: auto !important;
+  min-height: 400px !important;
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.blog-layout .finance-testimonial-container {
+  height: auto !important;
+  opacity: 1 !important;
+}
+
+.blog-layout .finance-testimonial-content {
+  height: auto !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Override animation requirements for Blog page */
+.blog-layout .finance-testimonial-stars,
+.blog-layout .finance-star,
+.blog-layout .finance-testimonial-text,
+.blog-layout .finance-testimonial-profile {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Filter Buttons - positioned within hero-layout */
+.blog-filter-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.blog-filter-btn {
+  display: flex;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #E5E5E5;
+  background: #FFFFFF;
+  color: #525252;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-filter-btn:hover {
+  background: #F5F5F5;
+}
+
+.blog-filter-btn.active {
+  background: #171717;
+  color: #FFFFFF;
+  border-color: #171717;
+}
+
+/* Blog Posts Grid Section */
+.blog-posts-section {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  height: 688px;
+  padding: 64px 0;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+  margin: 0 auto;
+}
+
+.blog-posts-container {
+  display: flex;
+  width: 850px;
+  height: 688px;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 850px;
+  height: 560px;
+}
+
+.blog-post-card {
+  display: flex;
+  flex-direction: column;
+  width: 272.67px;
+  height: 268px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-post-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.blog-post-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+  flex: 1;
+}
+
+.blog-post-date {
+  color: #737373;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.blog-post-title {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+}
+
+.blog-read-more {
+  color: #2563EB;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-top: auto;
+}
+
+.blog-read-more:hover {
+  color: #1E40AF;
+}
+
+/* Blog Testimonial Section */
+.blog-testimonial-section {
+  display: flex;
+  width: 100%;
+  padding: 80px 0;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+}
+
+.blog-testimonial-container {
+  display: flex;
+  width: 100%;
+  max-width: 850px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.blog-testimonial-stars {
+  display: flex;
+  gap: 8px;
+}
+
+.blog-star {
+  color: #F59E0B;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.blog-testimonial-quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blog-testimonial-text {
+  color: #171717;
+  text-align: center;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 34px;
+  letter-spacing: -0.56px;
+  margin: 0;
+  max-width: 850px;
+}
+
+.blog-testimonial-company {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 16px 0;
+}
+
+.blog-testimonial-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.blog-testimonial-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.blog-testimonial-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.blog-testimonial-name {
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin: 0;
+}
+
+.blog-testimonial-role {
+  color: #737373;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+}
+
+/* Blog CTA Section */
+.blog-cta-section {
+  display: flex;
+  width: 100%;
+  padding: 80px 0;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+}
+
+.blog-cta-container {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-cta-card {
+  display: flex;
+  width: 100%;
+  max-width: 866px;
+  height: 300px;
+  border-radius: 24px;
+  background: #172554;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-cta-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px;
+  gap: 24px;
+  flex: 1;
+  z-index: 2;
+}
+
+.blog-cta-title {
+  color: #FFFFFF;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -0.64px;
+  margin: 0;
+}
+
+.blog-cta-button {
+  display: flex;
+  width: fit-content;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: #FFFFFF;
+  border: none;
+  color: #171717;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-cta-button:hover {
+  background: #F5F5F5;
+  transform: translateY(-2px);
+}
+
+.blog-cta-right {
+  display: flex;
+  width: 450px;
+  height: 100%;
+  position: relative;
+}
+
+.blog-cta-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 24px 24px 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .blog-posts-section {
+    max-width: 100%;
+    padding: 64px 40px;
+  }
+
+  .blog-posts-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .blog-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    width: 100%;
+  }
+
+  .blog-post-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Hero Section Mobile */
+  .blog-layout .hero-layout {
+    padding: 80px 20px 60px 20px;
+    min-height: auto;
+  }
+
+  .blog-layout .hero-content {
+    gap: 24px;
+  }
+
+  .blog-layout .headline-section {
+    gap: 16px;
+  }
+
+  .blog-layout .main-headline {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1.28px;
+  }
+
+  .blog-layout .headline-description {
+    font-size: 14px;
+    line-height: 22px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Filter Buttons Mobile */
+  .blog-filter-buttons {
+    width: 100%;
+    padding: 0;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .blog-filter-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+    flex: 0 0 auto;
+  }
+
+  /* Blog Posts Grid Mobile */
+  .blog-posts-section {
+    padding: 40px 20px;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .blog-posts-container {
+    width: 100%;
+    height: auto;
+    gap: 32px;
+  }
+
+  .blog-posts-grid {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    height: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 10px;
+  }
+
+  .blog-posts-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .blog-post-card {
+    min-width: 280px;
+    max-width: 280px;
+    width: 280px;
+    height: auto;
+    min-height: 268px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+
+  .blog-post-image {
+    height: 160px;
+  }
+
+  .blog-post-content {
+    padding: 16px;
+  }
+
+  .blog-post-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .blog-post-date {
+    font-size: 12px;
+  }
+
+  /* Testimonial Section Mobile */
+  .blog-layout .finance-testimonial-section {
+    padding: 60px 20px !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .blog-layout .finance-testimonial-container {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    padding: 0 20px;
+  }
+
+  .blog-layout .finance-testimonial-content {
+    width: 100%;
+    max-width: 100%;
+    height: auto !important;
+    padding: 0;
+    gap: 24px;
+  }
+
+  .blog-layout .finance-testimonial-stars {
+    margin-bottom: 16px;
+  }
+
+  .blog-layout .finance-star {
+    font-size: 20px;
+  }
+
+  .blog-layout .finance-testimonial-quote {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .blog-layout .finance-testimonial-text {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+  }
+
+  .blog-layout .finance-testimonial-profile {
+    margin-top: 16px;
+    gap: 12px;
+  }
+
+  .blog-layout .finance-testimonial-role,
+  .blog-layout .finance-testimonial-company {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  /* Customer Stories Section Mobile */
+  .blog-layout .customer-stories-section {
+    padding: 60px 20px;
+    min-height: auto;
+  }
+
+  .blog-layout .customer-stories-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .blog-layout .customer-stories-header {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+
+  .blog-layout .customer-stories-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .blog-layout .customer-stories-description {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .blog-layout .customer-stories-cta {
+    align-self: flex-start;
+  }
+
+  .blog-layout .customer-stories-cards {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .blog-layout .customer-stories-grid {
+    display: flex;
+    gap: 16px;
+    transform: none !important;
+  }
+
+  .blog-layout .customer-story-card {
+    min-width: 280px;
+    max-width: 280px;
+    flex-shrink: 0;
+  }
+
+  .blog-layout .story-card-image {
+    height: 160px;
+  }
+
+  .blog-layout .story-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .blog-layout .customer-stories-navigation {
+    display: flex;
+    margin-top: 24px;
+  }
+
+  /* CTA Expert Section Mobile */
+  .blog-layout .cta-expert-section {
+    padding: 60px 20px;
+  }
+
+  .blog-layout .cta-expert-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .blog-layout .cta-expert-content {
+    width: 100%;
+  }
+
+  .blog-layout .cta-expert-card {
+    flex-direction: column;
+    height: auto;
+    max-width: 100%;
+    border-radius: 16px;
+  }
+
+  .blog-layout .cta-expert-left {
+    padding: 32px 24px;
+    gap: 20px;
+  }
+
+  .blog-layout .cta-expert-title {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.48px;
+  }
+
+  .blog-layout .cta-expert-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+
+  .blog-layout .cta-expert-right {
+    width: 100%;
+    height: 240px;
+  }
+
+  .blog-layout .cta-expert-image {
+    border-radius: 0 0 16px 16px;
+  }
+}

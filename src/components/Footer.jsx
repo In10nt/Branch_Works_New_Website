@@ -41,7 +41,7 @@ const Footer = () => {
                 <ul className="footer-links">
                   <li><Link to="/" onClick={handleHomeClick}>Home</Link></li>
                   <li><Link to="/about">About us</Link></li>
-                  <li><a href="#blog">Blog</a></li>
+                  <li><Link to="/blog">Blog</Link></li>
                   <li><a href="#careers">Careers</a></li>
                 </ul>
               </div>
