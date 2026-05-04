@@ -31,8 +31,8 @@ const Footer = () => {
                 <h3 className="footer-column-title">Industry</h3>
                 <ul className="footer-links">
                   <li><Link to="/finance">Finance</Link></li>
-                  <li><a href="#technology">Technology Support</a></li>
-                  <li><a href="#offshore">Offshore Hiring</a></li>
+                  <li><Link to="/technology-support">Technology Support</Link></li>
+                  <li><Link to="/offshore-hiring">Offshore Hiring</Link></li>
                 </ul>
               </div>
               

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 import './Finance.css';
+import './TechnologySupport.css';
 import './mobile-responsive.css';
 import Footer from './Footer';
 
@@ -228,8 +229,8 @@ const TechnologySupport = () => {
           </div>
           
           <div className="headline-section">
-            <h1 className="main-headline">[Your Headline Here]</h1>
-            <p className="headline-description">[Your description here - you can update this later]</p>
+            <h1 className="main-headline">Technology Solutions.<br />Simplified. Secured.</h1>
+            <p className="headline-description">Empowering businesses with comprehensive technology solutions to enhance operations, improve efficiency, and enable digital transformation.</p>
           </div>
 
           <div className="cta-section">
@@ -254,25 +255,25 @@ const TechnologySupport = () => {
           <div className="finance-scaling-content">
             <div className="finance-scaling-header" ref={scalingHeaderRef}>
               <h2 className="finance-scaling-title">
-                <span className="finance-scaling-title-black">[Your Title Here]<br /></span>
-                <span className="finance-scaling-title-gray">[Your subtitle here]</span>
+                <span className="finance-scaling-title-black">Why businesses are investing in<br /></span>
+                <span className="finance-scaling-title-gray">technology enablement</span>
               </h2>
             </div>
 
             <div className="finance-scaling-cards" ref={scalingCardsRef}>
               <div className="finance-scaling-card finance-scaling-card-primary">
-                <p className="finance-scaling-card-description">[Card 1 description]</p>
-                <div className="finance-scaling-card-value">70%</div>
+                <p className="finance-scaling-card-description">Businesses rely on cloud-based systems for operations</p>
+                <div className="finance-scaling-card-value">90%+</div>
               </div>
 
               <div className="finance-scaling-card finance-scaling-card-secondary">
-                <p className="finance-scaling-card-description">[Card 2 description]</p>
-                <div className="finance-scaling-card-value" style={{ color: '#60A5FA' }}>44,000+</div>
+                <p className="finance-scaling-card-description">Faster workflows with connected systems</p>
+                <div className="finance-scaling-card-value" style={{ color: '#60A5FA' }}>3x</div>
               </div>
 
               <div className="finance-scaling-card finance-scaling-card-secondary">
-                <p className="finance-scaling-card-description">[Card 3 description]</p>
-                <div className="finance-scaling-card-value" style={{ color: '#60A5FA' }}>60%</div>
+                <p className="finance-scaling-card-description">Companies invest in secure remote access</p>
+                <div className="finance-scaling-card-value" style={{ color: '#60A5FA' }}>65%</div>
               </div>
             </div>
           </div>
@@ -304,9 +305,9 @@ const TechnologySupport = () => {
                   />
                 </div>
                 <div className="finance-hero-text-content">
-                  <h2 className="finance-hero-title">[Service Category 1 Title]</h2>
+                  <h2 className="finance-hero-title">Data, Analytics & Cloud Architecture</h2>
                   <p className="finance-hero-description">
-                    [Service category 1 description - you can update this later]
+                    Delivering comprehensive technology solutions to enhance business operations, improve efficiency, and enable digital transformation.
                   </p>
                 </div>
                 <button className="finance-hero-button">
@@ -324,44 +325,37 @@ const TechnologySupport = () => {
 
             <div className="finance-services-grid" ref={servicesGridRef}>
               <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 1]</h3>
+                <h3 className="finance-service-title">Business Intelligence Dashboards</h3>
                 <p className="finance-service-description">
-                  [Service 1 description]
+                  Building dashboards using BI tools to provide real-time insights and support data-driven decisions.
                 </p>
               </div>
               
               <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 2]</h3>
+                <h3 className="finance-service-title">Data Engineering & Warehousing</h3>
                 <p className="finance-service-description">
-                  [Service 2 description]
+                  Designing data pipelines and warehouses to consolidate data and support reporting and analysis.
                 </p>
               </div>
               
               <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 3]</h3>
+                <h3 className="finance-service-title">Cloud Architecture & DevOps</h3>
                 <p className="finance-service-description">
-                  [Service 3 description]
+                  Setting up secure cloud environments and DevOps pipelines to support scalable operations.
                 </p>
               </div>
               
               <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 4]</h3>
+                <h3 className="finance-service-title">Analytics & Forecasting</h3>
                 <p className="finance-service-description">
-                  [Service 4 description]
+                  Using analytics and forecasting models to support planning, monitoring, and decision-making.
                 </p>
               </div>
               
               <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 5]</h3>
+                <h3 className="finance-service-title">Strategic Value</h3>
                 <p className="finance-service-description">
-                  [Service 5 description]
-                </p>
-              </div>
-              
-              <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 6]</h3>
-                <p className="finance-service-description">
-                  [Service 6 description]
+                  Enabling structured systems and reporting to improve visibility, efficiency, and operational scalability.
                 </p>
               </div>
             </div>
@@ -402,9 +396,9 @@ const TechnologySupport = () => {
                   />
                 </div>
                 <div className="finance-tax-hero-text-content">
-                  <h2 className="finance-tax-hero-title">[Service Category 2 Title]</h2>
+                  <h2 className="finance-tax-hero-title">Tailored Industry ERP Solutions</h2>
                   <p className="finance-tax-hero-description">
-                    [Service category 2 description]
+                    Corporate and individual tax filing, advisory, and compliance across geographies, ensuring accuracy and timeliness.
                   </p>
                 </div>
                 <button className="finance-tax-hero-button">
@@ -422,44 +416,44 @@ const TechnologySupport = () => {
 
             <div className="finance-tax-services-grid" ref={section2GridRef}>
               <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 1]</h3>
+                <h3 className="finance-tax-service-title">Healthcare ERP</h3>
                 <p className="finance-tax-service-description">
-                  [Service 1 description]
+                  Comprehensive ERP solution for healthcare organizations including EMR, billing, pharmacy, laboratory workflows, appointments, and clinical processes.
                 </p>
               </div>
               
               <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 2]</h3>
+                <h3 className="finance-tax-service-title">Retail ERP</h3>
                 <p className="finance-tax-service-description">
-                  [Service 2 description]
+                  Retail ERP system with POS, inventory management, promotions, multi-branch operations, and real-time analytics.
                 </p>
               </div>
               
               <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 3]</h3>
+                <h3 className="finance-tax-service-title">Service ERP</h3>
                 <p className="finance-tax-service-description">
-                  [Service 3 description]
+                  ERP designed for service-based businesses including job management, scheduling, field service operations, and billing functionalities.
                 </p>
               </div>
               
               <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 4]</h3>
+                <h3 className="finance-tax-service-title">Manufacturing ERP</h3>
                 <p className="finance-tax-service-description">
-                  [Service 4 description]
+                  Manufacturing ERP covering BOM, MRP, production planning, quality control, costing, and OEE dashboards.
                 </p>
               </div>
               
               <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 5]</h3>
+                <h3 className="finance-tax-service-title">Integrated Ecosystem</h3>
                 <p className="finance-tax-service-description">
-                  [Service 5 description]
+                  All ERP modules integrate seamlessly with accounting systems, HRIS, payment gateways, and business intelligence platforms.
                 </p>
               </div>
               
               <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 6]</h3>
+                <h3 className="finance-tax-service-title">Strategic Value</h3>
                 <p className="finance-tax-service-description">
-                  [Service 6 description]
+                  Deliver scalable, industry-specific ERP systems that improve efficiency, standardize operations, and create long-term business value.
                 </p>
               </div>
             </div>
@@ -500,9 +494,9 @@ const TechnologySupport = () => {
                   />
                 </div>
                 <div className="finance-payroll-hero-text-content">
-                  <h2 className="finance-payroll-hero-title">[Service Category 3 Title]</h2>
+                  <h2 className="finance-payroll-hero-title">Secure IT Infrastructure, Cybersecurity & Managed Operations</h2>
                   <p className="finance-payroll-hero-description">
-                    [Service category 3 description]
+                    Comprehensive payroll outsourcing with statutory reporting, salary processing, employee benefits, and HR admin management.
                   </p>
                 </div>
                 <button className="finance-payroll-hero-button">
@@ -520,44 +514,30 @@ const TechnologySupport = () => {
 
             <div className="finance-payroll-services-grid" ref={section3GridRef}>
               <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 1]</h3>
+                <h3 className="finance-payroll-service-title">IT Infrastructure Deployment & Device Provisioning</h3>
                 <p className="finance-payroll-service-description">
-                  [Service 1 description]
+                  Establish secure and standardized IT environments through infrastructure setup, device provisioning, and system configuration for remote and distributed teams.
                 </p>
               </div>
               
               <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 2]</h3>
+                <h3 className="finance-payroll-service-title">Help Desk (L1/L2) & IT Operations</h3>
                 <p className="finance-payroll-service-description">
-                  [Service 2 description]
+                  Provide continuous end-user support and IT operations management to ensure smooth business continuity and fast issue resolution.
                 </p>
               </div>
               
               <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 3]</h3>
+                <h3 className="finance-payroll-service-title">Remote Monitoring & Endpoint Management</h3>
                 <p className="finance-payroll-service-description">
-                  [Service 3 description]
+                  Deliver real-time monitoring, control, and management of endpoints and workstations to ensure performance, stability, and security.
                 </p>
               </div>
               
               <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 4]</h3>
+                <h3 className="finance-payroll-service-title">Cybersecurity Frameworks, Zero Trust Access & Compliance Governance</h3>
                 <p className="finance-payroll-service-description">
-                  [Service 4 description]
-                </p>
-              </div>
-              
-              <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 5]</h3>
-                <p className="finance-payroll-service-description">
-                  [Service 5 description]
-                </p>
-              </div>
-              
-              <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 6]</h3>
-                <p className="finance-payroll-service-description">
-                  [Service 6 description]
+                  Implement enterprise-grade cybersecurity controls based on Zero Trust architecture to protect systems, users, and data from threats.
                 </p>
               </div>
             </div>
@@ -598,9 +578,9 @@ const TechnologySupport = () => {
                   />
                 </div>
                 <div className="finance-management-hero-text-content">
-                  <h2 className="finance-management-hero-title">[Service Category 4 Title]</h2>
+                  <h2 className="finance-management-hero-title">Software Engineering, Automation & Digital Transformation</h2>
                   <p className="finance-management-hero-description">
-                    [Service category 4 description]
+                    Budgeting, forecasting, variance analysis, and strategic financial insights to empower data-driven business decisions.
                   </p>
                 </div>
                 <button className="finance-management-hero-button">
@@ -618,44 +598,30 @@ const TechnologySupport = () => {
 
             <div className="finance-management-services-grid" ref={section4GridRef}>
               <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 1]</h3>
+                <h3 className="finance-management-service-title">Full-stack web, mobile & enterprise software development</h3>
                 <p className="finance-management-service-description">
-                  [Service 1 description]
+                  Dedicated developer teams that deliver modern software solutions to enhance client efficiency and internal workflows.
                 </p>
               </div>
               
               <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 2]</h3>
+                <h3 className="finance-management-service-title">AI solutions (chatbots, NLP processing, predictive analytics)</h3>
                 <p className="finance-management-service-description">
-                  [Service 2 description]
+                  Leverage artificial intelligence and machine learning to power intelligent automation, conversational experiences, and data-driven decision making.
                 </p>
               </div>
               
               <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 3]</h3>
+                <h3 className="finance-management-service-title">Process automation (Power Automate / RPA / workflow engines)</h3>
                 <p className="finance-management-service-description">
-                  [Service 3 description]
+                  Streamline repetitive tasks and manual processes to help clients reduce operational overhead and scale faster.
                 </p>
               </div>
               
               <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 4]</h3>
+                <h3 className="finance-management-service-title">Modernization, integration & technology consulting</h3>
                 <p className="finance-management-service-description">
-                  [Service 4 description]
-                </p>
-              </div>
-              
-              <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 5]</h3>
-                <p className="finance-management-service-description">
-                  [Service 5 description]
-                </p>
-              </div>
-              
-              <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 6]</h3>
-                <p className="finance-management-service-description">
-                  [Service 6 description]
+                  Provide strategic advisory services to help clients assess their technology maturity, map digital transformation roadmaps, and implement new systems and integrations.
                 </p>
               </div>
             </div>
@@ -685,14 +651,14 @@ const TechnologySupport = () => {
             
             <div className="finance-testimonial-quote">
               <p className="finance-testimonial-text">
-                "[Your testimonial text here - you can update this later]"
+                "We moved from reactive bookkeeping to a structured finance function. The visibility and control we now have has changed how we operate."
               </p>
             </div>
 
             <div className="finance-testimonial-profile">
               <div className="finance-testimonial-info">
-                <p className="finance-testimonial-role">[Role]</p>
-                <p className="finance-testimonial-company">[Company]</p>
+                <p className="finance-testimonial-role">Technology Expert</p>
+                <p className="finance-testimonial-company">Small-to-Medium Enterprise (Australia)</p>
               </div>
             </div>
           </div>
@@ -716,16 +682,77 @@ const TechnologySupport = () => {
             
             <div className="customer-stories-cards">
               <div className="customer-stories-grid" style={{ transform: `translateX(-${currentCardIndex * 296.67}px)` }}>
-                {[...Array(8)].map((_, index) => (
-                  <div key={index} className="customer-story-card">
-                    <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                    <div className="story-card-content">
-                      <div className="story-date">Apr 18, 2026</div>
-                      <h3 className="story-title">[Story Title {index + 1}]</h3>
-                      <a href="/#" className="story-read-more-link">Read more</a>
-                    </div>
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
-                ))}
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Digital Transformation: Scaling Teams Globally</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 22, 2026</div>
+                    <h3 className="story-title">Cost Optimization: 40% Savings with Offshore Teams</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './HomePage.css';
 import './Finance.css';
+import './OffshoreHiring.css';
 import './mobile-responsive.css';
 import Footer from './Footer';
 
@@ -228,12 +229,12 @@ const OffshoreHiring = () => {
           </div>
           
           <div className="headline-section">
-            <h1 className="main-headline">[Your Headline Here]</h1>
-            <p className="headline-description">[Your description here - you can update this later]</p>
+            <h1 className="main-headline">End-to-End Offshore<br />Staffing Solutions</h1>
+            <p className="headline-description">Providing end-to-end offshore staffing solutions to help businesses scale efficiently with skilled talent across geographies.</p>
           </div>
 
           <div className="cta-section">
-            <button className="schedule-button">Book a free 30-minute demo</button>
+            <button className="schedule-button">Schedule a Consultation</button>
           </div>
 
           <div className="logos-section">
@@ -254,25 +255,25 @@ const OffshoreHiring = () => {
           <div className="finance-scaling-content">
             <div className="finance-scaling-header" ref={scalingHeaderRef}>
               <h2 className="finance-scaling-title">
-                <span className="finance-scaling-title-black">[Your Title Here]<br /></span>
-                <span className="finance-scaling-title-gray">[Your subtitle here]</span>
+                <span className="finance-scaling-title-black">Why businesses are<br /></span>
+                <span className="finance-scaling-title-gray">building teams in Sri Lanka</span>
               </h2>
             </div>
 
             <div className="finance-scaling-cards" ref={scalingCardsRef}>
               <div className="finance-scaling-card finance-scaling-card-primary">
-                <p className="finance-scaling-card-description">[Card 1 description]</p>
-                <div className="finance-scaling-card-value">70%</div>
+                <p className="finance-scaling-card-description">Literacy rate supporting a highly skilled workforce</p>
+                <div className="finance-scaling-card-value">93%</div>
               </div>
 
               <div className="finance-scaling-card finance-scaling-card-secondary">
-                <p className="finance-scaling-card-description">[Card 2 description]</p>
-                <div className="finance-scaling-card-value" style={{ color: '#60A5FA' }}>44,000+</div>
+                <p className="finance-scaling-card-description">Technology workforce supporting global delivery</p>
+                <div className="finance-scaling-card-value" style={{ color: '#60A5FA' }}>300,000+</div>
               </div>
 
               <div className="finance-scaling-card finance-scaling-card-secondary">
-                <p className="finance-scaling-card-description">[Card 3 description]</p>
-                <div className="finance-scaling-card-value" style={{ color: '#60A5FA' }}>60%</div>
+                <p className="finance-scaling-card-description">Cost savings compared to Western markets</p>
+                <div className="finance-scaling-card-value" style={{ color: '#60A5FA' }}>50%+</div>
               </div>
             </div>
           </div>
@@ -304,9 +305,9 @@ const OffshoreHiring = () => {
                   />
                 </div>
                 <div className="finance-hero-text-content">
-                  <h2 className="finance-hero-title">[Service Category 1 Title]</h2>
+                  <h2 className="finance-hero-title">Recruitment & Talent Acquisition</h2>
                   <p className="finance-hero-description">
-                    [Service category 1 description - you can update this later]
+                    Daily and periodic bookkeeping, reconciliation, financial statements, AR/AP management and closing support with global accounting tools.
                   </p>
                 </div>
                 <button className="finance-hero-button">
@@ -324,44 +325,16 @@ const OffshoreHiring = () => {
 
             <div className="finance-services-grid" ref={servicesGridRef}>
               <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 1]</h3>
+                <h3 className="finance-service-title">Role-Based Hiring</h3>
                 <p className="finance-service-description">
-                  [Service 1 description]
+                  Sourcing and selecting candidates aligned to your role requirements and business needs.
                 </p>
               </div>
               
               <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 2]</h3>
+                <h3 className="finance-service-title">Candidate Evaluation</h3>
                 <p className="finance-service-description">
-                  [Service 2 description]
-                </p>
-              </div>
-              
-              <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 3]</h3>
-                <p className="finance-service-description">
-                  [Service 3 description]
-                </p>
-              </div>
-              
-              <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 4]</h3>
-                <p className="finance-service-description">
-                  [Service 4 description]
-                </p>
-              </div>
-              
-              <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 5]</h3>
-                <p className="finance-service-description">
-                  [Service 5 description]
-                </p>
-              </div>
-              
-              <div className="finance-service-card">
-                <h3 className="finance-service-title">[Service 6]</h3>
-                <p className="finance-service-description">
-                  [Service 6 description]
+                  Managing interviews, assessments, and checks to ensure quality and role fit.
                 </p>
               </div>
             </div>
@@ -402,9 +375,9 @@ const OffshoreHiring = () => {
                   />
                 </div>
                 <div className="finance-tax-hero-text-content">
-                  <h2 className="finance-tax-hero-title">[Service Category 2 Title]</h2>
+                  <h2 className="finance-tax-hero-title">Onboarding & Training</h2>
                   <p className="finance-tax-hero-description">
-                    [Service category 2 description]
+                    Corporate and individual tax filing, advisory, and compliance across geographies. Ensuring accuracy and timeliness.
                   </p>
                 </div>
                 <button className="finance-tax-hero-button">
@@ -422,44 +395,16 @@ const OffshoreHiring = () => {
 
             <div className="finance-tax-services-grid" ref={section2GridRef}>
               <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 1]</h3>
+                <h3 className="finance-tax-service-title">Structured Onboarding</h3>
                 <p className="finance-tax-service-description">
-                  [Service 1 description]
+                  Setting up systems, access, and documentation to integrate teams into your operations.
                 </p>
               </div>
               
               <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 2]</h3>
+                <h3 className="finance-tax-service-title">Workflow Alignment</h3>
                 <p className="finance-tax-service-description">
-                  [Service 2 description]
-                </p>
-              </div>
-              
-              <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 3]</h3>
-                <p className="finance-tax-service-description">
-                  [Service 3 description]
-                </p>
-              </div>
-              
-              <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 4]</h3>
-                <p className="finance-tax-service-description">
-                  [Service 4 description]
-                </p>
-              </div>
-              
-              <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 5]</h3>
-                <p className="finance-tax-service-description">
-                  [Service 5 description]
-                </p>
-              </div>
-              
-              <div className="finance-tax-service-card">
-                <h3 className="finance-tax-service-title">[Service 6]</h3>
-                <p className="finance-tax-service-description">
-                  [Service 6 description]
+                  Training teams to align with your processes, tools, and business expectations.
                 </p>
               </div>
             </div>
@@ -500,9 +445,9 @@ const OffshoreHiring = () => {
                   />
                 </div>
                 <div className="finance-payroll-hero-text-content">
-                  <h2 className="finance-payroll-hero-title">[Service Category 3 Title]</h2>
+                  <h2 className="finance-payroll-hero-title">Payroll & Compliance Management</h2>
                   <p className="finance-payroll-hero-description">
-                    [Service category 3 description]
+                    Comprehensive payroll outsourcing with statutory reporting, salary processing, employee benefits, and HR admin management.
                   </p>
                 </div>
                 <button className="finance-payroll-hero-button">
@@ -520,44 +465,16 @@ const OffshoreHiring = () => {
 
             <div className="finance-payroll-services-grid" ref={section3GridRef}>
               <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 1]</h3>
+                <h3 className="finance-payroll-service-title">Payroll Management</h3>
                 <p className="finance-payroll-service-description">
-                  [Service 1 description]
+                  Managing salaries, benefits, and disbursements with accuracy and consistency.
                 </p>
               </div>
               
               <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 2]</h3>
+                <h3 className="finance-payroll-service-title">Compliance & Regulations</h3>
                 <p className="finance-payroll-service-description">
-                  [Service 2 description]
-                </p>
-              </div>
-              
-              <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 3]</h3>
-                <p className="finance-payroll-service-description">
-                  [Service 3 description]
-                </p>
-              </div>
-              
-              <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 4]</h3>
-                <p className="finance-payroll-service-description">
-                  [Service 4 description]
-                </p>
-              </div>
-              
-              <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 5]</h3>
-                <p className="finance-payroll-service-description">
-                  [Service 5 description]
-                </p>
-              </div>
-              
-              <div className="finance-payroll-service-card">
-                <h3 className="finance-payroll-service-title">[Service 6]</h3>
-                <p className="finance-payroll-service-description">
-                  [Service 6 description]
+                  Ensuring adherence to local regulations, tax requirements, and employment policies.
                 </p>
               </div>
             </div>
@@ -598,9 +515,9 @@ const OffshoreHiring = () => {
                   />
                 </div>
                 <div className="finance-management-hero-text-content">
-                  <h2 className="finance-management-hero-title">[Service Category 4 Title]</h2>
+                  <h2 className="finance-management-hero-title">Performance Monitoring & Reporting</h2>
                   <p className="finance-management-hero-description">
-                    [Service category 4 description]
+                    Budgeting, forecasting, variance analysis, and strategic financial insights to empower data-driven business decisions.
                   </p>
                 </div>
                 <button className="finance-management-hero-button">
@@ -618,44 +535,16 @@ const OffshoreHiring = () => {
 
             <div className="finance-management-services-grid" ref={section4GridRef}>
               <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 1]</h3>
+                <h3 className="finance-management-service-title">Performance Tracking</h3>
                 <p className="finance-management-service-description">
-                  [Service 1 description]
+                  Monitoring productivity and output through structured reporting and review cycles.
                 </p>
               </div>
               
               <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 2]</h3>
+                <h3 className="finance-management-service-title">Operational Insights</h3>
                 <p className="finance-management-service-description">
-                  [Service 2 description]
-                </p>
-              </div>
-              
-              <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 3]</h3>
-                <p className="finance-management-service-description">
-                  [Service 3 description]
-                </p>
-              </div>
-              
-              <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 4]</h3>
-                <p className="finance-management-service-description">
-                  [Service 4 description]
-                </p>
-              </div>
-              
-              <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 5]</h3>
-                <p className="finance-management-service-description">
-                  [Service 5 description]
-                </p>
-              </div>
-              
-              <div className="finance-management-service-card">
-                <h3 className="finance-management-service-title">[Service 6]</h3>
-                <p className="finance-management-service-description">
-                  [Service 6 description]
+                  Providing insights to improve team performance and support better decision-making.
                 </p>
               </div>
             </div>
@@ -685,14 +574,14 @@ const OffshoreHiring = () => {
             
             <div className="finance-testimonial-quote">
               <p className="finance-testimonial-text">
-                "[Your testimonial text here - you can update this later]"
+                "We moved from reactive bookkeeping to a structured finance function. The visibility and control we now have has changed how we operate."
               </p>
             </div>
 
             <div className="finance-testimonial-profile">
               <div className="finance-testimonial-info">
-                <p className="finance-testimonial-role">[Role]</p>
-                <p className="finance-testimonial-company">[Company]</p>
+                <p className="finance-testimonial-role">Offshore Expert</p>
+                <p className="finance-testimonial-company">Small-to-Medium Enterprise (Australia)</p>
               </div>
             </div>
           </div>
@@ -708,7 +597,7 @@ const OffshoreHiring = () => {
                 <h2 className="customer-stories-title">Customer Stories</h2>
                 <p className="customer-stories-description">
                   Companies like yours are building<br />
-                  better teams with Branchworks
+                  better solutions with Branchworks
                 </p>
               </div>
               <button className="customer-stories-cta">View All</button>
@@ -716,16 +605,77 @@ const OffshoreHiring = () => {
             
             <div className="customer-stories-cards">
               <div className="customer-stories-grid" style={{ transform: `translateX(-${currentCardIndex * 296.67}px)` }}>
-                {[...Array(8)].map((_, index) => (
-                  <div key={index} className="customer-story-card">
-                    <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                    <div className="story-card-content">
-                      <div className="story-date">Apr 18, 2026</div>
-                      <h3 className="story-title">[Story Title {index + 1}]</h3>
-                      <a href="/#" className="story-read-more-link">Read more</a>
-                    </div>
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
                   </div>
-                ))}
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 18, 2026</div>
+                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 20, 2026</div>
+                    <h3 className="story-title">Digital Transformation: Scaling Teams Globally</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
+                
+                <div className="customer-story-card">
+                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
+                  <div className="story-card-content">
+                    <div className="story-date">Apr 22, 2026</div>
+                    <h3 className="story-title">Cost Optimization: 40% Savings with Offshore Teams</h3>
+                    <a href="/#" className="story-read-more-link">Read more</a>
+                  </div>
+                </div>
               </div>
             </div>
 

@@ -750,7 +750,7 @@ const Finance = () => {
                 <h2 className="customer-stories-title">Customer Stories</h2>
                 <p className="customer-stories-description">
                   Companies like yours are building<br />
-                  better docs with Branchworks
+                  better solutions with Branchworks
                 </p>
               </div>
               <button className="customer-stories-cta">View All</button>

@@ -1,0 +1,195 @@
+/* ========================================
+   TECHNOLOGY SUPPORT PAGE SPECIFIC STYLES
+   ======================================== */
+
+/* Override grid layouts to show 2 columns instead of 3 */
+
+/* Section 1: Data, Analytics & Cloud Architecture (5 cards) */
+.finance-services-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  width: 866px !important;
+  height: auto !important;
+  gap: 24px !important;
+  margin-top: 32px !important;
+}
+
+.finance-service-card {
+  width: 100% !important;
+  height: 200px !important;
+  max-height: 200px !important;
+}
+
+.finance-service-title {
+  width: 100% !important;
+}
+
+.finance-service-description {
+  width: 100% !important;
+}
+
+/* Section 2: Tailored Industry ERP Solutions (6 cards) */
+.finance-tax-services-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  width: 866px !important;
+  height: auto !important;
+  gap: 24px !important;
+  margin-top: 32px !important;
+}
+
+.finance-tax-service-card {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 138px !important;
+}
+
+.finance-tax-service-title {
+  width: 100% !important;
+}
+
+.finance-tax-service-description {
+  width: 100% !important;
+}
+
+/* Section 3: Secure IT Infrastructure (4 cards) */
+.finance-payroll-services-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  width: 866px !important;
+  height: auto !important;
+  gap: 24px !important;
+  margin-top: 32px !important;
+}
+
+.finance-payroll-service-card {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 200px !important;
+}
+
+.finance-payroll-service-title {
+  width: 100% !important;
+}
+
+.finance-payroll-service-description {
+  width: 100% !important;
+}
+
+/* Increase gap between title and description for Cybersecurity card (4th card in Section 3) */
+.finance-payroll-services-grid .finance-payroll-service-card:nth-child(4) .finance-payroll-service-title {
+  margin-bottom: 32px !important;
+}
+
+/* Section 4: Software Engineering (4 cards) */
+.finance-management-services-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  width: 866px !important;
+  height: auto !important;
+  gap: 24px !important;
+  margin-top: 32px !important;
+}
+
+.finance-management-service-card {
+  width: 100% !important;
+  height: auto !important;
+  min-height: 138px !important;
+}
+
+.finance-management-service-title {
+  width: 100% !important;
+}
+
+.finance-management-service-description {
+  width: 100% !important;
+}
+
+/* Adjust section heights to accommodate grid layout */
+.finance-services-section,
+.finance-tax-section,
+.finance-payroll-section,
+.finance-management-section {
+  height: auto !important;
+}
+
+.finance-services-container,
+.finance-tax-container,
+.finance-payroll-container,
+.finance-management-container {
+  height: auto !important;
+}
+
+.finance-services-content,
+.finance-tax-content,
+.finance-payroll-content,
+.finance-management-content {
+  height: auto !important;
+}
+
+/* Reorder testimonial section - move stars to bottom */
+.finance-testimonial-section {
+  margin-top: 80px !important;
+}
+
+.finance-testimonial-content {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.finance-testimonial-stars {
+  order: 3 !important;
+  margin-bottom: 0 !important;
+  margin-top: 32px !important;
+}
+
+.finance-testimonial-quote {
+  order: 1 !important;
+  margin-bottom: 32px !important;
+}
+
+.finance-testimonial-profile {
+  order: 2 !important;
+  margin-top: 0 !important;
+}
+
+/* Mobile responsive - keep existing 2-column layout */
+@media (max-width: 767px) {
+  .finance-services-grid,
+  .finance-tax-services-grid,
+  .finance-payroll-services-grid,
+  .finance-management-services-grid {
+    grid-template-columns: 1fr 1fr !important;
+    width: 100% !important;
+    gap: 20px !important;
+  }
+
+  /* Adjust card heights for mobile */
+  .finance-service-card {
+    height: auto !important;
+    min-height: 180px !important;
+  }
+
+  .finance-payroll-service-card {
+    min-height: 180px !important;
+  }
+
+  /* Reduce gap for specific cards on mobile */
+  .finance-payroll-services-grid .finance-payroll-service-card:nth-child(4) .finance-payroll-service-title,
+  .finance-management-services-grid .finance-management-service-card:nth-child(3) .finance-management-service-title {
+    margin-bottom: 16px !important;
+  }
+
+  /* Adjust testimonial section spacing on mobile */
+  .finance-testimonial-section {
+    margin-top: 40px !important;
+  }
+
+  .finance-testimonial-quote {
+    margin-bottom: 24px !important;
+  }
+
+  .finance-testimonial-stars {
+    margin-top: 24px !important;
+  }
+}
