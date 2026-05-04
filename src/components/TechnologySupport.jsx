@@ -138,7 +138,7 @@ const TechnologySupport = () => {
               )}
             </div>
             <Link to="/about">About</Link>
-            <a href="#careers">Careers</a>
+            <Link to="/careers">Careers</Link>
           </nav>
           
           <button className="cta-button">Talk to an expert</button>
@@ -214,7 +214,7 @@ const TechnologySupport = () => {
               )}
             </div>
             <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-            <a href="#careers" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+            <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
           </nav>
           
           <button className="mobile-cta-button" onClick={() => setIsMobileMenuOpen(false)}>Talk to an expert</button>

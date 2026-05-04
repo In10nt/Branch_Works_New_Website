@@ -42,7 +42,7 @@ const Footer = () => {
                   <li><Link to="/" onClick={handleHomeClick}>Home</Link></li>
                   <li><Link to="/about">About us</Link></li>
                   <li><Link to="/blog">Blog</Link></li>
-                  <li><a href="#careers">Careers</a></li>
+                  <li><Link to="/careers">Careers</Link></li>
                 </ul>
               </div>
             </div>
@@ -63,8 +63,8 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/branchworksglobal" className="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                 <img src="/images/linkedin.png" alt="LinkedIn" width="18" height="22" />
               </a>
-              <a href="https://twitter.com/branchworksglobal" className="social-icon" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-                <img src="/images/twitter.png" alt="Twitter" width="18" height="22" />
+              <a href="https://www.facebook.com/branchworksglobal" className="social-icon" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                <img src="/images/facebook_icon.png" alt="Facebook" width="18" height="22" />
               </a>
             </div>
           </div>

@@ -10,6 +10,7 @@ import TechnologySupport from './components/TechnologySupport';
 import OffshoreHiring from './components/OffshoreHiring';
 import Blog from './components/Blog';
 import BlogDetail from './components/BlogDetail';
+import Careers from './components/Careers';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/offshore-hiring" element={<OffshoreHiring />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
+          <Route path="/careers" element={<Careers />} />
         </Routes>
       </div>
     </Router>

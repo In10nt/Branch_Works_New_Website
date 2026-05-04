@@ -195,7 +195,7 @@ const AboutPage = () => {
               )}
             </div>
             <Link to="/about">About</Link>
-            <a href="#careers">Careers</a>
+            <Link to="/careers">Careers</Link>
           </nav>
           
           <button className="cta-button">Talk to an expert</button>
@@ -274,7 +274,7 @@ const AboutPage = () => {
               )}
             </div>
             <Link to="/about" onClick={closeMobileMenu}>About</Link>
-            <a href="#careers" onClick={closeMobileMenu}>Careers</a>
+            <Link to="/careers" onClick={closeMobileMenu}>Careers</Link>
           </nav>
           
           <div className="mobile-menu-cta">

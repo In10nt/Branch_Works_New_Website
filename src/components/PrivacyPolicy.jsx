@@ -86,7 +86,7 @@ const PrivacyPolicy = () => {
               )}
             </div>
             <Link to="/about">About</Link>
-            <a href="#careers">Careers</a>
+            <Link to="/careers">Careers</Link>
           </nav>
           
           <button className="cta-button">Talk to an expert</button>
@@ -165,7 +165,7 @@ const PrivacyPolicy = () => {
               )}
             </div>
             <Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-            <a href="#careers" onClick={() => setIsMobileMenuOpen(false)}>Careers</a>
+            <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)}>Careers</Link>
           </nav>
           
           <button className="mobile-cta-button" onClick={() => setIsMobileMenuOpen(false)}>Talk to an expert</button>
@@ -265,8 +265,8 @@ const PrivacyPolicy = () => {
                   <ul className="footer-links">
                     <li><Link to="/" onClick={handleHomeClick}>Home</Link></li>
                     <li><Link to="/about">About us</Link></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li><a href="#careers">Careers</a></li>
+                    <li><Link to="/blog">Blog</Link></li>
+                    <li><Link to="/careers">Careers</Link></li>
                   </ul>
                 </div>
               </div>
