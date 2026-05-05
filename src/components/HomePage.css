@@ -248,7 +248,7 @@ body {
 /* Badge Chip Component */
 .badge-chip {
   display: flex;
-  padding: 8px 16px 8px 8px;
+  padding: 4px 12px 4px 4px;
   justify-content: center;
   align-items: center;
   gap: 12px;
@@ -256,6 +256,16 @@ body {
   border: 2px solid #F5F5F5;
   background: #FFFFFF;
   box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.10);
+}
+
+.badge-rating-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 2px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .badge-rating {

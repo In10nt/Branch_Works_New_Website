@@ -348,7 +348,7 @@ const HomePage = () => {
         <div className="hero-background-image"></div>
         <div className="hero-content">
           <div className="badge-chip">
-            <span className="badge-rating">4.8</span>
+            <img src={`${process.env.PUBLIC_URL}/images/herosection_round_icon.png`} alt="Rating" className="badge-rating-icon" />
             <img src={`${process.env.PUBLIC_URL}/images/trustpilot-logo.svg`} alt="Trustpilot" className="badge-trustpilot-logo" />
           </div>
           
