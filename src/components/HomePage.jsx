@@ -393,8 +393,8 @@ const HomePage = () => {
                 console.error('Video error:', e.target.error);
               }}
             >
-              <source src="/Video/Branchwork Website_V03.webm" type="video/webm" />
-              <source src="/Video/video_2.mp4" type="video/mp4" />
+              <source src={`${process.env.PUBLIC_URL}/Video/video_2.mp4`} type="video/mp4" />
+              <source src={`${process.env.PUBLIC_URL}/Video/Branchwork Website_V03.webm`} type="video/webm" />
               Your browser does not support the video tag.
             </video>
           </div>
