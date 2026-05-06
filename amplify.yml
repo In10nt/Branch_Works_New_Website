@@ -7,6 +7,9 @@ frontend:
     build:
       commands:
         - npm run build
+        - echo "Copying video files to build directory..."
+        - mkdir -p build/Video
+        - cp public/Video/video.mp4 build/Video/video.mp4
   artifacts:
     baseDirectory: build
     files:
