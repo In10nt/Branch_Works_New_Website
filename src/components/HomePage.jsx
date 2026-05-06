@@ -110,61 +110,25 @@ const HomePage = () => {
     const playVideo = async () => {
       if (videoRef.current) {
         try {
-          // Ensure video is muted (required for autoplay)
+          // Ensure video is muted and has correct attributes
           videoRef.current.muted = true;
           videoRef.current.playsInline = true;
+          videoRef.current.setAttribute('playsinline', '');
+          videoRef.current.setAttribute('webkit-playsinline', '');
           
-          // Wait for video to be ready
-          await new Promise(resolve => setTimeout(resolve, 300));
+          // Small delay to ensure video is loaded
+          await new Promise(resolve => setTimeout(resolve, 500));
           
           // Try to play
-          const playPromise = videoRef.current.play();
-          
-          if (playPromise !== undefined) {
-            await playPromise;
-            console.log('Video playing successfully');
-          }
+          await videoRef.current.play();
+          console.log('Video playing successfully');
         } catch (error) {
-          console.error('Video autoplay failed:', error);
-          console.log('Error name:', error.name);
-          console.log('Error message:', error.message);
-          
-          // Try multiple times with increasing delays
-          const retryDelays = [500, 1000, 2000];
-          for (const delay of retryDelays) {
-            await new Promise(resolve => setTimeout(resolve, delay));
-            try {
-              if (videoRef.current) {
-                videoRef.current.muted = true;
-                await videoRef.current.play();
-                console.log('Video playing after retry');
-                break;
-              }
-            } catch (retryError) {
-              console.error(`Retry after ${delay}ms failed:`, retryError);
-            }
-          }
+          console.error('Autoplay failed, will try on user interaction:', error);
         }
       }
     };
     
-    // Start playing when component mounts
     playVideo();
-    
-    // Also try to play when user interacts with page
-    const handleUserInteraction = () => {
-      if (videoRef.current && videoRef.current.paused) {
-        videoRef.current.play().catch(e => console.error('Play on interaction failed:', e));
-      }
-    };
-    
-    document.addEventListener('click', handleUserInteraction, { once: true });
-    document.addEventListener('touchstart', handleUserInteraction, { once: true });
-    
-    return () => {
-      document.removeEventListener('click', handleUserInteraction);
-      document.removeEventListener('touchstart', handleUserInteraction);
-    };
   }, []);
 
   useEffect(() => {
@@ -416,38 +380,13 @@ const HomePage = () => {
         <div className="video-content">
           <div className="video-placeholder">
             <video 
-              key="main-video"
               ref={videoRef}
               className="main-video"
               autoPlay
               muted
               loop
               playsInline
-              preload="metadata"
-              webkit-playsinline="true"
-              x5-playsinline="true"
-              onLoadedMetadata={(e) => {
-                console.log('Video metadata loaded');
-                e.target.muted = true;
-                e.target.play().catch(err => console.error('Play on metadata failed:', err));
-              }}
-              onCanPlay={(e) => {
-                console.log('Video can play');
-                e.target.muted = true;
-                e.target.play().catch(err => console.error('Play on canplay failed:', err));
-              }}
-              onLoadedData={(e) => {
-                console.log('Video loaded, attempting to play...');
-                e.target.muted = true;
-                e.target.play().catch(err => console.error('Play failed:', err));
-              }}
-              onError={(e) => {
-                console.error('Video error:', e.target.error);
-                if (e.target.error) {
-                  console.error('Error code:', e.target.error.code);
-                  console.error('Error message:', e.target.error.message);
-                }
-              }}
+              preload="auto"
             >
               <source src={`${process.env.PUBLIC_URL}/Video/Branchwork_Website_V03.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
