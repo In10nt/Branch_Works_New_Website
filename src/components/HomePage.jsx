@@ -117,13 +117,27 @@ const HomePage = () => {
           video.playsInline = true;
           video.setAttribute('playsinline', '');
           video.setAttribute('webkit-playsinline', '');
+          video.setAttribute('muted', '');
           video.defaultMuted = true;
           video.volume = 0;
           
           // Wait for video to load
           if (video.readyState < 3) {
             await new Promise(resolve => {
-              video.addEventListener('loadeddata', resolve, { once: true });
+              const handleLoad = () => {
+                resolve();
+                video.removeEventListener('loadeddata', handleLoad);
+                video.removeEventListener('canplay', handleLoad);
+              };
+              video.addEventListener('loadeddata', handleLoad);
+              video.addEventListener('canplay', handleLoad);
+              
+              // Timeout after 5 seconds
+              setTimeout(() => {
+                video.removeEventListener('loadeddata', handleLoad);
+                video.removeEventListener('canplay', handleLoad);
+                resolve();
+              }, 5000);
             });
           }
           
@@ -413,8 +427,10 @@ const HomePage = () => {
               playsInline
               preload="auto"
               controls={false}
+              webkit-playsinline="true"
+              x-webkit-airplay="allow"
             >
-              <source src={`${process.env.PUBLIC_URL}/Video/Branchwork_Website_V03.mp4`} type="video/mp4" />
+              <source src={`${process.env.PUBLIC_URL}/Video/video.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
