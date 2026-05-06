@@ -384,17 +384,26 @@ const HomePage = () => {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
+              poster={`${process.env.PUBLIC_URL}/images/hero_image_background.png`}
               onLoadedData={(e) => {
                 console.log('Video loaded, attempting to play...');
                 e.target.play().catch(err => console.error('Play failed:', err));
               }}
               onError={(e) => {
                 console.error('Video error:', e.target.error);
+                if (e.target.error) {
+                  console.error('Error code:', e.target.error.code);
+                  console.error('Error message:', e.target.error.message);
+                }
+              }}
+              onCanPlay={(e) => {
+                console.log('Video can play');
+                e.target.play().catch(err => console.error('Play on canplay failed:', err));
               }}
             >
-              <source src="/Video/Branchwork Website_V03.webm" type="video/webm" />
-              <source src="/Video/video_2.mp4" type="video/mp4" />
+              <source src={`${process.env.PUBLIC_URL}/Video/video_2.mp4`} type="video/mp4" />
+              <source src={`${process.env.PUBLIC_URL}/Video/Branchwork Website_V03.webm`} type="video/webm" />
               Your browser does not support the video tag.
             </video>
           </div>
