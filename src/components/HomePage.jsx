@@ -432,7 +432,6 @@ const HomePage = () => {
                crossOrigin="anonymous"
              >
                <source src="https://branchworks-video.s3.eu-north-1.amazonaws.com/Branchwork+Website_V03+(For+Web_MP4).mp4" type="video/mp4" />
-               <source src={`${process.env.PUBLIC_URL}/Video/video.mp4`} type="video/mp4" />
                Your browser does not support the video tag.
              </video>
            </div>
