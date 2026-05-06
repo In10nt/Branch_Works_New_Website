@@ -110,25 +110,49 @@ const HomePage = () => {
     const playVideo = async () => {
       if (videoRef.current) {
         try {
-          // Ensure video is muted and has correct attributes
-          videoRef.current.muted = true;
-          videoRef.current.playsInline = true;
-          videoRef.current.setAttribute('playsinline', '');
-          videoRef.current.setAttribute('webkit-playsinline', '');
+          const video = videoRef.current;
           
-          // Small delay to ensure video is loaded
-          await new Promise(resolve => setTimeout(resolve, 500));
+          // Ensure video is muted and has correct attributes
+          video.muted = true;
+          video.playsInline = true;
+          video.setAttribute('playsinline', '');
+          video.setAttribute('webkit-playsinline', '');
+          video.defaultMuted = true;
+          video.volume = 0;
+          
+          // Wait for video to load
+          if (video.readyState < 3) {
+            await new Promise(resolve => {
+              video.addEventListener('loadeddata', resolve, { once: true });
+            });
+          }
           
           // Try to play
-          await videoRef.current.play();
+          await video.play();
           console.log('Video playing successfully');
         } catch (error) {
-          console.error('Autoplay failed, will try on user interaction:', error);
+          console.error('Autoplay failed:', error);
+          
+          // Fallback: play on any user interaction
+          const playOnInteraction = () => {
+            if (videoRef.current) {
+              videoRef.current.muted = true;
+              videoRef.current.play().catch(e => console.error('Play on interaction failed:', e));
+            }
+          };
+          
+          document.addEventListener('click', playOnInteraction, { once: true });
+          document.addEventListener('scroll', playOnInteraction, { once: true });
+          document.addEventListener('touchstart', playOnInteraction, { once: true });
         }
       }
     };
     
+    // Try to play immediately
     playVideo();
+    
+    // Also try after a delay (for slow networks)
+    setTimeout(playVideo, 1000);
   }, []);
 
   useEffect(() => {
@@ -384,9 +408,11 @@ const HomePage = () => {
               className="main-video"
               autoPlay
               muted
+              defaultMuted
               loop
               playsInline
               preload="auto"
+              controls={false}
             >
               <source src={`${process.env.PUBLIC_URL}/Video/Branchwork_Website_V03.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
