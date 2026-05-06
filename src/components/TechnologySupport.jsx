@@ -359,14 +359,6 @@ const TechnologySupport = () => {
                 </p>
               </div>
             </div>
-
-            <div className="finance-tools-logo">
-              <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_1.png`} 
-                alt="Technology Tools" 
-                className="finance-logo-image"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -457,14 +449,6 @@ const TechnologySupport = () => {
                 </p>
               </div>
             </div>
-
-            <div className="finance-tax-tools-logo">
-              <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_2.png`}
-                alt="Technology Tools" 
-                className="finance-tax-logo-image"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -541,14 +525,6 @@ const TechnologySupport = () => {
                 </p>
               </div>
             </div>
-
-            <div className="finance-payroll-tools-logo">
-              <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_3.png`}
-                alt="Technology Tools" 
-                className="finance-payroll-logo-image"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -624,14 +600,6 @@ const TechnologySupport = () => {
                   Provide strategic advisory services to help clients assess their technology maturity, map digital transformation roadmaps, and implement new systems and integrations.
                 </p>
               </div>
-            </div>
-
-            <div className="finance-management-tools-logo">
-              <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_4.png`}
-                alt="Technology Tools" 
-                className="finance-management-logo-image"
-              />
             </div>
           </div>
         </div>

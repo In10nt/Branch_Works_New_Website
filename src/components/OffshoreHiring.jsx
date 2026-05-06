@@ -338,14 +338,6 @@ const OffshoreHiring = () => {
                 </p>
               </div>
             </div>
-
-            <div className="finance-tools-logo">
-              <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_1.png`} 
-                alt="Offshore Hiring Tools" 
-                className="finance-logo-image"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -407,14 +399,6 @@ const OffshoreHiring = () => {
                   Training teams to align with your processes, tools, and business expectations.
                 </p>
               </div>
-            </div>
-
-            <div className="finance-tax-tools-logo">
-              <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_2.png`}
-                alt="Offshore Hiring Tools" 
-                className="finance-tax-logo-image"
-              />
             </div>
           </div>
         </div>
@@ -478,14 +462,6 @@ const OffshoreHiring = () => {
                 </p>
               </div>
             </div>
-
-            <div className="finance-payroll-tools-logo">
-              <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_3.png`}
-                alt="Offshore Hiring Tools" 
-                className="finance-payroll-logo-image"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -547,14 +523,6 @@ const OffshoreHiring = () => {
                   Providing insights to improve team performance and support better decision-making.
                 </p>
               </div>
-            </div>
-
-            <div className="finance-management-tools-logo">
-              <img 
-                src={`${process.env.PUBLIC_URL}/images/finance_logo_4.png`}
-                alt="Offshore Hiring Tools" 
-                className="finance-management-logo-image"
-              />
             </div>
           </div>
         </div>
