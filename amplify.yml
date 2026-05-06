@@ -14,16 +14,3 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-  customHeaders:
-    - pattern: '**/*.mp4'
-      headers:
-        - key: 'Content-Type'
-          value: 'video/mp4'
-        - key: 'Cache-Control'
-          value: 'public, max-age=31536000'
-    - pattern: '**/*.webm'
-      headers:
-        - key: 'Content-Type'
-          value: 'video/webm'
-        - key: 'Cache-Control'
-          value: 'public, max-age=31536000'
