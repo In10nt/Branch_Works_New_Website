@@ -414,28 +414,28 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="video-section">
-        <div className="video-content">
-          <div className="video-placeholder">
-            <video 
-              ref={videoRef}
-              className="main-video"
-              autoPlay
-              muted
-              defaultMuted
-              loop
-              playsInline
-              preload="auto"
-              controls={false}
-              webkit-playsinline="true"
-              x-webkit-airplay="allow"
-            >
-              <source src={`${process.env.PUBLIC_URL}/Video/video.mp4`} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </div>
-      </div>
+       <div className="video-section">
+         <div className="video-content">
+           <div className="video-placeholder">
+             <video 
+               ref={videoRef}
+               className="main-video"
+               autoPlay
+               muted
+               defaultMuted
+               loop
+               playsInline
+               preload="auto"
+               controls={false}
+               webkit-playsinline="true"
+               x-webkit-airplay="allow"
+             >
+               <source src="/Video/video.mp4" type="video/mp4" />
+               Your browser does not support the video tag.
+             </video>
+           </div>
+         </div>
+       </div>
 
       <div className="stats-section">
         <div className="stats-container">
