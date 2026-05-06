@@ -412,7 +412,7 @@ const HomePage = () => {
               loop
               playsInline
               preload="auto"
-              controls={false}
+              controls
             >
               <source src={`${process.env.PUBLIC_URL}/Video/Branchwork_Website_V03.mp4`} type="video/mp4" />
               Your browser does not support the video tag.
