@@ -40,3 +40,9 @@ aws_secret.txt
 
 # Misc
 .cache/
+
+# Database files (H2)
+backend/data/
+*.db
+*.mv.db
+*.trace.db

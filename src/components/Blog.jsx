@@ -12,16 +12,119 @@ const Blog = () => {
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [dynamicBlogs, setDynamicBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Calculate max index for carousel (8 cards total, 3 visible)
   const totalCards = 8;
   const visibleCards = 3;
   const maxIndex = totalCards - visibleCards;
 
+  // Static blogs (your current blogs - keep as is)
+  const staticBlogs = [
+    {
+      id: 'static-1',
+      title: 'Async First: Cut Meetings, Boost Remote Wins',
+      slug: '1',
+      category: 'Technology Support',
+      featuredImage: '/images/customer_story_image_1.jpg',
+      publishedAt: '2026-04-18',
+      isStatic: true
+    },
+    {
+      id: 'static-2',
+      title: 'Async First: Cut Meetings, Boost Remote Wins',
+      slug: '1',
+      category: 'Technology Support',
+      featuredImage: '/images/customer_story_image_1.jpg',
+      publishedAt: '2026-04-18',
+      isStatic: true
+    },
+    {
+      id: 'static-3',
+      title: 'Async First: Cut Meetings, Boost Remote Wins',
+      slug: '1',
+      category: 'Finance',
+      featuredImage: '/images/customer_story_image_1.jpg',
+      publishedAt: '2026-04-18',
+      isStatic: true
+    },
+    {
+      id: 'static-4',
+      title: 'Async First: Cut Meetings, Boost Remote Wins',
+      slug: '1',
+      category: 'Offshore Hiring',
+      featuredImage: '/images/customer_story_image_1.jpg',
+      publishedAt: '2026-04-18',
+      isStatic: true
+    },
+    {
+      id: 'static-5',
+      title: 'Async First: Cut Meetings, Boost Remote Wins',
+      slug: '1',
+      category: 'Technology Support',
+      featuredImage: '/images/customer_story_image_1.jpg',
+      publishedAt: '2026-04-18',
+      isStatic: true
+    },
+    {
+      id: 'static-6',
+      title: 'Async First: Cut Meetings, Boost Remote Wins',
+      slug: '1',
+      category: 'Finance',
+      featuredImage: '/images/customer_story_image_1.jpg',
+      publishedAt: '2026-04-18',
+      isStatic: true
+    }
+  ];
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Fetch dynamic blogs from database
+  useEffect(() => {
+    fetchDynamicBlogs();
+  }, []);
+
+  const fetchDynamicBlogs = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:5000/api/blogs');
+      const data = await response.json();
+      setDynamicBlogs(data);
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+      setDynamicBlogs([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Combine static and dynamic blogs
+  const getAllBlogs = () => {
+    let combined = [...staticBlogs, ...dynamicBlogs];
+    
+    // Filter by category if not "All"
+    if (activeFilter !== 'All') {
+      combined = combined.filter(blog => blog.category === activeFilter);
+    }
+    
+    return combined;
+  };
+
+  const allBlogs = getAllBlogs();
+
+  const formatDate = (dateString) => {
+    if (!dateString) return 'Apr 18, 2026';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -228,61 +331,26 @@ const Blog = () => {
       <div className="blog-posts-section">
         <div className="blog-posts-container">
           <div className="blog-posts-grid">
-            {/* Row 1 */}
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
+            {allBlogs.map((blog) => (
+              <div key={blog.id} className="blog-post-card">
+                <img 
+                  src={
+                    blog.isStatic 
+                      ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
+                      : blog.featuredImage 
+                        ? `http://localhost:5000${blog.featuredImage}` 
+                        : `${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`
+                  } 
+                  alt={blog.title} 
+                  className="blog-post-image" 
+                />
+                <div className="blog-post-content">
+                  <div className="blog-post-date">{formatDate(blog.publishedAt)}</div>
+                  <h3 className="blog-post-title">{blog.title}</h3>
+                  <Link to={`/blog/${blog.slug}`} className="blog-read-more">Read more</Link>
+                </div>
               </div>
-            </div>
-
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
-
-            {/* Row 2 */}
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
