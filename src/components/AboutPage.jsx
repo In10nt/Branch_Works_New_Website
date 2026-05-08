@@ -332,7 +332,7 @@ const AboutPage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/valueIcon_1.png`} alt="Integrity in every engagement" />
               </div>
               <h3 className="value-card-title">Integrity in every engagement</h3>
-              <p className="value-card-description">Full transparency — in our reporting, processes, and every client relationship.</p>
+              <p className="value-card-description">Full transparency in our reporting, processes, and every client relationship.</p>
             </div>
 
             {/* Card 2 - Excellence in delivery */}
@@ -341,7 +341,7 @@ const AboutPage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/valueIcon_2.png`} alt="Excellence in delivery" />
               </div>
               <h3 className="value-card-title">Excellence in delivery</h3>
-              <p className="value-card-description">Defined service-level commitments — accuracy and consistency are non-negotiable.</p>
+              <p className="value-card-description">Defined service level commitments accuracy and consistency are non-negotiable.</p>
             </div>
 
             {/* Card 3 - Scalability by design */}
@@ -350,7 +350,7 @@ const AboutPage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/valueIcon_3.png`} alt="Scalability by design" />
               </div>
               <h3 className="value-card-title">Scalability by design</h3>
-              <p className="value-card-description">Solutions built to flex — scale up or down without disrupting operations.</p>
+              <p className="value-card-description">Solutions built to flex scale up or down without disrupting operations.</p>
             </div>
 
             {/* Card 4 - Technology-led thinking */}
