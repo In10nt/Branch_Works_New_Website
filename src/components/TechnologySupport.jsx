@@ -11,6 +11,8 @@ const TechnologySupport = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
+  const [customerStoryBlogs, setCustomerStoryBlogs] = useState([]);
+  const [blogsLoading, setBlogsLoading] = useState(true);
   
   // Animation refs
   const scalingHeaderRef = useRef(null);
@@ -26,9 +28,9 @@ const TechnologySupport = () => {
   const testimonialRef = useRef(null);
   
   // Calculate max index for carousel (total cards - visible cards)
-  const totalCards = 8;
+  const totalCards = customerStoryBlogs.length;
   const visibleCards = 3;
-  const maxIndex = totalCards - visibleCards;
+  const maxIndex = Math.max(0, totalCards - visibleCards);
 
   // Scroll to top when component mounts
   useEffect(() => {
@@ -67,6 +69,63 @@ const TechnologySupport = () => {
       });
     };
   }, []);
+
+  // Fetch blogs for Customer Stories section
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      setBlogsLoading(true);
+      try {
+        const response = await fetch('http://localhost:5000/api/blogs');
+        const data = await response.json();
+        
+        const staticBlog = {
+          id: 'static-1',
+          title: 'Offshore vs. In-House Assistants: Smarter Support for Buyer\'s Agents in Australia',
+          slug: '1',
+          category: 'Finance',
+          featuredImage: '/images/customer_story_image_1.jpg',
+          publishedAt: '2025-06-24',
+          isStatic: true
+        };
+        
+        // Filter only Technology Support category blogs
+        const techBlogs = data.filter(blog => blog.category === 'Technology Support');
+        setCustomerStoryBlogs([staticBlog, ...techBlogs]);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+        const staticBlog = {
+          id: 'static-1',
+          title: 'Offshore vs. In-House Assistants: Smarter Support for Buyer\'s Agents in Australia',
+          slug: '1',
+          category: 'Finance',
+          featuredImage: '/images/customer_story_image_1.jpg',
+          publishedAt: '2025-06-24',
+          isStatic: true
+        };
+        setCustomerStoryBlogs([staticBlog]);
+      } finally {
+        setBlogsLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  const formatDate = (dateString) => {
+    if (!dateString) return 'Apr 18, 2026';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
+
+  const truncateTitle = (title, maxLength = 50) => {
+    if (!title) return '';
+    if (title.length <= maxLength) return title;
+    return title.substring(0, maxLength).trim() + '...';
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -650,77 +709,38 @@ const TechnologySupport = () => {
             
             <div className="customer-stories-cards">
               <div className="customer-stories-grid" style={{ transform: `translateX(-${currentCardIndex * 296.67}px)` }}>
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                {/* Dynamic Blog Cards */}
+                {blogsLoading ? (
+                  <div className="customer-story-card">
+                    <div className="story-card-content">
+                      <p>Loading blogs...</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                ) : customerStoryBlogs.length > 0 ? (
+                  customerStoryBlogs.map((blog) => (
+                    <div key={blog.id} className="customer-story-card">
+                      <img 
+                        src={blog.isStatic 
+                          ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
+                          : `http://localhost:5000${blog.featuredImage}`
+                        } 
+                        alt={blog.title} 
+                        className="story-card-image" 
+                      />
+                      <div className="story-card-content">
+                        <div className="story-date">{formatDate(blog.publishedAt)}</div>
+                        <h3 className="story-title">{truncateTitle(blog.title)}</h3>
+                        <Link to={`/blog/${blog.slug}`} className="story-read-more-link">Read more</Link>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="customer-story-card">
+                    <div className="story-card-content">
+                      <p>No blogs available</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Digital Transformation: Scaling Teams Globally</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 22, 2026</div>
-                    <h3 className="story-title">Cost Optimization: 40% Savings with Offshore Teams</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
 

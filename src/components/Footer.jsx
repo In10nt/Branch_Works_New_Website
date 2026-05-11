@@ -43,6 +43,7 @@ const Footer = () => {
                   <li><Link to="/about">About us</Link></li>
                   <li><Link to="/blog">Blog</Link></li>
                   <li><Link to="/careers">Careers</Link></li>
+                  <li><a href="http://localhost:8080/blogs.html" target="_blank" rel="noopener noreferrer">Admin</a></li>
                 </ul>
               </div>
             </div>

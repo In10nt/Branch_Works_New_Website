@@ -18,6 +18,8 @@ const HomePage = () => {
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
   const [flippedCards, setFlippedCards] = useState([]);
+  const [customerStoryBlogs, setCustomerStoryBlogs] = useState([]);
+  const [blogsLoading, setBlogsLoading] = useState(true);
 
   // Toggle flip card on mobile
   const handleCardClick = (index) => {
@@ -239,10 +241,51 @@ const HomePage = () => {
     };
   }, []);
 
+  // Fetch blogs for Customer Stories section
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      setBlogsLoading(true);
+      try {
+        const response = await fetch('http://localhost:5000/api/blogs');
+        const data = await response.json();
+        
+        // Add the static blog first, then dynamic blogs
+        const staticBlog = {
+          id: 'static-1',
+          title: 'Offshore vs. In-House Assistants: Smarter Support for Buyer\'s Agents in Australia',
+          slug: '1',
+          category: 'Finance',
+          featuredImage: '/images/customer_story_image_1.jpg',
+          publishedAt: '2025-06-24',
+          isStatic: true
+        };
+        
+        setCustomerStoryBlogs([staticBlog, ...data]);
+      } catch (error) {
+        console.error('Error fetching blogs:', error);
+        // If fetch fails, show only static blog
+        const staticBlog = {
+          id: 'static-1',
+          title: 'Offshore vs. In-House Assistants: Smarter Support for Buyer\'s Agents in Australia',
+          slug: '1',
+          category: 'Finance',
+          featuredImage: '/images/customer_story_image_1.jpg',
+          publishedAt: '2025-06-24',
+          isStatic: true
+        };
+        setCustomerStoryBlogs([staticBlog]);
+      } finally {
+        setBlogsLoading(false);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   // Customer Stories carousel navigation
-  const totalCards = 8; // Total number of cards
+  const totalCards = customerStoryBlogs.length; // Total number of cards
   const cardsPerView = 3; // Number of full cards visible at once (plus half of next one)
-  const maxIndex = totalCards - cardsPerView; // Maximum index we can scroll to
+  const maxIndex = Math.max(0, totalCards - cardsPerView); // Maximum index we can scroll to
 
   const handlePrevCard = () => {
     setCurrentCardIndex((prev) => Math.max(0, prev - 1));
@@ -250,6 +293,24 @@ const HomePage = () => {
 
   const handleNextCard = () => {
     setCurrentCardIndex((prev) => Math.min(maxIndex, prev + 1));
+  };
+
+  // Format date for blog cards
+  const formatDate = (dateString) => {
+    if (!dateString) return 'Apr 18, 2026';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
+
+  // Truncate title to fit card
+  const truncateTitle = (title, maxLength = 50) => {
+    if (!title) return '';
+    if (title.length <= maxLength) return title;
+    return title.substring(0, maxLength).trim() + '...';
   };
 
   // FAQ accordion toggle
@@ -823,78 +884,38 @@ const HomePage = () => {
             
             <div className="customer-stories-cards">
               <div className="customer-stories-grid" style={{ transform: `translateX(-${currentCardIndex * 296.67}px)` }}>
-                {/* Individual Cards */}
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
+                {/* Dynamic Blog Cards */}
+                {blogsLoading ? (
+                  <div className="customer-story-card">
+                    <div className="story-card-content">
+                      <p>Loading blogs...</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
+                ) : customerStoryBlogs.length > 0 ? (
+                  customerStoryBlogs.map((blog) => (
+                    <div key={blog.id} className="customer-story-card">
+                      <img 
+                        src={blog.isStatic 
+                          ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
+                          : `http://localhost:5000${blog.featuredImage}`
+                        } 
+                        alt={blog.title} 
+                        className="story-card-image" 
+                      />
+                      <div className="story-card-content">
+                        <div className="story-date">{formatDate(blog.publishedAt)}</div>
+                        <h3 className="story-title">{truncateTitle(blog.title)}</h3>
+                        <Link to={`/blog/${blog.slug}`} className="story-read-more-link">Read more</Link>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="customer-story-card">
+                    <div className="story-card-content">
+                      <p>No blogs available</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
-                  </div>
-                </div>
-
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Digital Transformation: Scaling Teams Globally</h3>
-                    <Link to="/blog/1" className="story-read-more-link">Read more</Link>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 22, 2026</div>
-                    <h3 className="story-title">Cost Optimization: 40% Savings with Offshore Teams</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
             
