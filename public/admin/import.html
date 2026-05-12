@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Current Blogs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Import Current Blogs</h1>
+            <p class="subtitle">Import your existing website blogs into the management system</p>
+            
+            <div id="message" style="display: none; padding: 12px; border-radius: 8px; margin-bottom: 20px;"></div>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <p style="color: #737373; margin-bottom: 20px;">
+                    This will import 6 blog posts from your current website into the database.
+                </p>
+                <button onclick="importBlogs()" id="import-btn" class="btn-primary">
+                    Import Current Blogs
+                </button>
+            </div>
+            
+            <div class="login-footer">
+                <a href="index.html" style="color: #2563EB; text-decoration: none;">← Back to Login</a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function importBlogs() {
+            const btn = document.getElementById('import-btn');
+            const message = document.getElementById('message');
+            
+            btn.disabled = true;
+            btn.textContent = 'Importing...';
+            message.style.display = 'none';
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/admin/import/current-blogs', {
+                    method: 'POST'
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    message.style.display = 'block';
+                    message.style.background = '#D1FAE5';
+                    message.style.border = '1px solid #059669';
+                    message.style.color = '#059669';
+                    message.textContent = data.message + ' (' + data.count + ' blogs)';
+                    
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                } else {
+                    throw new Error(data.error || 'Import failed');
+                }
+            } catch (error) {
+                message.style.display = 'block';
+                message.style.background = '#FEE2E2';
+                message.style.border = '1px solid #FCA5A5';
+                message.style.color = '#DC2626';
+                message.textContent = 'Error: ' + error.message;
+                
+                btn.disabled = false;
+                btn.textContent = 'Import Current Blogs';
+            }
+        }
+    </script>
+</body>
+</html>
