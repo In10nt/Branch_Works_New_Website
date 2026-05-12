@@ -83,7 +83,12 @@ async function uploadImage() {
 }
 
 function showImagePreview(imageUrl) {
-    document.getElementById('preview-img').src = imageUrl;
+    // Construct full image URL if it's a relative path
+    const fullImageUrl = imageUrl.startsWith('http') 
+        ? imageUrl 
+        : `http://localhost:5000${imageUrl}`;
+    
+    document.getElementById('preview-img').src = fullImageUrl;
     document.getElementById('image-preview').style.display = 'block';
     document.getElementById('image-upload').style.display = 'none';
 }

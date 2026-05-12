@@ -71,11 +71,19 @@ function displayBlogs() {
         noBlogs.style.display = 'none';
         tableContainer.style.display = 'block';
         
-        tableBody.innerHTML = filteredBlogs.map(blog => `
+        tableBody.innerHTML = filteredBlogs.map(blog => {
+            // Construct full image URL
+            const imageUrl = blog.featuredImage 
+                ? (blog.featuredImage.startsWith('http') 
+                    ? blog.featuredImage 
+                    : `http://localhost:5000${blog.featuredImage}`)
+                : null;
+            
+            return `
             <tr>
                 <td>
-                    ${blog.featuredImage 
-                        ? `<img src="${blog.featuredImage}" alt="${blog.title}" class="blog-thumbnail">` 
+                    ${imageUrl 
+                        ? `<img src="${imageUrl}" alt="${blog.title}" class="blog-thumbnail">` 
                         : '<div class="blog-thumbnail-placeholder">No Image</div>'}
                 </td>
                 <td>
@@ -90,7 +98,7 @@ function displayBlogs() {
                     <a href="#" onclick="deleteBlog(${blog.id}, '${blog.title.replace(/'/g, "\\'")}'); return false;" class="action-link action-delete">Delete</a>
                 </td>
             </tr>
-        `).join('');
+        `}).join('');
     }
 }
 

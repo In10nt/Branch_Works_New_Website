@@ -306,11 +306,19 @@ const HomePage = () => {
     });
   };
 
-  // Truncate title to fit card
-  const truncateTitle = (title, maxLength = 50) => {
+  // Truncate title to fit card - break at word boundary
+  const truncateTitle = (title, maxLength = 60) => {
     if (!title) return '';
     if (title.length <= maxLength) return title;
-    return title.substring(0, maxLength).trim() + '...';
+    
+    // Find last space before maxLength
+    const truncated = title.substring(0, maxLength);
+    const lastSpace = truncated.lastIndexOf(' ');
+    
+    if (lastSpace > 0) {
+      return title.substring(0, lastSpace).trim() + '...';
+    }
+    return truncated.trim() + '...';
   };
 
   // FAQ accordion toggle

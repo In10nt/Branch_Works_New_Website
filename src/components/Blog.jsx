@@ -105,11 +105,24 @@ const Blog = () => {
     });
   };
 
-  // Truncate title to fit card
-  const truncateTitle = (title, maxLength = 50) => {
+  // Truncate title to fit card - break at word boundary
+  const truncateTitle = (title, maxLength = 60) => {
     if (!title) return '';
     if (title.length <= maxLength) return title;
-    return title.substring(0, maxLength).trim() + '...';
+    
+    // Find last space before maxLength
+    const truncated = title.substring(0, maxLength);
+    const lastSpace = truncated.lastIndexOf(' ');
+    
+    if (lastSpace > 0) {
+      return title.substring(0, lastSpace).trim() + '...';
+    }
+    return truncated.trim() + '...';
+  };
+
+  // Shorter truncation for blog post grid cards
+  const truncateBlogPostTitle = (title) => {
+    return truncateTitle(title, 45); // Shorter for blog post cards
   };
 
   const toggleMobileMenu = () => {
@@ -332,7 +345,7 @@ const Blog = () => {
                 />
                 <div className="blog-post-content">
                   <div className="blog-post-date">{formatDate(blog.publishedAt)}</div>
-                  <h3 className="blog-post-title">{blog.title}</h3>
+                  <h3 className="blog-post-title">{truncateBlogPostTitle(blog.title)}</h3>
                   <Link to={`/blog/${blog.slug}`} className="blog-read-more">Read more</Link>
                 </div>
               </div>

@@ -299,29 +299,54 @@ const BlogDetail = () => {
                 
                 {/* Format content with proper CSS classes */}
                 <div className="blog-detail-content">
-                  {blog.content.split('\n\n').map((paragraph, index) => {
-                    // Check if it's a heading (starts with #)
-                    if (paragraph.startsWith('#')) {
-                      const headingText = paragraph.replace(/^#+\s*/, '');
-                      return <h3 key={index} className="blog-detail-heading">{headingText}</h3>;
-                    }
-                    // Check if it's a list item (starts with - or *)
-                    else if (paragraph.includes('\n-') || paragraph.includes('\n*')) {
-                      const items = paragraph.split('\n').filter(line => line.trim().startsWith('-') || line.trim().startsWith('*'));
-                      return (
-                        <ul key={index} className="blog-detail-list">
-                          {items.map((item, i) => (
-                            <li key={i}>{item.replace(/^[-*]\s*/, '')}</li>
-                          ))}
-                        </ul>
-                      );
-                    }
-                    // Regular paragraph
-                    else if (paragraph.trim()) {
-                      return <p key={index} className="blog-detail-paragraph">{paragraph}</p>;
-                    }
-                    return null;
-                  })}
+                  {blog.isStatic ? (
+                    // Static blog uses HTML content directly
+                    <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+                  ) : (
+                    // Dynamic blogs: format plain text content
+                    blog.content && blog.content.trim() ? (
+                      blog.content.split('\n\n').map((paragraph, index) => {
+                        const trimmed = paragraph.trim();
+                        
+                        // Skip empty paragraphs
+                        if (!trimmed) return null;
+                        
+                        // Check if it's a heading (starts with #)
+                        if (trimmed.startsWith('###')) {
+                          const headingText = trimmed.replace(/^###\s*/, '');
+                          return <h3 key={index} className="blog-detail-heading">{headingText}</h3>;
+                        } else if (trimmed.startsWith('##')) {
+                          const headingText = trimmed.replace(/^##\s*/, '');
+                          return <h2 key={index} className="blog-detail-heading">{headingText}</h2>;
+                        } else if (trimmed.startsWith('#')) {
+                          const headingText = trimmed.replace(/^#\s*/, '');
+                          return <h3 key={index} className="blog-detail-heading">{headingText}</h3>;
+                        }
+                        // Check if it's a list (contains multiple lines starting with - or *)
+                        else if (trimmed.includes('\n-') || trimmed.includes('\n*') || trimmed.startsWith('-') || trimmed.startsWith('*')) {
+                          const lines = trimmed.split('\n');
+                          const listItems = lines.filter(line => {
+                            const l = line.trim();
+                            return l.startsWith('-') || l.startsWith('*');
+                          });
+                          
+                          if (listItems.length > 0) {
+                            return (
+                              <ul key={index} className="blog-detail-list">
+                                {listItems.map((item, i) => (
+                                  <li key={i}>{item.replace(/^[-*]\s*/, '').trim()}</li>
+                                ))}
+                              </ul>
+                            );
+                          }
+                        }
+                        // Regular paragraph
+                        return <p key={index} className="blog-detail-paragraph">{trimmed}</p>;
+                      })
+                    ) : (
+                      <p className="blog-detail-paragraph">No content available.</p>
+                    )
+                  )}
                 </div>
               </article>
             </div>
