@@ -34,7 +34,7 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
             </div>
             <h2 style="margin: 0 0 10px 0; color: #111827; font-size: 24px; font-weight: 600;">Login Successful!</h2>
             <p style="margin: 0 0 20px 0; color: #6B7280; font-size: 14px;">
-                Welcome to Blog Management System
+                Welcome to Admin Panel
             </p>
             <div style="background: #EFF6FF; border: 1px solid #3B82F6; border-radius: 8px; padding: 16px; margin-bottom: 20px;">
                 <p style="margin: 0; color: #1E40AF; font-size: 14px; font-weight: 500;">
@@ -73,12 +73,12 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
         
         // Close popup and redirect
         document.getElementById('closePopup').addEventListener('click', function() {
-            window.location.href = 'blogs.html';
+            window.location.href = 'dashboard.html';
         });
         
         // Auto redirect after 5 seconds
         setTimeout(function() {
-            window.location.href = 'blogs.html';
+            window.location.href = 'dashboard.html';
         }, 5000);
     } else {
         errorMessage.textContent = 'Invalid username or password';

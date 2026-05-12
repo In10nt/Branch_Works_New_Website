@@ -10,10 +10,31 @@ const Careers = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isIndustryDropdownOpen, setIsIndustryDropdownOpen] = useState(false);
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
+  const [careers, setCareers] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  // Fetch careers from database
+  useEffect(() => {
+    const fetchCareers = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch('http://localhost:5000/api/careers');
+        const data = await response.json();
+        setCareers(data);
+      } catch (error) {
+        console.error('Error fetching careers:', error);
+        setCareers([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCareers();
   }, []);
 
   const toggleMobileMenu = () => {
@@ -323,49 +344,32 @@ const Careers = () => {
             <h2 className="careers-open-roles-title">Open Roles</h2>
             
             <div className="careers-roles-list">
-              {/* Role 1 */}
-              <div className="careers-role-item">
-                <div className="careers-role-info">
-                  <h3 className="careers-role-title">Senior Accountant</h3>
-                  <p className="careers-role-location">Colombo · Hybrid · Finance</p>
-                </div>
-                <div className="careers-role-arrow">
-                  <img src={`${process.env.PUBLIC_URL}/images/career_IconWrapper.png`} alt="Arrow" width="24" height="24" />
-                </div>
-              </div>
-
-              {/* Role 2 */}
-              <div className="careers-role-item">
-                <div className="careers-role-info">
-                  <h3 className="careers-role-title">Project Manager</h3>
-                  <p className="careers-role-location">Colombo · Hybrid · Finance</p>
-                </div>
-                <div className="careers-role-arrow">
-                  <img src={`${process.env.PUBLIC_URL}/images/career_IconWrapper.png`} alt="Arrow" width="24" height="24" />
-                </div>
-              </div>
-
-              {/* Role 3 */}
-              <div className="careers-role-item">
-                <div className="careers-role-info">
-                  <h3 className="careers-role-title">UX Designer</h3>
-                  <p className="careers-role-location">Colombo · Hybrid · Finance</p>
-                </div>
-                <div className="careers-role-arrow">
-                  <img src={`${process.env.PUBLIC_URL}/images/career_IconWrapper.png`} alt="Arrow" width="24" height="24" />
-                </div>
-              </div>
-
-              {/* Role 4 */}
-              <div className="careers-role-item">
-                <div className="careers-role-info">
-                  <h3 className="careers-role-title">Data Analyst</h3>
-                  <p className="careers-role-location">Colombo · Hybrid · Finance</p>
-                </div>
-                <div className="careers-role-arrow">
-                  <img src={`${process.env.PUBLIC_URL}/images/career_IconWrapper.png`} alt="Arrow" width="24" height="24" />
-                </div>
-              </div>
+              {loading ? (
+                <p>Loading careers...</p>
+              ) : careers.length > 0 ? (
+                careers.map((career) => (
+                  <a 
+                    key={career.id}
+                    href={career.linkedinUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="careers-role-item"
+                    style={{ textDecoration: 'none', color: 'inherit' }}
+                  >
+                    <div className="careers-role-info">
+                      <h3 className="careers-role-title">{career.title}</h3>
+                      <p className="careers-role-location">
+                        {career.location} · {career.workType} · {career.department}
+                      </p>
+                    </div>
+                    <div className="careers-role-arrow">
+                      <img src={`${process.env.PUBLIC_URL}/images/career_IconWrapper.png`} alt="Arrow" width="24" height="24" />
+                    </div>
+                  </a>
+                ))
+              ) : (
+                <p>No open positions at the moment. Check back soon!</p>
+              )}
             </div>
           </div>
         </div>

@@ -6,7 +6,8 @@ const API_BASE_URL = window.location.hostname === 'localhost'
 
 const API_ENDPOINTS = {
     blogs: `${API_BASE_URL}/api/admin/blogs`,
-    upload: `${API_BASE_URL}/api/admin/upload`
+    upload: `${API_BASE_URL}/api/admin/upload`,
+    careers: `${API_BASE_URL}/api/admin/careers`
 };
 
 // Check if user is logged in
