@@ -1,8 +1,11 @@
-# Admin panel routes - serve static files
-/admin/*  /admin/:splat  200
+# Admin panel - serve static HTML files directly (must come BEFORE catch-all)
+/admin  /admin/index.html  200!
+/admin/  /admin/index.html  200!
+/admin/index.html  /admin/index.html  200!
+/admin/*  /admin/:splat  200!
 
 # API proxy (if backend on different domain)
 # /api/*  https://your-backend-url.com/api/:splat  200
 
-# React Router - all other routes go to index.html
+# React Router - catch-all for React app (must be LAST)
 /*  /index.html  200
