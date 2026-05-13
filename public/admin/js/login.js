@@ -5,6 +5,19 @@ document.getElementById('login-form').addEventListener('submit', function(e) {
     const password = document.getElementById('password').value;
     const errorMessage = document.getElementById('error-message');
     
+    // Check if backend is deployed (only in production)
+    if (window.location.hostname !== 'localhost' && typeof isBackendDeployed === 'function' && !isBackendDeployed()) {
+        errorMessage.innerHTML = `
+            <strong>⚠️ Backend Not Deployed</strong><br>
+            The admin panel requires the backend API to be deployed to AWS.<br>
+            <small>Please follow <strong>NEXT_STEPS.md</strong> to deploy the backend.</small>
+        `;
+        errorMessage.style.display = 'block';
+        errorMessage.style.padding = '15px';
+        errorMessage.style.lineHeight = '1.6';
+        return;
+    }
+    
     // Simple authentication (replace with real authentication)
     if (username === 'admin' && password === 'admin123') {
         localStorage.setItem('blogAdminLoggedIn', 'true');
