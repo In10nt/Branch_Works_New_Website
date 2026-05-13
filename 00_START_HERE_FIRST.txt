@@ -1,0 +1,115 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║              🚀 BRANCHWORKS - QUICK START GUIDE 🚀              ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+📌 FIRST TIME SETUP
+═══════════════════════════════════════════════════════════════════
+
+1. Make sure you have installed:
+   ✅ Java 17+
+   ✅ Maven 3.6+
+   ✅ Node.js 14+
+   ✅ Python 3.7+
+
+2. Install React dependencies (ONE TIME ONLY):
+   - Open Command Prompt in this folder
+   - Run: npm install
+   - Wait for installation to complete
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 DAILY USE - SUPER SIMPLE!
+═══════════════════════════════════════════════════════════════════
+
+TO START:
+---------
+1. Double-click: start-all.bat
+2. Wait 30-60 seconds
+3. Website opens automatically at http://localhost:3000
+4. Keep the 3 command windows open!
+
+TO STOP:
+--------
+1. Double-click: stop-all.bat
+2. All services stop automatically
+
+═══════════════════════════════════════════════════════════════════
+
+🌐 ACCESS URLS
+═══════════════════════════════════════════════════════════════════
+
+Website:      http://localhost:3000
+Admin Panel:  http://localhost:8080  (or click "Admin" in footer)
+Backend API:  http://localhost:5000/api
+
+═══════════════════════════════════════════════════════════════════
+
+🔐 ADMIN LOGIN
+═══════════════════════════════════════════════════════════════════
+
+Username: admin
+Password: admin123
+
+═══════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION FILES
+═══════════════════════════════════════════════════════════════════
+
+START_HERE.md              → Quick start guide
+USAGE_GUIDE.md             → Detailed usage instructions
+QUICK_REFERENCE.md         → Quick reference cheat sheet
+README.md                  → Technical documentation
+CREATE_DESKTOP_SHORTCUT.md → Create desktop shortcuts
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 QUICK WORKFLOW
+═══════════════════════════════════════════════════════════════════
+
+1. Double-click start-all.bat
+2. Go to http://localhost:3000
+3. Click "Admin" in footer
+4. Login with admin/admin123
+5. Create/edit blogs
+6. View blogs on website
+7. Double-click stop-all.bat when done
+
+═══════════════════════════════════════════════════════════════════
+
+⚠️ IMPORTANT NOTES
+═══════════════════════════════════════════════════════════════════
+
+✅ DO: Keep all 3 command windows open while using the app
+✅ DO: Wait 30-60 seconds for backend to fully start
+✅ DO: Use stop-all.bat to properly close all services
+
+❌ DON'T: Close command windows manually
+❌ DON'T: Start services if they're already running
+❌ DON'T: Use ports 3000, 5000, or 8080 for other apps
+
+═══════════════════════════════════════════════════════════════════
+
+🆘 NEED HELP?
+═══════════════════════════════════════════════════════════════════
+
+Problem: Services won't start
+Solution: Run stop-all.bat first, then start-all.bat
+
+Problem: Admin panel not loading
+Solution: Check if Python server window is open
+
+Problem: Blogs not showing on website
+Solution: Check blog status is "Published" and refresh page
+
+═══════════════════════════════════════════════════════════════════
+
+🎉 YOU'RE ALL SET!
+═══════════════════════════════════════════════════════════════════
+
+Just double-click start-all.bat and you're ready to go!
+
+For detailed instructions, open USAGE_GUIDE.md
+
+═══════════════════════════════════════════════════════════════════

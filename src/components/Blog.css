@@ -106,7 +106,7 @@
   display: flex;
   width: 100%;
   max-width: 1200px;
-  height: 688px;
+  min-height: 688px; /* Changed from fixed height to min-height */
   padding: 64px 0;
   flex-direction: column;
   align-items: center;
@@ -117,7 +117,7 @@
 .blog-posts-container {
   display: flex;
   width: 850px;
-  height: 688px;
+  min-height: 688px; /* Changed from fixed height to min-height */
   flex-direction: column;
   align-items: center;
   gap: 64px;
@@ -128,7 +128,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   width: 850px;
-  height: 560px;
+  min-height: 560px; /* Changed from fixed height to min-height */
 }
 
 .blog-post-card {

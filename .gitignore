@@ -40,3 +40,12 @@ aws_secret.txt
 
 # Misc
 .cache/
+
+# Database files (H2)
+backend/data/
+*.db
+*.mv.db
+*.trace.db
+
+# RDS Configuration (contains passwords)
+backend/src/main/resources/application-local-with-rds.properties

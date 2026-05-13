@@ -1,0 +1,8 @@
+# Admin panel routes - serve static files
+/admin/*  /admin/:splat  200
+
+# API proxy (if backend on different domain)
+# /api/*  https://your-backend-url.com/api/:splat  200
+
+# React Router - all other routes go to index.html
+/*  /index.html  200

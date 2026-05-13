@@ -12,16 +12,118 @@ const Blog = () => {
   const [isMobileIndustryOpen, setIsMobileIndustryOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState('All');
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [dynamicBlogs, setDynamicBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [customerStoryBlogs, setCustomerStoryBlogs] = useState([]);
 
-  // Calculate max index for carousel (8 cards total, 3 visible)
-  const totalCards = 8;
+  // Calculate max index for carousel
+  const totalCards = customerStoryBlogs.length;
   const visibleCards = 3;
-  const maxIndex = totalCards - visibleCards;
+  const maxIndex = Math.max(0, totalCards - visibleCards);
+
+  // Static blogs (your current blogs - keep as is)
+  const staticBlogs = [
+    {
+      id: 'static-1',
+      title: 'Offshore vs. In-House Assistants: Smarter Support for Buyer\'s Agents in Australia',
+      slug: '1',
+      category: 'Finance',
+      featuredImage: '/images/customer_story_image_1.jpg',
+      publishedAt: '2025-06-24',
+      isStatic: true
+    }
+  ];
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  // Fetch dynamic blogs from database
+  useEffect(() => {
+    fetchDynamicBlogs();
+  }, []);
+
+  const fetchDynamicBlogs = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('http://localhost:5000/api/blogs');
+      const data = await response.json();
+      setDynamicBlogs(data);
+      
+      // Also set customer story blogs (static + dynamic)
+      const staticBlog = {
+        id: 'static-1',
+        title: 'Offshore vs. In-House Assistants: Smarter Support for Buyer\'s Agents in Australia',
+        slug: '1',
+        category: 'Finance',
+        featuredImage: '/images/customer_story_image_1.jpg',
+        publishedAt: '2025-06-24',
+        isStatic: true
+      };
+      setCustomerStoryBlogs([staticBlog, ...data]);
+    } catch (error) {
+      console.error('Error fetching blogs:', error);
+      setDynamicBlogs([]);
+      // If fetch fails, show only static blog
+      const staticBlog = {
+        id: 'static-1',
+        title: 'Offshore vs. In-House Assistants: Smarter Support for Buyer\'s Agents in Australia',
+        slug: '1',
+        category: 'Finance',
+        featuredImage: '/images/customer_story_image_1.jpg',
+        publishedAt: '2025-06-24',
+        isStatic: true
+      };
+      setCustomerStoryBlogs([staticBlog]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Combine static and dynamic blogs
+  const getAllBlogs = () => {
+    let combined = [...staticBlogs, ...dynamicBlogs];
+    
+    // Filter by category if not "All"
+    if (activeFilter !== 'All') {
+      combined = combined.filter(blog => blog.category === activeFilter);
+    }
+    
+    return combined;
+  };
+
+  const allBlogs = getAllBlogs();
+
+  const formatDate = (dateString) => {
+    if (!dateString) return 'Apr 18, 2026';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    });
+  };
+
+  // Truncate title to fit card - break at word boundary
+  const truncateTitle = (title, maxLength = 60) => {
+    if (!title) return '';
+    if (title.length <= maxLength) return title;
+    
+    // Find last space before maxLength
+    const truncated = title.substring(0, maxLength);
+    const lastSpace = truncated.lastIndexOf(' ');
+    
+    if (lastSpace > 0) {
+      return title.substring(0, lastSpace).trim() + '...';
+    }
+    return truncated.trim() + '...';
+  };
+
+  // Shorter truncation for blog post grid cards
+  const truncateBlogPostTitle = (title) => {
+    return truncateTitle(title, 45); // Shorter for blog post cards
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -228,61 +330,26 @@ const Blog = () => {
       <div className="blog-posts-section">
         <div className="blog-posts-container">
           <div className="blog-posts-grid">
-            {/* Row 1 */}
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
+            {allBlogs.map((blog) => (
+              <div key={blog.id} className="blog-post-card">
+                <img 
+                  src={
+                    blog.isStatic 
+                      ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
+                      : blog.featuredImage 
+                        ? `http://localhost:5000${blog.featuredImage}` 
+                        : `${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`
+                  } 
+                  alt={blog.title} 
+                  className="blog-post-image" 
+                />
+                <div className="blog-post-content">
+                  <div className="blog-post-date">{formatDate(blog.publishedAt)}</div>
+                  <h3 className="blog-post-title">{truncateBlogPostTitle(blog.title)}</h3>
+                  <Link to={`/blog/${blog.slug}`} className="blog-read-more">Read more</Link>
+                </div>
               </div>
-            </div>
-
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
-
-            {/* Row 2 */}
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
-
-            <div className="blog-post-card">
-              <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Blog Post" className="blog-post-image" />
-              <div className="blog-post-content">
-                <div className="blog-post-date">Apr 18, 2026</div>
-                <h3 className="blog-post-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                <Link to="/blog/1" className="blog-read-more">Read more</Link>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -332,77 +399,38 @@ const Blog = () => {
             
             <div className="customer-stories-cards">
               <div className="customer-stories-grid" style={{ transform: `translateX(-${currentCardIndex * 296.67}px)` }}>
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                {/* Dynamic Blog Cards */}
+                {loading ? (
+                  <div className="customer-story-card">
+                    <div className="story-card-content">
+                      <p>Loading blogs...</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
+                ) : customerStoryBlogs.length > 0 ? (
+                  customerStoryBlogs.map((blog) => (
+                    <div key={blog.id} className="customer-story-card">
+                      <img 
+                        src={blog.isStatic 
+                          ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
+                          : `http://localhost:5000${blog.featuredImage}`
+                        } 
+                        alt={blog.title} 
+                        className="story-card-image" 
+                      />
+                      <div className="story-card-content">
+                        <div className="story-date">{formatDate(blog.publishedAt)}</div>
+                        <h3 className="story-title">{truncateTitle(blog.title)}</h3>
+                        <Link to={`/blog/${blog.slug}`} className="story-read-more-link">Read more</Link>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="customer-story-card">
+                    <div className="story-card-content">
+                      <p>No blogs available</p>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 18, 2026</div>
-                    <h3 className="story-title">Async First: Cut Meetings, Boost Remote Wins</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Remote Team Success: Building Culture Across Borders</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 20, 2026</div>
-                    <h3 className="story-title">Digital Transformation: Scaling Teams Globally</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
-                
-                <div className="customer-story-card">
-                  <img src={`${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`} alt="Customer Story" className="story-card-image" />
-                  <div className="story-card-content">
-                    <div className="story-date">Apr 22, 2026</div>
-                    <h3 className="story-title">Cost Optimization: 40% Savings with Offshore Teams</h3>
-                    <a href="/#" className="story-read-more-link">Read more</a>
-                  </div>
-                </div>
+                )}
               </div>
             </div>
 

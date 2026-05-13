@@ -332,7 +332,7 @@ const AboutPage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/valueIcon_1.png`} alt="Integrity in every engagement" />
               </div>
               <h3 className="value-card-title">Integrity in every engagement</h3>
-              <p className="value-card-description">Full transparency in our reporting, processes, and every client relationship.</p>
+              <p className="value-card-description">Full transparency — in our reporting, processes, and every client relationship.</p>
             </div>
 
             {/* Card 2 - Excellence in delivery */}
@@ -341,7 +341,7 @@ const AboutPage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/valueIcon_2.png`} alt="Excellence in delivery" />
               </div>
               <h3 className="value-card-title">Excellence in delivery</h3>
-              <p className="value-card-description">Defined service level commitments accuracy and consistency are non-negotiable.</p>
+              <p className="value-card-description">Defined service-level commitments — accuracy and consistency are non-negotiable.</p>
             </div>
 
             {/* Card 3 - Scalability by design */}
@@ -350,7 +350,7 @@ const AboutPage = () => {
                 <img src={`${process.env.PUBLIC_URL}/images/valueIcon_3.png`} alt="Scalability by design" />
               </div>
               <h3 className="value-card-title">Scalability by design</h3>
-              <p className="value-card-description">Solutions built to flex scale up or down without disrupting operations.</p>
+              <p className="value-card-description">Solutions built to flex — scale up or down without disrupting operations.</p>
             </div>
 
             {/* Card 4 - Technology-led thinking */}
@@ -422,24 +422,10 @@ const AboutPage = () => {
               <div className={`tomorrow-card ${flippedCards.includes(0) ? 'flipped' : ''}`} onClick={() => handleCardClick(0)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.png`} alt="Team Member 1" className="tomorrow-card-image" />
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.png`} alt="Achini Dharmasirwardhana" className="tomorrow-card-image" />
                   </div>
                   <div className="flip-card-back">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.png`} alt="Team Member 1" className="tomorrow-card-image" />
-                    <div className="flip-card-content">
-                      <h3 className="team-member-name">Niluka Jayasinghe</h3>
-                      <p className="team-member-designation">Chief Operating Officer</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className={`tomorrow-card ${flippedCards.includes(1) ? 'flipped' : ''}`} onClick={() => handleCardClick(1)}>
-                <div className="flip-card-inner">
-                  <div className="flip-card-front">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
-                  </div>
-                  <div className="flip-card-back">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Team Member 2" className="tomorrow-card-image" />
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember1.png`} alt="Achini Dharmasirwardhana" className="tomorrow-card-image" />
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Achini Dharmasirwardhana</h3>
                       <p className="team-member-designation">Chief Executive Officer</p>
@@ -447,13 +433,27 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
+              <div className={`tomorrow-card ${flippedCards.includes(1) ? 'flipped' : ''}`} onClick={() => handleCardClick(1)}>
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Niluka Jayasinghe" className="tomorrow-card-image" />
+                  </div>
+                  <div className="flip-card-back">
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember2.jpg`} alt="Niluka Jayasinghe" className="tomorrow-card-image" />
+                    <div className="flip-card-content">
+                      <h3 className="team-member-name">Niluka Jayasinghe</h3>
+                      <p className="team-member-designation">Chief Operating Officer</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className={`tomorrow-card ${flippedCards.includes(2) ? 'flipped' : ''}`} onClick={() => handleCardClick(2)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Amila Fernando" className="tomorrow-card-image" />
                   </div>
                   <div className="flip-card-back">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Team Member 3" className="tomorrow-card-image" />
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember3.jpg`} alt="Amila Fernando" className="tomorrow-card-image" />
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Amila Fernando</h3>
                       <p className="team-member-designation">Director – Chief Strategy Officer</p>
@@ -464,10 +464,10 @@ const AboutPage = () => {
               <div className={`tomorrow-card ${flippedCards.includes(3) ? 'flipped' : ''}`} onClick={() => handleCardClick(3)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Chandika Witharana" className="tomorrow-card-image" />
                   </div>
                   <div className="flip-card-back">
-                    <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Team Member 4" className="tomorrow-card-image" />
+                    <img src={`${process.env.PUBLIC_URL}/images/teamMember4.png`} alt="Chandika Witharana" className="tomorrow-card-image" />
                     <div className="flip-card-content">
                       <h3 className="team-member-name">Chandika Witharana</h3>
                       <p className="team-member-designation">Chief Technology Officer</p>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Openings - Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <div class="header-left">
+                <a href="dashboard.html" class="back-link">← Back to Dashboard</a>
+                <h1>Career Openings</h1>
+            </div>
+            <div class="header-right">
+                <a href="career-editor.html" class="btn-primary">+ Add New Role</a>
+                <button onclick="logout()" class="btn-secondary">Logout</button>
+            </div>
+        </header>
+        
+        <div class="filters">
+            <div class="status-filters">
+                <button class="filter-btn active" onclick="filterByStatus('all')">All (<span id="count-all">0</span>)</button>
+                <button class="filter-btn" onclick="filterByStatus('ACTIVE')">Active (<span id="count-active">0</span>)</button>
+                <button class="filter-btn" onclick="filterByStatus('INACTIVE')">Inactive (<span id="count-inactive">0</span>)</button>
+            </div>
+            
+            <div class="category-filter">
+                <select id="department-filter" onchange="filterByDepartment()">
+                    <option value="all">All Departments</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Technology">Technology</option>
+                    <option value="Operations">Operations</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="loading" class="loading">Loading careers...</div>
+        <div id="no-careers" class="no-blogs" style="display: none;">No career openings found</div>
+        
+        <div id="career-table-container" class="table-container" style="display: none;">
+            <table class="blog-table">
+                <thead>
+                    <tr>
+                        <th>TITLE</th>
+                        <th>LOCATION</th>
+                        <th>WORK TYPE</th>
+                        <th>DEPARTMENT</th>
+                        <th>STATUS</th>
+                        <th>CREATED</th>
+                        <th>ACTIONS</th>
+                    </tr>
+                </thead>
+                <tbody id="career-table-body">
+                    <!-- Careers will be inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script src="js/careers.js"></script>
+</body>
+</html>
