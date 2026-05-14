@@ -75,7 +75,7 @@ const OffshoreHiring = () => {
     const fetchBlogs = async () => {
       setBlogsLoading(true);
       try {
-        const response = await fetch('http://13.60.98.227:5000/api/blogs');
+        const response = await fetch('https://api.branchworksglobal.com/api/blogs');
         const data = await response.json();
         
         const staticBlog = {
@@ -653,7 +653,7 @@ const OffshoreHiring = () => {
                       <img 
                         src={blog.isStatic 
                           ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
-                          : `http://13.60.98.227:5000${blog.featuredImage}`
+                          : `https://api.branchworksglobal.com${blog.featuredImage}`
                         } 
                         alt={blog.title} 
                         className="story-card-image" 

@@ -17,17 +17,28 @@ public class Career {
     @Column(nullable = false)
     private String location;
     
-    @Column(nullable = false)
-    private String workType; // e.g., "Hybrid", "Remote", "On-site"
+    @Column(columnDefinition = "TEXT")
+    private String description;
     
     @Column(nullable = false)
-    private String department; // e.g., "Finance", "Technology", "Operations"
+    private String type = "Full-time"; // Full-time, Part-time, Contract, Internship
     
     @Column(nullable = false)
-    private String linkedinUrl;
+    private String experience;
+    
+    private String salary;
+    
+    @Column(columnDefinition = "TEXT")
+    private String skills;
+    
+    @Column(columnDefinition = "TEXT")
+    private String responsibilities;
+    
+    @Column(columnDefinition = "TEXT")
+    private String qualifications;
     
     @Column(nullable = false)
-    private String status = "ACTIVE"; // ACTIVE or INACTIVE
+    private Boolean active = true;
     
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -71,36 +82,68 @@ public class Career {
         this.location = location;
     }
     
-    public String getWorkType() {
-        return workType;
+    public String getDescription() {
+        return description;
     }
     
-    public void setWorkType(String workType) {
-        this.workType = workType;
+    public void setDescription(String description) {
+        this.description = description;
     }
     
-    public String getDepartment() {
-        return department;
+    public String getType() {
+        return type;
     }
     
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setType(String type) {
+        this.type = type;
     }
     
-    public String getLinkedinUrl() {
-        return linkedinUrl;
+    public String getExperience() {
+        return experience;
     }
     
-    public void setLinkedinUrl(String linkedinUrl) {
-        this.linkedinUrl = linkedinUrl;
+    public void setExperience(String experience) {
+        this.experience = experience;
     }
     
-    public String getStatus() {
-        return status;
+    public String getSalary() {
+        return salary;
     }
     
-    public void setStatus(String status) {
-        this.status = status;
+    public void setSalary(String salary) {
+        this.salary = salary;
+    }
+    
+    public String getSkills() {
+        return skills;
+    }
+    
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
+    
+    public String getResponsibilities() {
+        return responsibilities;
+    }
+    
+    public void setResponsibilities(String responsibilities) {
+        this.responsibilities = responsibilities;
+    }
+    
+    public String getQualifications() {
+        return qualifications;
+    }
+    
+    public void setQualifications(String qualifications) {
+        this.qualifications = qualifications;
+    }
+    
+    public Boolean getActive() {
+        return active;
+    }
+    
+    public void setActive(Boolean active) {
+        this.active = active;
     }
     
     public LocalDateTime getCreatedAt() {

@@ -31,6 +31,12 @@ public class BlogController {
         return ResponseEntity.ok(blogs);
     }
     
+    // Debug endpoint - get all blogs regardless of status
+    @GetMapping("/debug/all")
+    public ResponseEntity<List<BlogPost>> getAllBlogsDebug() {
+        return ResponseEntity.ok(blogService.getAllBlogs());
+    }
+    
     // Get single blog by slug (for public blog detail page)
     @GetMapping("/{slug}")
     public ResponseEntity<BlogPost> getBlogBySlug(@PathVariable String slug) {

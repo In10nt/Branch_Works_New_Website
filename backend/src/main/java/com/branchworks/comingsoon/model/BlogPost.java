@@ -70,6 +70,16 @@ public class BlogPost {
         DRAFT, PUBLISHED, ARCHIVED
     }
     
+    // Helper method for admin panel compatibility
+    @Transient
+    public boolean isPublished() {
+        return this.status == PostStatus.PUBLISHED;
+    }
+    
+    public void setPublished(boolean published) {
+        this.status = published ? PostStatus.PUBLISHED : PostStatus.DRAFT;
+    }
+    
     // Helper method to generate slug from title
     @PrePersist
     @PreUpdate

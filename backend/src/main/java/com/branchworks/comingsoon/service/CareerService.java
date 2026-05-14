@@ -19,11 +19,7 @@ public class CareerService {
     }
     
     public List<Career> getActiveCareers() {
-        return careerRepository.findByStatusOrderByCreatedAtDesc("ACTIVE");
-    }
-    
-    public List<Career> getCareersByDepartment(String department) {
-        return careerRepository.findByDepartment(department);
+        return careerRepository.findByActiveOrderByCreatedAtDesc(true);
     }
     
     public Optional<Career> getCareerById(Long id) {
@@ -39,11 +35,15 @@ public class CareerService {
                 .orElseThrow(() -> new RuntimeException("Career not found with id: " + id));
         
         career.setTitle(careerDetails.getTitle());
+        career.setDescription(careerDetails.getDescription());
         career.setLocation(careerDetails.getLocation());
-        career.setWorkType(careerDetails.getWorkType());
-        career.setDepartment(careerDetails.getDepartment());
-        career.setLinkedinUrl(careerDetails.getLinkedinUrl());
-        career.setStatus(careerDetails.getStatus());
+        career.setType(careerDetails.getType());
+        career.setExperience(careerDetails.getExperience());
+        career.setSalary(careerDetails.getSalary());
+        career.setSkills(careerDetails.getSkills());
+        career.setResponsibilities(careerDetails.getResponsibilities());
+        career.setQualifications(careerDetails.getQualifications());
+        career.setActive(careerDetails.getActive());
         
         return careerRepository.save(career);
     }

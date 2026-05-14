@@ -38,12 +38,12 @@ public class BlogService {
     
     // Get published blogs (for public)
     public List<BlogPost> getPublishedBlogs() {
-        return blogPostRepository.findByStatusOrderByPublishedAtDesc(PostStatus.PUBLISHED);
+        return blogPostRepository.findByStatusOrderByCreatedAtDesc(PostStatus.PUBLISHED);
     }
     
     // Get published blogs by category (for public)
     public List<BlogPost> getPublishedBlogsByCategory(String category) {
-        return blogPostRepository.findByStatusAndCategoryOrderByPublishedAtDesc(PostStatus.PUBLISHED, category);
+        return blogPostRepository.findByStatusAndCategoryOrderByCreatedAtDesc(PostStatus.PUBLISHED, category);
     }
     
     // Get blog by ID
@@ -58,8 +58,11 @@ public class BlogService {
     
     // Create new blog
     public BlogPost createBlog(BlogPost blogPost) {
-        if (blogPost.getStatus() == PostStatus.PUBLISHED && blogPost.getPublishedAt() == null) {
-            blogPost.setPublishedAt(LocalDateTime.now());
+        // Set publishedAt if status is PUBLISHED
+        if (blogPost.getStatus() == PostStatus.PUBLISHED) {
+            if (blogPost.getPublishedAt() == null) {
+                blogPost.setPublishedAt(LocalDateTime.now());
+            }
         }
         return blogPostRepository.save(blogPost);
     }

@@ -23,9 +23,9 @@ public interface BlogPostRepository extends JpaRepository<BlogPost, Long> {
     // Find by status and category
     List<BlogPost> findByStatusAndCategory(PostStatus status, String category);
     
-    // Find published blogs ordered by date
-    List<BlogPost> findByStatusOrderByPublishedAtDesc(PostStatus status);
+    // Find published blogs ordered by date (handle null publishedAt)
+    List<BlogPost> findByStatusOrderByCreatedAtDesc(PostStatus status);
     
-    // Find published blogs by category ordered by date
-    List<BlogPost> findByStatusAndCategoryOrderByPublishedAtDesc(PostStatus status, String category);
+    // Find published blogs by category ordered by date (handle null publishedAt)
+    List<BlogPost> findByStatusAndCategoryOrderByCreatedAtDesc(PostStatus status, String category);
 }

@@ -1,0 +1,20 @@
+STEPS TO RESTART BACKEND ON EC2:
+
+1. Connect to EC2:
+   ssh -i "C:\Users\DELL\Downloads\branchworks-key.pem" ubuntu@13.60.98.227
+
+2. Stop the current backend (inside the screen session):
+   screen -r backend
+   Press Ctrl+C to stop the running application
+   
+3. Start the new backend:
+   java -jar ~/branchworks/coming-soon-backend-0.0.1-SNAPSHOT.jar
+   
+4. Detach from screen (keep it running):
+   Press Ctrl+A then D
+
+5. Exit SSH:
+   exit
+
+Your backend will now be running with the updated code at http://13.60.98.227:5000
+Admin panel: http://13.60.98.227:5000/admin/

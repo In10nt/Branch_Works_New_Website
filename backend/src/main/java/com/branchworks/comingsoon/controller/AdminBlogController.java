@@ -79,4 +79,21 @@ public class AdminBlogController {
         blogService.deleteBlog(id);
         return ResponseEntity.ok().build();
     }
+    
+    // Toggle publish status
+    @PatchMapping("/{id}/publish")
+    public ResponseEntity<BlogPost> togglePublishStatus(
+            @PathVariable Long id,
+            @RequestParam boolean published) {
+        try {
+            BlogPost blog = blogService.getBlogById(id)
+                    .orElseThrow(() -> new RuntimeException("Blog not found"));
+            
+            blog.setStatus(published ? PostStatus.PUBLISHED : PostStatus.DRAFT);
+            BlogPost updatedBlog = blogService.updateBlog(id, blog);
+            return ResponseEntity.ok(updatedBlog);
+        } catch (RuntimeException e) {
+            return ResponseEntity.notFound().build();
+        }
+    }
 }

@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css';
 import './BlogEditor.css';
 
 const BlogEditor = () => {
@@ -14,12 +12,17 @@ const BlogEditor = () => {
   
   const [formData, setFormData] = useState({
     title: '',
+    slug: '',
     excerpt: '',
     content: '',
-    author: '',
-    imageUrl: '',
-    published: false
+    authorName: '',
+    category: 'Finance',
+    featuredImage: '',
+    status: 'DRAFT'
   });
+  
+  const [imageFile, setImageFile] = useState(null);
+  const [imagePreview, setImagePreview] = useState('');
 
   useEffect(() => {
     if (id) {
@@ -30,7 +33,20 @@ const BlogEditor = () => {
   const fetchBlog = async () => {
     try {
       const response = await axios.get(`/api/admin/blogs/${id}`);
-      setFormData(response.data);
+      const blog = response.data;
+      setFormData({
+        title: blog.title || '',
+        slug: blog.slug || '',
+        excerpt: blog.excerpt || '',
+        content: blog.content || '',
+        authorName: blog.authorName || '',
+        category: blog.category || 'Finance',
+        featuredImage: blog.featuredImage || '',
+        status: blog.status || 'DRAFT'
+      });
+      if (blog.featuredImage) {
+        setImagePreview(`https://api.branchworksglobal.com${blog.featuredImage}`);
+      }
     } catch (error) {
       setError('Failed to fetch blog');
       console.error('Error fetching blog:', error);
@@ -44,9 +60,17 @@ const BlogEditor = () => {
       [name]: type === 'checkbox' ? checked : value
     }));
   };
-
-  const handleContentChange = (content) => {
-    setFormData(prev => ({ ...prev, content }));
+  
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setImageFile(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -56,30 +80,41 @@ const BlogEditor = () => {
     setSuccess('');
 
     try {
+      let imagePath = formData.featuredImage;
+      
+      // Upload image if a new one was selected
+      if (imageFile) {
+        const imageFormData = new FormData();
+        imageFormData.append('file', imageFile);
+        
+        const uploadResponse = await axios.post('/api/admin/upload', imageFormData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        });
+        
+        imagePath = uploadResponse.data.url;
+      }
+      
+      const blogData = {
+        ...formData,
+        featuredImage: imagePath
+      };
+      
       if (id) {
-        await axios.put(`/api/admin/blogs/${id}`, formData);
+        await axios.put(`/api/admin/blogs/${id}`, blogData);
         setSuccess('Blog updated successfully!');
       } else {
-        await axios.post('/api/admin/blogs', formData);
+        await axios.post('/api/admin/blogs', blogData);
         setSuccess('Blog created successfully!');
       }
       setTimeout(() => navigate('/blogs'), 1500);
     } catch (error) {
-      setError('Failed to save blog');
+      setError('Failed to save blog: ' + (error.response?.data?.message || error.message));
       console.error('Error saving blog:', error);
     } finally {
       setLoading(false);
     }
-  };
-
-  const modules = {
-    toolbar: [
-      [{ 'header': [1, 2, 3, false] }],
-      ['bold', 'italic', 'underline', 'strike'],
-      [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-      ['link', 'image'],
-      ['clean']
-    ]
   };
 
   return (
@@ -95,34 +130,70 @@ const BlogEditor = () => {
       {success && <div className="alert alert-success">{success}</div>}
 
       <form onSubmit={handleSubmit} className="editor-form">
-        <div className="form-group">
-          <label htmlFor="title">Title *</label>
-          <input
-            type="text"
-            id="title"
-            name="title"
-            className="form-control"
-            value={formData.title}
-            onChange={handleChange}
-            required
-          />
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="title">Title *</label>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              className="form-control"
+              value={formData.title}
+              onChange={handleChange}
+              placeholder="e.g., Offshore vs. In-House Assistants: Smarter Support"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="slug">URL Slug *</label>
+            <input
+              type="text"
+              id="slug"
+              name="slug"
+              className="form-control"
+              value={formData.slug}
+              onChange={handleChange}
+              placeholder="e.g., offshore-vs-inhouse-assistants"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="authorName">Author Name *</label>
+            <input
+              type="text"
+              id="authorName"
+              name="authorName"
+              className="form-control"
+              value={formData.authorName}
+              onChange={handleChange}
+              placeholder="e.g., Branchworks Team"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="category">Category *</label>
+            <select
+              id="category"
+              name="category"
+              className="form-control"
+              value={formData.category}
+              onChange={handleChange}
+              required
+            >
+              <option value="Finance">Finance</option>
+              <option value="Technology Support">Technology Support</option>
+              <option value="Offshore Hiring">Offshore Hiring</option>
+            </select>
+          </div>
         </div>
 
         <div className="form-group">
-          <label htmlFor="author">Author *</label>
-          <input
-            type="text"
-            id="author"
-            name="author"
-            className="form-control"
-            value={formData.author}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="excerpt">Excerpt *</label>
+          <label htmlFor="excerpt">Excerpt (Short Description) *</label>
           <textarea
             id="excerpt"
             name="excerpt"
@@ -130,44 +201,72 @@ const BlogEditor = () => {
             value={formData.excerpt}
             onChange={handleChange}
             rows="3"
+            placeholder="A brief summary that appears in blog listings and as the intro paragraph"
             required
           />
         </div>
 
         <div className="form-group">
-          <label htmlFor="imageUrl">Image URL</label>
+          <label htmlFor="featuredImage">Featured Image *</label>
           <input
-            type="url"
-            id="imageUrl"
-            name="imageUrl"
+            type="file"
+            id="featuredImage"
+            accept="image/*"
+            onChange={handleImageChange}
             className="form-control"
-            value={formData.imageUrl}
-            onChange={handleChange}
-            placeholder="https://example.com/image.jpg"
           />
+          {imagePreview && (
+            <div className="image-preview">
+              <img src={imagePreview} alt="Preview" style={{ maxWidth: '300px', marginTop: '10px' }} />
+            </div>
+          )}
+          <small className="form-text">Upload an image for the blog header (JPG, PNG, WebP)</small>
         </div>
 
         <div className="form-group">
           <label>Content *</label>
-          <ReactQuill
-            theme="snow"
+          <div className="content-help">
+            <p><strong>Formatting Guide:</strong></p>
+            <ul>
+              <li><code>### Heading</code> - Creates a section heading</li>
+              <li><code>- List item</code> - Creates a bullet point</li>
+              <li>Leave blank lines between paragraphs</li>
+            </ul>
+          </div>
+          <textarea
+            name="content"
+            className="form-control content-textarea"
             value={formData.content}
-            onChange={handleContentChange}
-            modules={modules}
-            className="quill-editor"
+            onChange={handleChange}
+            rows="20"
+            placeholder="Write your blog content here...
+
+### What In-House Assistants Do Well
+
+In-house assistants are best suited for roles that require a physical presence.
+
+- Point one
+- Point two
+- Point three
+
+Regular paragraph text goes here..."
+            required
           />
         </div>
 
-        <div className="form-group checkbox-group">
-          <label>
-            <input
-              type="checkbox"
-              name="published"
-              checked={formData.published}
-              onChange={handleChange}
-            />
-            <span>Publish immediately</span>
-          </label>
+        <div className="form-group">
+          <label htmlFor="status">Status *</label>
+          <select
+            id="status"
+            name="status"
+            className="form-control"
+            value={formData.status}
+            onChange={handleChange}
+            required
+          >
+            <option value="DRAFT">Draft (not visible on website)</option>
+            <option value="PUBLISHED">Published (visible on website)</option>
+          </select>
         </div>
 
         <div className="form-actions">
