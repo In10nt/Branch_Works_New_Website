@@ -2,6 +2,21 @@
 
 A full-stack web application featuring a corporate website with an integrated Content Management System (CMS) for managing blog posts and career openings.
 
+## 🚀 Quick Start for Clients
+
+**New to this project?** Start here:
+- 📖 **[COMPLETE_CLIENT_GUIDE.md](COMPLETE_CLIENT_GUIDE.md)** - Complete all-in-one guide with everything you need
+
+This comprehensive guide includes:
+- Database setup (H2, MySQL, PostgreSQL)
+- Complete configuration steps
+- Local testing instructions
+- Production deployment
+- Security checklist
+- Troubleshooting
+
+The project includes a **pre-configured database** with sample data (2 blogs, careers, admin user).
+
 ## 📋 Table of Contents
 
 - [Project Structure](#project-structure)
