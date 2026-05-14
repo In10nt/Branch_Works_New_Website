@@ -11,6 +11,8 @@
   position: fixed;
   height: 100vh;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar-header {
@@ -31,6 +33,7 @@
 
 .nav-menu {
   list-style: none;
+  flex: 1;
 }
 
 .nav-menu li {
@@ -61,6 +64,55 @@
 .nav-menu .icon {
   margin-right: 12px;
   font-size: 20px;
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.user-icon {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.logout-button .icon {
+  margin-right: 10px;
+  font-size: 18px;
 }
 
 .main-content {

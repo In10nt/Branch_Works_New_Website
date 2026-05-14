@@ -1,316 +1,619 @@
-# BranchWorks - Coming Soon Website with Blog Management
+# BranchWorks Global - Corporate Website & CMS
 
-A full-stack web application featuring a modern landing page with integrated blog management system.
+A full-stack web application featuring a corporate website with an integrated Content Management System (CMS) for managing blog posts and career openings.
 
-## 🏗️ Technology Stack
+## 📋 Table of Contents
 
-### Frontend
-- **React 18.2.0** - UI framework
-- **React Router DOM 7.14.2** - Client-side routing
-- **Axios 1.4.0** - HTTP client for API calls
-- **CSS3** - Custom styling with responsive design
-
-### Backend
-- **Spring Boot 3.2.0** - Java backend framework
-- **Java 17** - Programming language
-- **H2 Database** - File-based database for blog storage
-- **Maven** - Build and dependency management
-
-### Admin Panel
-- **React 18.2.0** - Modern UI framework
-- **React Router DOM 6.20.0** - Navigation
-- **Axios 1.6.2** - HTTP client
-- **React Quill 2.0.0** - Rich text editor
+- [Project Structure](#project-structure)
+- [Technology Stack](#technology-stack)
+- [Prerequisites](#prerequisites)
+- [Frontend Setup](#frontend-setup)
+- [Backend Setup](#backend-setup)
+- [Admin Panel Setup](#admin-panel-setup)
+- [Database Setup](#database-setup)
+- [Running the Application](#running-the-application)
+- [Building for Production](#building-for-production)
+- [Deployment](#deployment)
+- [Environment Variables](#environment-variables)
+- [Default Admin Credentials](#default-admin-credentials)
+- [Features](#features)
+- [API Documentation](#api-documentation)
 
 ## 📁 Project Structure
 
 ```
-Branch Works/
-├── admin-panel/               # React Admin Panel
-│   ├── src/
-│   │   ├── components/       # Layout components
-│   │   ├── pages/            # Admin pages
-│   │   │   ├── Dashboard.jsx # Overview dashboard
-│   │   │   ├── BlogList.jsx  # Blog management
-│   │   │   ├── BlogEditor.jsx # Blog editor
-│   │   │   ├── CareerList.jsx # Career management
-│   │   │   └── CareerEditor.jsx # Career editor
-│   │   └── App.js           # Admin app routing
-│   ├── public/              # Admin static assets
-│   └── package.json         # Admin dependencies
-│
-├── backend/                    # Spring Boot backend
-│   ├── src/main/java/         # Java source code
-│   │   └── com/branchworks/comingsoon/
-│   │       ├── controller/    # REST API endpoints
-│   │       ├── service/       # Business logic
-│   │       ├── model/         # Data models
-│   │       ├── repository/    # Database access
-│   │       └── config/        # Configuration
-│   ├── src/main/resources/    # Application resources
-│   │   ├── application.properties
-│   │   └── static/uploads/    # Blog images storage
-│   ├── data/                  # H2 database files
-│   └── pom.xml               # Maven configuration
-│
-├── src/                      # React source code
-│   ├── components/           # React components
-│   │   ├── HomePage.jsx      # Landing page
-│   │   ├── Blog.jsx          # Blog listing
-│   │   ├── BlogDetail.jsx    # Blog detail page
-│   │   ├── Finance.jsx       # Finance page
-│   │   ├── TechnologySupport.jsx
-│   │   ├── OffshoreHiring.jsx
-│   │   └── Footer.jsx        # Footer with Admin link
-│   └── App.js               # Main app component
-│
-├── public/                   # Static assets
-│   ├── images/              # Image files
-│   └── index.html           # HTML template
-│
-├── start-all.bat            # Start all services (Windows)
-├── stop-all.bat             # Stop all services (Windows)
-└── START_HERE.md            # Quick start guide
+branchworks-global/
+├── frontend/                  # Frontend React Application
+│   ├── public/               # Static assets
+│   ├── src/                  # React source code
+│   │   ├── components/      # React components
+│   │   ├── config/          # API configuration
+│   │   └── App.js           # Main React app
+│   ├── package.json         # Frontend dependencies
+│   └── .env.example         # Frontend environment template
+├── backend/                  # Backend Spring Boot Application
+│   ├── admin-panel/         # Admin CMS React app
+│   │   ├── src/            # Admin panel source
+│   │   ├── package.json    # Admin dependencies
+│   │   └── .env.example    # Admin environment template
+│   ├── src/main/
+│   │   ├── java/           # Java source code
+│   │   └── resources/      # Application resources
+│   ├── data/               # H2 database files (auto-created)
+│   ├── pom.xml             # Maven configuration
+│   └── application.properties.example  # Backend config template
+├── database/                 # Database Files & Schemas
+│   ├── branchworks_db.mv.db      # H2 database with current data
+│   ├── branchworks_db.trace.db   # H2 trace file
+│   ├── blog-schema.sql           # Blog table schema
+│   ├── import-current-blogs.sql  # Sample blog data
+│   └── README.md                 # Database documentation
+├── .gitignore               # Git ignore rules
+├── README.md                # This file
+└── HANDOVER_CHECKLIST.md    # Client handover checklist
 ```
 
-## 🚀 Quick Start
+## 🛠 Technology Stack
 
-### Prerequisites
-- **Java 17+** - [Download](https://www.oracle.com/java/technologies/downloads/)
-- **Maven 3.6+** - [Download](https://maven.apache.org/download.cgi)
-- **Node.js 14+** - [Download](https://nodejs.org/)
-- **Python 3.7+** - [Download](https://www.python.org/downloads/)
+### Frontend
+- **React** 18.x - UI library
+- **React Router** - Client-side routing
+- **Axios** - HTTP client
 
-### Installation
+### Backend
+- **Spring Boot** 3.2.0 - Java framework
+- **Spring Security** - Authentication & authorization
+- **JWT** - Token-based authentication
+- **Spring Data JPA** - Database ORM
+- **H2 Database** - Embedded database (development)
+- **MySQL/PostgreSQL** - Production database options
+- **Maven** - Build tool
 
-1. **Clone or download the project**
+### Admin Panel
+- **React** 18.x - CMS interface
+- **React Router** - Admin routing
+- **Axios** - API communication
 
-2. **Install React dependencies for main website:**
-   ```bash
-   npm install
-   ```
+## ✅ Prerequisites
 
-3. **Install React dependencies for admin panel:**
-   ```bash
-   cd admin-panel
-   npm install
-   cd ..
-   ```
+Before you begin, ensure you have the following installed:
 
-4. **Start all services:**
-   - **Windows:** Double-click `start-all.bat`
-   - **Manual:** See START_HERE.md for individual commands
+- **Node.js** 16.x or higher ([Download](https://nodejs.org/))
+- **npm** 8.x or higher (comes with Node.js)
+- **Java JDK** 17 or higher ([Download](https://www.oracle.com/java/technologies/downloads/))
+- **Maven** 3.6 or higher ([Download](https://maven.apache.org/download.cgi))
+- **Git** (optional, for version control)
 
-### Access the Application
+### Verify Installation
 
-- **Website:** http://localhost:3000
-- **Admin Panel:** http://localhost:3001 (or click "Admin" in footer)
-- **Backend API:** http://localhost:5000/api
+```bash
+node --version
+npm --version
+java --version
+mvn --version
+```
 
-### Admin Features
-- **Dashboard:** Overview statistics for blogs and careers
-- **Blog Management:** Create, edit, delete blog posts with rich text editor
-- **Career Management:** Post, edit, delete career openings
-- No separate login required - direct access to admin features
+## 🚀 Frontend Setup
 
-## 📋 Features
+### 1. Navigate to Frontend Directory
 
-### Website Features
-- ✅ Modern, responsive landing page
-- ✅ Dynamic blog system with category filtering
-- ✅ Industry-specific pages (Finance, Technology Support, Offshore Hiring)
-- ✅ Customer stories section with dynamic blogs
-- ✅ Mobile-responsive design
-- ✅ SEO-friendly blog detail pages
+```bash
+cd frontend
+```
 
-### Blog Management Features
-- ✅ Create, edit, and delete blog posts
-- ✅ Rich text editor with formatting options (React Quill)
-- ✅ Image URL support
-- ✅ Category assignment (Finance, Technology Support, Offshore Hiring)
-- ✅ Draft/Publish status toggle
-- ✅ SEO-friendly slug generation
-- ✅ Modern React-based admin interface
+### 2. Install Dependencies
 
-### Career Management Features
-- ✅ Post, edit, and delete career openings
-- ✅ Job details: title, location, type, experience, salary
-- ✅ Skills tags and requirements
-- ✅ Responsibilities and qualifications
-- ✅ Active/inactive status toggle
-- ✅ Posted date tracking
+```bash
+npm install
+```
 
-### Category Filtering
-- **Finance Page** → Shows only Finance category blogs
-- **Technology Support Page** → Shows only Technology Support blogs
-- **Offshore Hiring Page** → Shows only Offshore Hiring blogs
-- **Home & Blog Pages** → Shows all published blogs
+### 3. Configure Environment Variables
 
-## 🔧 Development
+Create a `.env` file in the frontend directory:
 
-### Backend Development
+```bash
+cp .env.example .env
+```
+
+Edit `.env` and set your backend API URL:
+
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
+
+### 4. Run Development Server
+
+```bash
+npm start
+```
+
+The frontend will be available at `http://localhost:3000`
+
+### 5. Build for Production
+
+```bash
+npm run build
+```
+
+This creates an optimized production build in the `build/` directory.
+
+## 🔧 Backend Setup
+
+### 1. Navigate to Backend Directory
+
+```bash
+cd backend
+```
+
+### 2. Configure Application Properties
+
+Create `application.properties` from the example:
+
+```bash
+cp application.properties.example src/main/resources/application.properties
+```
+
+Edit `src/main/resources/application.properties` and configure:
+
+```properties
+# Server Port
+server.port=5000
+
+# Database (H2 for development)
+spring.datasource.url=jdbc:h2:file:./data/branchworks_db
+spring.datasource.username=sa
+spring.datasource.password=
+
+# Email Configuration
+spring.mail.username=YOUR_EMAIL@gmail.com
+spring.mail.password=YOUR_APP_PASSWORD
+company.email=YOUR_COMPANY_EMAIL@example.com
+
+# JWT Secret (Generate a secure random string)
+jwt.secret=YOUR_SECURE_JWT_SECRET_KEY_HERE
+```
+
+**Important:** 
+- Replace `YOUR_EMAIL@gmail.com` with your Gmail address
+- Replace `YOUR_APP_PASSWORD` with a Gmail App Password ([How to generate](https://support.google.com/accounts/answer/185833))
+- Replace `YOUR_SECURE_JWT_SECRET_KEY_HERE` with a secure random string (at least 256 bits)
+
+### 3. Build the Backend
+
+```bash
+mvn clean package -DskipTests
+```
+
+### 4. Run the Backend
+
+```bash
+java -jar target/coming-soon-backend-0.0.1-SNAPSHOT.jar
+```
+
+Or use Maven:
+
+```bash
+mvn spring-boot:run
+```
+
+The backend will be available at `http://localhost:5000`
+
+## 👨‍💼 Admin Panel Setup
+
+The admin panel is a separate React application embedded in the backend.
+
+### 1. Navigate to Admin Panel Directory
+
+```bash
+cd backend/admin-panel
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Configure Environment Variables
+
+Create `.env` file:
+
+```bash
+cp .env.template .env
+```
+
+Edit `.env`:
+
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
+
+### 4. Build Admin Panel
+
+```bash
+npm run build
+```
+
+The build files will be automatically copied to `backend/src/main/resources/static/admin/`
+
+### 5. Access Admin Panel
+
+After building and running the backend, access the admin panel at:
+
+```
+http://localhost:5000/admin/
+```
+
+## 🗄 Database Setup
+
+### Development (H2 Database)
+
+The application uses H2 embedded database by default. No setup required - the database is created automatically on first run.
+
+**H2 Console Access:**
+- URL: `http://localhost:5000/h2-console`
+- JDBC URL: `jdbc:h2:file:./data/branchworks_db`
+- Username: `sa`
+- Password: (leave empty)
+
+### Production (MySQL)
+
+1. **Create Database:**
+
+```sql
+CREATE DATABASE branchworks_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+2. **Update `application.properties`:**
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/branchworks_db?useSSL=false&serverTimezone=UTC
+spring.datasource.username=your_mysql_username
+spring.datasource.password=your_mysql_password
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+```
+
+3. **Disable H2 Console:**
+
+```properties
+spring.h2.console.enabled=false
+```
+
+### Production (PostgreSQL)
+
+1. **Create Database:**
+
+```sql
+CREATE DATABASE branchworks_db;
+```
+
+2. **Update `application.properties`:**
+
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/branchworks_db
+spring.datasource.username=your_postgres_username
+spring.datasource.password=your_postgres_password
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+```
+
+### Create Admin User
+
+After first run, create an admin user via H2 Console or your database client:
+
+```sql
+INSERT INTO users (username, password, role, created_at, updated_at) 
+VALUES ('admin', '$2a$10$xqz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8Qz8', 'ADMIN', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+```
+
+**Note:** The password above is BCrypt hashed. You'll need to generate your own hash or use the application to create users.
+
+## ▶️ Running the Application
+
+### Development Mode
+
+1. **Start Backend (from project root):**
 ```bash
 cd backend
 mvn spring-boot:run
 ```
-Backend runs on http://localhost:5000
 
-### Frontend Development
+2. **Start Frontend (in a new terminal, from project root):**
 ```bash
+cd frontend
 npm start
 ```
-React app runs on http://localhost:3000
 
-### Admin Panel Development
+3. **Access:**
+   - Frontend: `http://localhost:3000`
+   - Backend API: `http://localhost:5000`
+   - Admin Panel: `http://localhost:5000/admin/`
+   - H2 Console: `http://localhost:5000/h2-console`
+
+### Production Mode
+
+1. **Build Frontend (from project root):**
 ```bash
-cd admin-panel
-npm start
-```
-Admin panel runs on http://localhost:3001
-
-## 📡 API Endpoints
-
-### Blog Endpoints
-- `GET /api/blogs` - Get all published blogs
-- `GET /api/blogs/{slug}` - Get blog by slug
-- `GET /api/blogs/category/{category}` - Get blogs by category
-- `GET /api/admin/blogs` - Get all blogs (including drafts)
-- `GET /api/admin/blogs/{id}` - Get blog by ID
-- `POST /api/admin/blogs` - Create new blog
-- `PUT /api/admin/blogs/{id}` - Update blog
-- `DELETE /api/admin/blogs/{id}` - Delete blog
-- `PATCH /api/admin/blogs/{id}/publish` - Toggle publish status
-
-### Career Endpoints
-- `GET /api/careers` - Get all careers
-- `GET /api/careers/{id}` - Get career by ID
-- `POST /api/careers` - Create new career
-- `PUT /api/careers/{id}` - Update career
-- `DELETE /api/careers/{id}` - Delete career
-
-## 🗄️ Database
-
-- **Type:** H2 File-based Database
-- **Location:** `backend/data/branchworks_db.mv.db`
-- **Console:** http://localhost:5000/h2-console (if enabled)
-
-### Database Schema
-
-**WaitlistEntry Table:**
-- id (Long, Primary Key)
-- email (String)
-- createdAt (LocalDateTime)
-
-**BlogPost Table:**
-- id (Long, Primary Key)
-- title (String)
-- slug (String, Unique)
-- content (Text)
-- excerpt (String)
-- author (String)
-- category (String)
-- imageUrl (String)
-- published (Boolean)
-- createdAt (LocalDateTime)
-- updatedAt (LocalDateTime)
-
-**Career Table:**
-- id (Long, Primary Key)
-- title (String)
-- description (Text)
-- location (String)
-- type (String: Full-time/Part-time/Contract/Internship)
-- experience (String)
-- salary (String)
-- skills (String)
-- responsibilities (Text)
-- qualifications (Text)
-- active (Boolean)
-- postedDate (LocalDateTime)
-
-## 🎨 Styling
-
-- **Primary Color:** #172554 (Dark Blue)
-- **Accent Color:** #3B82F6 (Blue)
-- **Font:** System fonts (-apple-system, BlinkMacSystemFont, Segoe UI, Roboto)
-- **Design:** Modern, clean, professional
-
-## 📱 Responsive Breakpoints
-
-- **Mobile:** < 768px
-- **Tablet:** 768px - 1024px
-- **Desktop:** > 1024px
-
-## 🔒 Security Notes
-
-- Admin panel runs on separate port (3001) for isolation
-- CORS is configured for localhost development
-- Input validation on both frontend and backend
-- For production: implement proper authentication (JWT/OAuth)
-
-## 🚢 Deployment
-
-### Frontend (React Website)
-```bash
+cd frontend
 npm run build
+cd ..
 ```
-Deploy the `build/` folder to any static hosting (Netlify, Vercel, AWS S3, etc.)
 
-### Admin Panel (React)
+2. **Build Admin Panel (from project root):**
 ```bash
-cd admin-panel
+cd backend/admin-panel
 npm run build
+cd ../..
 ```
-Deploy the `build/` folder to a separate subdomain or path (e.g., admin.yourdomain.com)
 
-### Backend (Spring Boot)
+3. **Build Backend (from project root):**
 ```bash
 cd backend
-mvn clean package
+mvn clean package -DskipTests
+```
+
+4. **Run Backend (serves both frontend and admin):**
+```bash
 java -jar target/coming-soon-backend-0.0.1-SNAPSHOT.jar
 ```
 
-### Environment Variables
-Update `backend/src/main/resources/application.properties` for production:
-- Database connection
-- CORS allowed origins
-- File upload paths
+5. **Access:**
+   - Application: `http://localhost:5000`
+   - Admin Panel: `http://localhost:5000/admin/`
+
+## 🏗 Building for Production
+
+### Complete Build Process (from project root)
+
+```bash
+# 1. Build Frontend
+cd frontend
+npm run build
+cd ..
+
+# 2. Build Admin Panel
+cd backend/admin-panel
+npm run build
+cd ../..
+
+# 3. Build Backend (includes frontend and admin panel)
+cd backend
+mvn clean package -DskipTests
+cd ..
+```
+
+### Output
+
+- Frontend build: `frontend/build/`
+- Admin Panel build: `backend/admin-panel/build/` (copied to backend resources)
+- Backend JAR: `backend/target/coming-soon-backend-0.0.1-SNAPSHOT.jar`
+
+## 🚢 Deployment
+
+### Option 1: Traditional Server Deployment
+
+1. **Prepare Server:**
+   - Install Java 17+
+   - Install MySQL/PostgreSQL
+   - Configure firewall (ports 80, 443, 5000)
+
+2. **Deploy Backend:**
+```bash
+# Copy JAR to server
+scp backend/target/coming-soon-backend-0.0.1-SNAPSHOT.jar user@server:/opt/branchworks/
+
+# SSH to server
+ssh user@server
+
+# Run application
+cd /opt/branchworks
+java -jar coming-soon-backend-0.0.1-SNAPSHOT.jar
+```
+
+3. **Setup as Service (systemd):**
+
+Create `/etc/systemd/system/branchworks.service`:
+
+```ini
+[Unit]
+Description=BranchWorks Application
+After=syslog.target
+
+[Service]
+User=branchworks
+ExecStart=/usr/bin/java -jar /opt/branchworks/coming-soon-backend-0.0.1-SNAPSHOT.jar
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Enable and start:
+```bash
+sudo systemctl enable branchworks
+sudo systemctl start branchworks
+```
+
+### Option 2: AWS Deployment
+
+#### Frontend (S3 + CloudFront)
+
+1. **Create S3 Bucket**
+2. **Upload build files**
+3. **Configure CloudFront distribution**
+4. **Update REACT_APP_API_URL to backend URL**
+
+#### Backend (EC2 or Elastic Beanstalk)
+
+**EC2:**
+1. Launch EC2 instance
+2. Install Java 17
+3. Copy JAR file
+4. Run as service
+
+**Elastic Beanstalk:**
+1. Create application
+2. Upload JAR file
+3. Configure environment variables
+
+### Option 3: Docker Deployment
+
+Create `Dockerfile` in backend directory:
+
+```dockerfile
+FROM openjdk:17-jdk-slim
+WORKDIR /app
+COPY target/coming-soon-backend-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 5000
+ENTRYPOINT ["java","-jar","app.jar"]
+```
+
+Build and run:
+```bash
+docker build -t branchworks-backend .
+docker run -p 5000:5000 branchworks-backend
+```
+
+## 🔐 Environment Variables
+
+### Frontend (.env)
+
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
+
+### Admin Panel (backend/admin-panel/.env)
+
+```env
+REACT_APP_API_URL=http://localhost:5000
+```
+
+### Backend (application.properties)
+
+See `backend/application.properties.example` for all available configuration options.
+
+## 🔑 Default Admin Credentials
+
+**Important:** Change these credentials immediately after first login!
+
+- **Username:** `admin`
+- **Password:** `admin123`
+
+To change the password:
+1. Login to admin panel
+2. Go to Settings (if available) or
+3. Update directly in database using BCrypt hash
+
+## ✨ Features
+
+### Public Website
+- Responsive corporate website
+- Service pages (Finance, Technology Support, Offshore Hiring)
+- Blog listing and detail pages
+- Career openings page
+- Contact form
+- About page
+
+### Admin CMS
+- **Dashboard:** Overview of blogs and careers
+- **Blog Management:**
+  - Create, edit, delete blog posts
+  - Rich text editor
+  - Image upload
+  - Publish/unpublish
+  - SEO fields (title, excerpt, slug)
+- **Career Management:**
+  - Post job openings
+  - Edit job details
+  - Activate/deactivate listings
+  - LinkedIn integration
+- **Authentication:**
+  - JWT-based login
+  - Protected routes
+  - Session management
+
+## 📚 API Documentation
+
+### Public Endpoints
+
+```
+GET  /api/blogs              - Get all published blogs
+GET  /api/blogs/{slug}       - Get blog by slug
+GET  /api/careers            - Get all active careers
+POST /api/contact            - Submit contact form
+GET  /api/health             - Health check
+```
+
+### Admin Endpoints (Requires Authentication)
+
+```
+POST /api/auth/login         - Admin login
+
+GET    /api/admin/blogs      - Get all blogs
+GET    /api/admin/blogs/{id} - Get blog by ID
+POST   /api/admin/blogs      - Create blog
+PUT    /api/admin/blogs/{id} - Update blog
+DELETE /api/admin/blogs/{id} - Delete blog
+PATCH  /api/admin/blogs/{id}/publish - Publish/unpublish blog
+
+GET    /api/admin/careers      - Get all careers
+GET    /api/admin/careers/{id} - Get career by ID
+POST   /api/admin/careers      - Create career
+PUT    /api/admin/careers/{id} - Update career
+DELETE /api/admin/careers/{id} - Delete career
+
+POST /api/admin/upload       - Upload image
+```
+
+### Authentication
+
+Include JWT token in Authorization header:
+```
+Authorization: Bearer <your-jwt-token>
+```
 
 ## 🐛 Troubleshooting
 
-### Port Already in Use
-```bash
-# Windows
-netstat -ano | findstr :3000
-netstat -ano | findstr :3001
-netstat -ano | findstr :5000
-taskkill /PID <PID> /F
-```
+### Frontend won't start
+- Check Node.js version: `node --version` (should be 16+)
+- Delete `node_modules` and reinstall: `rm -rf node_modules && npm install`
+- Check port 3000 is not in use
 
-### Backend Won't Start
-- Check Java version: `java -version` (need 17+)
-- Check Maven: `mvn -version`
-- Delete `backend/target/` and rebuild
+### Backend won't start
+- Check Java version: `java --version` (should be 17+)
+- Verify `application.properties` is configured
+- Check port 5000 is not in use
+- Check database connection settings
 
-### React Won't Start
-- Delete `node_modules/` and `package-lock.json`
-- Run `npm install` again
-- Clear npm cache: `npm cache clean --force`
+### Admin panel shows blank page
+- Rebuild admin panel: `cd backend/admin-panel && npm run build`
+- Rebuild backend: `cd backend && mvn clean package`
+- Clear browser cache
+- Check browser console for errors
 
-### Database Issues
-- Delete `backend/data/branchworks_db.mv.db`
-- Restart backend (database will be recreated)
-- Re-import blogs using admin panel
+### Database errors
+- For H2: Delete `backend/data/` folder and restart
+- For MySQL/PostgreSQL: Verify connection settings and credentials
+- Check `spring.jpa.hibernate.ddl-auto=update` is set
 
-## 📝 License
+### Email not sending
+- Verify Gmail App Password is correct
+- Check Gmail account allows less secure apps
+- Verify SMTP settings in `application.properties`
 
-Private project - All rights reserved
+## 📞 Support
 
-## 👥 Support
+For issues or questions:
+1. Check this README
+2. Review application logs
+3. Check browser console for frontend errors
+4. Review backend logs for API errors
 
-For issues or questions, contact the development team.
+## 📄 License
+
+Proprietary - All rights reserved by BranchWorks Global
 
 ---
 
-**Last Updated:** May 2026
-**Version:** 1.0.0
+**Built with ❤️ for BranchWorks Global**

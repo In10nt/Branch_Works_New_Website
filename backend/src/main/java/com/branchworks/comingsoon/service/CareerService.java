@@ -37,7 +37,9 @@ public class CareerService {
         career.setTitle(careerDetails.getTitle());
         career.setDescription(careerDetails.getDescription());
         career.setLocation(careerDetails.getLocation());
-        career.setType(careerDetails.getType());
+        career.setWorkType(careerDetails.getWorkType());
+        career.setDepartment(careerDetails.getDepartment());
+        career.setLinkedinUrl(careerDetails.getLinkedinUrl());
         career.setExperience(careerDetails.getExperience());
         career.setSalary(careerDetails.getSalary());
         career.setSkills(careerDetails.getSkills());

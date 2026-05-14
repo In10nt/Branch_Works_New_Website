@@ -1,0 +1,88 @@
+# Backend Application Configuration Example
+# Copy this file to src/main/resources/application.properties and update with your values
+
+# ============================================
+# SERVER CONFIGURATION
+# ============================================
+server.port=5000
+
+# ============================================
+# DATABASE CONFIGURATION
+# ============================================
+# H2 Database (File-based, for local development/testing)
+spring.datasource.url=jdbc:h2:file:./data/branchworks_db
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+# MySQL Database (Recommended for production)
+# Uncomment and configure these if using MySQL
+#spring.datasource.url=jdbc:mysql://localhost:3306/branchworks_db?useSSL=false&serverTimezone=UTC
+#spring.datasource.username=your_mysql_username
+#spring.datasource.password=your_mysql_password
+#spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+#spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+
+# PostgreSQL Database
+# Uncomment and configure these if using PostgreSQL
+#spring.datasource.url=jdbc:postgresql://localhost:5432/branchworks_db
+#spring.datasource.username=your_postgres_username
+#spring.datasource.password=your_postgres_password
+#spring.datasource.driver-class-name=org.postgresql.Driver
+#spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+# ============================================
+# JPA CONFIGURATION
+# ============================================
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=false
+
+# ============================================
+# H2 CONSOLE (Development only - disable in production)
+# ============================================
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+# ============================================
+# FILE UPLOAD CONFIGURATION
+# ============================================
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB
+file.upload.dir=./src/main/resources/static/uploads
+
+# ============================================
+# CORS CONFIGURATION
+# ============================================
+cors.allowed.origins=*
+
+# ============================================
+# LOGGING
+# ============================================
+logging.level.com.branchworks=INFO
+
+# ============================================
+# EMAIL CONFIGURATION (Gmail SMTP)
+# ============================================
+spring.mail.host=smtp.gmail.com
+spring.mail.port=587
+spring.mail.username=YOUR_EMAIL@gmail.com
+spring.mail.password=YOUR_APP_PASSWORD
+spring.mail.properties.mail.smtp.auth=true
+spring.mail.properties.mail.smtp.starttls.enable=true
+spring.mail.properties.mail.smtp.starttls.required=true
+spring.mail.properties.mail.smtp.ssl.trust=smtp.gmail.com
+spring.mail.properties.mail.smtp.connectiontimeout=5000
+spring.mail.properties.mail.smtp.timeout=5000
+spring.mail.properties.mail.smtp.writetimeout=5000
+spring.mail.test-connection=false
+
+# Company email (where contact form submissions will be sent)
+company.email=YOUR_COMPANY_EMAIL@example.com
+
+# ============================================
+# JWT CONFIGURATION (Security)
+# ============================================
+# Generate a secure random string (at least 256 bits)
+jwt.secret=CHANGE_THIS_TO_A_SECURE_RANDOM_STRING_AT_LEAST_256_BITS
+jwt.expiration=86400000

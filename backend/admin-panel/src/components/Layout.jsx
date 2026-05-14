@@ -1,13 +1,22 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Layout.css';
 
 const Layout = ({ children }) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   const isActive = (path) => {
     return location.pathname.startsWith(path);
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    navigate('/login');
+  };
+
+  const username = localStorage.getItem('username');
 
   return (
     <div className="layout">
@@ -45,6 +54,16 @@ const Layout = ({ children }) => {
             </Link>
           </li>
         </ul>
+        <div className="sidebar-footer">
+          <div className="user-info">
+            <span className="user-icon">👤</span>
+            <span className="username">{username}</span>
+          </div>
+          <button onClick={handleLogout} className="logout-button">
+            <span className="icon">🚪</span>
+            Logout
+          </button>
+        </div>
       </nav>
       <main className="main-content">
         <div className="content-wrapper">

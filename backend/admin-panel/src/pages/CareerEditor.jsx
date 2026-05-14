@@ -14,7 +14,9 @@ const CareerEditor = () => {
     title: '',
     description: '',
     location: '',
-    type: 'Full-time',
+    workType: 'Full-time',
+    department: '',
+    linkedinUrl: '',
     experience: '',
     salary: '',
     skills: '',
@@ -31,7 +33,7 @@ const CareerEditor = () => {
 
   const fetchCareer = async () => {
     try {
-      const response = await axios.get(`/api/careers/${id}`);
+      const response = await axios.get(`/api/admin/careers/${id}`);
       setFormData(response.data);
     } catch (error) {
       setError('Failed to fetch career');
@@ -55,10 +57,10 @@ const CareerEditor = () => {
 
     try {
       if (id) {
-        await axios.put(`/api/careers/${id}`, formData);
+        await axios.put(`/api/admin/careers/${id}`, formData);
         setSuccess('Career updated successfully!');
       } else {
-        await axios.post('/api/careers', formData);
+        await axios.post('/api/admin/careers', formData);
         setSuccess('Career created successfully!');
       }
       setTimeout(() => navigate('/careers'), 1500);
@@ -113,24 +115,41 @@ const CareerEditor = () => {
 
         <div className="form-row">
           <div className="form-group">
-            <label htmlFor="type">Employment Type *</label>
+            <label htmlFor="workType">Work Type *</label>
             <select
-              id="type"
-              name="type"
+              id="workType"
+              name="workType"
               className="form-control"
-              value={formData.type}
+              value={formData.workType}
               onChange={handleChange}
               required
             >
               <option value="Full-time">Full-time</option>
               <option value="Part-time">Part-time</option>
               <option value="Contract">Contract</option>
-              <option value="Internship">Internship</option>
+              <option value="Remote">Remote</option>
+              <option value="Hybrid">Hybrid</option>
             </select>
           </div>
 
           <div className="form-group">
-            <label htmlFor="experience">Experience Required *</label>
+            <label htmlFor="department">Department *</label>
+            <input
+              type="text"
+              id="department"
+              name="department"
+              className="form-control"
+              value={formData.department}
+              onChange={handleChange}
+              placeholder="e.g., Finance, Technology, Operations"
+              required
+            />
+          </div>
+        </div>
+
+        <div className="form-row">
+          <div className="form-group">
+            <label htmlFor="experience">Experience Required</label>
             <input
               type="text"
               id="experience"
@@ -139,6 +158,19 @@ const CareerEditor = () => {
               value={formData.experience}
               onChange={handleChange}
               placeholder="e.g., 2-5 years"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="linkedinUrl">LinkedIn Job URL *</label>
+            <input
+              type="url"
+              id="linkedinUrl"
+              name="linkedinUrl"
+              className="form-control"
+              value={formData.linkedinUrl}
+              onChange={handleChange}
+              placeholder="https://www.linkedin.com/jobs/view/..."
               required
             />
           </div>

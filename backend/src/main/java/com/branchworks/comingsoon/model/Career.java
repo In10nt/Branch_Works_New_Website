@@ -17,13 +17,17 @@ public class Career {
     @Column(nullable = false)
     private String location;
     
+    @Column(name = "work_type")
+    private String workType = "Full-time"; // Full-time, Part-time, Contract, Remote, Hybrid
+    
+    private String department; // Finance, Technology, Operations, etc.
+    
+    @Column(name = "linkedin_url")
+    private String linkedinUrl; // URL to LinkedIn job posting
+    
     @Column(columnDefinition = "TEXT")
     private String description;
     
-    @Column(nullable = false)
-    private String type = "Full-time"; // Full-time, Part-time, Contract, Internship
-    
-    @Column(nullable = false)
     private String experience;
     
     private String salary;
@@ -37,7 +41,6 @@ public class Career {
     @Column(columnDefinition = "TEXT")
     private String qualifications;
     
-    @Column(nullable = false)
     private Boolean active = true;
     
     @Column(name = "created_at")
@@ -82,20 +85,36 @@ public class Career {
         this.location = location;
     }
     
+    public String getWorkType() {
+        return workType;
+    }
+    
+    public void setWorkType(String workType) {
+        this.workType = workType;
+    }
+    
+    public String getDepartment() {
+        return department;
+    }
+    
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+    
+    public String getLinkedinUrl() {
+        return linkedinUrl;
+    }
+    
+    public void setLinkedinUrl(String linkedinUrl) {
+        this.linkedinUrl = linkedinUrl;
+    }
+    
     public String getDescription() {
         return description;
     }
     
     public void setDescription(String description) {
         this.description = description;
-    }
-    
-    public String getType() {
-        return type;
-    }
-    
-    public void setType(String type) {
-        this.type = type;
     }
     
     public String getExperience() {

@@ -14,7 +14,7 @@ const CareerList = () => {
 
   const fetchCareers = async () => {
     try {
-      const response = await axios.get('/api/careers');
+      const response = await axios.get('/api/admin/careers');
       setCareers(response.data);
     } catch (error) {
       setError('Failed to fetch careers');
@@ -30,7 +30,7 @@ const CareerList = () => {
     }
 
     try {
-      await axios.delete(`/api/careers/${id}`);
+      await axios.delete(`/api/admin/careers/${id}`);
       setCareers(careers.filter(career => career.id !== id));
     } catch (error) {
       setError('Failed to delete career');
@@ -41,7 +41,7 @@ const CareerList = () => {
   const toggleActive = async (id, currentStatus) => {
     try {
       const career = careers.find(c => c.id === id);
-      await axios.put(`/api/careers/${id}`, {
+      await axios.put(`/api/admin/careers/${id}`, {
         ...career,
         active: !currentStatus
       });
@@ -69,78 +69,65 @@ const CareerList = () => {
 
       {error && <div className="alert alert-error">{error}</div>}
 
-      <div className="career-grid">
-        {careers.length === 0 ? (
-          <div className="empty-state">
-            <p>No career postings yet. Create your first one!</p>
-            <Link to="/careers/new" className="btn btn-primary">
-              Post Career Opening
-            </Link>
-          </div>
-        ) : (
-          careers.map(career => (
-            <div key={career.id} className="career-card">
-              <div className="career-header">
-                <div>
-                  <h3>{career.title}</h3>
-                  <div className="career-meta">
-                    <span className="location">📍 {career.location}</span>
-                    <span className="type">💼 {career.type}</span>
-                  </div>
-                </div>
-                <span className={`status-badge ${career.active ? 'active' : 'inactive'}`}>
-                  {career.active ? 'Active' : 'Inactive'}
-                </span>
-              </div>
-
-              <p className="career-description">{career.description}</p>
-
-              <div className="career-details">
-                <div className="detail-item">
-                  <strong>Experience:</strong> {career.experience}
-                </div>
-                <div className="detail-item">
-                  <strong>Salary:</strong> {career.salary}
-                </div>
-                {career.skills && (
-                  <div className="detail-item">
-                    <strong>Skills:</strong>
-                    <div className="skills-tags">
-                      {career.skills.split(',').map((skill, idx) => (
-                        <span key={idx} className="skill-tag">{skill.trim()}</span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="career-footer">
-                <span className="posted-date">
-                  Posted: {new Date(career.postedDate).toLocaleDateString()}
-                </span>
-              </div>
-
-              <div className="career-actions">
-                <Link to={`/careers/edit/${career.id}`} className="btn btn-secondary">
-                  ✏️ Edit
-                </Link>
-                <button
-                  onClick={() => toggleActive(career.id, career.active)}
-                  className={`btn ${career.active ? 'btn-secondary' : 'btn-success'}`}
-                >
-                  {career.active ? '⏸️ Deactivate' : '▶️ Activate'}
-                </button>
-                <button
-                  onClick={() => handleDelete(career.id)}
-                  className="btn btn-danger"
-                >
-                  🗑️ Delete
-                </button>
-              </div>
-            </div>
-          ))
-        )}
-      </div>
+      {careers.length === 0 ? (
+        <div className="empty-state">
+          <p>No career postings yet. Create your first one!</p>
+          <Link to="/careers/new" className="btn btn-primary">
+            Post Career Opening
+          </Link>
+        </div>
+      ) : (
+        <div className="table-container">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Job Title</th>
+                <th>Location</th>
+                <th>Work Type</th>
+                <th>Department</th>
+                <th>Status</th>
+                <th>Posted Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {careers.map(career => (
+                <tr key={career.id}>
+                  <td className="title-cell">
+                    <strong>{career.title}</strong>
+                  </td>
+                  <td>{career.location}</td>
+                  <td>{career.workType}</td>
+                  <td>{career.department || 'N/A'}</td>
+                  <td>
+                    <span className={`status-badge ${career.active ? 'active' : 'inactive'}`}>
+                      {career.active ? 'Active' : 'Inactive'}
+                    </span>
+                  </td>
+                  <td>{new Date(career.createdAt).toLocaleDateString()}</td>
+                  <td className="actions-cell">
+                    <Link to={`/careers/edit/${career.id}`} className="btn-action btn-edit">
+                      ✏️ Edit
+                    </Link>
+                    <button
+                      onClick={() => toggleActive(career.id, career.active)}
+                      className={`btn-action ${career.active ? 'btn-deactivate' : 'btn-activate'}`}
+                    >
+                      {career.active ? '⏸️ Deactivate' : '▶️ Activate'}
+                    </button>
+                    <button
+                      onClick={() => handleDelete(career.id)}
+                      className="btn-action btn-delete"
+                    >
+                      🗑️ Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };
