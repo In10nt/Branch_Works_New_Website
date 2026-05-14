@@ -59,7 +59,7 @@ const BlogDetail = () => {
           setLoading(false);
         } else {
           // Fetch from API
-          const response = await fetch(`https://api.branchworksglobal.com/api/blogs/${slug}`);
+          const response = await fetch(`https://7902b8afabb745.lhr.life/api/blogs/${slug}`);
           if (response.ok) {
             const data = await response.json();
             setBlog(data);
@@ -82,7 +82,7 @@ const BlogDetail = () => {
   useEffect(() => {
     const fetchRelatedBlogs = async () => {
       try {
-        const response = await fetch('https://api.branchworksglobal.com/api/blogs');
+        const response = await fetch('https://7902b8afabb745.lhr.life/api/blogs');
         const data = await response.json();
         
         // Filter out current blog and limit to 3
@@ -381,7 +381,7 @@ const BlogDetail = () => {
                   relatedBlogs.map((relatedBlog) => (
                     <div key={relatedBlog.id} className="customer-story-card">
                       <img 
-                        src={`https://api.branchworksglobal.com${relatedBlog.featuredImage}`} 
+                        src={`https://7902b8afabb745.lhr.life${relatedBlog.featuredImage}`} 
                         alt={relatedBlog.title} 
                         className="story-card-image" 
                       />

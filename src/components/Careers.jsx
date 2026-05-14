@@ -23,7 +23,7 @@ const Careers = () => {
     const fetchCareers = async () => {
       setLoading(true);
       try {
-        const response = await fetch('https://api.branchworksglobal.com/api/careers');
+        const response = await fetch('https://7902b8afabb745.lhr.life/api/careers');
         const data = await response.json();
         setCareers(data);
       } catch (error) {

@@ -45,7 +45,7 @@ const BlogEditor = () => {
         status: blog.status || 'DRAFT'
       });
       if (blog.featuredImage) {
-        setImagePreview(`https://api.branchworksglobal.com${blog.featuredImage}`);
+        setImagePreview(`https://7902b8afabb745.lhr.life${blog.featuredImage}`);
       }
     } catch (error) {
       setError('Failed to fetch blog');

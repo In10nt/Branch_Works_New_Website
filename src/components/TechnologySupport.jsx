@@ -75,7 +75,7 @@ const TechnologySupport = () => {
     const fetchBlogs = async () => {
       setBlogsLoading(true);
       try {
-        const response = await fetch('https://api.branchworksglobal.com/api/blogs');
+        const response = await fetch('https://7902b8afabb745.lhr.life/api/blogs');
         const data = await response.json();
         
         const staticBlog = {
@@ -730,7 +730,7 @@ const TechnologySupport = () => {
                       <img 
                         src={blog.isStatic 
                           ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
-                          : `https://api.branchworksglobal.com${blog.featuredImage}`
+                          : `https://7902b8afabb745.lhr.life${blog.featuredImage}`
                         } 
                         alt={blog.title} 
                         className="story-card-image" 

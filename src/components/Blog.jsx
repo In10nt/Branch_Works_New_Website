@@ -47,7 +47,7 @@ const Blog = () => {
   const fetchDynamicBlogs = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://api.branchworksglobal.com/api/blogs');
+      const response = await fetch('https://7902b8afabb745.lhr.life/api/blogs');
       const data = await response.json();
       setDynamicBlogs(data);
       
@@ -337,7 +337,7 @@ const Blog = () => {
                     blog.isStatic 
                       ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
                       : blog.featuredImage 
-                        ? `https://api.branchworksglobal.com${blog.featuredImage}` 
+                        ? `https://7902b8afabb745.lhr.life${blog.featuredImage}` 
                         : `${process.env.PUBLIC_URL}/images/customer_story_image_1.jpg`
                   } 
                   alt={blog.title} 
@@ -412,7 +412,7 @@ const Blog = () => {
                       <img 
                         src={blog.isStatic 
                           ? `${process.env.PUBLIC_URL}${blog.featuredImage}` 
-                          : `https://api.branchworksglobal.com${blog.featuredImage}`
+                          : `https://7902b8afabb745.lhr.life${blog.featuredImage}`
                         } 
                         alt={blog.title} 
                         className="story-card-image" 
