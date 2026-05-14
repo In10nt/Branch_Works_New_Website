@@ -1,0 +1,137 @@
+.career-list {
+  padding: 20px;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.career-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.career-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.career-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: 15px;
+  gap: 15px;
+}
+
+.career-header h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.career-meta {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.status-badge.active {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.inactive {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.career-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.career-details {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.detail-item {
+  margin-bottom: 10px;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-item strong {
+  color: #333;
+  margin-right: 8px;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.skill-tag {
+  background: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.career-footer {
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.posted-date {
+  font-size: 13px;
+  color: #999;
+}
+
+.career-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.career-actions .btn {
+  flex: 1;
+  min-width: 100px;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+@media (max-width: 768px) {
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-header {
+    flex-direction: column;
+  }
+
+  .career-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

@@ -23,7 +23,7 @@ const Careers = () => {
     const fetchCareers = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:5000/api/careers');
+        const response = await fetch('http://13.60.98.227:5000/api/careers');
         const data = await response.json();
         setCareers(data);
       } catch (error) {

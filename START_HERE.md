@@ -21,8 +21,8 @@ If you prefer to start services individually:
 
 2. **Admin Panel:**
    ```bash
-   cd blog-admin
-   python -m http.server 8080
+   cd admin-panel
+   npm start
    ```
 
 3. **React Website:**
@@ -41,20 +41,21 @@ Close each command window individually or press `Ctrl+C` in each terminal.
 ## 🌐 Access URLs
 
 - **Website:** http://localhost:3000
-- **Admin Panel:** http://localhost:8080 (Click "Admin" in footer)
+- **Admin Panel:** http://localhost:3001 (Click "Admin" in footer)
 - **Backend API:** http://localhost:5000/api
 
-## 📝 Admin Login Credentials
+## 📝 Admin Panel
 
-- **Username:** admin
-- **Password:** admin123
+- No login required - direct access to admin features
+- Manage blogs and career postings
+- Modern React-based interface with rich text editor
 
 ## ⚠️ Important Notes
 
 1. **Keep all three command windows open** while using the application
 2. The backend takes 30-60 seconds to fully start
 3. The React website will automatically open in your browser
-4. If port 3000, 5000, or 8080 is already in use, close other applications using those ports
+4. If port 3000, 3001, or 5000 is already in use, close other applications using those ports
 
 ## 🔧 Troubleshooting
 
@@ -63,7 +64,8 @@ Close each command window individually or press `Ctrl+C` in each terminal.
 - Make sure Maven is installed: `mvn -version`
 
 ### Admin Panel won't start
-- Make sure Python 3 is installed: `python --version`
+- Make sure Node.js is installed: `node -version`
+- Run `npm install` in the admin-panel folder if dependencies are missing
 
 ### React Website won't start
 - Make sure Node.js is installed: `node -version`
@@ -71,25 +73,26 @@ Close each command window individually or press `Ctrl+C` in each terminal.
 
 ### Port already in use
 - Run `stop-all.bat` to close any existing instances
-- Or manually close applications using ports 3000, 5000, or 8080
+- Or manually close applications using ports 3000, 3001, or 5000
 
 ## 📚 Features
 
-- **Blog Management:** Create, edit, and delete blog posts
+- **Blog Management:** Create, edit, and delete blog posts with rich text editor
+- **Career Management:** Post, edit, and delete career openings
 - **Category Filtering:** Blogs automatically show on relevant pages (Finance, Technology Support, Offshore Hiring)
-- **Image Upload:** Upload blog images with automatic storage
-- **Draft/Publish:** Save drafts or publish immediately
+- **Image Support:** Add image URLs to blog posts
+- **Draft/Publish:** Toggle publish status for blogs
+- **Active/Inactive:** Toggle active status for careers
 - **Responsive Design:** Works on desktop, tablet, and mobile
 
 ## 🎯 Workflow
 
 1. Start all services using `start-all.bat`
 2. Website opens automatically at http://localhost:3000
-3. Click "Admin" in the footer to access blog management
-4. Login with admin credentials
-5. Create/edit blogs as needed
-6. View blogs on the website immediately
-7. When done, run `stop-all.bat` to stop all services
+3. Click "Admin" in the footer to access admin panel (opens in new tab)
+4. Create/edit blogs and career postings as needed
+5. View blogs and careers on the website immediately
+6. When done, run `stop-all.bat` to stop all services
 
 ---
 

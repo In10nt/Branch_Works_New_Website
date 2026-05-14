@@ -17,14 +17,28 @@ A full-stack web application featuring a modern landing page with integrated blo
 - **Maven** - Build and dependency management
 
 ### Admin Panel
-- **Vanilla JavaScript** - No framework dependencies
-- **Python HTTP Server** - Static file serving
-- **HTML5/CSS3** - Modern web standards
+- **React 18.2.0** - Modern UI framework
+- **React Router DOM 6.20.0** - Navigation
+- **Axios 1.6.2** - HTTP client
+- **React Quill 2.0.0** - Rich text editor
 
 ## 📁 Project Structure
 
 ```
 Branch Works/
+├── admin-panel/               # React Admin Panel
+│   ├── src/
+│   │   ├── components/       # Layout components
+│   │   ├── pages/            # Admin pages
+│   │   │   ├── Dashboard.jsx # Overview dashboard
+│   │   │   ├── BlogList.jsx  # Blog management
+│   │   │   ├── BlogEditor.jsx # Blog editor
+│   │   │   ├── CareerList.jsx # Career management
+│   │   │   └── CareerEditor.jsx # Career editor
+│   │   └── App.js           # Admin app routing
+│   ├── public/              # Admin static assets
+│   └── package.json         # Admin dependencies
+│
 ├── backend/                    # Spring Boot backend
 │   ├── src/main/java/         # Java source code
 │   │   └── com/branchworks/comingsoon/
@@ -38,14 +52,6 @@ Branch Works/
 │   │   └── static/uploads/    # Blog images storage
 │   ├── data/                  # H2 database files
 │   └── pom.xml               # Maven configuration
-│
-├── blog-admin/                # Admin panel
-│   ├── index.html            # Login page
-│   ├── blogs.html            # Blog list page
-│   ├── editor.html           # Blog editor
-│   ├── css/                  # Stylesheets
-│   ├── js/                   # JavaScript files
-│   └── README.md             # Admin documentation
 │
 ├── src/                      # React source code
 │   ├── components/           # React components
@@ -79,24 +85,33 @@ Branch Works/
 
 1. **Clone or download the project**
 
-2. **Install React dependencies:**
+2. **Install React dependencies for main website:**
    ```bash
    npm install
    ```
 
-3. **Start all services:**
+3. **Install React dependencies for admin panel:**
+   ```bash
+   cd admin-panel
+   npm install
+   cd ..
+   ```
+
+4. **Start all services:**
    - **Windows:** Double-click `start-all.bat`
    - **Manual:** See START_HERE.md for individual commands
 
 ### Access the Application
 
 - **Website:** http://localhost:3000
-- **Admin Panel:** http://localhost:8080 (or click "Admin" in footer)
+- **Admin Panel:** http://localhost:3001 (or click "Admin" in footer)
 - **Backend API:** http://localhost:5000/api
 
-### Admin Credentials
-- **Username:** admin
-- **Password:** admin123
+### Admin Features
+- **Dashboard:** Overview statistics for blogs and careers
+- **Blog Management:** Create, edit, delete blog posts with rich text editor
+- **Career Management:** Post, edit, delete career openings
+- No separate login required - direct access to admin features
 
 ## 📋 Features
 
@@ -110,12 +125,20 @@ Branch Works/
 
 ### Blog Management Features
 - ✅ Create, edit, and delete blog posts
-- ✅ Rich text content with automatic formatting
-- ✅ Image upload and management
+- ✅ Rich text editor with formatting options (React Quill)
+- ✅ Image URL support
 - ✅ Category assignment (Finance, Technology Support, Offshore Hiring)
-- ✅ Draft/Publish status
+- ✅ Draft/Publish status toggle
 - ✅ SEO-friendly slug generation
-- ✅ Blog import from existing data
+- ✅ Modern React-based admin interface
+
+### Career Management Features
+- ✅ Post, edit, and delete career openings
+- ✅ Job details: title, location, type, experience, salary
+- ✅ Skills tags and requirements
+- ✅ Responsibilities and qualifications
+- ✅ Active/inactive status toggle
+- ✅ Posted date tracking
 
 ### Category Filtering
 - **Finance Page** → Shows only Finance category blogs
@@ -140,10 +163,10 @@ React app runs on http://localhost:3000
 
 ### Admin Panel Development
 ```bash
-cd blog-admin
-python -m http.server 8080
+cd admin-panel
+npm start
 ```
-Admin panel runs on http://localhost:8080
+Admin panel runs on http://localhost:3001
 
 ## 📡 API Endpoints
 
@@ -151,12 +174,19 @@ Admin panel runs on http://localhost:8080
 - `GET /api/blogs` - Get all published blogs
 - `GET /api/blogs/{slug}` - Get blog by slug
 - `GET /api/blogs/category/{category}` - Get blogs by category
-- `POST /api/blogs` - Create new blog
-- `PUT /api/blogs/{id}` - Update blog
-- `DELETE /api/blogs/{id}` - Delete blog
+- `GET /api/admin/blogs` - Get all blogs (including drafts)
+- `GET /api/admin/blogs/{id}` - Get blog by ID
+- `POST /api/admin/blogs` - Create new blog
+- `PUT /api/admin/blogs/{id}` - Update blog
+- `DELETE /api/admin/blogs/{id}` - Delete blog
+- `PATCH /api/admin/blogs/{id}/publish` - Toggle publish status
 
-### File Upload
-- `POST /api/upload` - Upload blog image
+### Career Endpoints
+- `GET /api/careers` - Get all careers
+- `GET /api/careers/{id}` - Get career by ID
+- `POST /api/careers` - Create new career
+- `PUT /api/careers/{id}` - Update career
+- `DELETE /api/careers/{id}` - Delete career
 
 ## 🗄️ Database
 
@@ -177,11 +207,26 @@ Admin panel runs on http://localhost:8080
 - slug (String, Unique)
 - content (Text)
 - excerpt (String)
+- author (String)
 - category (String)
 - imageUrl (String)
-- status (String: DRAFT/PUBLISHED)
+- published (Boolean)
 - createdAt (LocalDateTime)
 - updatedAt (LocalDateTime)
+
+**Career Table:**
+- id (Long, Primary Key)
+- title (String)
+- description (Text)
+- location (String)
+- type (String: Full-time/Part-time/Contract/Internship)
+- experience (String)
+- salary (String)
+- skills (String)
+- responsibilities (Text)
+- qualifications (Text)
+- active (Boolean)
+- postedDate (LocalDateTime)
 
 ## 🎨 Styling
 
@@ -198,18 +243,25 @@ Admin panel runs on http://localhost:8080
 
 ## 🔒 Security Notes
 
-- Default admin credentials should be changed in production
+- Admin panel runs on separate port (3001) for isolation
 - CORS is configured for localhost development
-- File uploads are restricted to images
 - Input validation on both frontend and backend
+- For production: implement proper authentication (JWT/OAuth)
 
 ## 🚢 Deployment
 
-### Frontend (React)
+### Frontend (React Website)
 ```bash
 npm run build
 ```
 Deploy the `build/` folder to any static hosting (Netlify, Vercel, AWS S3, etc.)
+
+### Admin Panel (React)
+```bash
+cd admin-panel
+npm run build
+```
+Deploy the `build/` folder to a separate subdomain or path (e.g., admin.yourdomain.com)
 
 ### Backend (Spring Boot)
 ```bash
@@ -230,8 +282,8 @@ Update `backend/src/main/resources/application.properties` for production:
 ```bash
 # Windows
 netstat -ano | findstr :3000
+netstat -ano | findstr :3001
 netstat -ano | findstr :5000
-netstat -ano | findstr :8080
 taskkill /PID <PID> /F
 ```
 

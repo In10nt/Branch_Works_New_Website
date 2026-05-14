@@ -1,0 +1,241 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                                                                  ║
+║         AWS EC2 DEPLOYMENT - COMPLETE STEP-BY-STEP              ║
+║                                                                  ║
+╚══════════════════════════════════════════════════════════════════╝
+
+═══════════════════════════════════════════════════════════════════
+PART 1: CREATE EC2 INSTANCE (On AWS Console)
+═══════════════════════════════════════════════════════════════════
+
+1. Go to: https://console.aws.amazon.com/ec2
+
+2. Click "Launch Instance"
+
+3. Configure:
+   Name: branchworks-backend
+   
+   OS Image: Ubuntu Server 22.04 LTS (Free tier eligible)
+   
+   Instance Type: t2.micro (Free tier eligible)
+   
+   Key Pair: 
+   - Click "Create new key pair"
+   - Name: branchworks-key
+   - Type: RSA
+   - Format: .pem
+   - DOWNLOAD AND SAVE THIS FILE!
+   
+   Network Settings:
+   - Click "Edit"
+   - Allow SSH from: My IP
+   - Click "Add security group rule"
+     - Type: Custom TCP
+     - Port: 5000
+     - Source: Anywhere (0.0.0.0/0)
+   
+   Storage: 30 GB (Free tier)
+
+4. Click "Launch Instance"
+
+5. Wait 2 minutes, then:
+   - Click on your instance
+   - Copy the "Public IPv4 address" (e.g., 54.123.45.67)
+   - SAVE THIS IP!
+
+═══════════════════════════════════════════════════════════════════
+PART 2: PREPARE YOUR APPLICATION (On Your Computer)
+═══════════════════════════════════════════════════════════════════
+
+1. Open: backend\src\main\resources\application.properties
+
+2. Find this line:
+   cors.allowed.origins=${CORS_ALLOWED_ORIGINS:*}
+
+3. You'll set the actual URL later via environment variable
+
+4. Build your JAR:
+   cd backend
+   mvn clean package -DskipTests
+
+5. Your JAR is at: backend\target\coming-soon-backend-0.0.1-SNAPSHOT.jar
+
+═══════════════════════════════════════════════════════════════════
+PART 3: CONNECT TO EC2 (On Your Computer)
+═══════════════════════════════════════════════════════════════════
+
+1. Open PowerShell
+
+2. Navigate to where you saved the .pem file:
+   cd Downloads
+
+3. Connect to EC2:
+   ssh -i "branchworks-key.pem" ubuntu@YOUR_EC2_IP
+
+   Replace YOUR_EC2_IP with your actual IP!
+
+4. Type "yes" when asked about fingerprint
+
+═══════════════════════════════════════════════════════════════════
+PART 4: SETUP EC2 (Run these commands ON EC2)
+═══════════════════════════════════════════════════════════════════
+
+Copy and paste these commands one by one:
+
+# Update system
+sudo apt update && sudo apt upgrade -y
+
+# Install Java 17
+sudo apt install openjdk-17-jdk -y
+
+# Verify Java
+java -version
+
+# Install screen (keeps app running)
+sudo apt install screen -y
+
+# Create directories
+mkdir -p ~/branchworks/data
+cd ~/branchworks
+
+# Done!
+echo "EC2 Setup Complete!"
+
+═══════════════════════════════════════════════════════════════════
+PART 5: UPLOAD JAR FILE (On Your Computer - New PowerShell)
+═══════════════════════════════════════════════════════════════════
+
+Open a NEW PowerShell window (keep EC2 connection open):
+
+cd "C:\Users\DELL\OneDrive\Desktop\Branch Works\backend"
+
+scp -i "C:\Users\DELL\Downloads\branchworks-key.pem" target\coming-soon-backend-0.0.1-SNAPSHOT.jar ubuntu@YOUR_EC2_IP:~/branchworks/
+
+Replace:
+- Path to your .pem file
+- YOUR_EC2_IP with your actual IP
+
+═══════════════════════════════════════════════════════════════════
+PART 6: RUN YOUR APPLICATION (Back in EC2 SSH window)
+═══════════════════════════════════════════════════════════════════
+
+# Go to app directory
+cd ~/branchworks
+
+# Set environment variables
+export CORS_ALLOWED_ORIGINS="https://your-amplify-url.amplifyapp.com"
+export PORT=5000
+
+# Start screen session
+screen -S backend
+
+# Run your application
+java -jar coming-soon-backend-0.0.1-SNAPSHOT.jar
+
+# Wait for "Started ComingSoonApplication" message
+
+# Detach from screen (keeps it running):
+Press: Ctrl+A then D
+
+# You can now close SSH - app keeps running!
+
+═══════════════════════════════════════════════════════════════════
+PART 7: TEST YOUR BACKEND
+═══════════════════════════════════════════════════════════════════
+
+Open browser and test:
+
+http://YOUR_EC2_IP:5000/api/blogs
+http://YOUR_EC2_IP:5000/api/careers
+
+You should see JSON data!
+
+═══════════════════════════════════════════════════════════════════
+PART 8: UPDATE ADMIN PANEL
+═══════════════════════════════════════════════════════════════════
+
+1. Open: backend\admin-panel\package.json
+
+2. Change proxy to:
+   "proxy": "http://YOUR_EC2_IP:5000"
+
+3. Rebuild admin:
+   cd backend\admin-panel
+   npm run build
+
+4. Redeploy to Amplify
+
+═══════════════════════════════════════════════════════════════════
+USEFUL COMMANDS
+═══════════════════════════════════════════════════════════════════
+
+# Connect to EC2:
+ssh -i "branchworks-key.pem" ubuntu@YOUR_EC2_IP
+
+# Check if app is running:
+screen -r backend
+
+# Stop the app:
+screen -r backend
+Then press: Ctrl+C
+
+# Start app again:
+screen -S backend
+java -jar ~/branchworks/coming-soon-backend-0.0.1-SNAPSHOT.jar
+Ctrl+A then D
+
+# View logs:
+screen -r backend
+(scroll up to see logs)
+
+# Update JAR (from your computer):
+scp -i "branchworks-key.pem" target\*.jar ubuntu@YOUR_EC2_IP:~/branchworks/
+
+═══════════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+═══════════════════════════════════════════════════════════════════
+
+Problem: Can't connect to EC2
+Solution: 
+- Check security group allows SSH from your IP
+- Verify .pem file path is correct
+- Make sure EC2 instance is running
+
+Problem: Can't access http://YOUR_EC2_IP:5000
+Solution:
+- Check security group allows port 5000
+- Verify app is running: screen -r backend
+- Check EC2 public IP hasn't changed
+
+Problem: App stops when I close SSH
+Solution:
+- Make sure you used screen
+- Detach with Ctrl+A then D (not Ctrl+C)
+
+Problem: CORS errors
+Solution:
+- Set CORS_ALLOWED_ORIGINS environment variable
+- Include your Amplify URL
+- Restart the app
+
+═══════════════════════════════════════════════════════════════════
+COST
+═══════════════════════════════════════════════════════════════════
+
+Free Tier (First 12 months):
+- 750 hours/month = FREE (24/7 for 1 month)
+- 30 GB storage = FREE
+- 15 GB data transfer = FREE
+
+After 12 months:
+- ~$8-10/month for t2.micro
+
+═══════════════════════════════════════════════════════════════════
+SUMMARY
+═══════════════════════════════════════════════════════════════════
+
+Your backend will be at: http://YOUR_EC2_IP:5000
+
+Update your admin panel to use this URL and you're done!
+
+═══════════════════════════════════════════════════════════════════

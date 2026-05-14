@@ -1,27 +1,17 @@
 ╔══════════════════════════════════════════════════════════════════╗
 ║                                                                  ║
-║              🚀 BRANCHWORKS - QUICK START GUIDE 🚀              ║
+║           🚀 BRANCHWORKS - QUICK START GUIDE 🚀                 ║
 ║                                                                  ║
 ╚══════════════════════════════════════════════════════════════════╝
 
-📌 FIRST TIME SETUP
+📌 FIRST TIME SETUP (ONE TIME ONLY)
 ═══════════════════════════════════════════════════════════════════
 
-1. Make sure you have installed:
-   ✅ Java 17+
-   ✅ Maven 3.6+
-   ✅ Node.js 14+
+Step 1: Install main website dependencies
+   npm install
 
-2. Install React dependencies for main website (ONE TIME ONLY):
-   - Open Command Prompt in this folder
-   - Run: npm install
-   - Wait for installation to complete
-
-3. Install React dependencies for admin panel (ONE TIME ONLY):
-   - Run: cd admin-panel
-   - Run: npm install
-   - Run: cd ..
-   - Wait for installation to complete
+Step 2: Setup admin panel
+   setup-admin.bat
 
 ═══════════════════════════════════════════════════════════════════
 
@@ -29,16 +19,10 @@
 ═══════════════════════════════════════════════════════════════════
 
 TO START:
----------
-1. Double-click: start-all.bat
-2. Wait 30-60 seconds
-3. Website opens automatically at http://localhost:3000
-4. Keep the 3 command windows open!
-
+   Double-click: start-all.bat
+   
 TO STOP:
---------
-1. Double-click: stop-all.bat
-2. All services stop automatically
+   Double-click: stop-all.bat
 
 ═══════════════════════════════════════════════════════════════════
 
@@ -46,73 +30,60 @@ TO STOP:
 ═══════════════════════════════════════════════════════════════════
 
 Website:      http://localhost:3000
-Admin Panel:  http://localhost:3001  (or click "Admin" in footer)
+Admin Panel:  http://localhost:5000/admin/  (click "Admin" in footer)
 Backend API:  http://localhost:5000/api
 
 ═══════════════════════════════════════════════════════════════════
 
-🔐 ADMIN PANEL
+✨ ADMIN PANEL FEATURES
 ═══════════════════════════════════════════════════════════════════
 
-No login required - direct access to admin features
-Click "Admin" in website footer to open admin panel in new tab
-Manage blogs and career postings with modern interface
-
-═══════════════════════════════════════════════════════════════════
-
-📚 DOCUMENTATION FILES
-═══════════════════════════════════════════════════════════════════
-
-START_HERE.md              → Quick start guide
-README.md                  → Technical documentation
-admin-panel/README.md      → Admin panel documentation
+✅ Dashboard with statistics
+✅ Blog Management (create, edit, delete, publish)
+✅ Career Management (post, edit, delete, activate)
+✅ Rich text editor
+✅ No login required (development mode)
 
 ═══════════════════════════════════════════════════════════════════
 
-🎯 QUICK WORKFLOW
+📝 HOW IT WORKS
 ═══════════════════════════════════════════════════════════════════
 
-1. Double-click start-all.bat
-2. Go to http://localhost:3000
-3. Click "Admin" in footer (opens in new tab)
-4. Create/edit blogs and career postings
-5. View content on website
-6. Double-click stop-all.bat when done
-
-═══════════════════════════════════════════════════════════════════
-
-⚠️ IMPORTANT NOTES
-═══════════════════════════════════════════════════════════════════
-
-✅ DO: Keep all 3 command windows open while using the app
-✅ DO: Wait 30-60 seconds for backend to fully start
-✅ DO: Use stop-all.bat to properly close all services
-
-❌ DON'T: Close command windows manually
-❌ DON'T: Start services if they're already running
-❌ DON'T: Use ports 3000, 3001, or 5000 for other apps
+1. Admin panel is built as React app
+2. Deployed to backend's static folder
+3. Served by Spring Boot at /admin/
+4. Makes API calls to backend
+5. No separate server needed!
 
 ═══════════════════════════════════════════════════════════════════
 
-🆘 NEED HELP?
+🔧 IF ADMIN LINK DOESN'T WORK
 ═══════════════════════════════════════════════════════════════════
 
-Problem: Services won't start
-Solution: Run stop-all.bat first, then start-all.bat
+Run this command:
+   setup-admin.bat
 
-Problem: Admin panel not loading
-Solution: Check if admin panel window is open and npm install was run in admin-panel folder
+This will build and deploy the admin panel.
 
-Problem: Blogs not showing on website
-Solution: Check blog status is "Published" and refresh page
+═══════════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION
+═══════════════════════════════════════════════════════════════════
+
+ADMIN_INTEGRATION_GUIDE.md  → Complete admin setup guide
+README.md                    → Technical documentation
+START_HERE.md                → Detailed start guide
+backend/admin-panel/README.md → Admin panel docs
 
 ═══════════════════════════════════════════════════════════════════
 
 🎉 YOU'RE ALL SET!
 ═══════════════════════════════════════════════════════════════════
 
-Just double-click start-all.bat and you're ready to go!
-
-For detailed instructions, open USAGE_GUIDE.md
+1. Run: setup-admin.bat (first time only)
+2. Run: start-all.bat
+3. Open: http://localhost:3000
+4. Click: "Admin" in footer
+5. Manage: Blogs and Careers
 
 ═══════════════════════════════════════════════════════════════════
