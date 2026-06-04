@@ -104,9 +104,8 @@ const FooterExpandable = () => {
         {/* Bottom Section */}
         <div className="footer-bottom-section">
           <div className="footer-bottom-container">
-            <p className="footer-copyright">
-              © 2026 Branchworks Global
-            </p>
+            <p className="footer-copyright">© 2026 Branchworks Global</p>
+            <p className="footer-copyright">Website Developed by <a href="https://in10nt.com/" target="_blank" rel="noopener noreferrer">IN10NT</a></p>
             <div className="footer-legal-links">
               <a href="/privacy" className="footer-legal-link">Policy</a>
               <a href="/terms" className="footer-legal-link">Terms</a>

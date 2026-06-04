@@ -4249,3 +4249,12 @@
 .finance-testimonial-content.animate-in .finance-testimonial-profile {
   animation: fadeInUp 0.8s ease-out 1.2s both;
 }
+/* Footer Link Color Override - Remove Blue Color */
+.footer-left-group .footer-copyright a {
+  color: #A3A3A3 !important;
+  text-decoration: none !important;
+}
+
+.footer-left-group .footer-copyright a:hover {
+  color: #FFFFFF !important;
+}

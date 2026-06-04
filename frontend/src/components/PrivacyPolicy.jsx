@@ -275,6 +275,7 @@ const PrivacyPolicy = () => {
             <div className="footer-bottom">
               <div className="footer-left-group">
                 <p className="footer-copyright">© 2026 Branchworks Global</p>
+                <p className="footer-copyright">Website Developed by <a href="https://in10nt.com/" target="_blank" rel="noopener noreferrer">IN10NT</a></p>
                 <div className="footer-policy-terms">
                   <Link to="/privacy-policy" className="footer-link-bottom">Policy</Link>
                   <Link to="/terms" className="footer-link-bottom">Terms</Link>
